@@ -1,0 +1,9 @@
+$__font-emoji-stack: 'Apple Color Emoji', 'Android Emoji', 'Noto Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+$__font-normal-stack: 'Roboto', 'Noto Sans', 'Noto Sans CJK SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+  'Segoe UI', 'Arial', san-serif, $__font-emoji-stack;
+
+$__font-narrow-stack: Roboto Condensed, Noto Sans Condensed, $__font-normal-stack;
+
+$__font-mono-stack: Iosevka, Sarasa Mono SC, Roboto Mono, Noto Sans Mono CJK SC, 'SFMono-Regular', Consolas, Ubuntu Mono,
+  monospace, $__font-emoji-stack;

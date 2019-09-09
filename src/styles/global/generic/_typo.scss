@@ -1,0 +1,141 @@
+//
+// Typography
+//
+
+$__line-spacing: gut(3) !default;
+
+// Remove top margins from headings
+//
+// By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
+// margin for easier control within type scales as it avoids margin collapsing.
+// stylelint-disable-next-line selector-list-comma-newline-after
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $__font-narrow-stack;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: $__line-spacing;
+  color: color(primary, 5);
+}
+
+h1 {
+  font-size: $__font-size-6;
+  line-height: $__line-height-6;
+}
+
+h2 {
+  font-size: $__font-size-5;
+  line-height: $__line-height-5;
+}
+
+h3 {
+  font-size: $__font-size-4;
+  line-height: $__line-height-4;
+}
+
+h4 {
+  font-size: $__font-size-3;
+  line-height: $__line-height-3;
+}
+// Reset margins on paragraphs
+//
+// Similarly, the top margin on `<p>`s get reset. However, we also reset the
+// bottom margin to use `rem` units instead of `em`.
+p {
+  margin-top: 0;
+  margin-bottom: $__line-spacing;
+}
+
+b,
+strong {
+  font-weight: bolder; // Add the correct font weight in Chrome, Edge, and Safari
+}
+
+small {
+  font-size: 80%; // Add the correct font size in all browsers
+}
+
+//
+// Prevent `sub` and `sup` elements from affecting the line height in
+// all browsers.
+//
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+
+blockquote {
+  margin: 0 0 $__line-spacing/2;
+}
+
+// Content grouping
+//
+// 1. Add the correct box sizing in Firefox.
+// 2. Show the overflow in Edge and IE.
+
+hr {
+  box-sizing: content-box; // 1
+  height: 0; // 1
+  overflow: visible; // 2
+}
+
+// List
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: $__line-spacing;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: $__line-spacing;
+  margin-left: 0; // Undo browser default
+}
+
+//
+// Code
+//
+
+pre,
+code,
+kbd,
+samp {
+  font-family: $__font-mono-stack;
+  font-size: 1em; // Correct the odd `em` font sizing in all browsers.
+}
+
+pre {
+  // Remove browser default top margin
+  margin-top: 0;
+  // Reset browser default of `1em` to use `rem`s
+  margin-bottom: $__line-spacing;
+  // Don't allow content to break outside
+  overflow: auto;
+}

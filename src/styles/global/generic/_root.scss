@@ -1,0 +1,53 @@
+// Modifieded from bootstrap's _reboot.scss
+// Bootstrap is licensed MIT.
+// Link: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+
+// 1. Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`.
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; // 1
+}
+
+// 1. Change the default font family in all browsers.
+// 2. Correct the line height in all browsers.
+// 3. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
+// 4. Change the default tap highlight to be completely transparent in iOS.
+
+html {
+  font-family: sans-serif; // 1
+  font-size: 100%;
+  // font-size: 20px;
+  line-height: 1.15; // 2
+  -webkit-text-size-adjust: 100%; // 3
+  -webkit-tap-highlight-color: rgba(#000, 0); // 4
+}
+
+// 1. Remove the margin in all browsers.
+// 2. As a best practice, apply a default `background-color`.
+// 3. Set an explicit initial text-align value so that we can later use
+//    the `inherit` value on things like `<th>` elements.
+
+$body-bgcolor: color(neutral, 7) !default;
+$body-color: color(neutral, 2) !default;
+$body-fontstack: $__font-normal-stack !default;
+
+body {
+  width: 100%;
+  min-width: 320px;
+  margin: 0; // 1
+  background-color: $body-bgcolor; // 2
+  color: $body-color;
+  font-family: $body-fontstack;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left; // 3
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}

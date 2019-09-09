@@ -1,0 +1,100 @@
+$__color-pallete: (
+  grey: (
+    1: hsl(215, 22%, 17%),
+    2: hsl(213, 12%, 43%),
+    3: hsl(215, 15%, 59%),
+    4: hsl(207, 18%, 76%),
+    5: hsl(212, 19%, 84%),
+    6: hsl(211, 18%, 93%),
+    7: hsl(210, 17%, 98%)
+  ),
+  cyan: (
+    1: hsl(179, 62%, 17%),
+    2: hsl(177, 58%, 25%),
+    3: hsl(176, 55%, 37%),
+    4: hsl(174, 49%, 46%),
+    5: hsl(175, 57%, 64%),
+    6: hsl(177, 67%, 80%),
+    7: hsl(179, 100%, 95%)
+  ),
+  blue: (
+    1: hsl(220, 45%, 23%),
+    2: hsl(220, 63%, 27%),
+    3: hsl(220, 64%, 39%),
+    4: hsl(220, 61%, 49%),
+    5: hsl(220, 60%, 62%),
+    6: hsl(220, 79%, 81%),
+    7: hsl(220, 100%, 97%)
+  ),
+  lime: (
+    1: hsl(135, 66%, 20%),
+    2: hsl(133, 65%, 28%),
+    3: hsl(132, 62%, 38%),
+    4: hsl(130, 55%, 49%),
+    5: hsl(132, 57%, 65%),
+    6: hsl(134, 67%, 80%),
+    7: hsl(136, 81%, 94%)
+  ),
+  gold: (
+    1: hsl(44, 66%, 22%),
+    2: hsl(43, 64%, 34%),
+    3: hsl(44, 57%, 52%),
+    4: hsl(38, 87%, 62%),
+    5: hsl(44, 90%, 80%),
+    6: hsl(44, 90%, 92%),
+    7: hsl(44, 100%, 98%)
+  ),
+  ruby: (
+    1: hsl(0, 60%, 24%),
+    2: hsl(0, 67%, 32%),
+    3: hsl(0, 70%, 42%),
+    4: hsl(0, 71%, 53%),
+    5: hsl(0, 70%, 64%),
+    6: hsl(0, 79%, 81%),
+    7: hsl(0, 77%, 95%)
+  ),
+  plum: (
+    1: hsl(276, 40%, 23%),
+    2: hsl(274, 46%, 32%),
+    3: hsl(271, 53%, 41%),
+    4: hsl(268, 59%, 52%),
+    5: hsl(270, 72%, 65%),
+    6: hsl(272, 87%, 80%),
+    7: hsl(274, 100%, 96%)
+  )
+);
+
+$__color-mapping: (
+  neutral: grey,
+  primary: cyan,
+  warning: gold,
+  support: blue,
+  success: lime,
+  harmful: ruby,
+  private: plum
+);
+
+@function color($type, $tone: 4) {
+  @if not map-has-key($__color-mapping, $type) {
+    @warn "unknown color `#{$type}` in palette";
+    @return red;
+  }
+
+  @if $tone < 1 or $tone > 7 {
+    @warn "tone should be in range 1..7";
+    @return red;
+  }
+
+  $color: map-get($__color-mapping, $type);
+  $tones: map-get($__color-pallete, $color);
+  @return map-get($tones, $tone);
+}
+
+// @charset 'utf-8';
+// // HEX
+// // ------------------------------
+// $color1: #d79bef;
+// $color2: #b2a7e8;
+// $color3: #eda6bd;
+// $color4: #ebffb2;
+// $color5: #97efee;
