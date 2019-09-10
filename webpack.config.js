@@ -96,7 +96,7 @@ module.exports = {
           use: {
             loader: 'svelte-loader',
             options: {
-              // preprocess,
+              preprocess,
               css: false,
               generate: 'ssr',
               dev,

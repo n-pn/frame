@@ -1,22 +1,28 @@
 <script>
-  import Nav from "./_layout/Nav.svelte";
+  import XNavi from "./_layout/navi.svelte";
 
   export let segment;
 </script>
 
 <style>
+  x-content {
+    display: block;
+    margin-left: 14rem;
+  }
+
   main {
     position: relative;
     max-width: 56em;
-    background-color: white;
     padding: 2em;
     margin: 0 auto;
     box-sizing: border-box;
   }
 </style>
 
-<Nav {segment} />
+<XNavi {segment} />
 
-<main>
-  <slot />
-</main>
+<x-content>
+  <main>
+    <slot />
+  </main>
+</x-content>

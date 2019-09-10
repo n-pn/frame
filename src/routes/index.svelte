@@ -6,7 +6,6 @@
   p {
     text-align: center;
     margin: 0 auto;
-    color: color(primary, 3);
   }
 
   h1 {
