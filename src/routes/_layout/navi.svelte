@@ -4,13 +4,19 @@
 
 <script>
   export let segment;
+
+  function active_page(evt) {
+    const target = evt.target;
+    console.log(evt);
+  }
 </script>
 
 <style lang="scss">
   @import "helpers";
   nav {
     position: fixed;
-    width: 14rem;
+    width: 18rem;
+    max-width: 100vw;
     top: 0;
     left: 0;
     bottom: 0;
@@ -19,7 +25,7 @@
     font-family: Roboto Condensed, system-sans;
     // padding: 0 1em;
     background-color: #fff;
-    box-shadow: 0 2px 6px rgba(#000, 0.06);
+    box-shadow: 2px 0 6px rgba(#000, 0.06);
   }
 
   a {
@@ -59,9 +65,10 @@
   }
 </style>
 
-<nav>
-  <a class={segment === undefined ? '_active' : ''} href=".">MELTE</a>
-  <a class={segment === 'about' ? '_active' : ''} href="about">about</a>
+<nav on:click={active_page}>
+  <a class:_active={segment === undefined} href=".">MELTE</a>
+
+  <a class:_active={segment === 'about'} href="about">about</a>
 
   <nav-label>Basic</nav-label>
   <a href="basic/icons">Icons</a>
