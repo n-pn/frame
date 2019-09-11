@@ -6,7 +6,7 @@ $__color-pallete: (
     4: hsl(207, 18%, 76%),
     5: hsl(212, 19%, 84%),
     6: hsl(211, 18%, 93%),
-    7: hsl(210, 17%, 98%)
+    7: hsl(210, 17%, 98%),
   ),
   cyan: (
     1: hsl(179, 62%, 17%),
@@ -15,7 +15,7 @@ $__color-pallete: (
     4: hsl(174, 49%, 46%),
     5: hsl(175, 57%, 64%),
     6: hsl(177, 67%, 80%),
-    7: hsl(179, 100%, 95%)
+    7: hsl(179, 100%, 95%),
   ),
   blue: (
     1: hsl(220, 45%, 23%),
@@ -24,7 +24,7 @@ $__color-pallete: (
     4: hsl(220, 61%, 49%),
     5: hsl(220, 60%, 62%),
     6: hsl(220, 79%, 81%),
-    7: hsl(220, 100%, 97%)
+    7: hsl(220, 100%, 97%),
   ),
   lime: (
     1: hsl(135, 66%, 20%),
@@ -33,7 +33,7 @@ $__color-pallete: (
     4: hsl(130, 55%, 49%),
     5: hsl(132, 57%, 65%),
     6: hsl(134, 67%, 80%),
-    7: hsl(136, 81%, 94%)
+    7: hsl(136, 81%, 94%),
   ),
   gold: (
     1: hsl(44, 66%, 22%),
@@ -42,7 +42,7 @@ $__color-pallete: (
     4: hsl(38, 87%, 62%),
     5: hsl(44, 90%, 80%),
     6: hsl(44, 90%, 92%),
-    7: hsl(44, 100%, 98%)
+    7: hsl(44, 100%, 98%),
   ),
   ruby: (
     1: hsl(0, 60%, 24%),
@@ -51,7 +51,7 @@ $__color-pallete: (
     4: hsl(0, 71%, 53%),
     5: hsl(0, 70%, 64%),
     6: hsl(0, 79%, 81%),
-    7: hsl(0, 77%, 95%)
+    7: hsl(0, 77%, 95%),
   ),
   plum: (
     1: hsl(276, 40%, 23%),
@@ -60,8 +60,8 @@ $__color-pallete: (
     4: hsl(268, 59%, 52%),
     5: hsl(270, 72%, 65%),
     6: hsl(272, 87%, 80%),
-    7: hsl(274, 100%, 96%)
-  )
+    7: hsl(274, 100%, 96%),
+  ),
 );
 
 $__color-mapping: (
@@ -71,7 +71,7 @@ $__color-mapping: (
   support: blue,
   success: lime,
   harmful: ruby,
-  private: plum
+  private: plum,
 );
 
 @function color($type, $tone: 4) {
@@ -90,9 +90,21 @@ $__color-mapping: (
   @return map-get($tones, $tone);
 }
 
-// @charset 'utf-8';
-// // HEX
-// // ------------------------------
+@function color2($color, $tone: 4) {
+  @if not map-has-key($__color-pallete, $color) {
+    @warn "unknown color `#{$color}` in palette";
+    @return red;
+  }
+
+  @if $tone < 1 or $tone > 7 {
+    @warn "tone should be in range 1..7";
+    @return red;
+  }
+
+  $tones: map-get($__color-pallete, $color);
+  @return map-get($tones, $tone);
+}
+
 // $color1: #d79bef;
 // $color2: #b2a7e8;
 // $color3: #eda6bd;

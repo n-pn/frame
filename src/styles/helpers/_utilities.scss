@@ -1,0 +1,91 @@
+@import 'variables';
+
+// caculate size from base cell size
+@function cell($size, $base: 0.75rem) {
+  @return $size * $base;
+}
+
+// convert px to rem
+@function rem($size, $base: 16) {
+  @if unitless($size) {
+    $size: $size * 1px;
+  }
+  @if unitless($base) {
+    $base: $base * 1px;
+  }
+  @return $size / $base * 1rem;
+}
+
+// convert px to em
+@function em($size, $base: 16) {
+  @if unitless($size) {
+    $size: $size * 1px;
+  }
+  @if unitless($base) {
+    $base: $base * 1px;
+  }
+  @return $size / $base * 1em;
+}
+
+// get color by name and tone
+@function f-color($color, $tone: 5) {
+  @if map-has-key($m-aliases, $color) {
+    $color: map-get($m-aliases, $color);
+  } @else if not map-has-key($m-palette, $color) {
+    @return $color;
+  }
+
+  @if $color == black or $color == white {
+    @return map-get($m-palette, $color);
+  } @else if $tone < 1 or $tone > 9 {
+    @warn "color tone should be in range 1..9";
+    $tone: 5;
+  }
+
+  $_colors: map-get($m-palette, $color);
+  @return map-get($_colors, $tone);
+}
+
+// color mixin
+@mixin color($color, $tone: 5) {
+  color: f-color($color, $tone);
+}
+
+// background color mixin
+@mixin bgcolor($color: gray, $tone: 1) {
+  background-color: f-color($color, $tone);
+}
+
+// border color
+@mixin bdcolor($color: gray, $tone: 4) {
+  border-color: f-color($color, $tone);
+}
+
+// media query
+@mixin min-width($size: tablet) {
+  @if $size == phone {
+    @media only screen and (min-width: #{$m-screen-phone}) {
+      @content;
+    }
+  } @else if $size == phablet {
+    @media only screen and (min-width: #{$m-screen-phablet}) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media only screen and (min-width: #{$m-screen-tablet}) {
+      @content;
+    }
+  } @else if $size == laptop {
+    @media only screen and (min-width: #{$m-screen-laptop}) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media only screen and (min-width: #{$m-screen-desktop}) {
+      @content;
+    }
+  } @else {
+    @media only screen and (min-width: #{$size}) {
+      @content;
+    }
+  }
+}

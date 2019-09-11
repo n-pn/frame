@@ -21,3 +21,27 @@
   }
   @return $size / $base * 1em;
 }
+
+@function f-cname($cname) {
+  @if not map-has-key($m-cnames, $cname) {
+    @warn "unknown color name `#{$name}`";
+    @return red;
+  }
+
+  @return map-get($m-cnames, $name);
+}
+
+@function f-color($color, $tone: 4) {
+  @if not map-has-key($__color-pallete, $color) {
+    @warn "unknown color `#{$color}` in palette";
+    @return red;
+  }
+
+  @if $tone < 1 or $tone > 7 {
+    @warn "tone should be in range 1..7";
+    @return red;
+  }
+
+  $tones: map-get($__color-pallete, $color);
+  @return map-get($tones, $tone);
+}
