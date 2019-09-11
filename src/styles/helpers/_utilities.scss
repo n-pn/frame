@@ -57,7 +57,7 @@
 }
 
 // border color
-@mixin bdcolor($color: gray, $tone: 4) {
+@mixin bdcolor($color: gray, $tone: 3) {
   border-color: f-color($color, $tone);
 }
 

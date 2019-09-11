@@ -19,7 +19,7 @@ h6 {
   font-weight: 400;
   margin-top: 0;
   margin-bottom: $__line-spacing;
-  color: color(primary, 5);
+  color: f-color(primary, 5);
 }
 
 h1 {
@@ -128,7 +128,7 @@ code,
 kbd,
 samp {
   font-family: $__font-mono-stack;
-  font-size: 1em; // Correct the odd `em` font sizing in all browsers.
+  font-size: em(15); // Correct the odd `em` font sizing in all browsers.
 }
 
 pre {

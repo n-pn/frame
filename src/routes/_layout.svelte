@@ -7,7 +7,7 @@
 <style>
   x-content {
     display: block;
-    margin-left: 18rem;
+    margin-left: 16rem;
   }
 
   main {

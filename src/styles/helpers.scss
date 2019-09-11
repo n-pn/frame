@@ -1,5 +1,3 @@
-@import 'helpers/functions';
-
 @import 'helpers/variables/colors';
 @import 'helpers/variables/fonts';
 @import 'helpers/variables/miscs';
@@ -15,3 +13,6 @@
 @import 'helpers/utilities/sizing';
 @import 'helpers/utilities/screen-min';
 @import 'helpers/utilities/truncate-text';
+
+@import 'helpers/variables';
+@import 'helpers/utilities';

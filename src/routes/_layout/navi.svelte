@@ -15,7 +15,7 @@
   @import "helpers";
   nav {
     position: fixed;
-    width: 18rem;
+    width: 16rem;
     max-width: 100vw;
     top: 0;
     left: 0;
@@ -36,7 +36,7 @@
     text-decoration: none;
     color: color(neutral, 3);
     border-radius: 3px 0 0 3px;
-
+    border: 0;
     &._active,
     &:hover {
       // display: block;
@@ -68,7 +68,7 @@
 <nav on:click={active_page}>
   <a class:_active={segment === undefined} href=".">MELTE</a>
 
-  <a class:_active={segment === 'about'} href="about">about</a>
+  <a class:_active={segment === 'about'} href="about">About</a>
 
   <nav-label>Basic</nav-label>
   <a href="basic/icons">Icons</a>

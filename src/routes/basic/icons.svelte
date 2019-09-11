@@ -8,6 +8,8 @@
 </script>
 
 <style lang="scss">
+  @import "helpers";
+
   icon-list {
     display: grid;
     grid-gap: 0.75rem;
@@ -38,8 +40,10 @@
 
   icon-name {
     display: block;
-    font-size: 0.75rem;
-    line-height: 1.5rem;
+    font-family: $m-font-narrow;
+    font-size: rem(15);
+    line-height: 1.25rem;
+    padding-top: 0.25rem;
   }
 </style>
 

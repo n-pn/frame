@@ -37,10 +37,10 @@ body {
   width: 100%;
   min-width: 320px;
   margin: 0; // 1
-  background-color: $body-bgcolor; // 2
-  color: $body-color;
-  font-family: $body-fontstack;
-  font-size: 1rem;
+  @include bgcolor(gray, 1);
+  @include color(neutral, 7);
+  font-family: $m-font-narrow;
+  font-size: rem(17);
   font-weight: 400;
   line-height: 1.5;
   text-align: left; // 3

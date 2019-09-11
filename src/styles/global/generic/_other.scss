@@ -48,3 +48,13 @@ summary {
   display: list-item; // Add the correct display in all browsers
   cursor: pointer;
 }
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  border-width: 0px;
+  border-bottom-width: 3px;
+  border-style: solid;
+  @include bdcolor(primary, 4);
+}
