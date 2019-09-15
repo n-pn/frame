@@ -21,38 +21,27 @@
     left: 0;
     bottom: 0;
 
-    // font-weight: 300;
-    font-family: Roboto Condensed, system-sans;
-    // padding: 0 1em;
-    background-color: #fff;
     box-shadow: 2px 0 6px rgba(#000, 0.06);
+    @include bgcolor(primary, 7);
   }
 
   a {
     display: block;
-    margin-left: 0.75rem;
+    margin: 0 0.75rem;
     line-height: 1.5rem;
     padding: 0.375rem 0.75rem;
     text-decoration: none;
-    color: color(neutral, 3);
-    border-radius: 3px 0 0 3px;
+    @include color(neutral, 2);
+
+    border-radius: 3px;
     border: 0;
-    &._active,
+
+    &._active {
+      @include color(primary, 2);
+    }
+
     &:hover {
-      // display: block;
-      position: relative;
-      color: color(primary, 4);
-      background-color: rgba(color(primary, 5), 0.1);
-      &:after {
-        position: absolute;
-        display: block;
-        content: "";
-        background-color: color(primary, 5);
-        top: 0;
-        right: 0;
-        width: 3px;
-        height: 100%;
-      }
+      background-color: rgba(f-color(primary, 4), 0.2);
     }
   }
 
@@ -61,19 +50,32 @@
     text-transform: uppercase;
     font-size: rem(14);
     padding: 1rem 1rem 0.5rem;
-    color: color(neutral, 4);
+    @include color(neutral, 4);
   }
 </style>
 
 <nav on:click={active_page}>
   <a class:_active={segment === undefined} href=".">MELTE</a>
 
-  <a class:_active={segment === 'about'} href="about">About</a>
-
   <nav-label>Basic</nav-label>
-  <a href="basic/icons">Icons</a>
+  <a href="basic/variables">Variables</a>
+  <a href="basic/utilities">Utilities</a>
+  <a href="basic/resources">Resources</a>
+  <a href="basic/typography">Typography</a>
+
+  <nav-label>Components</nav-label>
+  <a href="components/inputs">Inputs</a>
+  <a href="components/buttons">Buttons</a>
+  <a href="components/chips">Chips</a>
+  <a href="components/badges">Badges</a>
+  <a href="components/cards">Cards</a>
+  <a href="components/menus">Menus</a>
+  <a href="components/dialogs">Dialogs</a>
+  <a href="components/tables">Tables</a>
+  <a href="components/tooltips">Tooltips</a>
 
   <nav-label>Examples</nav-label>
+  <a class:_active={segment === 'about'} href="about">About</a>
   {#each posts as post}
     <a rel="prefetch" href="examples/{post.slug}">{post.title}</a>
   {/each}

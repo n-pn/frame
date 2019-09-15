@@ -1,0 +1,116 @@
+hr {
+  margin: $hr-margin-y 0;
+  color: $hr-color; // 1
+  background-color: currentColor;
+  border: 0;
+  opacity: $hr-opacity;
+}
+
+hr:not([size]) {
+  height: $hr-height; // 2
+}
+
+// Typography
+//
+// 1. Remove top margins from headings
+//    By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
+//    margin for easier control within type scales as it avoids margin collapsing.
+
+%heading {
+  margin-top: 0; // 1
+  margin-bottom: $headings-margin-bottom;
+  font-family: $headings-font-family;
+  font-style: $headings-font-style;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+}
+
+h1 {
+  @extend %heading;
+  @include font-size($h1-font-size);
+}
+
+h2 {
+  @extend %heading;
+  @include font-size($h2-font-size);
+}
+
+h3 {
+  @extend %heading;
+  @include font-size($h3-font-size);
+}
+
+h4 {
+  @extend %heading;
+  @include font-size($h4-font-size);
+}
+
+h5 {
+  @extend %heading;
+  @include font-size($h5-font-size);
+}
+
+h6 {
+  @extend %heading;
+  @include font-size($h6-font-size);
+}
+
+// Reset margins on paragraphs
+//
+// Similarly, the top margin on `<p>`s get reset. However, we also reset the
+// bottom margin to use `rem` units instead of `em`.
+
+p {
+  margin-top: 0;
+  margin-bottom: $paragraph-margin-bottom;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  // 1
+  text-decoration: underline; // 2
+  text-decoration: underline dotted; // 2
+  cursor: help; // 3
+  text-decoration-skip-ink: none; // 4
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+ol,
+ul {
+  padding-left: 2rem;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: $dt-font-weight;
+}
+
+// 1. Undo browser default
+
+dd {
+  margin-bottom: 0.5rem;
+  margin-left: 0; // 1
+}
+
+blockquote {
+  margin: 0 0 1rem;
+}

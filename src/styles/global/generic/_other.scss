@@ -49,12 +49,28 @@ summary {
   cursor: pointer;
 }
 
-a {
+main a {
   display: inline-block;
+  position: relative;
   color: inherit;
   text-decoration: none;
-  border-width: 0px;
-  border-bottom-width: 3px;
-  border-style: solid;
-  @include bdcolor(primary, 4);
+
+  &:hover {
+    color: #fff;
+
+    &:after {
+      height: 100%;
+    }
+  }
+
+  &:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    @include bgcolor(primary, 5);
+    z-index: -1;
+  }
 }

@@ -27,11 +27,20 @@
   @return $size / $base * 1em;
 }
 
+@function f-map-get($map, $key, $default: null) {
+  $val: map-get($map, $key);
+  @if $val == null {
+    @return $default;
+  } @else {
+    @return $val;
+  }
+}
+
 // get color by name and tone
 @function f-color($color, $tone: 5) {
-  @if map-has-key($m-aliases, $color) {
-    $color: map-get($m-aliases, $color);
-  } @else if not map-has-key($m-palette, $color) {
+  @if map-has-key($m-color-aliases, $color) {
+    $color: map-get($m-color-aliases, $color);
+  } @else if not map-has-key($m-color-palette, $color) {
     @return $color;
   }
 
@@ -42,7 +51,7 @@
     $tone: 5;
   }
 
-  $_colors: map-get($m-palette, $color);
+  $_colors: map-get($m-color-palette, $color);
   @return map-get($_colors, $tone);
 }
 
@@ -56,12 +65,126 @@
   background-color: f-color($color, $tone);
 }
 
-// border color
+// corners
+
+@mixin corner($pos: all, $radius: md) {
+  @if $radius == sm {
+    $radius: $m-radius-sm;
+  } @else if $radius == md {
+    $radius: $m-radius-md;
+  } @else if $radius == lg {
+    $radius: $m-radius-lg;
+  } @else if $radius == full {
+    $radius: $m-radius-full;
+  }
+
+  @if pos == top {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+  } @else if pos == bottom {
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+  } @else if pos == left {
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+  } @else if pos == right {
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+  } @else @if pos == top left {
+    border-top-left-radius: $radius;
+  } @else if pos == top right {
+    border-top-right-radius: $radius;
+  } @else if pos == bottom left {
+    border-bottom-left-radius: $radius;
+  } @else if pos == bottom right {
+    border-bottom-right-radius: $radius;
+  } @else {
+    border-radius: $radius;
+  }
+}
+
+// borders
+
 @mixin bdcolor($color: gray, $tone: 3) {
   border-color: f-color($color, $tone);
 }
 
+@mixin bdwidth($width: 1px) {
+  @if $width == 0 or $width == 2 or $width == 4 or $width == 8 {
+    border-width: rem($width);
+  } @else {
+    border-width: $width;
+  }
+}
+
+@mixin border($color, $width: 1px) {
+  border-color: $color;
+  border-width: $width;
+}
+
+@mixin border-left($color, $width: 1px) {
+  border-color: $color;
+  border-left-width: $width;
+}
+
+@mixin border-right($color, $width: 1px) {
+  border-color: $color;
+  border-right-width: $width;
+}
+
+@mixin border-top($color, $width: 1px) {
+  border-color: $color;
+  border-top-width: $width;
+}
+
+@mixin border-bottom($color, $width: 1px) {
+  border-color: $color;
+  border-bottom-width: $width;
+}
+
+// fonts
+@mixin font-family($family: sans) {
+  @if $family == null or $family == sans {
+    font-family: $m-font-sans;
+  } @else if $family == narrow {
+    font-family: $m-font-narrow;
+  } @else if $family == mono {
+    font-family: $m-font-mono;
+  } @else {
+    font-family: $family, $m-font-sans;
+  }
+}
+
+@mixin font-size($size: md) {
+  font-size: f-map-get($m-font-sizes, $size, $size);
+}
+
+// shadows
+
+@mixin shadow($type: sm) {
+  @if type == xs {
+    box-shadow: $m-shadow-xs;
+  } @else if type == sm {
+    box-shadow: $m-shadow-sm;
+  } @else if type == md {
+    box-shadow: $m-shadow-md;
+  } @else if type == lg {
+    box-shadow: $m-shadow-lg;
+  } @else if type == xl {
+    box-shadow: $m-shadow-xl;
+  } @else if type == xxl {
+    box-shadow: $m-shadow-xxl;
+  } @else if type == inner {
+    box-shadow: $m-shadow-inner;
+  } @else if type == outline {
+    box-shadow: $m-shadow-outline;
+  } @else {
+    box-shadow: $type;
+  }
+}
+
 // media query
+
 @mixin min-width($size: tablet) {
   @if $size == phone {
     @media only screen and (min-width: #{$m-screen-phone}) {

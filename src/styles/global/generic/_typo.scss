@@ -127,7 +127,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: $__font-mono-stack;
+  font-family: $m-font-mono;
   font-size: em(15); // Correct the odd `em` font sizing in all browsers.
 }
 
@@ -138,4 +138,18 @@ pre {
   margin-bottom: $__line-spacing;
   // Don't allow content to break outside
   overflow: auto;
+}
+
+code {
+  @include bgcolor(primary, 1);
+  @include color(primary, 9);
+  border-radius: 3px;
+  padding: 0 4px;
+  margin: 0 -4px;
+}
+
+pre > code {
+  display: block;
+  margin: 0;
+  padding: 0.75rem 1.5rem;
 }

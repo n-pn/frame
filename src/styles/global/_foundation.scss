@@ -1,0 +1,174 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
+}
+
+.g-map * {
+  border-style: none;
+}
+
+:root {
+  font-size: 16px;
+}
+
+::selection {
+  @include color(primary, 7);
+  @include bgcolor(primary, 2);
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  overflow-y: scroll;
+  min-width: $m-screen-min;
+  text-align: left;
+  font-weight: 400;
+  line-height: 1.5rem;
+  @include font-family(sans);
+  @include font-size($font-size-base);
+  @include color(neutral, 7);
+  @include bgcolor(neutral, 1);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba($black, 0);
+}
+
+[tabindex='-1']:focus:not(:focus-visible) {
+  outline: 0 !important;
+}
+
+// reset
+
+main,
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+// Add the correct font size in all browsers
+
+small {
+  @include font-size($small-font-size);
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+// normalize
+
+[hidden] {
+  display: none !important;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+template {
+  display: none;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+  -webkit-appearance: textfield;
+}
+
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'] {
+  -webkit-appearance: textfield;
+}
+
+[type='search'] {
+  outline-offset: -2px;
+  -webkit-appearance: textfield;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+[list]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+::-webkit-file-upload-button {
+  font: inherit; // 1
+  -webkit-appearance: button; // 2
+}
+
+::-webkit-datetime-edit {
+  overflow: visible;
+  line-height: 0;
+}

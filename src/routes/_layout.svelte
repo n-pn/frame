@@ -1,5 +1,5 @@
 <script>
-  import XNavi from "./_layout/navi.svelte";
+  import XNavi from "./_partials/navi.svelte";
 
   export let segment;
 </script>
@@ -13,7 +13,7 @@
   main {
     position: relative;
     max-width: 56rem;
-    padding: 2rem;
+    padding: 1.5rem;
     /* margin: 0 auto; */
     box-sizing: border-box;
   }
