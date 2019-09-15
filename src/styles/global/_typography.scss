@@ -240,3 +240,17 @@ code {
   @include bgcolor(neutral, 2);
   @include color(primary, 7);
 }
+
+.m-pretty pre > code {
+  display: block;
+  overflow-x: auto;
+  background: #1f2430;
+  color: #cbccc6;
+  padding: 0.5em 1em;
+}
+
+.m-pretty {
+  pre {
+    margin-bottom: $gutter;
+  }
+}
