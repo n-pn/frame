@@ -28,16 +28,20 @@ body {
   text-align: left;
   font-weight: 400;
   line-height: 1.5rem;
-  @include font-family(sans);
-  @include font-size($font-size-base);
-  @include color(neutral, 7);
+  @include font-family(narrow);
+  @include font-size(md);
+  @include color(neutral, 8);
   @include bgcolor(neutral, 1);
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba($black, 0);
+  -webkit-tap-highlight-color: rgba(#000, 0);
 }
 
 [tabindex='-1']:focus:not(:focus-visible) {
   outline: 0 !important;
+}
+
+[hidden] {
+  display: none !important;
 }
 
 // reset
@@ -54,9 +58,16 @@ object {
   display: block;
 }
 
-svg {
+svg,
+img {
   overflow: hidden;
   vertical-align: middle;
+}
+
+a,
+a:hover {
+  color: inherit;
+  text-decoration: none;
 }
 
 blockquote,
@@ -96,10 +107,38 @@ strong {
   font-weight: bolder;
 }
 
-// Add the correct font size in all browsers
-
 small {
-  @include font-size($small-font-size);
+  @include font-size(80%);
+}
+
+sub,
+sup {
+  position: relative;
+  @include font-size(75%);
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+  cursor: help;
+  text-decoration-skip-ink: none;
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
 }
 
 fieldset {
@@ -109,10 +148,24 @@ fieldset {
   border: 0;
 }
 
-// normalize
+pre,
+code,
+kbd,
+samp {
+  @include font-family(mono);
+  @include font-size(1em);
+}
 
-[hidden] {
-  display: none !important;
+figure {
+  margin: 0 0 1rem;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: inherit;
 }
 
 progress {

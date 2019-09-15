@@ -125,37 +125,38 @@ $m-color-palette: (
   ),
 );
 
-// Sizings
+/// Sizings
 
+// prettier-ignore
 $m-sizes: (
   0: 0,
-  1: 0.25rem,
-  2: 0.5rem,
-  3: 0.75rem,
-  4: 1rem,
-  5: 1.25rem,
-  6: 1.5rem,
-  8: 2rem,
-  10: 2.5rem,
-  12: 3rem,
-  16: 4rem,
-  20: 5rem,
-  24: 6rem,
-  32: 8rem,
-  40: 10rem,
-  48: 12rem,
-  56: 14rem,
-  64: 16rem,
+  1: 0.25rem, // 4px
+  2: 0.5rem, // 8px
+  3: 0.75rem, // 12px
+  4: 1rem, // 16px
+  5: 1.25rem, // 20px
+  6: 1.5rem, // 24px
+  8: 2rem, // 32px
+  10: 2.5rem, // 40px
+  12: 3rem, // 48px
+  16: 4rem, // 64px
+  20: 5rem, // 80px
+  24: 6rem, // 96px
+  32: 8rem, // 128px
+  40: 10rem, // 160px
+  48: 12rem, // 192px
+  56: 14rem, // 224px
+  64: 16rem, // 256px
 );
 
-// Border radius
+/// Border radius
 
 $m-radius-sm: 0.125rem;
 $m-radius-md: 0.25rem;
 $m-radius-lg: 0.5rem;
 $m-radius-full: 9999px;
 
-// Fonts
+// Font stacks
 
 $m-font-emoji: 'Apple Color Emoji', 'Noto Color Emoji', 'Segoe UI Emoji',
   'Segoe UI Symbol';
@@ -171,17 +172,19 @@ $m-font-serif: 'Noto Serif', 'Noto Serif CJK SC', Georgia, Cambria,
 $m-font-mono: Iosevka, 'Sarasa Mono SC', 'Noto Sans Mono CJK SC', Menlo, Monaco,
   Consolas, 'Ubuntu Mono', 'Courier New', monospace;
 
+// Font sizes
+
 $m-font-sizes: (
   xs: 0.75rem,
   sm: 0.875rem,
   md: 1rem,
   lg: 1.125rem,
   xl: 1.25rem,
-  2xl: 1.5rem,
-  3xl: 1.875rem,
-  4xl: 2.25rem,
-  5xl: 3rem,
-  6xl: 4rem,
+  x2: 1.5rem,
+  x3: 1.875rem,
+  x4: 2.25rem,
+  x5: 3rem,
+  x6: 4rem,
 );
 
 // Shadows

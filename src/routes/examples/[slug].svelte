@@ -54,8 +54,10 @@
   <title>{post.title}</title>
 </svelte:head>
 
-<h1>{post.title}</h1>
+<div class="m-pretty">
+  <h1>{post.title}</h1>
 
-<div class="content">
-  {@html post.html}
+  <div class="content">
+    {@html post.html}
+  </div>
 </div>

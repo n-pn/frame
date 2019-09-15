@@ -58,10 +58,10 @@
   <a class:_active={segment === undefined} href=".">MELTE</a>
 
   <nav-label>Basic</nav-label>
+  <a href="basic/typography">Typography</a>
   <a href="basic/variables">Variables</a>
   <a href="basic/utilities">Utilities</a>
   <a href="basic/resources">Resources</a>
-  <a href="basic/typography">Typography</a>
 
   <nav-label>Components</nav-label>
   <a href="components/inputs">Inputs</a>

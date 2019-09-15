@@ -45,7 +45,7 @@
   }
 
   @if $color == black or $color == white {
-    @return map-get($m-palette, $color);
+    @return map-get($m-color-palette, $color);
   } @else if $tone < 1 or $tone > 9 {
     @warn "color tone should be in range 1..9";
     $tone: 5;
@@ -90,13 +90,13 @@
   } @else if pos == right {
     border-top-right-radius: $radius;
     border-bottom-right-radius: $radius;
-  } @else @if pos == top left {
+  } @else if pos == top-left {
     border-top-left-radius: $radius;
-  } @else if pos == top right {
+  } @else if pos == top-right {
     border-top-right-radius: $radius;
-  } @else if pos == bottom left {
+  } @else if pos == bottom-left {
     border-bottom-left-radius: $radius;
-  } @else if pos == bottom right {
+  } @else if pos == bottom-right {
     border-bottom-right-radius: $radius;
   } @else {
     border-radius: $radius;
@@ -143,6 +143,7 @@
 }
 
 // fonts
+
 @mixin font-family($family: sans) {
   @if $family == null or $family == sans {
     font-family: $m-font-sans;
@@ -155,6 +156,10 @@
   }
 }
 
+@mixin font-weight($weight: bold) {
+  font-weight: $weight;
+}
+
 @mixin font-size($size: md) {
   font-size: f-map-get($m-font-sizes, $size, $size);
 }
@@ -162,21 +167,21 @@
 // shadows
 
 @mixin shadow($type: sm) {
-  @if type == xs {
+  @if $type == xs {
     box-shadow: $m-shadow-xs;
-  } @else if type == sm {
+  } @else if $type == sm {
     box-shadow: $m-shadow-sm;
-  } @else if type == md {
+  } @else if $type == md {
     box-shadow: $m-shadow-md;
-  } @else if type == lg {
+  } @else if $type == lg {
     box-shadow: $m-shadow-lg;
-  } @else if type == xl {
+  } @else if $type == xl {
     box-shadow: $m-shadow-xl;
-  } @else if type == xxl {
+  } @else if $type == xxl {
     box-shadow: $m-shadow-xxl;
-  } @else if type == inner {
+  } @else if $type == inner {
     box-shadow: $m-shadow-inner;
-  } @else if type == outline {
+  } @else if $type == outline {
     box-shadow: $m-shadow-outline;
   } @else {
     box-shadow: $type;

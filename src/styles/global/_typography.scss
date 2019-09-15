@@ -1,59 +1,64 @@
-hr {
-  margin: $hr-margin-y 0;
-  color: $hr-color; // 1
+$gutter: rem(16);
+
+.m-pretty hr,
+.m-hr {
+  margin: $gutter 0;
+  @include color(neutral, 3);
   background-color: currentColor;
   border: 0;
-  opacity: $hr-opacity;
-}
 
-hr:not([size]) {
-  height: $hr-height; // 2
+  &:not([size]) {
+    height: 1px;
+  }
 }
-
-// Typography
-//
-// 1. Remove top margins from headings
-//    By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
-//    margin for easier control within type scales as it avoids margin collapsing.
 
 %heading {
   margin-top: 0; // 1
-  margin-bottom: $headings-margin-bottom;
-  font-family: $headings-font-family;
-  font-style: $headings-font-style;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: $headings-color;
+  margin-bottom: $gutter;
+  @include font-family(narrow);
+  @include font-weight(normal);
+  @include color(primary, 6);
 }
 
-h1 {
+.m-pretty h1,
+.m-h1 {
   @extend %heading;
-  @include font-size($h1-font-size);
+  @include font-size(x4); // 2.25rem
+  line-height: 2.5rem;
 }
 
-h2 {
+.m-pretty h2,
+.m-h2 {
   @extend %heading;
-  @include font-size($h2-font-size);
+  @include font-size(x3); // 1.875rem;
+  line-height: 2rem;
 }
 
-h3 {
+.m-pretty h3,
+.m-h3 {
   @extend %heading;
-  @include font-size($h3-font-size);
+  @include font-size(x2); // 1.5rem;
+  // line-height: 1.5rem;
+}
+.m-pretty h4,
+.m-h4 {
+  @extend %heading;
+  @include font-size(xl); // 1.25rem;
+  // line-height: 1.5rem;
 }
 
-h4 {
+.m-pretty h5,
+.m-h5 {
   @extend %heading;
-  @include font-size($h4-font-size);
+  @include font-size(lg); // 1.125rem;
+  // line-height: 1.5;
 }
 
-h5 {
+.m-pretty h6,
+.m-h6 {
   @extend %heading;
-  @include font-size($h5-font-size);
-}
-
-h6 {
-  @extend %heading;
-  @include font-size($h6-font-size);
+  @include font-size(md); // 1rem;
+  // line-height: 1.5;
 }
 
 // Reset margins on paragraphs
@@ -61,56 +66,177 @@ h6 {
 // Similarly, the top margin on `<p>`s get reset. However, we also reset the
 // bottom margin to use `rem` units instead of `em`.
 
-p {
+.m-pretty p,
+.m-para {
   margin-top: 0;
-  margin-bottom: $paragraph-margin-bottom;
+  margin-bottom: $gutter;
+  @include font-size(rem(17));
+
+  [lang='ja'] &,
+  [lang='kr'] &,
+  [lang='zh'] &,
+  &[lang='ja'],
+  &[lang='kr'],
+  &[lang='zh'] {
+    @include font-size(md);
+  }
 }
 
-abbr[title],
-abbr[data-original-title] {
-  // 1
-  text-decoration: underline; // 2
-  text-decoration: underline dotted; // 2
-  cursor: help; // 3
-  text-decoration-skip-ink: none; // 4
+.m-pretty a,
+.m-link {
+  // display: inline-block;
+  $color: f-color(primary, 7);
+  $bdcolor: f-color(primary, 5);
+  // color: $color;
+  text-decoration: none;
+  @include border-bottom($bdcolor, 2px);
+  // background: linear-gradient(to bottom, transparent 1.25em, $bdcolor 0.05em);
+  // text-shadow: 0 0 2px 2px white;
+
+  &:hover {
+    // padding: 0 0.375rem;
+    // @include corner();
+    color: #fff;
+    background: $bdcolor;
+    // transition: background 0.3s ease;
+  }
 }
 
-address {
-  margin-bottom: 1rem;
-  font-style: normal;
+.m-pretty ol,
+.m-ol,
+.m-pretty ul,
+.m-ul {
+  margin-top: 0;
+  margin-bottom: $gutter;
+  padding-left: $gutter;
+
+  ol,
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+.m-pretty ol,
+.m-ol {
+  counter-reset: li;
+}
+
+.m-pretty li,
+.m-li {
+  display: block;
+
+  &:before {
+    display: inline-block;
+    @include color(primary, 6);
+    width: 1rem;
+    margin-left: -$gutter;
+    text-align: right;
+    padding-right: 0.25rem;
+  }
+}
+
+.m-pretty {
+  ul > li {
+    &:before {
+      content: '▪';
+    }
+
+    ul > li:before {
+      content: '▫';
+    }
+
+    ul > li ul > li {
+      content: '◦';
+    }
+  }
+
+  ol > li {
+    counter-increment: li;
+    &:before {
+      content: counter(li) '.';
+    }
+  }
+}
+
+.m-pretty dt,
+.m-dt {
+  margin-top: 0;
+  margin-bottom: 0;
+  @include color(neutral, 7);
+  font-weight: bold;
+}
+
+.m-pretty dd,
+.m-dd {
+  margin-bottom: $gutter;
+  margin-left: 0;
+}
+
+.m-pretty blockquote,
+.m-bq {
+  margin: 0 0 $gutter;
+  padding: 0 1rem 0 0.75rem;
+  @include border-left(f-color(primary, 5), 0.25rem);
+  @include color(neutral, 7);
+  @include bgcolor(rgba(f-color(primary, 5), 0.1));
+}
+
+.m-pretty del,
+.m-del,
+.m-pretty ins,
+.m-ins,
+.m-pretty mark,
+.m-mark {
+  border-radius: 2px;
+  // display: inline-block;
+  line-height: inherit;
+  padding: 0 0.25rem;
+}
+
+.m-pretty del,
+.m-del {
+  @include color(red, 7);
+  @include bgcolor(red, 2);
+}
+
+.m-pretty ins,
+.m-ins {
+  @include color(green, 7);
+  @include bgcolor(green, 2);
+}
+
+.m-pretty mark,
+.m-mark {
+  @include color(yellow, 7);
+  @include bgcolor(yellow, 2);
+}
+
+time,
+var {
+  @include color(neutral, 6);
+}
+
+time {
+  // font-weight: bold;
+  font-variant: small-caps;
+}
+
+kbd,
+code {
+  // display: inline-block;
+  font-size: em(15);
+  border-radius: 2px;
+  padding: 0 0.25rem;
   line-height: inherit;
 }
 
-ol,
-ul {
-  padding-left: 2rem;
+kbd {
+  @include color(neutral, 6);
+  @include border(f-color(neutral, 4));
+  @include shadow(xs);
 }
 
-ol,
-ul,
-dl {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-ol ol,
-ul ul,
-ol ul,
-ul ol {
-  margin-bottom: 0;
-}
-
-dt {
-  font-weight: $dt-font-weight;
-}
-
-// 1. Undo browser default
-
-dd {
-  margin-bottom: 0.5rem;
-  margin-left: 0; // 1
-}
-
-blockquote {
-  margin: 0 0 1rem;
+code {
+  @include bgcolor(neutral, 2);
+  @include color(primary, 7);
 }
