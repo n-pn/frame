@@ -4,13 +4,15 @@
 
 <style>
   svg {
+    display: inline-block;
     /* display: inline-block; */
     padding: 0;
     margin: 0;
-    vertical-align: text-bottom;
     vertical-align: auto;
-    width: 1rem;
-    height: 1rem;
+    vertical-align: middle;
+    margin-top: -3px;
+    width: 1em;
+    height: 1em;
     stroke: currentColor;
     stroke-width: 2;
     stroke-linecap: round;

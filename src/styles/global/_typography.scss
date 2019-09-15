@@ -2,7 +2,7 @@ $gutter: rem(16);
 
 .m-pretty hr,
 .m-hr {
-  margin: $gutter 0;
+  margin: $gutter / 2 0;
   @include color(neutral, 3);
   background-color: currentColor;
   border: 0;
@@ -13,8 +13,7 @@ $gutter: rem(16);
 }
 
 %heading {
-  margin-top: 0; // 1
-  margin-bottom: $gutter;
+  padding: $gutter / 2 0;
   @include font-family(narrow);
   @include font-weight(normal);
   @include color(primary, 6);
@@ -68,8 +67,8 @@ $gutter: rem(16);
 
 .m-pretty p,
 .m-para {
-  margin-top: 0;
-  margin-bottom: $gutter;
+  // margin-top: 0;
+  padding: $gutter / 2 0;
   @include font-size(rem(17));
 
   [lang='ja'] &,
@@ -106,9 +105,8 @@ $gutter: rem(16);
 .m-ol,
 .m-pretty ul,
 .m-ul {
-  margin-top: 0;
-  margin-bottom: $gutter;
-  padding-left: $gutter;
+  padding: $gutter/2 $gutter;
+  padding-right: 0;
 
   ol,
   ul {
@@ -174,11 +172,16 @@ $gutter: rem(16);
 
 .m-pretty blockquote,
 .m-bq {
-  margin: 0 0 $gutter;
-  padding: 0 1rem 0 0.75rem;
+  @include corner(md);
+  margin: $gutter/2 0;
+  padding: 0 $gutter/2 0;
   @include border-left(f-color(primary, 5), 0.25rem);
   @include color(neutral, 7);
   @include bgcolor(rgba(f-color(primary, 5), 0.1));
+  > blockquote {
+    margin-top: 0;
+    // margin-right: -0.5rem;
+  }
 }
 
 .m-pretty del,

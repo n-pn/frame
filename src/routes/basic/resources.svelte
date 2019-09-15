@@ -47,26 +47,29 @@
   }
 </style>
 
-<h1>Icons</h1>
+<div class="m-pretty">
+  <h1>Icons</h1>
 
-<h2>Icon list ({icons.length})</h2>
+  <h2>Icon list ({icons.length})</h2>
 
-<p>
-  <MIcon name="alert-circle" />
-  TODO: search/filter
-</p>
-<p>
-  <MIcon name="alert-circle" />
-  TODO: change to table?
-</p>
+  <p>
+    <MIcon name="alert-circle" />
+    TODO: search/filter
+  </p>
+  <p>
+    <MIcon name="alert-circle" />
+    TODO: change to table?
+  </p>
 
-<icon-list>
-  {#each icons as icon}
-    <icon-item>
-      <icon-view>
-        {@html icon.toSvg()}
-      </icon-view>
-      <icon-name>{icon.name}</icon-name>
-    </icon-item>
-  {/each}
-</icon-list>
+  <icon-list>
+    {#each icons as icon}
+      <icon-item>
+        <icon-view>
+          {@html icon.toSvg()}
+        </icon-view>
+        <icon-name>{icon.name}</icon-name>
+      </icon-item>
+    {/each}
+  </icon-list>
+
+</div>

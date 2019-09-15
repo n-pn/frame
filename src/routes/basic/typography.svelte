@@ -2,8 +2,7 @@
   @import "helpers";
 
   .demo {
-    padding: gut(3) / 2 0;
-    margin-bottom: 1rem;
+    padding: rem(8) 0;
     @include clearfix;
   }
 
@@ -202,12 +201,12 @@
 
   <div class="demo">
     <div class="column">
-      <p class="sample">
-        <span class="lang-zh-hans">你好</span>
+      <p lang="zh" class="sample">
+        <span>你好</span>
         ,
-        <span class="lang-ja">こんにちは</span>
+        <span>こんにちは</span>
         ,
-        <span class="lang-ko">안녕하세요</span>
+        <span>안녕하세요</span>
       </p>
       <p class="sample">Chinese (Simplified)</p>
       <p lang="zh">
@@ -233,7 +232,7 @@
 
   <hr />
 
-  <h2>Blockquote</h2>
+  <h2>Blockquotes</h2>
 
   <blockquote>
     <p>Sample:</p>
