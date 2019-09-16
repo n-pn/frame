@@ -1,3 +1,43 @@
+pre,
+code,
+kbd,
+samp {
+  @include font-family(mono);
+  @include font-size(1em);
+}
+
+pre {
+  margin: 0.5rem 0;
+}
+
+kbd,
+code {
+  // display: inline-block;
+  font-size: em(15);
+  border-radius: 2px;
+  padding: 0 0.25rem;
+  line-height: inherit;
+}
+
+kbd {
+  @include color(neutral, 6);
+  @include border(f-color(neutral, 4));
+  @include shadow(xs);
+}
+
+code {
+  @include bgcolor(neutral, 2);
+  @include color(primary, 7);
+}
+
+pre > code {
+  display: block;
+  overflow-x: auto;
+  background: #1f2430;
+  color: #cbccc6;
+  padding: 0.5em 1em;
+}
+
 // Ayu Mirage
 
 .hljs {

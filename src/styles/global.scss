@@ -1,5 +1,6 @@
 @import 'helpers';
 
-@import 'global/foundation';
-@import 'global/typography';
-@import 'global/highlights';
+@import 'global/base_elements';
+@import 'global/form_elements';
+@import 'global/text_elements';
+@import 'global/code_elements';

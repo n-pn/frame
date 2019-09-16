@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
+}
+
+:root {
+  font-size: 16px;
+}
+
+::selection {
+  @include color(primary, 7);
+  @include bgcolor(primary, 2);
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  overflow-y: scroll;
+  min-width: $m-screen-min;
+  text-align: left;
+  font-weight: 400;
+  line-height: 1.5rem;
+  @include font-family(narrow);
+  @include font-size(md);
+  @include color(neutral, 8);
+  @include bgcolor(neutral, 1);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(#000, 0);
+}
+
+[tabindex='-1']:focus:not(:focus-visible) {
+  outline: 0 !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+main,
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+template {
+  display: none;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}

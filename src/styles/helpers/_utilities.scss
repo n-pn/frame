@@ -417,3 +417,16 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+// resets
+
+@mixin reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin reset-link {
+  color: inherit;
+  text-decoration: none;
+}
