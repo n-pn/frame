@@ -27,7 +27,7 @@
   color-list {
     display: block;
     // padding: 0.5rem 0;
-    @include clearfix;
+    display: flow-root;
   }
 
   color-name {

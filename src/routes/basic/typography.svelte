@@ -3,7 +3,7 @@
 
   .demo {
     padding: rem(8) 0;
-    @include clearfix;
+    display: flow-root;
   }
 
   .right {

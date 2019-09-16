@@ -13,7 +13,7 @@
   .demo {
     padding: gut(3) / 2 0;
 
-    @include clearfix;
+    display: flow-root;
   }
 
   .right {
