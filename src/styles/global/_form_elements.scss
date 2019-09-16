@@ -1,3 +1,89 @@
+progress {
+  vertical-align: baseline;
+}
+
+label {
+  display: inline-block;
+}
+
+button {
+  border-radius: 0;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+select {
+  word-wrap: normal;
+}
+
+button,
+[type="button"], // 1
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; // 2
+
+  @include hover {
+    &:not(:disabled) {
+      cursor: pointer; // 3
+    }
+  }
+}
+
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'] {
+  -webkit-appearance: textfield;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+  -webkit-appearance: textfield;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  float: left; // 1
+  width: 100%;
+  padding: 0;
+  margin-bottom: 1rem;
+  line-height: inherit;
+  color: inherit; // 2
+  white-space: normal; // 3
+  @include font-size(md);
+}
+
 [type='search'] {
   outline-offset: -2px;
   -webkit-appearance: textfield;
@@ -28,28 +114,4 @@
 ::-webkit-datetime-edit {
   overflow: visible;
   line-height: 0;
-}
-
-fieldset {
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-textarea {
-  overflow: auto;
-  resize: vertical;
-  -webkit-appearance: textfield;
-}
-
-input[type='date'],
-input[type='time'],
-input[type='datetime-local'],
-input[type='month'] {
-  -webkit-appearance: textfield;
-}
-
-progress {
-  vertical-align: baseline;
 }

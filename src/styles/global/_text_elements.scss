@@ -91,8 +91,8 @@ del,
 ins,
 mark {
   padding: 0 0.25rem;
-  border-radius: 2px;
   line-height: inherit;
+  @include corner(sm);
 }
 
 del {
@@ -195,15 +195,20 @@ ol > li {
   }
 }
 
+dl {
+  @include spacing();
+}
+
 dt {
   margin: 0;
-  font-weight: bold;
-  @include color(neutral, 7);
+  // font-weight: bold;
+  @include color(primary, 6);
 }
 
 dd {
-  margin-left: 0;
-  margin-bottom: 1rem;
+  margin: 0;
+  margin-left: 1rem;
+  // @include spacing();
 }
 
 /// paragraphs
@@ -243,6 +248,36 @@ blockquote {
   }
 }
 
+/// tables
+
+table {
+  border-collapse: collapse;
+}
+
+caption {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  @include color(neutral, 5);
+  text-align: left;
+  caption-side: bottom;
+}
+
+th {
+  text-align: inherit;
+}
+/// images
+
+figure {
+  margin: 0 0 1rem;
+}
+
+svg,
+img {
+  overflow: hidden;
+  border-style: none;
+  vertical-align: middle;
+}
+
 /// miscs
 
 abbr[title],
@@ -257,39 +292,4 @@ address {
   margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit;
-}
-
-summary {
-  display: list-item;
-  cursor: pointer;
-}
-
-/// tables
-
-table {
-  border-collapse: collapse;
-}
-
-th {
-  text-align: inherit;
-}
-
-caption {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  @include color(neutral, 5);
-  text-align: left;
-  caption-side: bottom;
-}
-
-/// images
-
-figure {
-  margin: 0 0 1rem;
-}
-
-svg,
-img {
-  overflow: hidden;
-  vertical-align: middle;
 }
