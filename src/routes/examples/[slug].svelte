@@ -18,10 +18,8 @@
   <title>{post.title}</title>
 </svelte:head>
 
-<div class="m-pretty">
-  <h1>{post.title}</h1>
+<h1>{post.title}</h1>
 
-  <div class="content">
-    {@html post.html}
-  </div>
+<div class="content">
+  {@html post.html}
 </div>
