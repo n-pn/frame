@@ -8,8 +8,6 @@
 </script>
 
 <style lang="scss">
-  @import "helpers";
-
   icon-list {
     display: grid;
     grid-gap: 0.75rem;

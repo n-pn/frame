@@ -8,7 +8,7 @@ $m-color-aliases: (
   warning: orange,
   success: green,
   harmful: red,
-);
+) !default;
 
 $m-color-palette: (
   white: #fff,
@@ -123,7 +123,7 @@ $m-color-palette: (
     8: #97266d,
     9: #702459,
   ),
-);
+) !default;
 
 /// Sizings
 
@@ -147,30 +147,30 @@ $m-sizes: (
   48: 12rem, // 192px
   56: 14rem, // 224px
   64: 16rem, // 256px
-);
+) !default;
 
 /// Border radius
 
-$m-radius-sm: 0.125rem;
-$m-radius-md: 0.25rem;
-$m-radius-lg: 0.5rem;
-$m-radius-full: 9999px;
+$m-radius-sm: 0.125rem !default;
+$m-radius-md: 0.25rem !default;
+$m-radius-lg: 0.5rem !default;
+$m-radius-full: 9999px !default;
 
 // Font stacks
 
 $m-font-emoji: 'Apple Color Emoji', 'Noto Color Emoji', 'Segoe UI Emoji',
-  'Segoe UI Symbol';
+  'Segoe UI Symbol' !default;
 
 $m-font-sans: Roboto, 'Noto Sans', 'Noto Sans CJK SC', -apple-system,
   BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Arial, san-serif,
-  $m-font-emoji;
+  $m-font-emoji !default;
 
-$m-font-narrow: 'Roboto Condensed', 'Noto Sans Condensed', $m-font-sans;
+$m-font-narrow: 'Roboto Condensed', 'Noto Sans Condensed', $m-font-sans !default;
 $m-font-serif: 'Noto Serif', 'Noto Serif CJK SC', Georgia, Cambria,
-  'Times New Roman', Times, serif;
+  'Times New Roman', Times, serif !default;
 
 $m-font-mono: Iosevka, 'Sarasa Mono SC', 'Noto Sans Mono CJK SC', Menlo, Monaco,
-  Consolas, 'Ubuntu Mono', 'Courier New', monospace;
+  Consolas, 'Ubuntu Mono', 'Courier New', monospace !default;
 
 // Font sizes
 
@@ -185,19 +185,19 @@ $m-font-sizes: (
   x4: 2.25rem,
   x5: 3rem,
   x6: 4rem,
-);
+) !default;
 
 // Shadows
 
-$m-shadow-xs: 0 1px 2px 0 rgba(#000, 0.1);
-$m-shadow-sm: 0 1px 3px 0 rgba(#000, 0.1), 0 1px 2px 0 rgba(#000, 0.06);
-$m-shadow-md: 0 4px 6px -1px rgba(#000, 0.1), 0 2px 4px -1px rgba(#000, 0.06);
-$m-shadow-lg: 0 10px 15px -3px rgba(#000, 0.1), 0 4px 6px -2px rgba(#000, 0.05);
+$m-shadow-xs: 0 1px 2px 0 rgba(#000, 0.1) !default;
+$m-shadow-sm: 0 1px 3px 0 rgba(#000, 0.1), 0 1px 2px 0 rgba(#000, 0.06) !default;
+$m-shadow-md: 0 4px 6px -1px rgba(#000, 0.1), 0 2px 4px -1px rgba(#000, 0.06) !default;
+$m-shadow-lg: 0 10px 15px -3px rgba(#000, 0.1), 0 4px 6px -2px rgba(#000, 0.05) !default;
 $m-shadow-xl: 0 20px 25px -5px rgba(#000, 0.1),
-  0 10px 10px -5px rgba(#000, 0.04);
-$m-shadow-xxl: 0 25px 50px -12px rgba(#000, 0.25);
-$m-shadow-inner: inset 0 2px 4px 0 rgba(#000, 0.06);
-$m-shadow-outline: 0 0 0 3px rgba(#4299e1, 0.5);
+  0 10px 10px -5px rgba(#000, 0.04) !default;
+$m-shadow-xxl: 0 25px 50px -12px rgba(#000, 0.25) !default;
+$m-shadow-inner: inset 0 2px 4px 0 rgba(#000, 0.06) !default;
+$m-shadow-outline: 0 0 0 3px rgba(#4299e1, 0.5) !default;
 
 // Screens
 

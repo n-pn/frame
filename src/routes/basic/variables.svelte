@@ -14,8 +14,6 @@
 </script>
 
 <style lang="scss">
-  @import "helpers";
-
   color-table {
     display: block;
     background-color: #fff;

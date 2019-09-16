@@ -1,6 +1,4 @@
 <style lang="scss">
-  @import "helpers";
-
   h1,
   figure,
   p {
@@ -20,9 +18,10 @@
   }
 
   img {
+    display: block;
     width: 100%;
     max-width: 400px;
-    margin: 0 0 1em 0;
+    margin: 0 auto 1em;
   }
 
   p {
@@ -37,18 +36,21 @@
 </style>
 
 <svelte:head>
-  <title>Sapper project template</title>
+  <title>Melte</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<div class="m-pretty">
+  <h1>Great success!</h1>
 
-<figure>
-  <img alt="Borat" src="great-success.png" />
-  <figcaption>HIGH FIVE!</figcaption>
-</figure>
+  <figure>
+    <img alt="Borat" src="great-success.png" />
+    <figcaption>HIGH FIVE!</figcaption>
+  </figure>
 
-<p>
-  <strong>
-    Try editing this file (src/routes/index.svelte) to test live reloading.
-  </strong>
-</p>
+  <p>
+    <strong>
+      Try editing this file (src/routes/index.svelte) to test live reloading.
+    </strong>
+  </p>
+
+</div>

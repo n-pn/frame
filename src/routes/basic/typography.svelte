@@ -1,6 +1,4 @@
 <style lang="scss">
-  @import "helpers";
-
   .demo {
     padding: rem(8) 0;
     display: flow-root;
@@ -16,13 +14,13 @@
     // line-height: 1;
 
     &._third {
-      @include screen-min(tablet) {
+      @include min-width(tablet) {
         width: 33%;
       }
     }
 
     &._half {
-      @include screen-min(tablet) {
+      @include min-width(tablet) {
         width: 50%;
       }
     }
@@ -100,7 +98,7 @@
 
   <p>
     Lorem ipsum dolor sit amet, consectetur
-    <a href="#typography">adipiscing elit</a>
+    <a href="basic/typography">adipiscing elit</a>
     . Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus.
     Duis quis sodales risus. Etiam euismod ornare consequat.
   </p>

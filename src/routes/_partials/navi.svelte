@@ -12,7 +12,6 @@
 </script>
 
 <style lang="scss">
-  @import "helpers";
   nav {
     position: fixed;
     width: 16rem;

@@ -1,6 +1,4 @@
 <style lang="scss">
-  @import "helpers";
-
   $spacing: gut(3) !default;
 
   :global(.text) {
