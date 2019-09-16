@@ -1,6 +1,24 @@
+// rulers
+
+@mixin spacing() {
+  margin: 0 0 1rem;
+}
+
+hr {
+  @include spacing();
+  @include color(neutral, 3);
+  background-color: currentColor;
+  border: 0;
+
+  &:not([size]) {
+    height: 1px;
+  }
+}
+
+// headings
+
 %heading {
-  margin: 0;
-  padding: 0.5rem 0;
+  @include spacing();
   @include font-family(narrow);
   @include font-weight(normal);
   @include color(primary, 6);
@@ -23,6 +41,7 @@ h3 {
   @include font-size(x2); // 1.5rem;
   // line-height: 1.5rem;
 }
+
 h4 {
   @extend %heading;
   @include font-size(xl); // 1.25rem;
@@ -41,16 +60,7 @@ h6 {
   // line-height: 1.5;
 }
 
-hr {
-  margin: 0.5rem 0;
-  @include color(neutral, 3);
-  background-color: currentColor;
-  border: 0;
-
-  &:not([size]) {
-    height: 1px;
-  }
-}
+// texts
 
 b,
 strong {
@@ -77,115 +87,12 @@ sup {
   top: -0.5em;
 }
 
-a {
-  $bdcolor: f-color(primary, 5);
-  color: currentColor;
-  text-decoration: none;
-  @include border-bottom($bdcolor, 2px);
-
-  &:hover {
-    color: #fff;
-    background: $bdcolor;
-  }
-}
-
-ol,
-ul {
-  padding: 0.5rem 1rem;
-  padding-right: 0;
-
-  ol,
-  ul {
-    margin-bottom: 0;
-  }
-}
-
-ol {
-  counter-reset: li;
-}
-
-li {
-  display: block;
-
-  &:before {
-    display: inline-block;
-    @include color(primary, 6);
-    width: 1rem;
-    margin-left: -1rem;
-    text-align: right;
-    padding-right: 0.25rem;
-  }
-}
-
-ul > li {
-  &:before {
-    content: '▪';
-  }
-
-  ul > li:before {
-    content: '▫';
-  }
-
-  ul > li ul > li {
-    content: '◦';
-  }
-}
-
-ol > li {
-  counter-increment: li;
-  &:before {
-    content: counter(li) '.';
-  }
-}
-
-dt {
-  margin-top: 0;
-  margin-bottom: 0;
-  @include color(neutral, 7);
-  font-weight: bold;
-}
-
-dd {
-  margin-bottom: 1rem;
-  margin-left: 0;
-}
-
-p {
-  // margin-top: 0;
-  margin: 0;
-  padding: 0.5rem 0;
-  @include font-size(rem(17));
-
-  [lang='ja'] &,
-  [lang='kr'] &,
-  [lang='zh'] &,
-  &[lang='ja'],
-  &[lang='kr'],
-  &[lang='zh'] {
-    @include font-size(md);
-  }
-}
-
-blockquote {
-  margin: 0.5rem 0;
-  padding: 0 0.5rem 0;
-  @include corner(md);
-  @include color(neutral, 7);
-  @include border-left(f-color(primary, 5), 0.25rem);
-  @include bgcolor(rgba(f-color(primary, 5), 0.1));
-  > blockquote {
-    margin-top: 0;
-    // margin-right: -0.5rem;
-  }
-}
-
 del,
 ins,
 mark {
-  border-radius: 2px;
-  // display: inline-block;
-  line-height: inherit;
   padding: 0 0.25rem;
+  border-radius: 2px;
+  line-height: inherit;
 }
 
 del {
@@ -213,6 +120,131 @@ time {
   font-variant: small-caps;
 }
 
+/// links
+
+a {
+  // TODO replace border with liner gradient
+  $bdcolor: f-color(primary, 5);
+
+  color: currentColor;
+  text-decoration: none;
+  @include border-bottom($bdcolor, 2px);
+
+  @include hover {
+    color: #fff;
+    background: $bdcolor;
+  }
+}
+
+a:not([href]) {
+  @include reset-link;
+}
+
+/// lists
+
+ol,
+ul {
+  margin: 0;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+
+  ol,
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+ol {
+  counter-reset: li;
+}
+
+li {
+  display: block;
+
+  &:before {
+    display: inline-block;
+    @include color(primary, 6);
+    // width: 1rem;
+    margin-left: -1rem;
+    // text-align: right;
+    padding-right: 0.25rem;
+  }
+}
+
+ul > li {
+  &:before {
+    content: '▪';
+  }
+
+  ul > li:before {
+    content: '▫';
+  }
+
+  ul > li ul > li {
+    content: '◦';
+  }
+}
+
+ol > li {
+  counter-increment: li;
+
+  &:before {
+    // @include font-size(sm);
+    // text-transform: uppercase;
+    content: counter(li) '.';
+  }
+}
+
+dt {
+  margin: 0;
+  font-weight: bold;
+  @include color(neutral, 7);
+}
+
+dd {
+  margin-left: 0;
+  margin-bottom: 1rem;
+}
+
+/// paragraphs
+
+p {
+  @include spacing();
+  font-size: rem(17);
+
+  [lang='ja'] &,
+  [lang='kr'] &,
+  [lang='zh'] &,
+  &[lang='ja'],
+  &[lang='kr'],
+  &[lang='zh'] {
+    @include font-size(md);
+  }
+}
+
+/// blockquotes
+
+blockquote {
+  padding: 0.5rem 0.5rem 0;
+
+  @include spacing();
+  @include corner(md);
+  @include color(neutral, 7);
+  @include border-left(f-color(primary, 5), 0.25rem);
+  @include bgcolor(rgba(f-color(primary, 5), 0.1));
+
+  *:last-child {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.01px;
+  }
+
+  > blockquote {
+    margin-top: -0.5rem;
+  }
+}
+
+/// miscs
+
 abbr[title],
 abbr[data-original-title] {
   text-decoration: underline;
@@ -227,6 +259,13 @@ address {
   line-height: inherit;
 }
 
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+/// tables
+
 table {
   border-collapse: collapse;
 }
@@ -234,6 +273,16 @@ table {
 th {
   text-align: inherit;
 }
+
+caption {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  @include color(neutral, 5);
+  text-align: left;
+  caption-side: bottom;
+}
+
+/// images
 
 figure {
   margin: 0 0 1rem;

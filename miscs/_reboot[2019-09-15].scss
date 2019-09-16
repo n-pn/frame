@@ -20,39 +20,6 @@ pre {
   }
 }
 
-code {
-  @include font-size($code-font-size);
-  color: $code-color;
-  word-wrap: break-word;
-
-  // Streamline the style when inside anchors to avoid broken underline and more
-  a > & {
-    color: inherit;
-  }
-}
-
-kbd {
-  padding: $kbd-padding-y $kbd-padding-x;
-  @include font-size($kbd-font-size);
-  color: $kbd-color;
-  background-color: $kbd-bg;
-  @include border-radius($border-radius-sm);
-
-  kbd {
-    padding: 0;
-    @include font-size(1em);
-    font-weight: $nested-kbd-font-weight;
-  }
-}
-
-caption {
-  padding-top: $table-cell-padding;
-  padding-bottom: $table-cell-padding;
-  color: $table-caption-color;
-  text-align: left;
-  caption-side: bottom;
-}
-
 // Forms
 
 // 1. Allow labels to use `margin` for spacing.

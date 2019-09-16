@@ -49,3 +49,7 @@ input[type='datetime-local'],
 input[type='month'] {
   -webkit-appearance: textfield;
 }
+
+progress {
+  vertical-align: baseline;
+}

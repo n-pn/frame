@@ -6,17 +6,13 @@ samp {
   @include font-size(1em);
 }
 
-pre {
-  margin: 0.5rem 0;
-}
-
 kbd,
 code {
   // display: inline-block;
-  font-size: em(15);
-  border-radius: 2px;
   padding: 0 0.25rem;
+  font-size: em(15);
   line-height: inherit;
+  @include corner(0.25rem);
 }
 
 kbd {
@@ -26,17 +22,29 @@ kbd {
 }
 
 code {
-  @include bgcolor(neutral, 2);
   @include color(primary, 7);
+  @include bgcolor(neutral, 2);
+
+  a > & {
+    color: inherit;
+  }
 }
 
-pre > code {
+pre {
   display: block;
-  overflow-x: auto;
-  background: #1f2430;
-  color: #cbccc6;
-  padding: 0.5em 1em;
+  margin: 0.5rem 0;
+
+  & > code {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em 1em;
+    color: #cbccc6;
+    background: #1f2430;
+    @include corner(0.25rem);
+  }
 }
+
+// for highlightjs
 
 // Ayu Mirage
 
@@ -44,8 +52,8 @@ pre > code {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #1f2430;
   color: #cbccc6;
+  background: #1f2430;
 }
 
 .hljs-comment,
