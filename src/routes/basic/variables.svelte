@@ -57,10 +57,10 @@
 </style>
 
 <div class="m-pretty">
-  <h1>Colors</h1>
+  <h1>Variables</h1>
 
   <color-table>
-    <h2>Palette</h2>
+    <h2>Color palette</h2>
     {#each colors as color}
       <hr />
       <color-list>

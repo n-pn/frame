@@ -1,6 +1,6 @@
 <style lang="scss">
   .demo {
-    display: flow-root;
+    @include clearfix;
     margin-bottom: 1rem;
   }
 
@@ -52,42 +52,42 @@
   <div class="column">
     <h1>
       H1 Heading
-      <code>36px</code>
+      <code>30px</code>
     </h1>
   </div>
 
   <div class="column">
     <h2>
       H2 Heading
-      <code>30px</code>
+      <code>24px</code>
     </h2>
   </div>
 
   <div class="column">
     <h3>
       H3 Heading
-      <code>24px</code>
+      <code>20px</code>
     </h3>
   </div>
 
   <div class="column">
     <h4>
       H4 Heading
-      <code>20px</code>
+      <code>18px</code>
     </h4>
   </div>
 
   <div class="column">
     <h5>
       H5 Heading
-      <code>18px</code>
+      <code>16px</code>
     </h5>
   </div>
 
   <div class="column">
     <h6>
       H6 Heading
-      <code>16px</code>
+      <code>14px</code>
     </h6>
   </div>
 </typo-sample>

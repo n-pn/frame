@@ -5,23 +5,6 @@
 </script>
 
 <style lang="scss" scope="global">
-  button-list {
-    display: block;
-    @include clearfix;
-    margin-bottom: 1rem;
-
-    > button,
-    > .button {
-      float: left;
-      margin-right: 0.5rem;
-    }
-
-    > button-group {
-      float: left;
-      margin: 1rem;
-    }
-  }
-
   @mixin button() {
     :global(button),
     :global(.button) {
@@ -79,7 +62,11 @@
 
   @include button {
     display: inline-block;
+    // display: inline-flex;
     @include corner(md);
+    text-transform: uppercase;
+    font-weight: 500;
+    // text-align: center;
     border: none;
   }
 
@@ -91,20 +78,20 @@
     }
 
     &._small {
-      @include button-size(1.5rem, sm);
+      @include button-size(1.5rem, sx);
     }
 
     &,
     &._medium {
-      @include button-size(2rem, md);
+      @include button-size(2rem, sm);
     }
 
     &._large {
-      @include button-size(2.5rem, lg);
+      @include button-size(2.5rem, md);
     }
 
     &._huge {
-      @include button-size(3rem, xl);
+      @include button-size(3rem, lg);
     }
   }
 
@@ -113,15 +100,15 @@
   @include button {
     &,
     &._normal {
-      padding: 0 0.75em;
+      padding: 0 1em;
     }
 
     &._narrow {
-      padding: 0 0.25em;
+      padding: 0 0.5em;
     }
 
     &._widely {
-      padding: 0 1.25em;
+      padding: 0 1.5em;
     }
 
     &._block {
@@ -224,11 +211,33 @@
     }
   }
 
+  button-list {
+    display: flex;
+    // justify-content: space-around;
+    margin-bottom: 1rem;
+
+    @include button {
+      margin-right: 1rem;
+    }
+
+    > button-group {
+      margin: 1rem;
+    }
+
+    &._color {
+      @include button {
+        width: 6rem;
+      }
+    }
+  }
+
   // button groups
   button-group {
-    display: flex;
-
+    display: inline-flex;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
     &._block {
+      display: flex;
       width: 100%;
     }
 
@@ -331,102 +340,118 @@
 
 <h2>Button colors</h2>
 
-<button-list>
-  <button class="_text _gray">Gray</button>
-  <button class="_text _red">Red</button>
-  <button class="_text _orange">Orange</button>
-  <button class="_text _yellow">Yellow</button>
-  <button class="_text _green">Green</button>
-  <button class="_text _teal">Teal</button>
-  <button class="_text _blue">Blue</button>
-  <button class="_text _indigo">Indigo</button>
-  <button class="_text _purple">Purple</button>
-  <button class="_text _pink">Pink</button>
+<button-list class="_color">
+  <button class="_text _gray">gray</button>
+  <button class="_line _gray">gray</button>
+  <button class="_fill _gray">gray</button>
+  <button class="_rise _gray">gray</button>
 </button-list>
 
-<button-list>
-  <button class="_line _gray">Gray</button>
-  <button class="_line _red">Red</button>
-  <button class="_line _orange">Orange</button>
-  <button class="_line _yellow">Yellow</button>
-  <button class="_line _green">Green</button>
-  <button class="_line _teal">Teal</button>
-  <button class="_line _blue">Blue</button>
-  <button class="_line _indigo">Indigo</button>
-  <button class="_line _purple">Purple</button>
-  <button class="_line _pink">Pink</button>
+<button-list class="_color">
+  <button class="_text _red">red</button>
+  <button class="_line _red">red</button>
+  <button class="_fill _red">red</button>
+  <button class="_rise _red">red</button>
 </button-list>
 
-<button-list>
-  <button class="_gray">Gray</button>
-  <button class="_red">Red</button>
-  <button class="_orange">Orange</button>
-  <button class="_yellow">Yellow</button>
-  <button class="_green">Green</button>
-  <button class="_teal">Teal</button>
-  <button class="_blue">Blue</button>
-  <button class="_indigo">Indigo</button>
-  <button class="_purple">Purple</button>
-  <button class="_pink">Pink</button>
+<button-list class="_color">
+  <button class="_text _orange">orange</button>
+  <button class="_line _orange">orange</button>
+  <button class="_fill _orange">orange</button>
+  <button class="_rise _orange">orange</button>
 </button-list>
 
-<button-list>
-  <button class="_rise _gray">Gray</button>
-  <button class="_rise _red">Red</button>
-  <button class="_rise _orange">Orange</button>
-  <button class="_rise _yellow">Yellow</button>
-  <button class="_rise _green">Green</button>
-  <button class="_rise _teal">Teal</button>
-  <button class="_rise _blue">Blue</button>
-  <button class="_rise _indigo">Indigo</button>
-  <button class="_rise _purple">Purple</button>
-  <button class="_rise _pink">Pink</button>
+<button-list class="_color">
+  <button class="_text _yellow">yellow</button>
+  <button class="_line _yellow">yellow</button>
+  <button class="_fill _yellow">yellow</button>
+  <button class="_rise _yellow">yellow</button>
+</button-list>
+
+<button-list class="_color">
+  <button class="_text _green">green</button>
+  <button class="_line _green">green</button>
+  <button class="_fill _green">green</button>
+  <button class="_rise _green">green</button>
+</button-list>
+
+<button-list class="_color">
+  <button class="_text _teal">teal</button>
+  <button class="_line _teal">teal</button>
+  <button class="_fill _teal">teal</button>
+  <button class="_rise _teal">teal</button>
+</button-list>
+
+<button-list class="_color">
+  <button class="_text _blue">blue</button>
+  <button class="_line _blue">blue</button>
+  <button class="_fill _blue">blue</button>
+  <button class="_rise _blue">blue</button>
+</button-list>
+
+<button-list class="_color">
+  <button class="_text _indigo">indigo</button>
+  <button class="_line _indigo">indigo</button>
+  <button class="_fill _indigo">indigo</button>
+  <button class="_rise _indigo">indigo</button>
+</button-list>
+
+<button-list class="_color">
+  <button class="_text _purple">purple</button>
+  <button class="_line _purple">purple</button>
+  <button class="_fill _purple">purple</button>
+  <button class="_rise _purple">purple</button>
+</button-list>
+
+<button-list class="_color">
+  <button class="_text _pink">pink</button>
+  <button class="_line _pink">pink</button>
+  <button class="_fill _pink">pink</button>
+  <button class="_rise _pink">pink</button>
 </button-list>
 
 <hr />
 
 <h2>Button layouts</h2>
 
-<button-list>
-  <button-group>
-    <button class="_line">One</button>
-    <button class="_line">Two</button>
-    <button class="_line">Three</button>
-  </button-group>
+<button-group>
+  <button class="_line">One</button>
+  <button class="_line">Two</button>
+  <button class="_line">Three</button>
+</button-group>
 
-  <button-group>
-    <button class="_line _primary">One</button>
-    <button class="_line _primary">Two</button>
-    <button class="_line _primary">Three</button>
-  </button-group>
+<button-group>
+  <button class="_line _primary">One</button>
+  <button class="_line _primary">Two</button>
+  <button class="_line _primary">Three</button>
+</button-group>
 
-  <button-group>
-    <button class="_line _harmful">One</button>
-    <button class="_line _harmful">Two</button>
-    <button class="_line _harmful">Three</button>
-  </button-group>
+<button-group>
+  <button class="_line _harmful">One</button>
+  <button class="_line _harmful">Two</button>
+  <button class="_line _harmful">Three</button>
+</button-group>
 
-  <button-group>
-    <button class="_fill">One</button>
-    <button class="_fill">Two</button>
-    <button class="_fill">Three</button>
-  </button-group>
+<button-group>
+  <button class="_fill">One</button>
+  <button class="_fill">Two</button>
+  <button class="_fill">Three</button>
+</button-group>
 
-  <button-group>
-    <button class="_fill _primary">One</button>
-    <button class="_fill _primary">Two</button>
-    <button class="_fill _primary">Three</button>
-  </button-group>
+<button-group>
+  <button class="_fill _primary">One</button>
+  <button class="_fill _primary">Two</button>
+  <button class="_fill _primary">Three</button>
+</button-group>
 
-  <button-group>
-    <button class="_fill _harmful">One</button>
-    <button class="_fill _harmful">Two</button>
-    <button class="_fill _harmful">Three</button>
-  </button-group>
+<button-group>
+  <button class="_fill _harmful">One</button>
+  <button class="_fill _harmful">Two</button>
+  <button class="_fill _harmful">Three</button>
+</button-group>
 
-  <button-group class="_block">
-    <button class="_line">Full</button>
-    <button class="_line">Width</button>
-    <button class="_line">Block</button>
-  </button-group>
-</button-list>
+<button-group class="_block">
+  <button class="_line">Full</button>
+  <button class="_line">Width</button>
+  <button class="_line">Block</button>
+</button-group>

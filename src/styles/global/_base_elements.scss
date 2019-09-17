@@ -28,7 +28,7 @@ body {
   text-align: left;
   font-weight: 400;
   line-height: 1.5rem;
-  @include font-family(narrow);
+  @include font-family(sans);
   @include font-size(md);
   @include color(neutral, 8);
   @include bgcolor(neutral, 1);

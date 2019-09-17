@@ -45,7 +45,9 @@
   }
 </style>
 
-<h1>Icons</h1>
+<h1>Resources</h1>
+
+<hr />
 
 <h2>Icon list ({icons.length})</h2>
 
