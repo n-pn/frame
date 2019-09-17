@@ -79,7 +79,6 @@
 
   @include button {
     display: inline-block;
-    text-transform: uppercase;
     @include corner(md);
     border: none;
   }
@@ -92,20 +91,20 @@
     }
 
     &._small {
-      @include button-size(1.5rem, xs);
+      @include button-size(1.5rem, sm);
     }
 
     &,
     &._medium {
-      @include button-size(2rem, sm);
+      @include button-size(2rem, md);
     }
 
     &._large {
-      @include button-size(2.5rem, md);
+      @include button-size(2.5rem, lg);
     }
 
     &._huge {
-      @include button-size(3rem, lg);
+      @include button-size(3rem, xl);
     }
   }
 
