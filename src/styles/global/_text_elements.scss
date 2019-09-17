@@ -125,16 +125,18 @@ time {
 /// links
 
 a {
-  // TODO replace border with liner gradient
   $bdcolor: f-color(primary, 5);
-
   color: currentColor;
   text-decoration: none;
-  @include border-bottom($bdcolor, 2px);
+  padding: 0 2px;
+  @include border(transparent, 2px);
+  border-bottom-color: $bdcolor;
 
   @include hover {
     color: #fff;
-    background: $bdcolor;
+    @include bgcolor($bdcolor);
+    @include border($bdcolor, 2px);
+    transition: all 0.1s ease-in-out;
   }
 }
 
