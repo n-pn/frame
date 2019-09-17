@@ -67,7 +67,7 @@
 
 // corners
 
-@mixin corner($pos: all, $radius: md) {
+@mixin corner($radius: md, $pos: all) {
   @if $radius == sm {
     $radius: $m-radius-sm;
   } @else if $radius == md {
@@ -78,25 +78,25 @@
     $radius: $m-radius-full;
   }
 
-  @if pos == top {
+  @if $pos == top {
     border-top-left-radius: $radius;
     border-top-right-radius: $radius;
-  } @else if pos == bottom {
+  } @else if $pos == bottom {
     border-bottom-left-radius: $radius;
     border-bottom-right-radius: $radius;
-  } @else if pos == left {
+  } @else if $pos == left {
     border-top-left-radius: $radius;
     border-bottom-left-radius: $radius;
-  } @else if pos == right {
+  } @else if $pos == right {
     border-top-right-radius: $radius;
     border-bottom-right-radius: $radius;
-  } @else if pos == top-left {
+  } @else if $pos == top-left {
     border-top-left-radius: $radius;
-  } @else if pos == top-right {
+  } @else if $pos == top-right {
     border-top-right-radius: $radius;
-  } @else if pos == bottom-left {
+  } @else if $pos == bottom-left {
     border-bottom-left-radius: $radius;
-  } @else if pos == bottom-right {
+  } @else if $pos == bottom-right {
     border-bottom-right-radius: $radius;
   } @else {
     border-radius: $radius;
@@ -232,7 +232,7 @@
 
 // Horizontal gradient, from left to right
 //
-// Creates two color stops, start and end, by specifying a color and position for each color stop.
+// Creates two color stops, start and end, by specifying a color and $position for each color stop.
 @mixin gradient-x(
   $start-color: $gray-700,
   $end-color: $gray-800,
@@ -249,7 +249,7 @@
 
 // Vertical gradient, from top to bottom
 //
-// Creates two color stops, start and end, by specifying a color and position for each color stop.
+// Creates two color stops, start and end, by specifying a color and $position for each color stop.
 @mixin gradient-y(
   $start-color: $gray-700,
   $end-color: $gray-800,
@@ -429,4 +429,13 @@
 @mixin reset-link {
   color: inherit;
   text-decoration: none;
+}
+
+// clearfix
+@mixin clearfix {
+  &:after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
 }
