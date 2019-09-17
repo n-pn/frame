@@ -126,9 +126,11 @@ time {
 
 a {
   $bdcolor: f-color(primary, 5);
+
+  padding: 0 2px;
   color: currentColor;
   text-decoration: none;
-  padding: 0 2px;
+
   @include border(transparent, 2px);
   border-bottom-color: $bdcolor;
 

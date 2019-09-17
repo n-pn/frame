@@ -36,8 +36,8 @@
     &._line {
       background: transparent;
       @include color($color, 6);
-      box-shadow: 0 0 0 1px f-color($color, 4);
-      border: none;
+      @include bdcolor($color, 4);
+
       @include hover() {
         @if $color == gray or $color == neutral {
           @include bgcolor($color, 2);
@@ -62,12 +62,10 @@
 
   @include button {
     display: inline-block;
-    // display: inline-flex;
-    @include corner(md);
     text-transform: uppercase;
     font-weight: 500;
-    // text-align: center;
-    border: none;
+    @include corner(md);
+    @include border(transparent, 1px);
   }
 
   // button sizes
@@ -212,6 +210,7 @@
   }
 
   button-list {
+    display: block;
     display: flex;
     // justify-content: space-around;
     margin-bottom: 1rem;
@@ -236,6 +235,7 @@
     display: inline-flex;
     margin-bottom: 1rem;
     margin-right: 1rem;
+
     &._block {
       display: flex;
       width: 100%;
@@ -244,11 +244,13 @@
     @include button {
       border-radius: 0;
       flex: 1;
+      margin-right: -1px;
       &:first-child {
         @include corner(md, left);
       }
       &:last-child {
         @include corner(md, right);
+        margin-right: 0;
       }
     }
   }
