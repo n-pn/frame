@@ -114,12 +114,7 @@ mark {
 
 time,
 var {
-  @include color(neutral, 6);
-}
-
-time {
-  // font-weight: bold;
-  font-variant: small-caps;
+  @include color(primary, 6);
 }
 
 /// links
@@ -127,7 +122,6 @@ time {
 a {
   $bdcolor: f-color(primary, 5);
 
-  padding: 0 2px;
   color: currentColor;
   text-decoration: none;
 
@@ -137,7 +131,8 @@ a {
   @include hover {
     color: #fff;
     @include bgcolor($bdcolor);
-    @include border($bdcolor, 2px);
+    @include bdcolor($bdcolor);
+    // @include corner(sm);
     transition: all 0.1s ease-in-out;
   }
 }

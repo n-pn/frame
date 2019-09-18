@@ -3,16 +3,14 @@ code,
 kbd,
 samp {
   @include font-family(mono);
-  @include font-size(1em);
 }
 
 kbd,
 code {
   // display: inline-block;
-  padding: 0 0.25rem;
+  padding: 0 0.25em;
   font-size: em(15);
-  line-height: inherit;
-  @include corner(0.25rem);
+  @include corner(md);
 }
 
 kbd {
@@ -24,10 +22,6 @@ kbd {
 code {
   @include color(primary, 7);
   @include bgcolor(neutral, 2);
-
-  a > & {
-    color: inherit;
-  }
 }
 
 pre {

@@ -97,13 +97,26 @@
 <h2>Paragraphs</h2>
 
 <p>
-  Lorem ipsum dolor sit amet, consectetur
-  <a href="basic/typography">adipiscing elit</a>
+  <strong>
+    Lorem ipsum
+    <a href="/">dolor</a>
+    <em>sit amet</em>
+    , consectetur
+  </strong>
+  <a href="basic/typography">
+    adipiscing
+    <code>elit</code>
+  </a>
   . Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis
   quis sodales risus. Etiam euismod ornare consequat.
 </p>
 <p>
-  Climb leg rub face on everything give attitude nap all day for under the bed.
+  <em>
+    Climb leg rub face on everything give
+    <strong>attitude</strong>
+    nap all day for under the bed.
+  </em>
+  <br />
   Chase mice attack feet but rub face on everything hopped up on goofballs.
 </p>
 

@@ -7,6 +7,7 @@
     "green",
     "teal",
     "blue",
+    "indigo",
     "purple",
     "pink"
   ];
