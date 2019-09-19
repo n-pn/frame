@@ -5,217 +5,13 @@
 </script>
 
 <style lang="scss" scope="global">
-  @mixin button() {
-    :global(button),
-    :global(.button) {
-      @content;
-    }
-  }
-
-  @mixin button-size($size, $font-size) {
-    @include height($size);
-    @include font-size($font-size);
-
-    &._icon {
-      width: $size;
-    }
-  }
-
-  @mixin button-color($color: neutral) {
-    &,
-    &._fill,
-    &._rise {
-      color: #fff;
-      @include bgcolor($color, 5);
-
-      @include hover() {
-        @include bgcolor($color, 4);
-      }
-    }
-
-    &._line {
-      background: transparent;
-      @include color($color, 6);
-      @include bdcolor($color, 4);
-
-      @include hover() {
-        @if $color == gray or $color == neutral {
-          @include bgcolor($color, 2);
-        } @else {
-          @include bgcolor($color, 1);
-        }
-      }
-    }
-
-    &._text {
-      background: transparent;
-      @include color($color, 7);
-      @include hover() {
-        @if $color == gray or $color == neutral {
-          @include bgcolor($color, 2);
-        } @else {
-          @include bgcolor($color, 1);
-        }
-      }
-    }
-  }
-
-  @include button {
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: 500;
-    @include corner(md);
-    @include border(transparent, 1px);
-  }
-
-  // button sizes
-
-  @include button {
-    &._tiny {
-      @include button-size(1.25rem, xs);
-    }
-
-    &._small {
-      @include button-size(1.5rem, sx);
-    }
-
-    &,
-    &._medium {
-      @include button-size(2rem, sm);
-    }
-
-    &._large {
-      @include button-size(2.5rem, md);
-    }
-
-    &._huge {
-      @include button-size(3rem, lg);
-    }
-  }
-
-  // button widths
-
-  @include button {
-    &,
-    &._normal {
-      padding: 0 1em;
-    }
-
-    &._narrow {
-      padding: 0 0.5em;
-    }
-
-    &._widely {
-      padding: 0 1.5em;
-    }
-
-    &._block {
-      display: block;
-      width: 100%;
-    }
-  }
-
-  // button styles
-
-  @include button {
-    &._icon {
-      @include corner(9999px);
-      padding: 0;
-    }
-
-    &._rise {
-      // @include shadow(md);
-      box-shadow: 0 3px 6px rgba(#000, 0.1), 0 1px 2px rgba(#000, 0.2);
-    }
-
-    &,
-    &._default {
-      @include button-color(neutral);
-
-      &,
-      &._fill,
-      &._rise {
-        @include color(neutral, 7);
-        @include bgcolor(neutral, 2);
-        @include hover {
-          @include color(neutral, 7);
-          @include bgcolor(neutral, 3);
-        }
-      }
-    }
-
-    &._primary {
-      @include button-color(primary);
-    }
-
-    &._success {
-      @include button-color(success);
-    }
-
-    &._harmful {
-      @include button-color(harmful);
-    }
-
-    &._gray {
-      @include button-color(gray);
-    }
-
-    &._red {
-      @include button-color(red);
-    }
-
-    &._orange {
-      @include button-color(orange);
-    }
-
-    &._yellow {
-      @include button-color(yellow);
-    }
-
-    &._green {
-      @include button-color(green);
-    }
-
-    &._teal {
-      @include button-color(teal);
-    }
-
-    &._blue {
-      @include button-color(blue);
-    }
-
-    &._indigo {
-      @include button-color(indigo);
-    }
-
-    &._purple {
-      @include button-color(purple);
-    }
-
-    &._pink {
-      @include button-color(pink);
-    }
-
-    &._disable,
-    &[disabled] {
-      @include color(neutral, 5);
-      @include bgcolor(neutral, 2);
-      box-shadow: none;
-      @include hover {
-        cursor: text;
-        @include color(neutral, 5);
-        @include bgcolor(neutral, 2);
-      }
-    }
-  }
-
-  button-list {
+  :global(button-list) {
     display: block;
     display: flex;
     // justify-content: space-around;
     margin-bottom: 1rem;
 
-    @include button {
+    @include buttons {
       margin-right: 1rem;
     }
 
@@ -224,14 +20,14 @@
     }
 
     &._color {
-      @include button {
+      @include buttons {
         width: 6rem;
       }
     }
   }
 
   // button groups
-  button-group {
+  :global(button-group) {
     display: inline-flex;
     margin-bottom: 1rem;
     margin-right: 1rem;
@@ -241,7 +37,7 @@
       width: 100%;
     }
 
-    @include button {
+    @include buttons {
       border-radius: 0;
       flex: 1;
       margin-right: -1px;
@@ -308,7 +104,7 @@
   <button class="_text _success">Success</button>
   <button class="_text _harmful">Harmful</button>
   <button class="_text _disable">Disable</button>
-  <a href="/" class="button _text">Link</a>
+  <a href="/" class="m-btn _text">Link</a>
 </button-list>
 
 <button-list>
@@ -317,7 +113,7 @@
   <button class="_line _success">Success</button>
   <button class="_line _harmful">Harmful</button>
   <button class="_line _disable">Disable</button>
-  <a href="/" class="button _line">Link</a>
+  <a href="/" class="m-btn _line">Link</a>
 </button-list>
 
 <button-list>
@@ -326,7 +122,7 @@
   <button class="_success">Success</button>
   <button class="_harmful">Harmful</button>
   <button class="_disable">Disable</button>
-  <a href="/" class="button">Link</a>
+  <a href="/" class="m-btn">Link</a>
 </button-list>
 
 <button-list>
@@ -335,7 +131,7 @@
   <button class="_rise _success">Success</button>
   <button class="_rise _harmful">Harmful</button>
   <button class="_rise _disable">Disable</button>
-  <a href="/" class="button _rise">Link</a>
+  <a href="/" class="m-btn _rise">Link</a>
 </button-list>
 
 <hr />

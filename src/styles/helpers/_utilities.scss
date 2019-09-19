@@ -439,3 +439,11 @@
     clear: both;
   }
 }
+
+@mixin buttons() {
+  button,
+  input[type='button'],
+  .m-btn {
+    @content;
+  }
+}
