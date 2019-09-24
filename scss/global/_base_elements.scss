@@ -20,9 +20,13 @@
   @include bgcolor(primary, 2);
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  height: 100%;
   overflow-y: scroll;
   min-width: $m-screen-min;
   text-align: left;
@@ -69,4 +73,13 @@ summary {
 
 output {
   display: inline-block;
+}
+
+:focus {
+  outline: none !important;
+}
+
+button::-moz-focus-inner {
+  border: 0 !important;
+  outline: none !important;
 }

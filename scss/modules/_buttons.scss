@@ -7,46 +7,50 @@
   }
 }
 
+@mixin button-color-fill($color) {
+  @include color(white);
+  @include bgcolor($color, 5);
+
+  @include hover() {
+    @include bgcolor($color, 4);
+  }
+}
+
+@mixin button-color-line($color) {
+  background: transparent;
+  @include color($color, 6);
+  @include bdcolor($color, 4);
+
+  @include hover() {
+    @include bgcolor($color, 2);
+  }
+}
+
+@mixin button-color-text($color) {
+  background: transparent;
+  @include color($color, 7);
+  @include hover() {
+    @include bgcolor($color, 2);
+  }
+}
+
 @mixin button-color($color: neutral) {
   &,
   &._fill,
   &._rise {
-    color: #fff;
-    @include bgcolor($color, 5);
-
-    @include hover() {
-      @include bgcolor($color, 4);
-    }
+    @include button-color-fill($color);
   }
 
   &._line {
-    background: transparent;
-    @include color($color, 6);
-    @include bdcolor($color, 4);
-
-    @include hover() {
-      @if $color == gray or $color == neutral {
-        @include bgcolor($color, 2);
-      } @else {
-        @include bgcolor($color, 1);
-      }
-    }
+    @include button-color-line($color);
   }
 
   &._text {
-    background: transparent;
-    @include color($color, 7);
-    @include hover() {
-      @if $color == gray or $color == neutral {
-        @include bgcolor($color, 2);
-      } @else {
-        @include bgcolor($color, 1);
-      }
-    }
+    @include button-color-text($color);
   }
 }
 
-@include buttons {
+@mixin button-size .m-btn {
   display: inline-block;
   text-transform: uppercase;
   font-weight: 500;
@@ -56,7 +60,7 @@
 
 // button sizes
 
-@include buttons {
+.m-btn {
   &._tiny {
     @include button-size(1.25rem, xs);
   }
@@ -81,7 +85,7 @@
 
 // button widths
 
-@include buttons {
+.m-btn {
   &,
   &._normal {
     padding: 0 1em;
@@ -103,7 +107,7 @@
 
 // button styles
 
-@include buttons {
+.m-btn {
   &._icon {
     @include corner(9999px);
     padding: 0;

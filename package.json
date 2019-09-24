@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "sapper dev --no-hot",
+    "dev": "sapper dev",
     "build": "sapper build",
     "export": "sapper export",
     "start": "node __sapper__/build"
@@ -12,10 +12,12 @@
   "files": [
     "svelte.config.js",
     "webpack.config.js",
-    "src/styles/**/*",
-    "src/components/**/*"
+    "scss/**/*",
+    "src/components/**/*",
+    "src/utils/**/*"
   ],
   "dependencies": {
+    "compression": "^1.7.4",
     "polka": "next",
     "sirv": "^0.4.0"
   },
@@ -28,7 +30,7 @@
     "sass": "^1.22.0",
     "sass-loader": "^8.0.0",
     "svelte": "^3.0.0",
-    "svelte-loader": "^2.9.0",
+    "svelte-loader": "https://github.com/rixo/svelte-loader",
     "webpack": "^4.7.0"
   }
 }

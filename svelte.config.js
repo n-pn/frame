@@ -1,8 +1,9 @@
 const path = require('path')
 const sass = require('sass')
+// const Fiber = require('fibers')
 
-const style_dir = path.resolve(__dirname, './src/styles/')
-const import_helper_string = '@import "helpers";\n'
+const style_dir = path.join(__dirname, 'scss')
+const prepend_content = '@import "helpers";\n'
 
 module.exports = {
   preprocess: {
@@ -10,7 +11,8 @@ module.exports = {
       const { type, lang } = attributes
       if (type !== 'text/scss' && lang !== 'scss') return
 
-      content = import_helper_string + content
+      content = prepend_content + content
+
       return new Promise((resolve, reject) => {
         sass.render(
           {
@@ -18,6 +20,7 @@ module.exports = {
             sourceMap: true,
             includePaths: [path.dirname(filename), style_dir, 'node_modules'],
             outFile: 'x', // this is necessary, but is ignored
+            // fiber: Fiber,
           },
           (err, result) => {
             if (err) return reject(err)

@@ -119,7 +119,9 @@ var {
 
 /// links
 
-a {
+main a,
+section a,
+article a {
   $bdcolor: f-color(primary, 5);
 
   color: currentColor;
