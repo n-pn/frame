@@ -1,5 +1,5 @@
 {
-  "name": "melte",
+  "name": "@nipin/melte",
   "description": "personal collection of styles and view components for svelte",
   "version": "0.0.1",
   "private": true,
@@ -10,9 +10,8 @@
     "start": "node __sapper__/build"
   },
   "files": [
-    "svelte.config.js",
-    "webpack.config.js",
-    "scss/**/*",
+    "configs/**/*.js",
+    "scss/**/*.scss",
     "src/components/**/*",
     "src/utils/**/*"
   ],
