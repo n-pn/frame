@@ -1,9 +1,8 @@
 const path = require('path')
-const sass = require('node-sass')
 
 const prepend_content = '@import "helpers";\n'
 
-module.exports = function(dir = __dirname) {
+module.exports = function(dir = __dirname, sass) {
     return {
         preprocess: {
             style: async ({ content, attributes, filename }) => {
@@ -19,8 +18,8 @@ module.exports = function(dir = __dirname) {
                             omitSourceMapUrl: true,
                             includePaths: [
                                 path.dirname(filename),
-                                path.resolve(__dirname, '../scss'),
                                 path.join(dir, 'node_modules'),
+                                path.resolve(__dirname, '../src/styles'),
                             ],
                             outFile: 'x',
                         },
@@ -33,22 +32,6 @@ module.exports = function(dir = __dirname) {
                         }
                     )
                 })
-                // const result = await sass.render({
-                //     data: content,
-                //     sourceMap: 'style.css.map',
-                //     omitSourceMapUrl: true,
-                //     includePaths: [
-                //         path.dirname(filename),
-                //         path.join(__dirname, 'scss'),
-                //         path.join(dir, 'node_modules'),
-                //     ],
-                //     outFile: 'x',
-                // })
-
-                // return {
-                //     code: result.css.toString('utf8'),
-                //     map: result.map.toString('utf8'),
-                // }
             },
         },
     }

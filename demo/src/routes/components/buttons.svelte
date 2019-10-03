@@ -1,5 +1,5 @@
 <script>
-  import MIcon from "../../components/MIcon";
+  import MIcon from "$melte/MIcon.svelte";
 
   // your script goes here
 </script>

@@ -4,7 +4,7 @@
 </script>
 
 <script>
-  import MIcon from "../../components/MIcon";
+  import MIcon from "$melte/MIcon.svelte";
 </script>
 
 <style lang="scss">
