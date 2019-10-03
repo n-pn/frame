@@ -3,51 +3,48 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  border-color: currentColor;
+    box-sizing: border-box;
 }
 
 /// root
 
 :root {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 ::selection {
-  @include color(primary, 7);
-  @include bgcolor(primary, 2);
+    @include color(primary, 7);
+    @include bgcolor(primary, 2);
 }
 
 html,
 body {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  margin: 0;
-  overflow-y: scroll;
-  min-width: $m-screen-min;
-  text-align: left;
-  font-weight: 400;
-  line-height: 1.5rem;
-  @include font-family(sans);
-  @include font-size(md);
-  @include color(neutral, 8);
-  @include bgcolor(neutral, 1);
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(#000, 0);
+    margin: 0;
+    overflow-y: scroll;
+    min-width: $m-screen-min;
+    text-align: left;
+    font-weight: 400;
+    line-height: 1.5rem;
+    @include font-family(sans);
+    @include font-size(md);
+    @include color(neutral, 8);
+    @include bgcolor(neutral, 1);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(#000, 0);
 }
 
 /// normalize
 
 [tabindex='-1']:focus:not(:focus-visible) {
-  outline: 0 !important;
+    outline: 0 !important;
 }
 
 [hidden] {
-  display: none !important;
+    display: none !important;
 }
 
 main,
@@ -59,27 +56,27 @@ audio,
 iframe,
 embed,
 object {
-  display: block;
+    display: block;
 }
 
 template {
-  display: none;
+    display: none;
 }
 
 summary {
-  display: list-item;
-  cursor: pointer;
+    display: list-item;
+    cursor: pointer;
 }
 
 output {
-  display: inline-block;
+    display: inline-block;
 }
 
 :focus {
-  outline: none !important;
+    outline: none !important;
 }
 
 button::-moz-focus-inner {
-  border: 0 !important;
-  outline: none !important;
+    border: 0 !important;
+    outline: none !important;
 }

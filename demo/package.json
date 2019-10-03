@@ -1,6 +1,6 @@
 {
   "name": "@nipin/melte-demo",
-  "description": "preview for melte",
+  "description": "showcase for melte",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,12 +10,13 @@
     "start": "node __sapper__/build"
   },
   "dependencies": {
-    "@nipin/melte": "file:../",
     "compression": "^1.7.4",
     "polka": "next",
     "sirv": "^0.4.0"
   },
   "devDependencies": {
+    "@nipin/hmark": "https://github.com/nipinium/hmark",
+    "@nipin/melte": "file:../",
     "css-loader": "^3.2.0",
     "feather-icons": "^4.24.1",
     "mini-css-extract-plugin": "^0.8.0",

@@ -2,12 +2,9 @@
   "name": "@nipin/melte",
   "description": "personal collection of styles and view components for svelte",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "files": [
-    "configs/**/*.js",
-    "src/styles/**/*.scss",
-    "src/components/**/*.svelte",
-    "src/utils/**/*.js"
+    "src/**/*.js"
   ],
   "dependencies": {
     "highlight.js": "^9.15.10"
