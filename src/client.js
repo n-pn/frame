@@ -1,7 +1,7 @@
 import * as sapper from '@sapper/app'
 
-import './styles/global.scss'
+import '../scss/global.scss'
 
 sapper.start({
-  target: document.querySelector('#sapper'),
+    target: document.querySelector('#sapper'),
 })
