@@ -23,7 +23,6 @@ body {
 }
 
 body {
-    margin: 0;
     overflow-y: scroll;
     min-width: $screen-min;
     text-align: left;
@@ -79,4 +78,22 @@ output {
 button::-moz-focus-inner {
     border: 0 !important;
     outline: none !important;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
 }
