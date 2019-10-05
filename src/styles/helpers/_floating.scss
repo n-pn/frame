@@ -8,15 +8,15 @@
 }
 
 @if $include-helper-classes {
-    .cf {
+    .u-cf {
         @include clearfix;
     }
 
-    .fl {
+    .u-fl {
         float: left;
     }
 
-    .fr {
+    .u-fr {
         float: right;
     }
 }
