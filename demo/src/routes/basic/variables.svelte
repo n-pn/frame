@@ -44,10 +44,10 @@
     @include corner(md);
     margin-left: 0.5rem;
 
-    @each $color in $m-color-names {
+    @each $color in $color-names {
       @for $tone from 1 through 9 {
         &[color="#{'' + $color}"][tone="#{$tone}"] {
-          @include bgcolor(f-color($color, $tone));
+          @include bgcolor(color($color, $tone));
         }
       }
     }

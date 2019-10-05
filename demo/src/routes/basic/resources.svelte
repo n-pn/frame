@@ -38,7 +38,7 @@
 
   icon-name {
     display: block;
-    font-family: $m-font-narrow;
+    font-family: $font-narrow;
     font-size: rem(15);
     line-height: 1.25rem;
     padding-top: 0.25rem;

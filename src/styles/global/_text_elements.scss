@@ -1,4 +1,4 @@
-.m-text,
+.text,
 section,
 article,
 blockquote,
@@ -11,8 +11,8 @@ li {
 // rulers
 
 hr {
-    @include m-color(neutral, 3);
-    @include m-bgcolor(currentColor);
+    @include color(neutral, 3);
+    @include bgcolor(currentColor);
     border: 0;
 
     &:not([size]) {
@@ -129,7 +129,7 @@ a[class] {
 }
 
 a:not([class]) {
-    $bdcolor: f-color(primary, 5);
+    $bdcolor: color(primary, 5);
 
     color: currentColor;
     text-decoration: none;
@@ -262,8 +262,8 @@ blockquote {
 
     @include corner(md);
     @include color(neutral, 7);
-    @include border-left(f-color(primary, 5), 0.25rem);
-    @include bgcolor(rgba(f-color(primary, 5), 0.1));
+    @include border-left(color(primary, 5), 0.25rem);
+    @include bgcolor(rgba(color(primary, 5), 0.1));
 }
 
 /// tables

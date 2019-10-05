@@ -40,7 +40,7 @@
     }
 
     &:hover {
-      background-color: rgba(f-color(primary, 4), 0.2);
+      background-color: rgba(color(primary, 4), 0.2);
     }
   }
 

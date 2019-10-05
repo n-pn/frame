@@ -6,12 +6,12 @@
 
 <style lang="scss" scope="global">
   :global(button-list) {
-    display: block;
+    // display: block;
     display: flex;
     // justify-content: space-around;
     margin-bottom: 1rem;
 
-    .m-btn {
+    .btn {
       margin-right: 1rem;
     }
 
@@ -20,7 +20,7 @@
     }
 
     &._color {
-      .m-btn {
+      .btn {
         width: 6rem;
       }
     }
@@ -42,10 +42,10 @@
       flex: 1;
       margin-right: -1px;
       &:first-child {
-        @include corner(md, left);
+        @include corner-left(md);
       }
       &:last-child {
-        @include corner(md, right);
+        @include corner-right(md);
         margin-right: 0;
       }
     }

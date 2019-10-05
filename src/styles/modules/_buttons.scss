@@ -50,7 +50,7 @@
     }
 }
 
-.m-btn {
+.btn {
     display: inline-block;
     text-transform: uppercase;
     font-weight: 500;
@@ -60,7 +60,7 @@
 
 // button sizes
 
-.m-btn {
+.btn {
     &._tiny {
         @include button-size(1.25rem, xs);
     }
@@ -85,7 +85,7 @@
 
 // button widths
 
-.m-btn {
+.btn {
     &,
     &._normal {
         padding: 0 1em;
@@ -107,7 +107,7 @@
 
 // button styles
 
-.m-btn {
+.btn {
     &._icon {
         @include corner(9999px);
         padding: 0;

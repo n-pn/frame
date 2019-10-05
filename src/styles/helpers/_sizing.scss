@@ -1,5 +1,5 @@
 // prettier-ignore
-$m-sizes: (
+$sizes: (
   0: 0,
   1: 0.25rem, // 4px
   2: 0.5rem, // 8px
@@ -20,28 +20,28 @@ $m-sizes: (
   64: 16rem, // 256px
 ) !default;
 
-@mixin m-pad($size) {
-  padding: $size;
+@mixin pad($size) {
+    padding: $size;
 }
 
-@mixin m-pad-x($size) {
-  padding-left: $size;
-  padding-right: $size;
+@mixin pad-x($size) {
+    padding-left: $size;
+    padding-right: $size;
 }
 
-@mixin m-pad-y($size) {
-  padding-top: $size;
-  padding-bottom: $size;
+@mixin pad-y($size) {
+    padding-top: $size;
+    padding-bottom: $size;
 }
 
 // Sizing shortcuts
 
 @mixin sizing($width, $height: $width) {
-  width: $width;
-  height: $height;
+    width: $width;
+    height: $height;
 }
 
 @mixin height($size) {
-  height: $size;
-  line-height: $size;
+    height: $size;
+    line-height: $size;
 }

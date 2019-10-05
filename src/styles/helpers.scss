@@ -1,4 +1,4 @@
-$m-include-helper-classes: false !default;
+$include-helper-classes: false !default;
 
 @import 'helpers/base';
 
@@ -20,4 +20,3 @@ $m-include-helper-classes: false !default;
 
 @import 'helpers/image';
 @import 'helpers/gradient';
-

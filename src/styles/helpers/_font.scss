@@ -1,20 +1,20 @@
 // Font stacks
 
-$m-font-emoji: 'Apple Color Emoji', 'Noto Color Emoji', 'Segoe UI Emoji',
+$font-emoji: 'Apple Color Emoji', 'Noto Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol' !default;
 
-$m-font-sans: Roboto, 'Noto Sans', 'Noto Sans CJK SC', -apple-system,
+$font-sans: Roboto, 'Noto Sans', 'Noto Sans CJK SC', -apple-system,
     BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Arial, san-serif,
-    $m-font-emoji !default;
+    $font-emoji !default;
 
-$m-font-narrow: 'Roboto Condensed', 'Noto Sans Condensed', $m-font-sans !default;
-$m-font-serif: 'Noto Serif', 'Noto Serif CJK SC', Georgia, Cambria,
+$font-narrow: 'Roboto Condensed', 'Noto Sans Condensed', $font-sans !default;
+$font-serif: 'Noto Serif', 'Noto Serif CJK SC', Georgia, Cambria,
     'Times New Roman', Times, serif !default;
 
-$m-font-mono: Iosevka, 'Sarasa Mono SC', 'Noto Sans Mono CJK SC', Menlo, Monaco,
+$font-mono: Iosevka, 'Sarasa Mono SC', 'Noto Sans Mono CJK SC', Menlo, Monaco,
     Consolas, 'Ubuntu Mono', 'Courier New', monospace !default;
 
-$m-font-sizes: (
+$font-sizes: (
     xs: 0.75rem,
     sm: 0.875rem,
     md: 1rem,
@@ -29,13 +29,13 @@ $m-font-sizes: (
 
 @mixin font-family($family: sans) {
     @if $family == null or $family == sans {
-        font-family: $m-font-sans;
+        font-family: $font-sans;
     } @else if $family == narrow {
-        font-family: $m-font-narrow;
+        font-family: $font-narrow;
     } @else if $family == mono {
-        font-family: $m-font-mono;
+        font-family: $font-mono;
     } @else {
-        font-family: $family, $m-font-sans;
+        font-family: $family, $font-sans;
     }
 }
 
@@ -44,5 +44,5 @@ $m-font-sizes: (
 }
 
 @mixin font-size($size: md) {
-    font-size: f-map-get($m-font-sizes, $size, $size);
+    font-size: f-map-get($font-sizes, $size, $size);
 }

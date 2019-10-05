@@ -1,7 +1,7 @@
 // Text truncate
 // Requires inline-block or block for proper styling
 
-@mixin m-truncate($width: 100%) {
+@mixin truncate($width: 100%) {
     width: $width;
     overflow: hidden;
     text-overflow: ellipsis;

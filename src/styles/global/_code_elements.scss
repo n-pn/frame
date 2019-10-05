@@ -2,40 +2,40 @@ pre,
 code,
 kbd,
 samp {
-  @include font-family(mono);
+    @include font-family(mono);
 }
 
 kbd,
 code {
-  // display: inline-block;
-  padding: 0 0.25em;
-  font-size: em(15);
-  @include corner(md);
+    // display: inline-block;
+    padding: 0 0.25em;
+    font-size: em(15);
+    @include corner(md);
 }
 
 kbd {
-  @include color(neutral, 6);
-  @include border(f-color(neutral, 4));
-  @include shadow(xs);
+    @include color(neutral, 6);
+    @include border(color(neutral, 4));
+    @include shadow(xs);
 }
 
 code {
-  @include color(primary, 7);
-  @include bgcolor(neutral, 2);
+    @include color(primary, 7);
+    @include bgcolor(neutral, 2);
 }
 
 pre {
-  display: block;
-  margin: 0.5rem 0;
-
-  & > code {
     display: block;
-    overflow-x: auto;
-    padding: 0.5em 1em;
-    color: #cbccc6;
-    background: #1f2430;
-    @include corner(0.25rem);
-  }
+    margin: 0.5rem 0;
+
+    & > code {
+        display: block;
+        overflow-x: auto;
+        padding: 0.5em 1em;
+        color: #cbccc6;
+        background: #1f2430;
+        @include corner(0.25rem);
+    }
 }
 
 // for highlightjs
@@ -43,23 +43,23 @@ pre {
 // Ayu Mirage
 
 .hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #cbccc6;
-  background: #1f2430;
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: #cbccc6;
+    background: #1f2430;
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #5c6773;
+    color: #5c6773;
 }
 
 // Green
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-addition {
-  color: #ffa759;
+    color: #ffa759;
 }
 
 // Cyan
@@ -69,7 +69,7 @@ pre {
 .hljs-literal,
 .hljs-doctag,
 .hljs-regexp {
-  color: #bae67e;
+    color: #bae67e;
 }
 
 // Blue
@@ -78,7 +78,7 @@ pre {
 .hljs-name,
 .hljs-selector-id,
 .hljs-selector-class {
-  color: #73d0ff;
+    color: #73d0ff;
 }
 
 // Yellow
@@ -88,7 +88,7 @@ pre {
 .hljs-template-variable,
 .hljs-class .hljs-title,
 .hljs-type {
-  color: #ffd580;
+    color: #ffd580;
 }
 
 // Orange
@@ -100,23 +100,23 @@ pre {
 .hljs-selector-attr,
 .hljs-selector-pseudo,
 .hljs-link {
-  color: #ffa759;
+    color: #ffa759;
 }
 
 // Red
 .hljs-built_in,
 .hljs-deletion {
-  color: #ff3333;
+    color: #ff3333;
 }
 
 .hljs-formula {
-  background: #073642;
+    background: #073642;
 }
 
 .hljs-emphasis {
-  font-style: italic;
+    font-style: italic;
 }
 
 .hljs-strong {
-  font-weight: bold;
+    font-weight: bold;
 }

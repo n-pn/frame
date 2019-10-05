@@ -5,7 +5,7 @@
   }
 
   .right {
-    margin-left: gut(1);
+    margin-left: gap(2);
   }
 
   .column {
@@ -14,13 +14,13 @@
     // line-height: 1;
 
     &._third {
-      @include min-width(tablet) {
+      @include screen-min(tablet) {
         width: 33%;
       }
     }
 
     &._half {
-      @include min-width(tablet) {
+      @include screen-min(tablet) {
         width: 50%;
       }
     }
@@ -28,7 +28,7 @@
 
   .sample {
     // font-weight: bold;
-    color: color(neutral, 2);
+    @include color(neutral, 2);
     display: flow-root;
   }
 </style>

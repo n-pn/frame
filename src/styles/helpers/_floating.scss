@@ -1,5 +1,5 @@
 // clearfix
-@mixin m-cf {
+@mixin clearfix {
     &:after {
         content: ' ';
         display: block;
@@ -7,16 +7,16 @@
     }
 }
 
-@if $m-include-helper-classes {
-    .m-cf {
-        @include m-cf;
+@if $include-helper-classes {
+    .cf {
+        @include clearfix;
     }
 
-    .m-fl {
+    .fl {
         float: left;
     }
 
-    .m-fr {
+    .fr {
         float: right;
     }
 }
