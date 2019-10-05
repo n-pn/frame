@@ -1,2 +1,23 @@
-@import 'helpers/variables';
-@import 'helpers/utilities';
+$m-include-helper-classes: false !default;
+
+@import 'helpers/base';
+
+@import 'helpers/sizing';
+@import 'helpers/coloring';
+
+@import 'helpers/screening';
+
+@import 'helpers/floating';
+@import 'helpers/hovering';
+@import 'helpers/resetting';
+
+@import 'helpers/bordering';
+@import 'helpers/cornering';
+@import 'helpers/shadowing';
+
+@import 'helpers/font';
+@import 'helpers/formatting';
+
+@import 'helpers/image';
+@import 'helpers/gradient';
+

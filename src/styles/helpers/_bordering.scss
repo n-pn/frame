@@ -1,0 +1,33 @@
+// borders
+
+@mixin bdcolor($color: gray, $tone: 3) {
+  border-color: f-color($color, $tone);
+}
+
+@mixin bdwidth($width: 1px) {
+  @if $width == 0 or $width == 2 or $width == 4 or $width == 8 {
+    border-width: rem($width);
+  } @else {
+    border-width: $width;
+  }
+}
+
+@mixin border($color, $width: 1px) {
+  border: $width solid $color;
+}
+
+@mixin border-left($color, $width: 1px) {
+  border-left: $width solid $color;
+}
+
+@mixin border-right($color, $width: 1px) {
+  border-right: $width solid $color;
+}
+
+@mixin border-top($color, $width: 1px) {
+  border-top: $width solid $color;
+}
+
+@mixin border-bottom($color, $width: 1px) {
+  border-bottom: $width solid $color;
+}

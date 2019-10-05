@@ -1,19 +1,18 @@
+.m-text,
+section,
 article,
-.m-flow {
-    * + * {
-        margin-top: 1rem !important;
+blockquote,
+li {
+    > * + * {
+        margin-top: 1rem;
     }
-
-    // li + li {
-    //     margin-top: 0 !important;
-    // }
 }
 
 // rulers
 
 hr {
-    @include color(neutral, 3);
-    background-color: currentColor;
+    @include m-color(neutral, 3);
+    @include m-bgcolor(currentColor);
     border: 0;
 
     &:not([size]) {

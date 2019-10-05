@@ -1,0 +1,53 @@
+$m-screen-ip: 320px !default; // small phones like iphone 3 4 5
+$m-screen-ph: 360px !default; // normal phone like android or iphone 6 7 8
+$m-screen-pl: 480px !default; // large phablet like iphone 6+, galaxy note...
+$m-screen-sm: 640px !default; // small tablet or phone landscape mode
+$m-screen-md: 720px !default; // normal tablet
+$m-screen-lg: 960px !default; // tablet in landscape mode or small laptop
+$m-screen-xl: 1280px !default; // modern laptop or desktop monitor
+
+$m-screen-min: $m-screen-ip !default;
+$m-screen-phone: $m-screen-ph !default;
+$m-screen-phablet: $m-screen-pl !default;
+$m-screen-tablet: $m-screen-sm !default;
+$m-screen-laptop: $m-screen-lg !default;
+$m-screen-desktop: $m-screen-xl !default;
+
+@function m-screen($name) {
+    @if $size == phone {
+        @return $m-screen-phone;
+    } @else if $size == phablet {
+        @return $m-screen-phablet;
+    } @else if $size == tablet {
+        @return $m-screen-tablet;
+    } @else if $size == laptop {
+        @return $m-screen-laptop;
+    } @else if $size == desktop {
+        @return $m-screen-desktop;
+    } @else {
+        @return $name;
+    }
+}
+
+@mixin m-screen-min($name: tablet) {
+    $size: m-screen($name);
+    @media only screen and (min-width: #{$size}) {
+        @content;
+    }
+}
+
+@mixin m-screen-max($size: tablet) {
+    $size: m-screen($name);
+    @media only screen and (max-width: #{$size}) {
+        @content;
+    }
+}
+
+@mixin m-screen-range($min, $max) {
+    $min-screen: m-screen($min);
+    $max-screen: m-screen($max);
+
+    @media only screen and (min-width: #{$min-screen}) and (max-width: #{$max-screen}) {
+        @content;
+    }
+}

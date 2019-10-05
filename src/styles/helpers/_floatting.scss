@@ -1,0 +1,22 @@
+// clearfix
+@mixin m-cf {
+    &:after {
+        content: ' ';
+        display: block;
+        clear: both;
+    }
+}
+
+@if $m-include-helper-classes {
+    .m-cf {
+        @include m-cf;
+    }
+
+    .m-fl {
+        float: left;
+    }
+
+    .m-fr {
+        float: right;
+    }
+}

@@ -1,0 +1,70 @@
+/// Border radius
+
+$m-corner-sm: 0.125rem !default;
+$m-corner-md: 0.25rem !default;
+$m-corner-lg: 0.5rem !default;
+$m-corner-full: 9999px !default;
+
+@function m-corner($name) {
+    @if $name == sm {
+        @return $m-corner-sm;
+    } @else if $name == md {
+        @return $m-corner-md;
+    } @else if $name == lg {
+        @return $m-corner-lg;
+    } @else if $name == full {
+        @return $m-corner-full;
+    } @else if unitless($name) {
+        @return rem($name);
+    } @else {
+        @return $name;
+    }
+}
+
+@mixin m-corner($name: md) {
+    $radius: m-corner($name);
+}
+
+@mixin m-corner-top($name: md) {
+    $radius: m-corner($name);
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin m-corner-bottom($name: md) {
+    $radius: m-corner($name);
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+@mixin m-corner-left($name: md) {
+    $radius: m-corner($name);
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+@mixin m-corner-right($name: md) {
+    $radius: m-corner($name);
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+@mixin m-corner-top-left($name: md) {
+    $radius: m-corner($name);
+    border-top-left-radius: $radius;
+}
+
+@mixin m-corner-bottom-left($name: md) {
+    $radius: m-corner($name);
+    border-bottom-left-radius: $radius;
+}
+
+@mixin m-corner-top-right($name: md) {
+    $radius: m-corner($name);
+    border-top-right-radius: $radius;
+}
+
+@mixin m-corner-bottom-right($name: md) {
+    $radius: m-corner($name);
+    border-bottom-right-radius: $radius;
+}

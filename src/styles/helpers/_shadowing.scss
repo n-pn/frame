@@ -1,0 +1,35 @@
+$m-shadow-xs: 0 1px 2px 0 rgba(#000, 0.1) !default;
+$m-shadow-sm: 0 1px 3px 0 rgba(#000, 0.1), 0 1px 2px 0 rgba(#000, 0.06) !default;
+$m-shadow-md: 0 4px 6px -1px rgba(#000, 0.1), 0 2px 4px -1px rgba(#000, 0.06) !default;
+$m-shadow-lg: 0 10px 15px -3px rgba(#000, 0.1), 0 4px 6px -2px rgba(#000, 0.05) !default;
+$m-shadow-xl: 0 20px 25px -5px rgba(#000, 0.1),
+    0 10px 10px -5px rgba(#000, 0.04) !default;
+$m-shadow-xxl: 0 25px 50px -12px rgba(#000, 0.25) !default;
+$m-shadow-inner: inset 0 2px 4px 0 rgba(#000, 0.06) !default;
+$m-shadow-outline: 0 0 0 3px rgba(#4299e1, 0.5) !default;
+
+@function m-shadow($type) {
+    @if $type == xs {
+        @return $m-shadow-xs;
+    } @else if $type == sm {
+        @return $m-shadow-sm;
+    } @else if $type == md {
+        @return $m-shadow-md;
+    } @else if $type == lg {
+        @return $m-shadow-lg;
+    } @else if $type == xl {
+        @return $m-shadow-xl;
+    } @else if $type == xxl {
+        @return $m-shadow-xxl;
+    } @else if $type == inner {
+        @return $m-shadow-inner;
+    } @else if $type == outline {
+        @return $m-shadow-outline;
+    } @else {
+        @return $type;
+    }
+}
+
+@mixin m-shadow($type: sm) {
+    box-shadow: m-shadow($type);
+}
