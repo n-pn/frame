@@ -23,6 +23,7 @@ $corner-full: 9999px !default;
 
 @mixin corner($name: md) {
     $radius: corner($name);
+    border-radius: $radius;
 }
 
 @mixin corner-top($name: md) {

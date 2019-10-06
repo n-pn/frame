@@ -1,16 +1,15 @@
 <script>
-  export let name = "feather";
+  export let name = 'feather'
 </script>
 
-<style>
+<style lang="scss">
   svg {
     display: inline-block;
-    /* display: inline-block; */
     padding: 0;
     margin: 0;
-    vertical-align: auto;
-    vertical-align: middle;
-    margin-top: -3px;
+    /*vertical-align: auto;*/
+    /*vertical-align: middle;*/
+    /*margin-top: -3px;*/
     width: 1em;
     height: 1em;
     stroke: currentColor;
@@ -21,6 +20,4 @@
   }
 </style>
 
-<svg>
-  <use xlink:href="/feather-sprite.svg#{name}" />
-</svg>
+<svg><use xlink:href="/feather-sprite.svg#{name}" /></svg>

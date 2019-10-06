@@ -128,7 +128,7 @@ var {
 /// links
 
 a[class] {
-    @include reset-link;
+    text-decoration: none;
 }
 
 a:not([class]) {
