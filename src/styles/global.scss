@@ -3,9 +3,18 @@ $include-helper-classes: true !default;
 
 @import 'helpers';
 
-@import 'global/base_elements';
-@import 'global/form_elements';
-@import 'global/text_elements';
-@import 'global/code_elements';
+@import 'global/reset';
+@import 'global/layout';
+@import 'global/selection';
+
+@import 'global/headings';
+@import 'global/lists';
+@import 'global/links';
+@import 'global/texts';
+@import 'global/tables';
+@import 'global/rulers';
+@import 'global/blockquotes';
+@import 'global/pre_code_kbd';
+@import 'global/code_higlight';
 
 @import 'modules/buttons';

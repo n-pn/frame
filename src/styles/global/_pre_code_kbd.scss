@@ -1,0 +1,39 @@
+pre,
+code,
+kbd,
+samp {
+    @include font-family(mono);
+}
+
+kbd,
+code {
+    // display: inline-block;
+    padding: 0 0.25em;
+    font-size: em(15);
+    @include corner(md);
+}
+
+kbd {
+    @include color(neutral, 6);
+    @include border(color(neutral, 4));
+    @include shadow(xs);
+}
+
+code {
+    @include color(primary, 7);
+    @include bgcolor(neutral, 2);
+}
+
+pre {
+    display: block;
+    margin: 0.5rem 0;
+
+    & > code {
+        display: block;
+        overflow-x: auto;
+        padding: 0.5em 1em;
+        color: #cbccc6;
+        background: #1f2430;
+        @include corner(0.25rem);
+    }
+}

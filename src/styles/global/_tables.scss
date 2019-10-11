@@ -1,0 +1,27 @@
+/// tables
+
+$table-caption-color: color(neutral, 5) !default;
+$table-pad: 0.5rem !default;
+table {
+    border-collapse: collapse;
+}
+
+caption {
+    @include pad-y($table-pad);
+    color: $table-caption-color;
+    text-align: left;
+    caption-side: bottom;
+}
+
+th {
+    text-align: inherit;
+}
+
+/// images
+
+svg,
+img {
+    overflow: hidden;
+    border-style: none;
+    vertical-align: middle;
+}
