@@ -2,7 +2,7 @@
 
 ## Implementation
 
--   [ ] copy useful variables from tailwind
+-   [x] copy useful variables from tailwind
 -   [ ] implement more scss utilities
 -   [x] reimport bootstrap's `_reboot.scss`
 -   [x] implement button inspired by material design in `miscs` folder
@@ -11,11 +11,11 @@
 ## Import resources:
 
 -   [x] [feathericons](https://github.com/feathericons/feather) sprite: <https://unpkg.com/feather-icons@4.24.1/dist/feather-sprite.svg>
--   [ ] favicon (searching old projects for resource)
+-   [x] favicon (searching old projects for resource)
 
 ## Migrate
 
--   [ ] clean trash from sapper-template
+-   [x] clean trash from sapper-template
 -   [x] copy code from old project
 
 ## Websites to check :

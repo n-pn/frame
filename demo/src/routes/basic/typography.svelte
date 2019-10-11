@@ -11,7 +11,6 @@
   .column {
     float: left;
     width: 100%;
-    // line-height: 1;
 
     &._third {
       @include screen-min(tablet) {

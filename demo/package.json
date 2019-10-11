@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@nipin/hmark": "https://github.com/nipinium/hmark",
-    "@nipin/melte": "file:../",
+    "@nipin/melte": "file:..",
     "css-loader": "^3.2.0",
     "feather-icons": "^4.24.1",
     "mini-css-extract-plugin": "^0.8.0",
