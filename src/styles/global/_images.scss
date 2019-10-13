@@ -1,0 +1,18 @@
+/// images
+
+svg,
+img {
+    overflow: hidden;
+    border-style: none;
+    vertical-align: middle;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+p > img {
+    display: inline-block;
+}
