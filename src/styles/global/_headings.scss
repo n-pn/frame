@@ -1,5 +1,5 @@
 // headings
-$heading-color: color(primary, 7) !default;
+$heading-color: color(neutral, 8) !default;
 
 %heading {
     @include color($heading-color);
