@@ -29,13 +29,14 @@ module.exports = {
                 {
                     test: /\.(svelte|html)$/,
                     use: {
-                        loader: 'svelte-loader',
+                        loader: 'svelte-loader-hot',
                         options: {
-                            emitCss: true,
-                            preprocess,
                             dev,
+                            preprocess,
                             hydratable: true,
                             hotReload: true,
+                            emitCss: false,
+                            hotOptions: { optimistic: true },
                         },
                     },
                 },
@@ -57,7 +58,6 @@ module.exports = {
         },
         mode,
         plugins: [
-            // pending https://github.com/sveltejs/svelte/issues/2377
             dev && new webpack.HotModuleReplacementPlugin(),
             new webpack.DefinePlugin({
                 'process.browser': true,
@@ -83,12 +83,12 @@ module.exports = {
                 {
                     test: /\.(svelte|html)$/,
                     use: {
-                        loader: 'svelte-loader',
+                        loader: 'svelte-loader-hot',
                         options: {
-                            preprocess,
                             css: false,
                             generate: 'ssr',
                             dev,
+                            preprocess,
                         },
                     },
                 },

@@ -1,12 +1,8 @@
 {
-  "name": "@nipin/melte",
-  "description": "personal collection of styles and view components for svelte",
-  "version": "0.0.1",
-  "private": false,
-  "files": [
-    "src/**/*.js"
-  ],
-  "dependencies": {
-    "highlight.js": "^9.15.10"
-  }
+    "name": "@nipin/melte",
+    "description": "personal collection of styles and view components for svelte",
+    "version": "0.0.1",
+    "files": [
+        "src/**/*.js"
+    ]
 }
