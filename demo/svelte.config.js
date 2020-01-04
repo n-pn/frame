@@ -9,16 +9,20 @@ module.exports = {
             const { type, lang } = attributes
             if (type !== 'text/scss' && lang !== 'scss') return
 
-            // const prepend_content = '@import "helpers";\n'
-            // content = prepend_content + content
+            const prepend_content = '@import "helpers";\n'
+            content = prepend_content + content
 
             const options = {
                 data: content,
                 sourceMap: true,
                 includePaths: [
                     path.dirname(filename),
-                    path.resolve(__dirname, 'node_modules'),
-                    path.resolve(__dirname, 'src/stylesheets'),
+                    path.resolve(
+                        __dirname,
+                        'node_modules',
+                        '@nipin/melte',
+                        'src/stylesheets'
+                    ),
                 ],
                 outFile: filename + '.css',
             }
