@@ -1,13 +1,17 @@
-@mixin button-size($size, $font-size) {
+$-feat-button: true !default;
+$-button-sizes: tiny, small, medium, large, huge !default;
+$-button-styles: text, line, solid, raise;
+
+@mixin -button-size($size, $font-size) {
     @include height($size);
     @include font-size($font-size);
 
-    &._icon {
+    &.-icon {
         width: $size;
     }
 }
 
-@mixin button-color-fill($color) {
+@mixin -button-fill-color($color) {
     @include color(white);
     @include bgcolor($color, 5);
 
@@ -16,7 +20,7 @@
     }
 }
 
-@mixin button-color-line($color) {
+@mixin -button-line-color($color) {
     background: transparent;
     @include color($color, 6);
     @include bdcolor($color, 4);
@@ -36,70 +40,72 @@
 
 @mixin button-color($color: neutral) {
     &,
-    &._fill,
-    &._rise {
-        @include button-color-fill($color);
+    &.-fill,
+    &.-rise {
+        @include -button-fill-color($color);
     }
 
-    &._line {
-        @include button-color-line($color);
+    &.-line {
+        @include -button-line-color($color);
     }
 
-    &._text {
+    &.-text {
         @include button-color-text($color);
     }
 }
 
-.m-btn {
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: 500;
-    @include corner(md);
-    @include border(transparent, 1px);
+@if $-feat-button {
+    .m-button {
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: 500;
+        @include corner(md);
+        @include border(transparent, 1px);
+    }
 }
 
 // button sizes
 
-.m-btn {
-    &._tiny {
-        @include button-size(1.25rem, xs);
+.m-button {
+    &.-tiny {
+        @include -button-size(1.25rem, xs);
     }
 
-    &._small {
-        @include button-size(1.5rem, sx);
+    &.-small {
+        @include -button-size(1.5rem, sx);
     }
 
     &,
-    &._medium {
-        @include button-size(2rem, sm);
+    &.-medium {
+        @include -button-size(2rem, sm);
     }
 
-    &._large {
-        @include button-size(2.5rem, md);
+    &.-large {
+        @include -button-size(2.5rem, md);
     }
 
-    &._huge {
-        @include button-size(3rem, lg);
+    &.-huge {
+        @include -button-size(3rem, lg);
     }
 }
 
 // button widths
 
-.m-btn {
+.m-button {
     &,
-    &._normal {
+    &.-normal {
         padding: 0 1em;
     }
 
-    &._narrow {
+    &.-narrow {
         padding: 0 0.5em;
     }
 
-    &._widely {
+    &.-widely {
         padding: 0 1.5em;
     }
 
-    &._block {
+    &.-block {
         display: block;
         width: 100%;
     }
@@ -107,24 +113,24 @@
 
 // button styles
 
-.m-btn {
-    &._icon {
+.m-button {
+    &.-icon {
         @include corner(9999px);
         padding: 0;
     }
 
-    &._rise {
+    &.-rise {
         // @include shadow(md);
         box-shadow: 0 3px 6px rgba(#000, 0.1), 0 1px 2px rgba(#000, 0.2);
     }
 
     &,
-    &._default {
+    &.-default {
         @include button-color(neutral);
 
         &,
-        &._fill,
-        &._rise {
+        &.-fill,
+        &.-rise {
             @include color(neutral, 7);
             @include bgcolor(neutral, 2);
             @include hover {
@@ -134,59 +140,59 @@
         }
     }
 
-    &._primary {
+    &.-primary {
         @include button-color(primary);
     }
 
-    &._success {
+    &.-success {
         @include button-color(success);
     }
 
-    &._harmful {
+    &.-harmful {
         @include button-color(harmful);
     }
 
-    &._gray {
+    &.-gray {
         @include button-color(gray);
     }
 
-    &._red {
+    &.-red {
         @include button-color(red);
     }
 
-    &._orange {
+    &.-orange {
         @include button-color(orange);
     }
 
-    &._yellow {
+    &.-yellow {
         @include button-color(yellow);
     }
 
-    &._green {
+    &.-green {
         @include button-color(green);
     }
 
-    &._teal {
+    &.-teal {
         @include button-color(teal);
     }
 
-    &._blue {
+    &.-blue {
         @include button-color(blue);
     }
 
-    &._indigo {
+    &.-indigo {
         @include button-color(indigo);
     }
 
-    &._purple {
+    &.-purple {
         @include button-color(purple);
     }
 
-    &._pink {
+    &.-pink {
         @include button-color(pink);
     }
 
-    &._disable,
+    &.-disable,
     &[disabled] {
         @include color(neutral, 5);
         @include bgcolor(neutral, 2);

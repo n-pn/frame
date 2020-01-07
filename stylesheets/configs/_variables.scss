@@ -1,0 +1,206 @@
+/// colors
+
+// color pallete
+$-color-white: #fff !default;
+$-color-black: #000 !default;
+$-color-gray: (
+    1: #f7fafc,
+    2: #edf2f7,
+    3: #e2e8f0,
+    4: #cbd5e0,
+    5: #a0aec0,
+    6: #718096,
+    7: #4a5568,
+    8: #2d3748,
+    9: #1a202c,
+) !default;
+$-color-red: (
+    1: #fff5f5,
+    2: #fed7d7,
+    3: #feb2b2,
+    4: #fc8181,
+    5: #f56565,
+    6: #e53e3e,
+    7: #c53030,
+    8: #9b2c2c,
+    9: #742a2a,
+) !default;
+$-color-orange: (
+    1: #fffaf0,
+    2: #feebc8,
+    3: #fbd38d,
+    4: #f6ad55,
+    5: #ed8936,
+    6: #dd6b20,
+    7: #c05621,
+    8: #9c4221,
+    9: #7b341e,
+) !default;
+$-color-yellow: (
+    1: #fffff0,
+    2: #fefcbf,
+    3: #faf089,
+    4: #f6e05e,
+    5: #ecc94b,
+    6: #d69e2e,
+    7: #b7791f,
+    8: #975a16,
+    9: #744210,
+) !default;
+$-color-green: (
+    1: #f0fff4,
+    2: #c6f6d5,
+    3: #9ae6b4,
+    4: #68d391,
+    5: #48bb78,
+    6: #38a169,
+    7: #2f855a,
+    8: #276749,
+    9: #22543d,
+) !default;
+$-color-teal: (
+    1: #e6fffa,
+    2: #b2f5ea,
+    3: #81e6d9,
+    4: #4fd1c5,
+    5: #38b2ac,
+    6: #319795,
+    7: #2c7a7b,
+    8: #285e61,
+    9: #234e52,
+) !default;
+$-color-blue: (
+    1: #ebf8ff,
+    2: #bee3f8,
+    3: #90cdf4,
+    4: #63b3ed,
+    5: #4299e1,
+    6: #3182ce,
+    7: #2b6cb0,
+    8: #2c5282,
+    9: #2a4365,
+) !default;
+$-color-indigo: (
+    1: #ebf4ff,
+    2: #c3dafe,
+    3: #a3bffa,
+    4: #7f9cf5,
+    5: #667eea,
+    6: #5a67d8,
+    7: #4c51bf,
+    8: #434190,
+    9: #3c366b,
+) !default;
+$-color-purple: (
+    1: #faf5ff,
+    2: #e9d8fd,
+    3: #d6bcfa,
+    4: #b794f4,
+    5: #9f7aea,
+    6: #805ad5,
+    7: #6b46c1,
+    8: #553c9a,
+    9: #44337a,
+) !default;
+$-color-pink: (
+    1: #fff5f7,
+    2: #fed7e2,
+    3: #fbb6ce,
+    4: #f687b3,
+    5: #ed64a6,
+    6: #d53f8c,
+    7: #b83280,
+    8: #97266d,
+    9: #702459,
+) !default;
+
+$-color-pallete: (
+    gray: $-color-gray,
+    red: $-color-red,
+    orange: $-color-orange,
+    yellow: $-color-yellow,
+    green: $-color-green,
+    teal: $-color-teal,
+    blue: $-color-blue,
+    indigo: $-color-indigo,
+    purple: $-color-purple,
+    pink: $-color-pink,
+) !default;
+
+$-color-aliases: (
+    neutral: gray,
+    primary: blue,
+    success: green,
+    warning: orange,
+    harmful: red,
+) !default;
+
+/// sizes
+
+// media screens
+
+$-screen-sp: 320px !default; // small phones like iphone 3 4 5
+$-screen-mp: 360px !default; // normal phone like android or iphone 6 7 8
+$-screen-lp: 480px !default; // large phablet like iphone 6+, galaxy note...
+$-screen-sm: 640px !default; // small tablet or phone landscape mode
+$-screen-md: 720px !default; // normal tablet
+$-screen-lg: 960px !default; // tablet in landscape mode or small laptop
+$-screen-xl: 1280px !default; // modern laptop or desktop monitor
+
+$-screen-min: $-screen-sp !default;
+$-screen-phone: $-screen-mp !default;
+$-screen-phablet: $-screen-lp !default;
+$-screen-tablet: $-screen-sm !default;
+$-screen-laptop: $-screen-lg !default;
+$-screen-desktop: $-screen-xl !default;
+
+// spacing
+
+$-sizes: 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 58, 64 !default;
+
+// border radius
+
+$-corner-sm: 0.125rem !default;
+$-corner-md: 0.25rem !default;
+$-corner-lg: 0.5rem !default;
+$-corner-pill: 9999px !default;
+
+// font sizes
+
+$-font-xs: 0.75rem !default;
+$-font-sm: 0.875rem !default;
+$-font-md: 1rem !default;
+$-font-lg: 1.125rem !default;
+$-font-xl: 1.25rem !default;
+$-font-x2: 1.5rem !default;
+$-font-x3: 1.875rem !default;
+$-font-x4: 2.25rem !default;
+$-font-x5: 3rem !default;
+$-font-x6: 4rem !default;
+
+/// fonts
+
+$-font-emoji: 'Apple Color Emoji', 'Noto Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol' !default;
+
+$-font-sans: Roboto, 'Noto Sans', 'Noto Sans CJK SC', -apple-system,
+    BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Arial, san-serif,
+    $font-emoji !default;
+
+$-font-narrow: 'Roboto Condensed', 'Noto Sans Condensed', $font-sans !default;
+$-font-serif: 'Noto Serif', 'Noto Serif CJK SC', Georgia, Cambria,
+    'Times New Roman', Times, serif !default;
+
+$-font-mono: Iosevka, 'Sarasa Mono SC', 'Noto Sans Mono CJK SC', Menlo, Monaco,
+    Consolas, 'Ubuntu Mono', 'Courier New', monospace !default;
+
+/// modules
+
+// buttons
+$-mod-button: true !default;
+
+$-button-sizes: tiny, small, medium, large, huge !default;
+$-button-styles: text, line, solid, raise;
+
+$-button-default-size: medium;
+$-button-default-style: solid;
