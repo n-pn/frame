@@ -9,7 +9,7 @@ const dev = mode === 'development'
 
 const alias = {
     svelte: path.resolve('node_modules', 'svelte'),
-    $melte: path.resolve(__dirname, 'node_modules/@nipin/melte/src/components'),
+    $melte: path.resolve(__dirname, 'node_modules/@nipin/melte/components'),
     $src: path.resolve(__dirname, 'src'),
     $cpn: path.resolve(__dirname, 'src/components'),
 }

@@ -17,12 +17,7 @@ module.exports = {
                 sourceMap: true,
                 includePaths: [
                     path.dirname(filename),
-                    path.resolve(
-                        __dirname,
-                        'node_modules',
-                        '@nipin/melte',
-                        'src/stylesheets'
-                    ),
+                    path.resolve(__dirname, '../stylesheets'),
                 ],
                 outFile: filename + '.css',
             }

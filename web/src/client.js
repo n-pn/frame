@@ -1,6 +1,6 @@
 import * as sapper from '@sapper/app'
 
-import '@nipin/melte/src/stylesheets/global.scss'
+import '@nipin/melte/stylesheets/global.scss'
 
 window._goto = sapper.goto
 
