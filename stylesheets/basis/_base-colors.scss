@@ -1,4 +1,4 @@
-/// color pallete
+/// color palette
 $-color-white: #fff !default;
 $-color-black: #000 !default;
 $-color-gray: (
@@ -112,7 +112,7 @@ $-color-pink: (
     9: #702459,
 ) !default;
 
-$-color-pallete: (
+$-color-palette: (
     -gray: $-color-gray,
     -red: $-color-red,
     -orange: $-color-orange,
@@ -133,20 +133,21 @@ $-color-aliases: (
     -harmful: -red
 ) !default;
 
+$-color-names: map-keys($color-palette), map-keys($-color-aliases);
+@debug $-color-names;
+
 // functions
 
 /// get color by name and tone
 @function color($name, $tone: 5) {
     // prettier-ignore
-    @if $name == none { @return transparent; }
+    @if type-of($name) == color { @return $name; }
     // prettier-ignore
-    @if $name == black { @return $-color-black; }
+    @if $name == -none { @return transparent; }
     // prettier-ignore
-    @if $name == white { @return $-color-white; }
-
-    @if type-of($name) == color {
-        @return $name;
-    }
+    @if $name == -black { @return $-color-black; }
+    // prettier-ignore
+    @if $name == -white { @return $-color-white; }
 
     @if map-has-key($-color-aliases, $name) {
         $name: map-get($-color-aliases, $name);

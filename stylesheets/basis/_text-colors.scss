@@ -1,0 +1,29 @@
+@import 'base-colors';
+
+// functions
+
+@mixin color($name: -neutral, $tone: 5) {
+    color: color($name, $tone);
+}
+
+// utils
+
+@if $-util-classes {
+    @each $name in (-none, -white, -black) {
+        .__t#{$name} {
+            color: color($name);
+        }
+    }
+
+    @each $name in $-color-names {
+        .__t#{$name} {
+            @include color($name);
+        }
+
+        @for $tone from 1 to 9 {
+            .__t#{$name}-#{$tone} {
+                @include color($name, $tone);
+            }
+        }
+    }
+}

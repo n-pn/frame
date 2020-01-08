@@ -9,7 +9,6 @@ $-screen-lg: 960px !default; // tablet in landscape mode or small laptop
 $-screen-xl: 1280px !default; // small laptop or desktop monitor
 $-screen-xxl: 1600px !default; // large laptop or desktop monitor
 
-$-screen-names: -sp, -mp, -lp, -sm, -md, -lg, -xl, -xxl;
 $-screen-sizes: (
     -sp: $-screen-sp,
     -mp: $-screen-mp,
@@ -19,7 +18,8 @@ $-screen-sizes: (
     -lg: $-screen-lg,
     -xl: $-screen-xl,
     -xxl: $-screen-xxl
-);
+) !default;
+$-screen-names: map-keys($-screen-names);
 
 // functions
 

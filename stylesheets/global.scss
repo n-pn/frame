@@ -1,22 +1,19 @@
 // overridable settings
 
 $-util-classes: true !default;
-@import 'helpers';
-
 $-normalize: true !default;
 $-typography: true !default;
-@import 'global/headings';
-@import 'global/lists';
-@import 'global/links';
-@import 'global/texts';
-@import 'global/tables';
-@import 'global/rulers';
-@import 'global/images';
-@import 'global/blockquotes';
-@import 'global/pre_code_kbd';
-@import 'global/code_highlight';
+$-object-classes: true !default;
+$-button-objects: true !default;
 
-$-module-classes: true !default;
-$-button-classes: true !default;
+// imports
 
-@import 'modules/buttons';
+@import 'helpers';
+
+// generic
+@import 'generic/normalize';
+@import 'generic/foundation';
+@import 'generic/typography';
+
+// objects
+@import 'objects/buttons';
