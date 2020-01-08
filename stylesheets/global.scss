@@ -1,12 +1,10 @@
 // overridable settings
-$include-helper-classes: true !default;
 
+$-util-classes: true !default;
 @import 'helpers';
 
-@import 'global/reset';
-@import 'global/layout';
-@import 'global/selection';
-
+$-normalize: true !default;
+$-typography: true !default;
 @import 'global/headings';
 @import 'global/lists';
 @import 'global/links';
@@ -17,5 +15,8 @@ $include-helper-classes: true !default;
 @import 'global/blockquotes';
 @import 'global/pre_code_kbd';
 @import 'global/code_highlight';
+
+$-module-classes: true !default;
+$-button-classes: true !default;
 
 @import 'modules/buttons';

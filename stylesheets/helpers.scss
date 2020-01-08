@@ -1,13 +1,13 @@
-$include-helper-classes: false !default;
+@import 'configs/utils';
+@import 'configs/screens';
+@import 'configs/spacings';
+@import 'configs/sizings';
+@import 'configs/colors';
+@import 'configs/corners';
+@import 'configs/texts';
 
-@import 'helpers/base';
+@import 'helpers/font-families';
 
-@import 'helpers/sizing';
-@import 'helpers/coloring';
-
-@import 'helpers/screening';
-
-@import 'helpers/floating';
 @import 'helpers/hovering';
 @import 'helpers/resetting';
 

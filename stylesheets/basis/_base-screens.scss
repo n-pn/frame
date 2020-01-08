@@ -1,0 +1,75 @@
+// variables
+
+$-screen-sp: 320px !default; // small phones like iphone 3 4 5
+$-screen-mp: 360px !default; // normal phone like android or iphone 6 7 8
+$-screen-lp: 480px !default; // large phablet like iphone 6+, galaxy note...
+$-screen-sm: 640px !default; // small tablet or phone landscape mode
+$-screen-md: 720px !default; // normal tablet
+$-screen-lg: 960px !default; // tablet in landscape mode or small laptop
+$-screen-xl: 1280px !default; // small laptop or desktop monitor
+$-screen-xxl: 1600px !default; // large laptop or desktop monitor
+
+$-screen-names: -sp, -mp, -lp, -sm, -md, -lg, -xl, -xxl;
+$-screen-sizes: (
+    -sp: $-screen-sp,
+    -mp: $-screen-mp,
+    -lp: $-screen-lp,
+    -sm: $-screen-sm,
+    -md: $-screen-md,
+    -lg: $-screen-lg,
+    -xl: $-screen-xl,
+    -xxl: $-screen-xxl
+);
+
+// functions
+
+/// get screen size by aliases
+@function screen-size($name) {
+    @if type-of($name) == number {
+        @warn "custom screen size (#{$name}) is not recommended";
+        @return $name;
+    }
+
+    $size: map-get($-screen-sizes, $name);
+    // prettier-ignore
+    @if $size { @return $size; }
+
+    @warn "unknows screen name: '#{$name}', returning '#{$-screen-md}'";
+    @return $-screen-md;
+}
+
+// mixins
+/// media query for screen min
+@mixin screen-min($min: -sm) {
+    @if $min == null {
+        @content;
+    } @else {
+        $size-min: screen-size($min);
+        // prettier-ignore
+        @media screen and (min-width: $size-min) { @content; }
+    }
+}
+
+/// media query for screen max
+@mixin screen-max($max: -lg) {
+    @if $min == null {
+        @content;
+    } @else {
+        $size-max: screen-size($max) - 1px;
+        // prettier-ignore
+        @media screen and (max-width: $size-max) { @content; }
+    }
+}
+
+/// media query for screen from min to max
+@mixin screen-range($min, $max) {
+    @if $min == null {
+        @content;
+    } @else {
+        $size-min: screen-size($min);
+        $size-max: screen-size($max) - 1px;
+        @media screen and (min-width: $size-min) and (max-width: $size-max) {
+            @content;
+        }
+    }
+}

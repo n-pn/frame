@@ -1,6 +1,14 @@
-$-feat-button: true !default;
+// configs
+
+$-mod-button: true !default;
+
 $-button-sizes: tiny, small, medium, large, huge !default;
-$-button-styles: text, line, solid, raise;
+$-button-styles: text, line, solid, raise !default;
+
+$-button-default-size: medium !default;
+$-button-default-style: solid !default;
+
+// mixins
 
 @mixin -button-size($size, $font-size) {
     @include height($size);

@@ -7,7 +7,7 @@ $shadow-xxl: 0 25px 50px -12px rgba(#000, 0.25) !default;
 $shadow-inner: inset 0 2px 4px 0 rgba(#000, 0.06) !default;
 $shadow-outline: 0 0 0 3px rgba(#4299e1, 0.5) !default;
 
-@function shadow($type) {
+@function sd($type) {
     @if $type == xs {
         @return $shadow-xs;
     } @else if $type == sm {

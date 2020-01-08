@@ -1,12 +1,12 @@
 /// blockquotes
 
-$blockquote-pad: 0.75rem !default;
+$blockquote-gutter: 0.75rem !default;
 $blockquote-color: color(primary, 5) !default;
 $blockquote-border: 0.25rem !default;
 $blockquote-bgcolor: rgba($blockquote-color, 0.15) !default;
 
 blockquote {
-    padding: $blockquote-pad;
+    padding: $blockquote-gutter;
 
     // @include corner(md);
     // @include color(neutral, 7);
