@@ -113,24 +113,24 @@ $-color-pink: (
 ) !default;
 
 $-color-palette: (
-    -gray: $-color-gray,
-    -red: $-color-red,
-    -orange: $-color-orange,
-    -yellow: $-color-yellow,
-    -green: $-color-green,
-    -teal: $-color-teal,
-    -blue: $-color-blue,
-    -indigo: $-color-indigo,
-    -purple: $-color-purple,
-    -pink: $-color-pink
+    gray: $-color-gray,
+    red: $-color-red,
+    orange: $-color-orange,
+    yellow: $-color-yellow,
+    green: $-color-green,
+    teal: $-color-teal,
+    blue: $-color-blue,
+    indigo: $-color-indigo,
+    purple: $-color-purple,
+    pink: $-color-pink,
 ) !default;
 
 $-color-aliases: (
-    -neutral: -gray,
-    -primary: -blue,
-    -success: -green,
-    -warning: -orange,
-    -harmful: -red
+    neutral: gray,
+    primary: blue,
+    success: green,
+    warning: orange,
+    harmful: red,
 ) !default;
 
 $-color-names: map-keys($color-palette), map-keys($-color-aliases);
@@ -141,13 +141,13 @@ $-color-names: map-keys($color-palette), map-keys($-color-aliases);
 /// get color by name and tone
 @function color($name, $tone: 5) {
     // prettier-ignore
+    @if $name == none { @return transparent; }
+    // prettier-ignore
+    @if $name == black { @return $-color-black; }
+    // prettier-ignore
+    @if $name == white { @return $-color-white; }
+    // prettier-ignore
     @if type-of($name) == color { @return $name; }
-    // prettier-ignore
-    @if $name == -none { @return transparent; }
-    // prettier-ignore
-    @if $name == -black { @return $-color-black; }
-    // prettier-ignore
-    @if $name == -white { @return $-color-white; }
 
     @if map-has-key($-color-aliases, $name) {
         $name: map-get($-color-aliases, $name);
