@@ -1,7 +1,0 @@
-$selection-color: color(primary, 7) !default;
-$selection-bgcolor: bgcolor(primary, 2) !default;
-
-::selection {
-    color: $selection-color;
-    background-color: $selection-bgcolor;
-}

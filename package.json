@@ -3,6 +3,6 @@
     "description": "personal collection of styles and view components for svelte",
     "version": "0.0.1",
     "files": [
-        "src/**/*.js"
+        "src"
     ]
 }
