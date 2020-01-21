@@ -1,6 +1,6 @@
 import * as sapper from '@sapper/app'
 
-import 'mould/css/premade.scss'
+import '../../css/premade.scss'
 
 window._goto = sapper.goto
 
