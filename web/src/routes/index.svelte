@@ -3,10 +3,9 @@
 </style>
 
 <svelte:head>
-    <title>Melte</title>
+  <title>Mould</title>
 </svelte:head>
 
 <article>
-    <h1>Melte</h1>
-
+  <h1>Melte</h1>
 </article>

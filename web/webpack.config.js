@@ -8,10 +8,10 @@ const mode = process.env.NODE_ENV
 const dev = mode === 'development'
 
 const alias = {
-  svelte: path.resolve('node_modules', 'svelte'),
-  $melte: path.resolve(__dirname, 'node_modules/@nipin/melte/components'),
+  svelte: path.resolve(__dirname, 'node_modules', 'svelte'),
+  $mould: path.resolve(__dirname, 'node_modules', 'mould/lib'),
+  $common: path.resolve(__dirname, 'src/routes/_common'),
   $src: path.resolve(__dirname, 'src'),
-  $cpn: path.resolve(__dirname, 'src/components'),
 }
 
 const extensions = ['.mjs', '.js', '.json', '.svelte', '.html']

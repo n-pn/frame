@@ -1,178 +1,119 @@
 <script>
-    import MIcon from '$melte/MIcon.svelte'
+  import MIcon from '$mould/MIcon.svelte'
+  import MButton from '$mould/MButton.svelte'
 
-    const colors = [
-        'gray',
-        'red',
-        'orange',
-        'yellow',
-        'green',
-        'teal',
-        'blue',
-        'indigo',
-        'purple',
-        'pink',
-    ]
-    const styles = ['text', 'line', 'fill', 'rise']
-    const sizes = ['tiny', 'small', 'medium', 'large', 'huge']
-    // your script goes here
+  const colors = [
+    'gray',
+    'red',
+    'orange',
+    'yellow',
+    'green',
+    'teal',
+    'blue',
+    'indigo',
+    'purple',
+    'pink',
+  ]
+  const styles = ['text', 'line', 'solid', 'raise']
+  const sizes = ['tiny', 'small', 'medium', 'large', 'huge']
+  const variants = [
+    'default',
+    'primary',
+    'success',
+    'warning',
+    'harmful',
+    'disable',
+  ]
 </script>
 
-<style lang="scss" scope="global">
-    .button-list {
-        // display: block;
-        display: flex;
-        // justify-content: space-around;
+<style type="text/scss">
+  .button-list {
+    // display: block;
+    display: flex;
+    // justify-content: space-around;
 
-        > .button-group {
-            margin: 1rem;
-        }
-
-        .m-button + .m-button {
-            margin-left: 1rem;
-        }
-
-        &.-color .m-button {
-            width: 6rem;
-        }
+    &._color :global(.m-button) {
+      width: 6rem;
     }
+  }
 
-    // button groups
-    .button-group {
-        display: inline-flex;
-        margin-bottom: 1rem;
-        margin-right: 1rem;
-
-        &.-block {
-            display: flex;
-            width: 100%;
-        }
-
-        .m-button {
-            flex: 1;
-            @include corner(0);
-
-            // prettier-ignore
-            & + & { margin-left: -1px; }
-            // prettier-ignore
-            &:first-child { @include corner-left(md); }
-            // prettier-ignore
-            &:last-child { @include corner-right(md); }
-        }
-    }
+  :global(.m-button + .m-button) {
+    margin-left: 1rem;
+  }
 </style>
 
-<article>
-    <h1>Buttons</h1>
+<svelte:head>
+  <title>Buttons - Molds</title>
+</svelte:head>
 
-    <hr />
+<article class="m-article">
+  <h1>Buttons</h1>
 
-    <h2>Button sizes</h2>
+  <h2>Sizes</h2>
 
-    <div class="button-list">
-        {#each sizes as size}
-            <button class="m-button -{size}">{size}</button>
-        {/each}
-    </div>
+  <div class="button-list">
+    {#each sizes as size}
+      <MButton class="_{size}" text={size + ' button'} />
+    {/each}
+  </div>
 
-    <hr />
+  <h2>Widths</h2>
 
-    <h2>Button widths</h2>
+  <div class="button-list">
+    <MButton class="_narrow _line" text="Narrow button" />
+    <MButton class="_normal _success _solid" text="Normal button" />
+    <MButton class="_widely _disable _raise _pill" text="Widely button" />
+  </div>
 
-    <div class="button-list">
-        <button class="m-button -narrow">Narrow button</button>
-        <button class="m-button -normal">Normal button</button>
-        <button class="m-button -widely">Widely button</button>
-    </div>
+  <div class="button-list">
+    <MButton class="_block _raise _large _primary" text="Block button" />
+  </div>
 
-    <div class="button-list">
-        <button class="m-button -block">Button block</button>
-    </div>
+  <h2>Styles</h2>
 
-    <hr />
-
-    <h2>Button styles</h2>
-
-    <div class="button-list">
-        <button class="m-button -icon">
-            <MIcon />
-        </button>
-        {#each styles as style}
-            <button class="m-button -{style}">{style}</button>
-        {/each}
-    </div>
-
-    <hr />
-
-    <h2>Button variants</h2>
-
+  <div class="button-list">
     {#each styles as style}
-        <div class="button-list">
-            <button class="m-button -{style} -default">Default</button>
-            <button class="m-button -{style} -primary">Primary</button>
-            <button class="m-button -{style} -success">Success</button>
-            <button class="m-button -{style} -harmful">Harmful</button>
-            <button class="m-button -{style} -disable">Disable</button>
-            <a href="/" class="m-button -{style}">Link</a>
-        </div>
+      <button class="m-button _{style} _primary">
+        <span>{style}</span>
+      </button>
     {/each}
+  </div>
 
-    <hr />
+  <h2>Icons</h2>
 
-    <h2>Button colors</h2>
+  <div class="button-list">
+    <MButton class="_pill" icon="feather" />
+    <MButton class="_widely _green" icon="circle" />
+    <MButton class="_harmful" icon="x" text="Close" />
+    <MButton class="_primary _raise" icon_right="arrow-right" text="Next" />
+    <MButton
+      class="_line"
+      icon="chevron-left"
+      icon_right="chevron-right"
+      text="Left and right" />
+  </div>
 
-    {#each colors as color}
-        <div class="button-list -color">
-            {#each styles as style}
-                <button class="m-button -{style} -{color}">{color}</button>
-            {/each}
-        </div>
-    {/each}
+  <h2>Variants</h2>
 
-    <hr />
-
-    <h2>Button layouts</h2>
-
-    <div class="button-group">
-        <button class="m-button -line">One</button>
-        <button class="m-button -line">Two</button>
-        <button class="m-button -line">Three</button>
+  {#each styles as style}
+    <div class="button-list">
+      {#each variants as variant}
+        <MButton class="_{style} _{variant}" text={variant} />
+      {/each}
+      <a href="/" class="m-button _{style}">
+        <span>Link</span>
+      </a>
     </div>
+  {/each}
 
-    <div class="button-group">
-        <button class="m-button -line -primary">One</button>
-        <button class="m-button -line -primary">Two</button>
-        <button class="m-button -line -primary">Three</button>
-    </div>
+  <h2>Colors</h2>
 
-    <div class="button-group">
-        <button class="m-button -line -harmful">One</button>
-        <button class="m-button -line -harmful">Two</button>
-        <button class="m-button -line -harmful">Three</button>
+  {#each colors as color}
+    <div class="button-list _color">
+      {#each styles as style}
+        <MButton class="_{style} _{color}" text={color} />
+      {/each}
     </div>
-
-    <div class="button-group">
-        <button class="m-button _fill">One</button>
-        <button class="m-button _fill">Two</button>
-        <button class="m-button _fill">Three</button>
-    </div>
-
-    <div class="button-group">
-        <button class="m-button _fill -primary">One</button>
-        <button class="m-button _fill -primary">Two</button>
-        <button class="m-button _fill -primary">Three</button>
-    </div>
-
-    <div class="button-group">
-        <button class="m-button _fill -harmful">One</button>
-        <button class="m-button _fill -harmful">Two</button>
-        <button class="m-button _fill -harmful">Three</button>
-    </div>
-
-    <div class="button-group -block">
-        <button class="m-button -line">Full</button>
-        <button class="m-button -line">Width</button>
-        <button class="m-button -line">Block</button>
-    </div>
+  {/each}
 
 </article>
