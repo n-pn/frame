@@ -1,8 +1,8 @@
 <script>
-  import MIcon from './MIcon.svelte'
+  import MIcon from './MIcon'
 
-  export let text
   export let icon
+  export let text
   export let right_icon
 </script>
 

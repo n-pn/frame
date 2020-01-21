@@ -35,9 +35,8 @@ $-button-style-df: solid !default;
 
   $padding: ($height - $line-height) / 2 - rem(1px);
   height: $height;
-  padding: $padding;
+  padding: 0 $padding;
   font-size: $line-height;
-  line-height: $line-height;
 
   span {
     font-size: $font-size;
@@ -102,29 +101,17 @@ $-button-style-df: solid !default;
 }
 
 .m-button {
-  display: inline-flex;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
   font-weight: 500;
   text-transform: uppercase;
   user-select: none;
 
   @include border-radius();
   @include border(all, 1px, transparent);
-
-  .m-icon {
-    // width: 1.25em;
-    // height: 1.25em;
-    // margin-top: -0.125em;
-    // vertical-align: middle;
-    vertical-align: top;
-    // padding-top: 0.125em;
-  }
-  // span {
-  //     font-size: 85%;
-  //     // vertical-align: baseline;
-  // }
-
-  // button sizes
 
   @include button-sizing($-button-size-df);
 

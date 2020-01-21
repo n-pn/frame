@@ -28,7 +28,6 @@
 
 <style type="text/scss">
   .button-list {
-    // display: block;
     display: flex;
     // justify-content: space-around;
 
@@ -84,7 +83,7 @@
   <div class="button-list">
     <MButton class="_pill" icon="feather" />
     <MButton class="_widely _green" icon="circle" />
-    <MButton class="_harmful" icon="x" text="Close" />
+    <MButton class="_harmful _line" icon="x" text="Close" />
     <MButton class="_primary _raise" right_icon="arrow-right" text="Next" />
     <MButton
       class="_line"
