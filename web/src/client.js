@@ -1,10 +1,9 @@
 import * as sapper from '@sapper/app'
 
-import '@nipin/molds/scss/generic.scss'
-import '@nipin/molds/scss/premade.scss'
+import 'mould/css/premade.scss'
 
 window._goto = sapper.goto
 
 sapper.start({
-    target: document.querySelector('#sapper'),
+  target: document.querySelector('#sapper'),
 })

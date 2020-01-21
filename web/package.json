@@ -1,31 +1,38 @@
 {
-    "name": "@nipin/melte-demo",
-    "description": "showcase for melte",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "dev": "sapper dev",
-        "build": "sapper build",
-        "export": "sapper export",
-        "start": "node __sapper__/build"
-    },
-    "dependencies": {
-        "compression": "^1.7.4",
-        "highlight.js": "^9.17.1",
-        "polka": "next",
-        "sirv": "^0.4.0"
-    },
-    "devDependencies": {
-        "@nipin/molds": "https://github.com/nipinium/molds",
-        "@nipin/melds": "file:..",
-        "css-loader": "^3.4.1",
-        "feather-icons": "^4.24.1",
-        "mini-css-extract-plugin": "^0.9.0",
-        "node-sass": "^4.13.0",
-        "sapper": "^0.27.0",
-        "sass-loader": "^8.0.0",
-        "svelte": "^3.0.0",
-        "svelte-loader-hot": "^0.1.1",
-        "webpack": "^4.41.5"
-    }
+  "name": "@nipin/melte-demo",
+  "description": "showcase for melte",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "sapper dev",
+    "build": "sapper build",
+    "export": "sapper export",
+    "start": "node __sapper__/build"
+  },
+  "dependencies": {
+    "highlight.js": "^9.17.1",
+    "polka": "next",
+    "sirv": "^0.4.0"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.0.5",
+    "autoprefixer": "^9.7.4",
+    "compression": "^1.7.4",
+    "css-loader": "^3.4.1",
+    "cssnano": "^4.1.10",
+    "feather-icons": "^4.24.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "mould": "file:..",
+    "node-sass": "^4.13.0",
+    "postcss-loader": "^3.0.0",
+    "sapper": "^0.27.0",
+    "sass-loader": "^8.0.0",
+    "svelte": "^3.0.0",
+    "svelte-loader-hot": "^0.1.1",
+    "webpack": "^4.41.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }

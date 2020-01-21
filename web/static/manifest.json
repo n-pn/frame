@@ -1,8 +1,8 @@
 {
   "background_color": "#F7FAFC",
   "theme_color": "#ffffff",
-  "name": "Melte",
-  "short_name": "Melte",
+  "name": "Mould UI",
+  "short_name": "Mould",
   "display": "minimal-ui",
   "start_url": "/",
   "icons": [

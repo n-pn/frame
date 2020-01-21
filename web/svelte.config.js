@@ -2,36 +2,36 @@ const path = require('path')
 const sass = require('node-sass')
 
 module.exports = {
-    preprocess: {
-        style: async ({ content, attributes, filename }) => {
-            if (content.length === 0) return { code: content }
+  preprocess: {
+    style: async ({ content, attributes, filename }) => {
+      if (content.length === 0) return { code: content }
 
-            const { type, lang } = attributes
-            if (type !== 'text/scss' && lang !== 'scss') return
+      const { type, lang } = attributes
+      if (type !== 'text/scss' && lang !== 'scss') return
 
-            const prepend_content = '@import "helpers";\n'
-            content = prepend_content + content
+      const prepend = '@import "mould/css/essence";\n'
+      const data = prepend + content
 
-            const options = {
-                data: content,
-                sourceMap: true,
-                includePaths: [
-                    path.dirname(filename),
-                    path.resolve(__dirname, '../stylesheets'),
-                ],
-                outFile: filename + '.css',
-            }
+      const options = {
+        data,
+        sourceMap: true,
+        includePaths: [
+          path.dirname(filename),
+          path.resolve(__dirname, 'styles'),
+        ],
+        outFile: filename + '.css',
+      }
 
-            return new Promise((resolve, reject) => {
-                sass.render(options, (err, result) => {
-                    if (err) return reject(err)
-                    resolve({
-                        code: result.css.toString(),
-                        map: result.map.toString(),
-                        dependencies: result.stats.includedFiles,
-                    })
-                })
-            })
-        },
+      return new Promise((resolve, reject) => {
+        sass.render(options, (err, result) => {
+          if (err) return reject(err)
+          resolve({
+            code: result.css.toString(),
+            map: result.map.toString(),
+            dependencies: result.stats.includedFiles,
+          })
+        })
+      })
     },
+  },
 }
