@@ -1,6 +1,6 @@
 <script context="module">
   export function preload({ params, query }) {
-    return this.fetch(`examples.json`)
+    return this.fetch(`posts.json`)
       .then(r => r.json())
       .then(posts => {
         return { posts }
@@ -20,7 +20,7 @@
 </style>
 
 <svelte:head>
-  <title>Examples - Mould</title>
+  <title>Posts - Mould</title>
 </svelte:head>
 
 <article class="m-article">
@@ -29,7 +29,7 @@
   <ul>
     {#each posts as post}
       <li>
-        <a rel="prefetch" href="examples/{post.slug}">{post.title}</a>
+        <a rel="prefetch" href="posts/{post.slug}">{post.title}</a>
       </li>
     {/each}
   </ul>

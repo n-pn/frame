@@ -1,5 +1,5 @@
 <script context="module">
-  import posts from '../examples/_posts.js'
+  import posts from '../posts/_posts.js'
 </script>
 
 <script>
@@ -97,6 +97,6 @@
 
   <h3>Examples</h3>
   {#each posts as post}
-    <a class="link" rel="prefetch" href="examples/{post.slug}">{post.title}</a>
+    <a class="link" rel="prefetch" href="posts/{post.slug}">{post.title}</a>
   {/each}
 </nav>
