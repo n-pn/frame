@@ -1,6 +1,6 @@
 {
-  "name": "@nipin/melte-demo",
-  "description": "showcase for melte",
+  "name": "mould-web",
+  "description": "website + showcase",
   "version": "0.0.1",
   "private": true,
   "scripts": {
