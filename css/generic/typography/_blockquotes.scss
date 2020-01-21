@@ -1,0 +1,19 @@
+/// blockquotes
+
+$blockquote-gutter: rem(3bs) !default;
+$blockquote-color: color(neutral, 6) !default;
+$blockquote-border: rem(1bs) !default;
+$blockquote-bgcolor: rgba($blockquote-color, 0.05) !default;
+
+blockquote {
+  padding: $blockquote-gutter;
+  color: $blockquote-color;
+
+  @include border-radius();
+  @include border(left, $width: $blockquote-border, $color: $blockquote-color);
+  background-color: $blockquote-bgcolor;
+
+  > * + * {
+    margin-top: $blockquote-gutter;
+  }
+}

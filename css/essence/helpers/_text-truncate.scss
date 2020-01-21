@@ -1,0 +1,9 @@
+// Text truncate
+// Requires inline-block or block for proper styling
+
+@mixin truncate($width: 100%) {
+  width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

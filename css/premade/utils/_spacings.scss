@@ -1,0 +1,37 @@
+$-spacing-sizes: (0, 1bs, 2bs, 3bs, 4bs, 5bs, 6bs, 8bs, 10bs) !default;
+$-spacing-sides: join($-side-edges, $-side-flanks) !default;
+
+@each $size in $-spacing-sizes {
+  $base: strip-unit($size);
+
+  .u-m-#{$base} {
+    @include margin($size);
+  }
+  .u-p-#{$base} {
+    @include padding($size);
+  }
+
+  @each $side in $-spacing-sides {
+    $attr: side-abbr($side);
+
+    .u-m#{$attr}-#{$base} {
+      @include margin($size, $side);
+    }
+    .u-p#{$attr}-#{$base} {
+      @include padding($size, $side);
+    }
+
+    @each $screen in $-screen-names {
+      .u-m#{$attr}-#{$base}-#{$screen} {
+        @include screen-min($screen) {
+          @include margin($size, $side);
+        }
+      }
+      .u-p#{$attr}-#{$base}-#{$screen} {
+        @include screen-min($screen) {
+          @include padding($size, $side);
+        }
+      }
+    }
+  }
+}

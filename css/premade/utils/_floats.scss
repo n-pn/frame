@@ -1,0 +1,11 @@
+// clearfix
+
+.u-cf {
+  @include clearfix;
+}
+.u-fl {
+  float: left;
+}
+.u-fr {
+  float: right;
+}

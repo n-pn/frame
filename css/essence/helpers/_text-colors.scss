@@ -1,0 +1,7 @@
+// set text color
+$-tc-name-df: neutral !default;
+$-tc-tone-df: 7 !default;
+
+@mixin color($name: $-tc-name-df, $tone: $-tc-tone-df) {
+  color: color($name, $tone);
+}

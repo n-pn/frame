@@ -1,8 +1,12 @@
 {
-    "name": "@nipin/melte",
-    "description": "personal collection of styles and view components for svelte",
-    "version": "0.0.1",
-    "files": [
-        "src"
-    ]
+  "name": "mould",
+  "author": "Nipinium",
+  "description": "reusable stylesheets and components for Svelte projects",
+  "version": "0.0.1",
+  "license": "MIT",
+  "files": [
+    "css",
+    "lib",
+    "files"
+  ]
 }

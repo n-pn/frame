@@ -1,0 +1,33 @@
+@mixin pos($type: null) {
+  @if $type == -s {
+    position: static;
+  } @else if $type == -a {
+    position: absolute;
+  } @else if $type == -r {
+    position: relative;
+  } @else if $type == -f {
+    position: fixed;
+  } @else if $type == -t {
+    position: sticky;
+  }
+}
+
+@mixin top($val: 0) {
+  top: size($val);
+}
+
+@mixin right($val: 0) {
+  right: size($val);
+}
+
+@mixin bottom($val: 0) {
+  bottom: size($val);
+}
+
+@mixin left($val: 0) {
+  left: size($val);
+}
+
+@mixin z-index($val) {
+  z-index: $val * 10;
+}

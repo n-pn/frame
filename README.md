@@ -1,71 +1,37 @@
-# Melte
+# Mould
 
-Personal collection of styles and view components for Svelte
+Personal collection of stylesheets and components for Svelte projects
 
 ## Install
 
-### Install package globally and insert content to project
-
-Install package globally:
-
 ```sh
-yarn global add https://github.com/nipinium/melte
+yarn add https://github.com/nipinium/mould
 ```
 
-Copy melte styles, components and assets to current folder:
+## Usage
 
-```sh
-melte
+### Stylesheets
 
-```
-
-Upgrade assets only (icon sprites, fonts...):
-
-```sh
-melte upgrade
-```
-
-### Install package locally and directly linking files
-
-Install package locally:
-
-```sh
-yarn add -D https://github.com/nipinium/melte
-```
-
-Insert melte styles, components and assets to current folder:
-
-```sh
-yarn exec melte
-```
-
-Upgrade assets only (icons, fonts...):
-
-```sh
-yarn exec melte upgrade
-```
-
-Directly linking files:
-
-for `svelte.config.js`:
+in `src/client.js`:
 
 ```js
-module.exports = require('melte/svelte.config)
+import 'mould/css/generic.scss'
+import 'mould/css/premade.scss'
 ```
 
-for `src/client.js`:
-
-```js
-import 'melte/src/styles/global.scss'
-```
-
-for svelte components:
+in svelte components:
 
 ```html
 <style lang="scss">
-  @import 'melte/src/styles/helpers';
+  @import 'mould/css/essence';
   /* your code here */
 </style>
+```
+
+### components
+
+```js
+import 'mould/lib/MButton.svelte'
 ```
 
 ## License

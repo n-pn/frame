@@ -1,0 +1,31 @@
+/// configs
+
+// helpers
+@mixin margin($size, $side: all, $screen: null) {
+  $spacing: rem($size);
+
+  @include screen-min($screen) {
+    // prettier-ignore
+    @if $side == all { margin: $spacing; }
+    @each $edge in $-side-edges {
+      // prettier-ignore
+      @if side-match($side, $edge) { margin-#{$edge}: $spacing; }
+    }
+  }
+}
+
+@mixin padding($size, $side: all, $screen: null) {
+  $spacing: rem($size);
+
+  @if $side == all {
+    // prettier-ignore
+    @include screen-min($screen) { padding: $spacing; }
+  }
+
+  @each $edge in $-side-edges {
+    @if side-match($side, $edge) {
+      // prettier-ignore
+      @include screen-min($screen) { padding-#{$edge}: $spacing; }
+    }
+  }
+}

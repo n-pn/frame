@@ -1,0 +1,211 @@
+// configs
+
+$-mod-button: true !default;
+
+$-button-sizes: tiny, small, medium, large, huge !default;
+$-button-styles: text, line, solid, raise !default;
+
+$-button-size-df: medium !default;
+$-button-style-df: solid !default;
+
+// mixins
+
+@mixin button-sizing($size: medium) {
+  $height: 2rem;
+  $line-height: font-size(md);
+  $font-size: font-size(sm);
+
+  @if $size == tiny {
+    $height: 1.25rem;
+    $line-height: font-size(xs);
+    $font-size: font-size(xxs);
+  } @else if $size == small {
+    $height: 1.5rem;
+    $line-height: font-size(sm);
+    $font-size: font-size(xs);
+  } @else if $size == large {
+    $height: 2.5rem;
+    $line-height: font-size(lg);
+    $font-size: font-size(md);
+  } @else if $size == huge {
+    $height: 3rem;
+    $line-height: font-size(x1);
+    $font-size: font-size(lg);
+  }
+
+  $padding: ($height - $line-height) / 2 - rem(1px);
+  height: $height;
+  padding: $padding;
+  font-size: $line-height;
+  line-height: $line-height;
+
+  span {
+    font-size: $font-size;
+  }
+}
+
+@mixin button-variant($style, $color) {
+}
+
+@mixin button-solid-color($color) {
+  $bgcolor: color($color, 5);
+  $bghover: color($color, 4);
+
+  color: #fff;
+  background-color: $bgcolor;
+
+  @include hover() {
+    background-color: $bghover;
+  }
+}
+
+@mixin button-line-color($name) {
+  $color: color($name, 6);
+  $hover: color($name, 1);
+  $bdcolor: color($name, 3);
+
+  background: transparent;
+  color: $color;
+  @include border-color($color: $bdcolor);
+
+  @include hover() {
+    background-color: $hover;
+  }
+}
+
+@mixin button-text-color($name) {
+  $color: color($name, 6);
+  $hover: color($name, 1);
+
+  background: transparent;
+  color: $color;
+
+  @include hover() {
+    background-color: $hover;
+  }
+}
+
+@mixin button-color($color: neutral) {
+  &,
+  &._solid,
+  &._raise {
+    @include button-solid-color($color);
+  }
+
+  &._line {
+    @include button-line-color($color);
+  }
+
+  &._text {
+    @include button-text-color($color);
+  }
+}
+
+.m-button {
+  display: inline-flex;
+  display: inline-block;
+  font-weight: 500;
+  text-transform: uppercase;
+  user-select: none;
+
+  @include border-radius();
+  @include border(all, 1px, transparent);
+
+  .m-icon {
+    // width: 1.25em;
+    // height: 1.25em;
+    // margin-top: -0.125em;
+    // vertical-align: middle;
+    vertical-align: top;
+    // padding-top: 0.125em;
+  }
+  // span {
+  //     font-size: 85%;
+  //     // vertical-align: baseline;
+  // }
+
+  // button sizes
+
+  @include button-sizing($-button-size-df);
+
+  @each $size in $-button-sizes {
+    &._#{$size} {
+      @include button-sizing($size);
+    }
+  }
+
+  // button widths
+
+  &._narrow {
+    @include padding(0.25em, left-right);
+  }
+
+  &._widely {
+    @include padding(1.25em, left-right);
+  }
+
+  &._block {
+    display: block;
+    width: 100%;
+  }
+
+  // button styles
+
+  &._pill {
+    border-radius: 1.5rem;
+  }
+
+  &._raise {
+    @include box-shadow(3);
+  }
+
+  & {
+    &,
+    &._solid,
+    &._raise {
+      @include color(neutral, 7);
+      @include bgcolor(neutral, 2);
+      @include hover {
+        @include bgcolor(neutral, 3);
+      }
+    }
+    &._line,
+    &._text {
+      background: none;
+      @include hover {
+        @include bgcolor(neutral, 1);
+      }
+    }
+    &._line {
+      border-color: color(neutral, 3);
+    }
+  }
+
+  @each $type in map-keys($-color-mapping) {
+    &._#{$type} {
+      @include button-color($type);
+    }
+  }
+
+  @each $type in map-keys($-color-palette) {
+    &._#{$type} {
+      @include button-color($type);
+    }
+  }
+
+  &._disable,
+  &[disabled] {
+    @include color(neutral, 4);
+
+    @include hover {
+      cursor: text;
+      @include bgcolor(none, 5);
+    }
+
+    &._solid,
+    &._raise {
+      @include color(neutral, 5);
+      @include bgcolor(neutral, 2);
+    }
+  }
+}
