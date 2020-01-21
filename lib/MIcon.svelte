@@ -1,8 +1,7 @@
 <script>
-  export let ico = 'circle'
-  export let set = 'feather'
+  export let name = 'circle'
 </script>
 
-<svg class="m-icon">
-  <use xlink:href="/{set}.svg#{ico}" />
+<svg class="m-icon _{name} {$$props.class}">
+  <use xlink:href="/feather.svg#{name}" />
 </svg>

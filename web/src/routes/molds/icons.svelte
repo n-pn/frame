@@ -56,7 +56,7 @@
     {#each icons as icon}
       <li class="item">
         <div class="view">
-          <MIcon ico={icon.name} />
+          <MIcon name={icon.name} />
         </div>
         <icon-name>{icon.name}</icon-name>
       </li>

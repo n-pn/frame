@@ -85,11 +85,11 @@
     <MButton class="_pill" icon="feather" />
     <MButton class="_widely _green" icon="circle" />
     <MButton class="_harmful" icon="x" text="Close" />
-    <MButton class="_primary _raise" icon_right="arrow-right" text="Next" />
+    <MButton class="_primary _raise" right_icon="arrow-right" text="Next" />
     <MButton
       class="_line"
       icon="chevron-left"
-      icon_right="chevron-right"
+      right_icon="chevron-right"
       text="Left and right" />
   </div>
 

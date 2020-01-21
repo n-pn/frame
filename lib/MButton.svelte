@@ -3,19 +3,19 @@
 
   export let text
   export let icon
-  export let icon_right
+  export let right_icon
 </script>
 
 <button class="m-button {$$props.class}">
   {#if icon}
-    <MIcon ico={icon} />
+    <MIcon name={icon} />
   {/if}
 
   {#if text}
     <span>{text}</span>
   {/if}
 
-  {#if icon_right}
-    <MIcon ico={icon_right} />
+  {#if right_icon}
+    <MIcon name={right_icon} />
   {/if}
 </button>
