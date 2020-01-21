@@ -1,0 +1,5 @@
+@each $key, $val in $-shadows {
+  .u-sd-#{$key} {
+    box-shadow: $val;
+  }
+}

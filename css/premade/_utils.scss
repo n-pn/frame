@@ -1,8 +1,9 @@
-@import 'utils/floats';
-@import 'utils/backgrounds';
-@import 'utils/borders';
-@import 'utils/spacings';
-@import 'utils/texts';
+@import 'utils/u-cf+u-fl+u-fr';
+@import 'utils/u-bg';
+@import 'utils/u-bd';
+@import 'utils/u-m+u-p';
+@import 'utils/u-sd';
+@import 'utils/u-t';
 
 $-font-names: map-keys($-font-families);
 
@@ -51,12 +52,5 @@ $-radius-sizes: (
     .u-rd-#{$key}-#{$abbr} {
       @include border-radius($side, $val);
     }
-  }
-}
-
-// classes
-@each $key, $val in $-shadows {
-  .u-sd-#{$key} {
-    box-shadow: $val;
   }
 }

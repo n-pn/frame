@@ -1,4 +1,11 @@
-// texts
+article > * + * {
+  margin-top: 1rem;
+}
+
+p {
+  margin: 0;
+  font-size: 1rem;
+}
 
 b,
 strong {
@@ -52,14 +59,6 @@ time,
 var {
   @include color(primary, 6);
 }
-
-/// paragraphs
-
-p {
-  font-size: 1rem;
-}
-
-/// miscs
 
 abbr[title],
 abbr[data-original-title] {

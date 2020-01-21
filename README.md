@@ -15,7 +15,6 @@ yarn add https://github.com/nipinium/mould
 in `src/client.js`:
 
 ```js
-import 'mould/css/generic.scss'
 import 'mould/css/premade.scss'
 ```
 
