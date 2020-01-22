@@ -26,19 +26,17 @@ ol {
     ol ol & { list-style-type: lower-alpha; }
 }
 
-$-li-marker-color: color(neutral, 6);
+$-marker-color: color(neutral, 6);
 
 // prettier-ignore
 li {
     margin: 0;
     padding: 0;
-    &::marker { color: $-li-marker-color; }
+    &::marker { color: $-marker-color; }
 
     li + & { margin-top: 0.5rem; }
     ul[class] &, li & { margin-top: 0; }
 }
-
-$-dt-color: color(neutral, 6) !default;
 
 // dl {
 //     display: block;
@@ -46,7 +44,7 @@ $-dt-color: color(neutral, 6) !default;
 
 // prettier-ignore
 dt {
-    color: $-dt-color;
+    color: $-marker-color;
     & ~ dt { margin-top: 0.5rem; }
     dt & { margin-top: 0; }
 }

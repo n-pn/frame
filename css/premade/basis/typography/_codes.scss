@@ -40,8 +40,9 @@ pre {
     display: block;
     overflow-x: auto;
     padding: 0.5em 1em;
-    color: #cbccc6;
-    background: #1f2430;
+    color: color(gray, 1);
+    background: color(gray, 8);
+    font-weight: normal;
     @include border-radius(0.25rem);
   }
 }
