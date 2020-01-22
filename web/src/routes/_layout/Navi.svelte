@@ -16,11 +16,15 @@
     position: fixed;
     width: 16rem;
     max-width: 100vw;
+    z-index: 999;
     top: 0;
-    left: 0;
     bottom: 0;
-
+    text-align: right;
     box-shadow: 2px 0 6px rgba(#000, 0.06);
+    left: -16rem;
+    @include screen-min(lg) {
+      left: 0;
+    }
     @include bgcolor(primary, 7);
   }
   a {
@@ -33,7 +37,8 @@
     text-transform: uppercase;
     font-weight: 300;
     // text-align: center;
-    @include font-size(x2);
+    @include font-size(x3);
+    letter-spacing: 0.1em;
     // margin: 0 0.375rem;
     padding: 0 0.75rem;
     line-height: 4rem;
@@ -67,10 +72,12 @@
   h3 {
     display: block;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
     font-size: rem(14px);
+    line-height: 1.5rem;
     font-weight: 400;
-    padding: 0.25rem 1rem;
-    // margin-top: 0.5rem;
+    padding: 0 1rem;
+    margin-top: 0.5rem;
     @include color(neutral, 4);
   }
 </style>
@@ -80,8 +87,8 @@
 
   <h3>Foundation</h3>
 
-  <a class="link" href="bases/typography">Typography</a>
-  <a class="link" href="bases/cheatsheet">Cheatsheet</a>
+  <a class="link" href="basis/typography">Typography</a>
+  <a class="link" href="basis/cheatsheet">Cheatsheet</a>
 
   <h3>Components</h3>
   <a class="link" href="molds/icons">Icons</a>

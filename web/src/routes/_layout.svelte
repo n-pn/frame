@@ -4,15 +4,22 @@
   export let segment
 </script>
 
-<style>
+<style lang="scss">
   :global(#sapper) {
     height: 100%;
+    @include screen-min(lg) {
+      margin-left: 16rem;
+    }
   }
 
   main {
-    max-width: 45rem;
+    width: 50rem;
+    max-width: 100%;
     padding: 1.5rem;
-    margin-left: 16rem;
+    margin: 0 auto;
+    @include screen-min(xl) {
+      margin-left: 0;
+    }
   }
 </style>
 

@@ -29,15 +29,18 @@
 <style type="text/scss">
   .button-list {
     display: flex;
-    // justify-content: space-around;
+    flex-wrap: wrap;
 
     &._color :global(.m-button) {
       width: 6rem;
     }
   }
 
-  :global(.m-button + .m-button) {
-    margin-left: 1rem;
+  :global(.m-button) {
+    margin-top: 0.5rem;
+    & + & {
+      margin-left: 0.5rem;
+    }
   }
 </style>
 

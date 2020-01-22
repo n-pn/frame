@@ -12,34 +12,34 @@ $-button-style-df: solid !default;
 
 @mixin button-sizing($size: medium) {
   $height: 2rem;
-  $line-height: font-size(md);
-  $font-size: font-size(sm);
+  $icon-size: font-size(md);
+  $text-size: font-size(sm);
 
   @if $size == tiny {
     $height: 1.25rem;
-    $line-height: font-size(xs);
-    $font-size: font-size(xxs);
+    $icon-size: font-size(xs);
+    $text-size: font-size(xxs);
   } @else if $size == small {
     $height: 1.5rem;
-    $line-height: font-size(sm);
-    $font-size: font-size(xs);
+    $icon-size: font-size(sm);
+    $text-size: font-size(xs);
   } @else if $size == large {
     $height: 2.5rem;
-    $line-height: font-size(lg);
-    $font-size: font-size(md);
+    $icon-size: font-size(lg);
+    $text-size: font-size(md);
   } @else if $size == huge {
     $height: 3rem;
-    $line-height: font-size(x1);
-    $font-size: font-size(lg);
+    $icon-size: font-size(x1);
+    $text-size: font-size(lg);
   }
 
-  $padding: ($height - $line-height) / 2 - rem(1px);
+  $padding: ($height - $icon-size) / 2 - rem(1px);
   height: $height;
   padding: 0 $padding;
-  font-size: $line-height;
+  font-size: $icon-size;
 
   span {
-    font-size: $font-size;
+    font-size: $text-size;
   }
 }
 
@@ -104,11 +104,15 @@ $-button-style-df: solid !default;
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: auto;
   font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   user-select: none;
+
+  span {
+    @include truncate();
+  }
 
   @include border-radius();
   @include border(all, 1px, transparent);
@@ -132,7 +136,6 @@ $-button-style-df: solid !default;
   }
 
   &._block {
-    display: block;
     width: 100%;
   }
 
