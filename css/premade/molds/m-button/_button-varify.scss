@@ -6,8 +6,7 @@ $-button-theme-df: neutral !default;
 @mixin button-varify($style: solid, $theme: neutral) {
   @if $style == line {
     border-color: color(neutral, 3);
-    &:disabled,
-    &._disable {
+    &:disabled {
       border-color: color(neutral, 2);
     }
   } @else {
@@ -18,24 +17,22 @@ $-button-theme-df: neutral !default;
     @if $theme == neutral {
       @include color(neutral, 6);
       @include bgcolor(neutral, 2);
-      @include hover {
+      &:hover {
         @include bgcolor(neutral, 3);
       }
 
-      &:disabled,
-      &._disable {
+      &:disabled {
         @include color(neutral, 4);
         @include bgcolor(neutral, 2);
       }
     } @else {
       color: #fff;
       @include bgcolor($theme, 5);
-      @include hover {
+      &:hover {
         @include bgcolor($theme, 4);
       }
 
-      &:disabled,
-      &._disable {
+      &:disabled {
         @include bgcolor($theme, 3);
       }
     }
@@ -43,12 +40,11 @@ $-button-theme-df: neutral !default;
     @include color($theme, 5);
 
     background-color: transparent;
-    @include hover {
+    &:hover {
       background-color: color(neutral, 2);
     }
 
-    &:disabled,
-    &._disable {
+    &:disabled {
       @include color($theme, 3);
       background-color: transparent;
     }

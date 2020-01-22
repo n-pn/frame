@@ -2,7 +2,7 @@
 
 @mixin hoverable {
   // prettier-ignore
-  @media (hover: hover) { @content; }
+  @media (hover) { @content; }
 }
 
 @mixin not-hoverable {

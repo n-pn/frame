@@ -28,7 +28,7 @@
     }
   }
 
-  :global(.m-button) {
+  :global([m-button]) {
     margin-top: 0.5rem;
     & + & {
       margin-left: 0.5rem;

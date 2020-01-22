@@ -119,10 +119,8 @@ button,
 [type='submit'] {
   -webkit-appearance: button;
 
-  @include hover {
-    &:not(:disabled) {
-      cursor: pointer;
-    }
+  &:not(:disabled) {
+    cursor: pointer;
   }
 }
 

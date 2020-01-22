@@ -1,7 +1,7 @@
 @import 'm-button/button-sizing';
 @import 'm-button/button-varify';
 
-.m-button {
+[m-button] {
   // width: auto;
   user-select: none;
   display: inline-flex;
@@ -10,9 +10,8 @@
   @include border-radius();
   @include border(all, 1px, transparent);
 
-  &:disabled,
-  &._disable {
-    @include hover {
+  &:disabled {
+    &:hover {
       cursor: not-allowed;
     }
   }

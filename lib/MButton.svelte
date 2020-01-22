@@ -3,8 +3,8 @@
 </script>
 
 <button
-  class="m-button {$$props.class || ''}"
-  m-button={$$props['m-button']}
+  class={$$props.class}
+  m-button={$$props['m-button'] || ''}
   disabled={$$props.disabled}>
   {#if $$props.icon}
     <MIcon name={$$props.icon} />
