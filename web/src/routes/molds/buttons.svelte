@@ -32,7 +32,7 @@
     }
   }
 
-  @import 'premade/molds/m-button/button-styling';
+  @import 'premade/molds/m-button/button-varify';
 
   :global(.m-button) {
     margin-top: 0.5rem;
@@ -42,12 +42,12 @@
 
     @each $color in map-keys($-color-palette) {
       &._#{$color} {
-        @include button-styling(solid, $color);
+        @include button-varify(solid, $color);
       }
 
       @each $style in $-button-styles {
         &._#{$style}._#{$color} {
-          @include button-styling($style, $color);
+          @include button-varify($style, $color);
         }
       }
     }
@@ -83,14 +83,14 @@
 
   <div class="button-list">
     <MButton class="u-rd-x" icon="feather" />
-    <MButton class="_success u-p-4-lr" icon="circle" />
-    <MButton class="_harmful _line" icon="x" text="Close" />
+    <MButton class="_success u-p-8-lr" icon="circle" />
+    <MButton class="_harmful _line u-rd-8" icon="x" text="Close" />
     <MButton
-      class="_primary u-rd-6 u-p-4-lr"
+      class="_primary u-rd-x u-p-4-lr"
       right_icon="arrow-right"
       text="Next" />
     <MButton
-      class="_disable u-sd-4"
+      class="_disable u-sd-4 u-rd-0"
       icon="chevron-left"
       right_icon="chevron-right"
       text="Left and right" />

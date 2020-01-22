@@ -2,11 +2,10 @@
 @import 'm-button/button-varify';
 
 .m-button {
-  width: auto;
+  // width: auto;
   user-select: none;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+
   @include text-upper;
   @include border-radius();
   @include border(all, 1px, transparent);

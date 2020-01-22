@@ -10,11 +10,9 @@
   {#if icon}
     <MIcon name={icon} />
   {/if}
-
   {#if text}
     <span>{text}</span>
   {/if}
-
   {#if right_icon}
     <MIcon name={right_icon} />
   {/if}
