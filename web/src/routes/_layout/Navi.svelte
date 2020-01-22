@@ -14,14 +14,14 @@
 <style lang="scss">
   nav {
     position: fixed;
-    width: 16rem;
+    width: 25vw;
     max-width: 100vw;
     z-index: 999;
     top: 0;
     bottom: 0;
     text-align: right;
     box-shadow: 2px 0 6px rgba(#000, 0.06);
-    left: -16rem;
+    left: -25vw;
     @include screen-min(lg) {
       left: 0;
     }

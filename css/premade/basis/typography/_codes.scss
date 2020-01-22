@@ -10,18 +10,26 @@ code {
   padding: 0 0.25em;
   font-size: 85%;
   line-height: inherit;
+  font-weight: 600;
+  vertical-align: text-top;
   @include border-radius();
 }
 
 kbd {
-  @include color(neutral, 6);
+  // margin: -0.2em 0;
+  // display: inline-block;
+  @include color(primary, 5);
   @include border($color: color(neutral, 4));
   @include box-shadow(1);
 }
 
 code {
-  @include color(primary, 8);
+  // margin: 0 -0.2em;
+  @include color(primary, 5);
   @include bgcolor(primary, 1);
+  & + & {
+    margin-left: 0.4em;
+  }
 }
 
 pre {

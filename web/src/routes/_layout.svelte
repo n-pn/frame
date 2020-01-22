@@ -8,12 +8,12 @@
   :global(#sapper) {
     height: 100%;
     @include screen-min(lg) {
-      margin-left: 16rem;
+      margin-left: 25vw;
     }
   }
 
   main {
-    width: 50rem;
+    width: 48rem;
     max-width: 100%;
     padding: 1.5rem;
     margin: 0 auto;
