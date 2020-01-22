@@ -1,19 +1,18 @@
 <script>
   import MIcon from './MIcon'
-
-  export let icon
-  export let text
-  export let right_icon
 </script>
 
-<button class="m-button {$$props.class}">
-  {#if icon}
-    <MIcon name={icon} />
+<button
+  class="m-button {$$props.class || ''}"
+  m-button={$$props['m-button']}
+  disabled={$$props.disabled}>
+  {#if $$props.icon}
+    <MIcon name={$$props.icon} />
   {/if}
-  {#if text}
-    <span>{text}</span>
+  {#if $$props.text}
+    <span>{$$props.text}</span>
   {/if}
-  {#if right_icon}
-    <MIcon name={right_icon} />
+  {#if $$props['icon-right']}
+    <MIcon name={$$props['icon-right']} />
   {/if}
 </button>

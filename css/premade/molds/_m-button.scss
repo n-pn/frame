@@ -17,31 +17,32 @@
     }
   }
 
-  // sizings
-
   @include button-sizing($-button-size-df);
-  // prettier-ignore
-  @each $name in $-button-size-names {
-    &._#{$name} { @include button-sizing($name); }
-  }
-
-  // variants
-
   @include button-varify($-button-style-df, $-button-theme-df);
+}
 
-  @each $style in $-button-styles {
-    &._#{$style} {
-      @include button-varify($style, $-button-theme-df);
-    }
+// sizes
+
+@each $name in $-button-size-names {
+  [m-button~='#{$name}'] {
+    @include button-sizing($name);
   }
+}
 
-  @each $theme in $-button-themes {
-    &._#{$theme} {
-      @include button-varify($-button-style-df, $theme);
-    }
+// variants
+
+@each $style in $-button-styles {
+  [m-button~='#{$style}'] {
+    @include button-varify($style, $-button-theme-df);
+  }
+}
+
+@each $theme in $-button-themes {
+  [m-button~='#{$theme}'] {
+    @include button-varify($-button-style-df, $theme);
 
     @each $style in $-button-styles {
-      &._#{$style}._#{$theme} {
+      &[m-button~='#{$style}'] {
         @include button-varify($style, $theme);
       }
     }

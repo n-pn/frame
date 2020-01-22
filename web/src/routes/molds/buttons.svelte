@@ -26,27 +26,23 @@
     & + & {
       margin-top: 0;
     }
-
-    &._color :global(.m-button) {
-      width: 6rem;
-    }
   }
-
-  @import 'premade/molds/m-button/button-varify';
 
   :global(.m-button) {
     margin-top: 0.5rem;
     & + & {
       margin-left: 0.5rem;
     }
+  }
 
-    @each $color in map-keys($-color-palette) {
-      &._#{$color} {
-        @include button-varify(solid, $color);
-      }
+  @import 'premade/molds/m-button/button-varify';
+
+  @each $color in map-keys($-color-palette) {
+    :global([m-button~='#{$color}']) {
+      @include button-varify(solid, $color);
 
       @each $style in $-button-styles {
-        &._#{$style}._#{$color} {
+        &[m-button~='#{$style}'] {
           @include button-varify($style, $color);
         }
       }
@@ -65,7 +61,7 @@
 
   <div class="button-list">
     {#each sizes as size}
-      <MButton class="_{size}" text={size + ' button'} />
+      <MButton m-button={size} text={size + ' button'} />
     {/each}
   </div>
 
@@ -73,7 +69,7 @@
 
   <div class="button-list">
     {#each styles as style}
-      <button class="m-button _{style} _primary">
+      <button class="m-button" m-button="{style} primary">
         <span>{style}</span>
       </button>
     {/each}
@@ -83,16 +79,18 @@
 
   <div class="button-list">
     <MButton class="u-rd-x" icon="feather" />
-    <MButton class="_success u-p-8-lr" icon="circle" />
-    <MButton class="_harmful _line u-rd-8" icon="x" text="Close" />
+    <MButton class="u-p-8-lr" m-button="success" icon="circle" />
+    <MButton class="u-rd-8" m-button="harmful line" icon="x" text="Close" />
     <MButton
-      class="_primary u-rd-x u-p-4-lr"
-      right_icon="arrow-right"
+      class="u-rd-x u-p-4-lr"
+      m-button="primary"
+      icon-right="arrow-right"
       text="Next" />
     <MButton
-      class="_disable u-sd-4 u-rd-0"
+      class="u-sd-4 u-rd-0"
+      disabled
       icon="chevron-left"
-      right_icon="chevron-right"
+      icon-right="chevron-right"
       text="Left and right" />
   </div>
 
@@ -101,13 +99,13 @@
   {#each styles as style}
     <div class="button-list">
       {#each variants as variant}
-        <MButton class="_{style} _{variant}" text={variant} />
+        <MButton m-button="{style} {variant}" text={variant} />
       {/each}
     </div>
 
     <div class="button-list">
       {#each variants as variant}
-        <MButton class="_{style} _{variant} _disable" text={variant} />
+        <MButton m-button="{style} {variant}" disabled text={variant} />
       {/each}
     </div>
     <hr />
@@ -117,14 +115,14 @@
 
   <div class="button-list">
     {#each styles as style}
-      <a href="/" class="m-button _{style}">
+      <a href="/" class="m-button" m-button={style}>
         <span>Link</span>
       </a>
     {/each}
   </div>
   <div class="button-list">
     {#each styles as style}
-      <input type="button" class="m-button _{style}" value="input" />
+      <input type="button" class="m-button" m-button={style} value="input" />
     {/each}
   </div>
 
@@ -133,14 +131,14 @@
 
   <div class="button-list">
     {#each variants as variant}
-      <MButton class="_{variant} u-rd-x" text={variant} />
+      <MButton class="u-rd-x" m-button={variant} text={variant} />
     {/each}
   </div>
 
   <h3>With shadows:</h3>
   <div class="button-list">
     {#each variants as variant}
-      <MButton class="_{variant} u-sd-2" text={variant} />
+      <MButton class="u-sd-2" m-button={variant} text={variant} />
     {/each}
   </div>
 
@@ -152,7 +150,7 @@
   {#each styles as style}
     <div class="button-list">
       {#each colors as color}
-        <MButton class="_{style} _{color}" text={color} />
+        <MButton m-button="{style} {color}" text={color} />
       {/each}
     </div>
   {/each}
