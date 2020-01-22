@@ -1,17 +1,17 @@
 // headings
 $heading-color: color(neutral, 9) !default;
 
-$-h1-font-size: font-size(x3) !default;
+$-h1-font-size: font-size(7) !default;
 $-h1-line-height: 2.5rem !default;
-$-h2-font-size: font-size(x2) !default;
+$-h2-font-size: font-size(6) !default;
 $-h2-line-height: 2.25rem !default;
-$-h3-font-size: font-size(x1) !default;
+$-h3-font-size: font-size(5) !default;
 $-h3-line-height: 2rem !default;
-$-h4-font-size: font-size(lg) !default;
+$-h4-font-size: font-size(4) !default;
 $-h4-line-height: 1.75rem !default;
-$-h5-font-size: font-size(md) !default;
+$-h5-font-size: font-size(3) !default;
 $-h5-line-height: 1.5rem !default;
-$-h6-font-size: font-size(sm) !default;
+$-h6-font-size: font-size(2) !default;
 $-h6-line-height: 1.5rem !default;
 
 @mixin heading($font-size, $line-height: 1.5rem) {
@@ -34,19 +34,23 @@ h2 {
 h3 {
   @include heading($-h3-font-size, $-h3-line-height);
   font-weight: 500;
+  color: color(neutral, 8);
 }
 
 h4 {
   @include heading($-h4-font-size, $-h4-line-height);
   font-weight: 600;
+  color: color(neutral, 7);
 }
 
 h5 {
   @include heading($-h5-font-size, $-h5-line-height);
   font-weight: 700;
+  color: color(neutral, 7);
 }
 
 h6 {
   @include heading($-h6-font-size, $-h6-line-height);
   font-weight: 900;
+  color: color(neutral, 6);
 }

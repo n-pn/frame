@@ -12,13 +12,13 @@ strong {
 }
 
 small {
-  @include font-size(80%);
+  font-size: 80%;
 }
 
 sub,
 sup {
   position: relative;
-  @include font-size(75%);
+  font-size: 75%;
   line-height: 0;
   vertical-align: baseline;
 }

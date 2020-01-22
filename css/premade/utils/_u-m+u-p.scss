@@ -14,20 +14,20 @@ $-spacing-sides: join($-side-edges, $-side-flanks) !default;
   @each $side in $-spacing-sides {
     $attr: side-abbr($side);
 
-    .u-m#{$attr}-#{$base} {
+    .u-m-#{$base}-#{$attr} {
       @include margin($size, $side);
     }
-    .u-p#{$attr}-#{$base} {
+    .u-p-#{$base}-#{$attr} {
       @include padding($size, $side);
     }
 
     @each $screen in $-screen-names {
-      .u-m#{$attr}-#{$base}-#{$screen} {
+      .u-m-#{$base}-#{$attr}-#{$screen} {
         @include screen-min($screen) {
           @include margin($size, $side);
         }
       }
-      .u-p#{$attr}-#{$base}-#{$screen} {
+      .u-p-#{$base}-#{$attr}-#{$screen} {
         @include screen-min($screen) {
           @include padding($size, $side);
         }

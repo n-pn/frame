@@ -3,16 +3,13 @@
 $-font-emoji: 'Apple Color Emoji', 'Noto Color Emoji', 'Segoe UI Emoji',
   'Segoe UI Symbol' !default;
 
-$-font-sans: Roboto, 'Noto Sans', 'Noto Sans CJK SC', -apple-system,
-  BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Arial, san-serif !default;
+$-font-sans: Roboto, 'Noto Sans', 'Noto Sans CJK SC', 'san-serif' !default;
 
-$-font-mono: 'Sarasa Mono SC', 'Noto Sans Mono CJK SC', Menlo, Monaco, Consolas,
-  'Ubuntu Mono', 'Courier New', monospace !default;
+$-font-mono: 'Sarasa Mono SC', 'Noto Sans Mono CJK SC', monospace !default;
 
-$-font-serif: 'Noto Serif', 'Noto Serif CJK SC', Georgia, Cambria,
-  'Times New Roman', Times, serif !default;
+$-font-serif: 'Noto Serif', 'Noto Serif CJK SC', serif !default;
 
-$-font-narrow: 'Roboto Condensed', 'Noto Sans Condensed', san-serif !default;
+$-font-narrow: 'Roboto Condensed', 'Noto Sans Condensed', 'san-serif' !default;
 
 $-font-families: (
   sans: $-font-sans,

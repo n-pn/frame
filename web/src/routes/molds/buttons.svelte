@@ -14,32 +14,42 @@
     'purple',
     'pink',
   ]
-  const styles = ['text', 'line', 'solid', 'raise']
   const sizes = ['tiny', 'small', 'medium', 'large', 'huge']
-  const variants = [
-    'default',
-    'primary',
-    'success',
-    'warning',
-    'harmful',
-    'disable',
-  ]
+  const styles = ['text', 'line', 'solid']
+  const variants = ['default', 'primary', 'success', 'warning', 'harmful']
 </script>
 
 <style type="text/scss">
   .button-list {
     display: flex;
     flex-wrap: wrap;
+    & + & {
+      margin-top: 0;
+    }
 
     &._color :global(.m-button) {
       width: 6rem;
     }
   }
 
+  @import 'premade/molds/m-button/button-styling';
+
   :global(.m-button) {
     margin-top: 0.5rem;
     & + & {
       margin-left: 0.5rem;
+    }
+
+    @each $color in map-keys($-color-palette) {
+      &._#{$color} {
+        @include button-styling(solid, $color);
+      }
+
+      @each $style in $-button-styles {
+        &._#{$style}._#{$color} {
+          @include button-styling($style, $color);
+        }
+      }
     }
   }
 </style>
@@ -59,18 +69,6 @@
     {/each}
   </div>
 
-  <h2>Widths</h2>
-
-  <div class="button-list">
-    <MButton class="_narrow _line" text="Narrow button" />
-    <MButton class="_normal _success _solid" text="Normal button" />
-    <MButton class="_widely _disable _raise _pill" text="Widely button" />
-  </div>
-
-  <div class="button-list">
-    <MButton class="_block _raise _large _primary" text="Block button" />
-  </div>
-
   <h2>Styles</h2>
 
   <div class="button-list">
@@ -84,12 +82,15 @@
   <h2>Icons</h2>
 
   <div class="button-list">
-    <MButton class="_pill" icon="feather" />
-    <MButton class="_widely _green" icon="circle" />
+    <MButton class="u-rd-x" icon="feather" />
+    <MButton class="_success u-p-4-lr" icon="circle" />
     <MButton class="_harmful _line" icon="x" text="Close" />
-    <MButton class="_primary _raise" right_icon="arrow-right" text="Next" />
     <MButton
-      class="_line"
+      class="_primary u-rd-6 u-p-4-lr"
+      right_icon="arrow-right"
+      text="Next" />
+    <MButton
+      class="_disable u-sd-4"
       icon="chevron-left"
       right_icon="chevron-right"
       text="Left and right" />
@@ -102,17 +103,55 @@
       {#each variants as variant}
         <MButton class="_{style} _{variant}" text={variant} />
       {/each}
+    </div>
+
+    <div class="button-list">
+      {#each variants as variant}
+        <MButton class="_{style} _{variant} _disable" text={variant} />
+      {/each}
+    </div>
+    <hr />
+  {/each}
+
+  <h2>Elements</h2>
+
+  <div class="button-list">
+    {#each styles as style}
       <a href="/" class="m-button _{style}">
         <span>Link</span>
       </a>
-    </div>
-  {/each}
+    {/each}
+  </div>
+  <div class="button-list">
+    {#each styles as style}
+      <input type="button" class="m-button _{style}" value="input" />
+    {/each}
+  </div>
 
-  <h2>Colors</h2>
+  <h2>Mixed up with utilties</h2>
+  <h3>Border radius:</h3>
 
-  {#each colors as color}
-    <div class="button-list _color">
-      {#each styles as style}
+  <div class="button-list">
+    {#each variants as variant}
+      <MButton class="_{variant} u-rd-x" text={variant} />
+    {/each}
+  </div>
+
+  <h3>With shadows:</h3>
+  <div class="button-list">
+    {#each variants as variant}
+      <MButton class="_{variant} u-sd-2" text={variant} />
+    {/each}
+  </div>
+
+  <h2>Colors (custom)</h2>
+  <p>
+    <em>Check source code of this page for detailed implementation.</em>
+  </p>
+
+  {#each styles as style}
+    <div class="button-list">
+      {#each colors as color}
         <MButton class="_{style} _{color}" text={color} />
       {/each}
     </div>

@@ -1,201 +1,50 @@
-// configs
-
-$-mod-button: true !default;
-
-$-button-sizes: tiny, small, medium, large, huge !default;
-$-button-styles: text, line, solid, raise !default;
-
-$-button-size-df: medium !default;
-$-button-style-df: solid !default;
-
-// mixins
-
-@mixin button-sizing($size: medium) {
-  $height: 2rem;
-  $icon-size: font-size(md);
-  $text-size: font-size(sm);
-
-  @if $size == tiny {
-    $height: 1.25rem;
-    $icon-size: font-size(xs);
-    $text-size: font-size(xxs);
-  } @else if $size == small {
-    $height: 1.5rem;
-    $icon-size: font-size(sm);
-    $text-size: font-size(xs);
-  } @else if $size == large {
-    $height: 2.5rem;
-    $icon-size: font-size(lg);
-    $text-size: font-size(md);
-  } @else if $size == huge {
-    $height: 3rem;
-    $icon-size: font-size(x1);
-    $text-size: font-size(lg);
-  }
-
-  $padding: ($height - $icon-size) / 2 - rem(1px);
-  height: $height;
-  padding: 0 $padding;
-  font-size: $icon-size;
-
-  span {
-    font-size: $text-size;
-  }
-}
-
-@mixin button-variant($style, $color) {
-}
-
-@mixin button-solid-color($color) {
-  $bgcolor: color($color, 5);
-  $bghover: color($color, 4);
-
-  color: #fff;
-  background-color: $bgcolor;
-
-  @include hover() {
-    background-color: $bghover;
-  }
-}
-
-@mixin button-line-color($name) {
-  $color: color($name, 6);
-  $hover: color($name, 1);
-  $bdcolor: color($name, 3);
-
-  background: transparent;
-  color: $color;
-  @include border-color($color: $bdcolor);
-
-  @include hover() {
-    background-color: $hover;
-  }
-}
-
-@mixin button-text-color($name) {
-  $color: color($name, 6);
-  $hover: color($name, 1);
-
-  background: transparent;
-  color: $color;
-
-  @include hover() {
-    background-color: $hover;
-  }
-}
-
-@mixin button-color($color: neutral) {
-  &,
-  &._solid,
-  &._raise {
-    @include button-solid-color($color);
-  }
-
-  &._line {
-    @include button-line-color($color);
-  }
-
-  &._text {
-    @include button-text-color($color);
-  }
-}
+@import 'm-button/button-sizing';
+@import 'm-button/button-varify';
 
 .m-button {
-  display: flex;
+  width: auto;
+  user-select: none;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: auto;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  user-select: none;
-
-  span {
-    @include truncate();
-  }
-
+  @include text-upper;
   @include border-radius();
   @include border(all, 1px, transparent);
 
-  @include button-sizing($-button-size-df);
-
-  @each $size in $-button-sizes {
-    &._#{$size} {
-      @include button-sizing($size);
-    }
-  }
-
-  // button widths
-
-  &._narrow {
-    @include padding(0.25em, left-right);
-  }
-
-  &._widely {
-    @include padding(1.25em, left-right);
-  }
-
-  &._block {
-    width: 100%;
-  }
-
-  // button styles
-
-  &._pill {
-    border-radius: 1.5rem;
-  }
-
-  &._raise {
-    @include box-shadow(3);
-  }
-
-  & {
-    &,
-    &._solid,
-    &._raise {
-      @include color(neutral, 7);
-      @include bgcolor(neutral, 2);
-      @include hover {
-        @include bgcolor(neutral, 3);
-      }
-    }
-    &._line,
-    &._text {
-      background: none;
-      @include hover {
-        @include bgcolor(neutral, 1);
-      }
-    }
-    &._line {
-      border-color: color(neutral, 3);
-    }
-  }
-
-  @each $type in map-keys($-color-mapping) {
-    &._#{$type} {
-      @include button-color($type);
-    }
-  }
-
-  @each $type in map-keys($-color-palette) {
-    &._#{$type} {
-      @include button-color($type);
-    }
-  }
-
-  &._disable,
-  &[disabled] {
-    @include color(neutral, 4);
-
+  &:disabled,
+  &._disable {
     @include hover {
-      cursor: text;
-      @include bgcolor(none, 5);
+      cursor: not-allowed;
+    }
+  }
+
+  // sizings
+
+  @include button-sizing($-button-size-df);
+  // prettier-ignore
+  @each $name in $-button-size-names {
+    &._#{$name} { @include button-sizing($name); }
+  }
+
+  // variants
+
+  @include button-varify($-button-style-df, $-button-theme-df);
+
+  @each $style in $-button-styles {
+    &._#{$style} {
+      @include button-varify($style, $-button-theme-df);
+    }
+  }
+
+  @each $theme in $-button-themes {
+    &._#{$theme} {
+      @include button-varify($-button-style-df, $theme);
     }
 
-    &._solid,
-    &._raise {
-      @include color(neutral, 5);
-      @include bgcolor(neutral, 2);
+    @each $style in $-button-styles {
+      &._#{$style}._#{$theme} {
+        @include button-varify($style, $theme);
+      }
     }
   }
 }

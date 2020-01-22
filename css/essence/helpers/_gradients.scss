@@ -9,11 +9,18 @@
 /// Horizontal gradient, from left to right
 //
 /// Creates two color stops, start and end, by specifying a color and $position for each color stop.
-// prettier-ignore
-@mixin gradient-x( $start-color, $end-color, $start-percent: 0%, $end-percent: 100% ) {
-    // prettier-ignore
-    background-image: linear-gradient( to right, $start-color $start-percent, $end-color $end-percent );
-    background-repeat: repeat-x;
+@mixin gradient-x(
+  $start-color,
+  $end-color,
+  $start-percent: 0%,
+  $end-percent: 100%
+) {
+  background-image: linear-gradient(
+    to right,
+    $start-color $start-percent,
+    $end-color $end-percent
+  );
+  background-repeat: repeat-x;
 }
 
 // Vertical gradient, from top to bottom
