@@ -45,8 +45,6 @@
     blockquote and lists elements.
   </p>
 
-  <hr />
-
   <h2>Headings</h2>
 
   <article class="sample">
@@ -75,8 +73,6 @@
     </div>
   </article>
 
-  <hr />
-
   <h2>Paragraphs</h2>
 
   <p>
@@ -102,8 +98,6 @@
     <br />
     Chase mice attack feet but rub face on everything hopped up on goofballs.
   </p>
-
-  <hr />
 
   <h2>Semantic text elements</h2>
 
@@ -188,8 +182,6 @@
     </div>
   </div>
 
-  <hr />
-
   <h2>Optimized for East Asian fonts</h2>
 
   <div class="demo">
@@ -223,8 +215,6 @@
     </div>
   </div>
 
-  <hr />
-
   <h2>Blockquotes</h2>
 
   <blockquote>
@@ -240,8 +230,6 @@
       </p>
     </blockquote>
   </blockquote>
-
-  <hr />
 
   <h2>Lists</h2>
 

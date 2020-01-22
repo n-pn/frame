@@ -3,6 +3,7 @@
 $blockquote-gutter: rem(3bs) !default;
 $blockquote-color: color(neutral, 6) !default;
 $blockquote-border: rem(1bs) !default;
+$blockquote-bdcolor: color(neutral, 6) !default;
 $blockquote-bgcolor: rgba($blockquote-color, 0.05) !default;
 
 blockquote {
@@ -10,7 +11,11 @@ blockquote {
   color: $blockquote-color;
 
   @include border-radius();
-  @include border(left, $width: $blockquote-border, $color: $blockquote-color);
+  @include border(
+    left,
+    $width: $blockquote-border,
+    $color: $blockquote-bdcolor
+  );
   background-color: $blockquote-bgcolor;
 
   > * + * {

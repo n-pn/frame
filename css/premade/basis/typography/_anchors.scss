@@ -4,16 +4,16 @@ a[class] {
   text-decoration: none;
 }
 
-$-link-internal: color(primary, 5) !default;
+$-link-internal: color(teal, 5) !default;
 $-link-external: color(teal, 6) !default;
-$-link-external-visited: color(purple, 7) !default;
+$-link-external-visited: color(purple, 6) !default;
 
 a:not([class]) {
   color: $-link-internal;
   text-decoration: none;
   // text-decoration-skip-ink: auto;
-  padding: 2px 4px;
-  margin: -2px -4px;
+  padding: 0.125em 0.25em;
+  margin: -0.125em -0.25em;
   font-weight: 500;
   // transition: all 0.1s ease-in-out;
   @include border-radius();
