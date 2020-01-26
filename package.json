@@ -1,5 +1,5 @@
 {
-  "name": "mould",
+  "name": "~mould",
   "author": "Nipinium",
   "description": "Reusable stylesheets and components for Svelte projects",
   "version": "0.0.1",
@@ -8,5 +8,8 @@
     "css",
     "lib",
     "files"
-  ]
+  ],
+  "devDependencies": {
+    "feather-icons": "^4.25.0"
+  }
 }

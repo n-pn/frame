@@ -9,8 +9,8 @@ const dev = mode === 'development'
 
 const alias = {
   svelte: path.resolve(__dirname, 'node_modules', 'svelte'),
-  $mould: path.resolve(__dirname, 'node_modules', 'mould/lib'),
-  $common: path.resolve(__dirname, 'src/routes/_common'),
+  $mould: path.resolve(__dirname, 'node_modules', '~mould/lib'),
+  $com: path.resolve(__dirname, 'src/routes/_common'),
   $src: path.resolve(__dirname, 'src'),
 }
 
