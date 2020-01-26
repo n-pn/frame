@@ -5,7 +5,7 @@ Personal collection of stylesheets and components for Svelte projects
 ## Install
 
 ```sh
-yarn add https://github.com/nipinium/mould
+yarn add -D https://github.com/nipinium/mould
 ```
 
 ## Usage
@@ -15,14 +15,14 @@ yarn add https://github.com/nipinium/mould
 in `src/client.js`:
 
 ```js
-import 'mould/css/premade.scss'
+import '~mould/css/premade.scss'
 ```
 
 in svelte components:
 
 ```html
 <style lang="scss">
-  @import 'mould/css/essence';
+  @import '~mould/css/essence';
   /* your code here */
 </style>
 ```
@@ -30,7 +30,7 @@ in svelte components:
 ### components
 
 ```js
-import 'mould/lib/MButton.svelte'
+import '~mould/lib/MButton.svelte'
 ```
 
 ## License
