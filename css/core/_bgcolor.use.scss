@@ -1,13 +1,14 @@
 // backgrounds
 
 @each $name in (none, white, black) {
-  // prettier-ignore
-  .u-bg-#{$name} { @include bgcolor($name); }
+  [u-bg-#{$name}] {
+    @include bgcolor($name);
+  }
 }
 
 @each $name in $-color-names {
-  @for $tone from 1 to 10 {
-    .u-bg-#{$name}-#{$tone} {
+  @for $tone from 1 through 9 {
+    [u-bg-#{$name}='#{$tone}'] {
       @include bgcolor($name, $tone);
     }
   }

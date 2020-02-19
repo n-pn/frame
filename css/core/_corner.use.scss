@@ -1,0 +1,17 @@
+[u-corner] {
+  border-radius: $-radius-size-df;
+}
+
+@each $key, $value in $-radius-sizes {
+  [u-corner='#{$key}'] {
+    @include corner($value, $side: all);
+  }
+}
+
+@each $side in $-sides {
+  @each $key, $value in $-radius-sizes {
+    [u-corner-#{$side}='#{$key}'] {
+      @include border-radius($value, $side: $side);
+    }
+  }
+}

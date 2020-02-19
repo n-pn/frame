@@ -1,0 +1,45 @@
+// $-margin-sides: join($-side-edges, $-side-flanks) !default;
+
+[u-margin] {
+  @include margin($side: all);
+}
+
+@each $screen in $-screen-names {
+  [u-margin\:#{$screen}] {
+    @include screen-min($screen) {
+      @include margin($screen: $screen);
+    }
+  }
+}
+
+@each $size in $-margins {
+  [u-margin='#{$size}'] {
+    @include margin($size, all);
+  }
+
+  @each $screen in $-screen-names {
+    .u-m-#{$base}-#{$attr}-#{$screen} {
+      @include screen-min($screen) {
+        @include margin($size, $side);
+      }
+    }
+  }
+
+  @each $side in $-margin-sides {
+    [u-margin-#{$side}] {
+      @include margin($side: $side);
+    }
+
+    [u-margin-#{$side}='#{$size}'] {
+      @include margin($size, $side);
+    }
+
+    @each $screen in $-screen-names {
+      .u-m-#{$base}-#{$attr}-#{$screen} {
+        @include screen-min($screen) {
+          @include margin($size, $side);
+        }
+      }
+    }
+  }
+}

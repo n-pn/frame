@@ -1,32 +1,3 @@
-// variables
-
-$-screen-xs: 320px !default;
-$-screen-sm: 560px !default;
-$-screen-md: 800px !default;
-$-screen-lg: 1040px !default;
-$-screen-xl: 1280px !default;
-
-$-screen-sizes: (
-  sm: $-screen-sm,
-  md: $-screen-md,
-  lg: $-screen-lg,
-  xl: $-screen-xl,
-) !default;
-
-$-screen-names: map-keys($-screen-sizes);
-
-// functions
-@function screen-size($key) {
-  $val: map-get($-screen-sizes, $key);
-
-  @if $val {
-    @return $val;
-  }
-
-  @warn "custom screen size '#{$key}' is not recommended";
-  @return $key;
-}
-
 // mixins
 
 @mixin screen-min($min: sm) {

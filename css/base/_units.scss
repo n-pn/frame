@@ -1,6 +1,3 @@
-$-base-size: 16px !default;
-$-base-spacing: 0.25rem !default;
-
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
 }
@@ -12,16 +9,16 @@ $-base-spacing: 0.25rem !default;
     @if type-of($size) != number { @error "'#{$size}' is not a number"; }
 
     @if unitless($size) { @return $size * 1rem; }
+    @if unit($size) == x { @return strip-unit($size) * $-base-spacing; }
     @if unit($size) == px { @return ($size / $-base-size) * 1rem; }
-    @if unit($size) == bs { @return strip-unit($size) * $-base-spacing; }
-    @if unit($size) == rem { @return $size; }
     @if unit($size) == em { @return $size; }
+    @if unit($size) == rem { @return $size; }
 
     @error "unsupported unit '#{$size}'";
 }
 
 // @debug rem(1);
-// @debug rem(4bs);
+// @debug rem(1x);
 // @debug rem(16px);
 
 // convert px to em

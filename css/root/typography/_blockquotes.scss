@@ -1,8 +1,8 @@
 /// blockquotes
 
-$blockquote-gutter: rem(3bs) !default;
+$blockquote-gutter: rem(3x) !default;
 $blockquote-color: color(neutral, 6) !default;
-$blockquote-border: rem(1bs) !default;
+$blockquote-border: rem(1x) !default;
 $blockquote-bdcolor: color(neutral, 6) !default;
 $blockquote-bgcolor: rgba($blockquote-color, 0.05) !default;
 

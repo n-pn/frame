@@ -1,0 +1,33 @@
+[u-border] {
+  @include border(all);
+}
+
+@each $width in $-border-widths {
+  [u-border~='#{$width}'] {
+    @include border-width($width, all);
+  }
+}
+
+@each $style, $class in $-border-styles {
+  [u-border~='#{$class}'] {
+    @include border-style($style, all);
+  }
+}
+
+@each $side in $-sides {
+  [u-border-#{$side}] {
+    @include border($side);
+  }
+
+  @each $width in $-border-widths {
+    [u-border-#{$side}~='#{$width}'] {
+      @include borde-width($width, $side);
+    }
+  }
+
+  @each $style, $class in $-border-styles {
+    [u-border-#{side}~='#{$class}'] {
+      @include border-style($style, $side);
+    }
+  }
+}

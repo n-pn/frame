@@ -1,0 +1,40 @@
+// functions
+
+/// get color by name and tone
+@function color($name, $tone: 5) {
+  @if $name == none {
+    @return transparent;
+  }
+  @if $name == white {
+    @return #fff;
+  }
+  @if $name == black {
+    @return #000;
+  }
+
+  $color: map-get($-mapping, $name);
+  @if $color {
+    $name: $color;
+  }
+
+  $colors: map-get($-palette, $name);
+
+  @if not $colors {
+    @if type-of($name) == color {
+      @warn "using custom color (#{$name}) is not recommended";
+      @return $name;
+    } @else {
+      @error "'#{$name}' is not a valid color";
+    }
+  }
+
+  @if type-of($tone) != number {
+    @error "color tone should be a number, got '#{$tone}'";
+  }
+
+  @if $tone < 1 or $tone > 9 {
+    @error "color tone should be in range 1..9, got '#{$tone}'";
+  }
+
+  @return map-get($colors, $tone);
+}

@@ -6,6 +6,6 @@
   <title>Mould</title>
 </svelte:head>
 
-<article>
+<article u-pd:sm="1x">
   <h1>Melte</h1>
 </article>

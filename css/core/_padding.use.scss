@@ -1,4 +1,4 @@
-$-spacing-sizes: (0, 1bs, 2bs, 3bs, 4bs, 5bs, 6bs, 8bs, 10bs) !default;
+$-spacing-sizes: (0, 1x, 2x, 3x, 4x, 5x, 6x, 8x, 10x) !default;
 $-spacing-sides: join($-side-edges, $-side-flanks) !default;
 
 @each $size in $-spacing-sizes {
