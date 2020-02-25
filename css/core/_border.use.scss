@@ -25,7 +25,7 @@ $abbr: abbr(border, $df: bd);
 
   @each $width in $-border-widths {
     .u-#{$abbr}-#{$side-abbr}-#{$width} {
-      @include borde-width($width, $side);
+      @include border-width($width, $side);
     }
   }
 

@@ -35,9 +35,9 @@
     }
   }
 
-  @import 'premade/molds/m-button/button-varify';
+  @import 'mold/button.def';
 
-  @each $color in map-keys($-color-palette) {
+  @each $color in map-keys($-palette) {
     :global([m-button~='#{$color}']) {
       @include button-varify(solid, $color);
 
@@ -69,7 +69,7 @@
 
   <div class="button-list">
     {#each styles as style}
-      <button class="m-button" m-button="{style} primary">
+      <button m-button="{style} primary">
         <span>{style}</span>
       </button>
     {/each}
@@ -79,7 +79,7 @@
 
   <div class="button-list">
     <MButton class="u-rd-x" icon="feather" />
-    <MButton class="u-p-8-lr" m-button="success" icon="circle" />
+    <MButton class="u-p-l-8 u-p-r-8" m-button="success" icon="circle" />
     <MButton class="u-rd-8" m-button="harmful line" icon="x" text="Close" />
     <MButton
       class="u-rd-x u-p-4-lr"
@@ -115,14 +115,14 @@
 
   <div class="button-list">
     {#each styles as style}
-      <a href="/" class="m-button" m-button={style}>
+      <a href="/" m-button={style}>
         <span>Link</span>
       </a>
     {/each}
   </div>
   <div class="button-list">
     {#each styles as style}
-      <input type="button" class="m-button" m-button={style} value="input" />
+      <input type="button" m-button={style} value="input" />
     {/each}
   </div>
 

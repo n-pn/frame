@@ -4,7 +4,7 @@ ul,
 ol {
   margin: 0;
   padding: 0;
-  padding-left: 1rem;
+  padding-left: rem(4x);
 }
 
 ul[class] {
@@ -37,7 +37,7 @@ li {
   &::marker { color: $-marker-color; }
 
   // prettier-ignore
-  li + & { margin-top: 0.5rem; }
+  li + & { margin-top: rem(2x) }
   ul[class] &,
   li & {
     margin-top: 0;
@@ -47,12 +47,12 @@ li {
 dt {
   color: $-marker-color;
   // prettier-ignore
-  & ~ dt { margin-top: 0.5rem; }
+  & ~ dt { margin-top: rem(2x) }
   // prettier-ignore
   dt & { margin-top: 0; }
 }
 
 dd {
   margin: 0;
-  margin-left: 1rem;
+  margin-left: rem(4x);
 }

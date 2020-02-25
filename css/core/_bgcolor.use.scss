@@ -7,7 +7,7 @@ $abbr: abbr(bgcolor, bg);
   }
 }
 
-@each $name in $-color-names {
+@each $name in $-colors {
   @for $tone from 1 through 9 {
     .u-#{$abbr}-#{$name}-#{$tone} {
       @include bgcolor($name, $tone);

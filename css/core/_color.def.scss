@@ -2,6 +2,6 @@
 $-color-name-df: neutral !default;
 $-color-tone-df: 7 !default;
 
-@mixin color($name: $-tc-name-df, $tone: $-tc-tone-df) {
+@mixin color($name: $-color-name-df, $tone: $-color-tone-df) {
   color: color($name, $tone);
 }

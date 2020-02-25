@@ -16,7 +16,7 @@ a:not([class]) {
   margin: -0.125em -0.25em;
   font-weight: 500;
   // transition: all 0.1s ease-in-out;
-  @include border-radius();
+  @include radius();
 
   @include hover {
     color: lighten($-link-internal, 5%);

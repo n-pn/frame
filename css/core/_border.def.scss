@@ -22,7 +22,7 @@ $-border-color-df: color(neutral, 3) !default;
   @if $side == all {
     border-style: $style;
   } @else {
-    border-#{$side}-style: $width;
+    border-#{$side}-style: $style;
   }
 }
 

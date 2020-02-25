@@ -23,7 +23,7 @@
   <title>Posts - Mould</title>
 </svelte:head>
 
-<article class="m-article">
+<article m-article>
   <h1>Recent posts</h1>
 
   <ul>

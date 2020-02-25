@@ -1,13 +1,10 @@
-@import 'm-button/button-sizing';
-@import 'm-button/button-varify';
-
 [m-button] {
   // width: auto;
   user-select: none;
   display: inline-flex;
 
   @include text-upper;
-  @include border-radius();
+  @include radius();
   @include border(all, 1px, transparent);
 
   &:disabled {

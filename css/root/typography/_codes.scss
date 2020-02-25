@@ -12,7 +12,7 @@ code {
   line-height: inherit;
   font-weight: 600;
   vertical-align: text-top;
-  @include border-radius();
+  @include radius();
 }
 
 kbd {
@@ -20,7 +20,7 @@ kbd {
   // display: inline-block;
   @include color(primary, 5);
   @include border($color: color(neutral, 4));
-  @include box-shadow(1);
+  @include shadow(1);
 }
 
 code {
@@ -43,6 +43,6 @@ pre {
     color: color(gray, 1);
     background: color(gray, 8);
     font-weight: normal;
-    @include border-radius(0.25rem);
+    @include radius();
   }
 }

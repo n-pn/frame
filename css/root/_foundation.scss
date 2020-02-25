@@ -6,7 +6,7 @@ html {
 
 $-body-color: color(neutral, 8) !default;
 $-body-bgcolor: color(neutral, 1) !default;
-$-body-font-stack: $-font-sans !default;
+$-body-font-family: font-family(sans) !default;
 
 body {
   min-width: $-screen-xs;
@@ -14,7 +14,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  font-family: $-body-font-stack;
+  font-family: $-body-font-family;
 
   text-align: left;
   vertical-align: baseline;

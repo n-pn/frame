@@ -14,16 +14,9 @@ $-abbrs: (
 ) !default;
 
 @function abbr($key, $df: $key) {
-  $abbrs: map-get($-abbrs, $type);
-
-  @if $abbrs == null {
-    @warn "unknown abbr key '#{$key}'";
-    @return $df;
-  }
-
-  $val: map-get($abbrs, $key);
+  $val: map-get($-abbrs, $key);
   @if $val == null {
-    @warn "unknow abbr for '#{$key}', possibles: '#{map-key($abbrs)}'";
+    @warn "unknow abbr for '#{$key}'";
     @return $df;
   }
 

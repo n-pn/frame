@@ -12,9 +12,15 @@ $-radius-sizes: (
   x: 100vmax,
 ) !default;
 
-$-radius-size-df: 4px !default;
+$-radius-size-df: 4 !default;
 
-@mixin radius($radius: $-radius-size-df, $side: all) {
+@function radius($size) {
+  @return map-get($-radius-sizes, $size);
+}
+
+@mixin radius($size: $-radius-size-df, $side: all) {
+  $radius: radius($size);
+
   @if $side == all {
     border-radius: $radius;
   }

@@ -1,4 +1,4 @@
-@import 'essense';
+@import 'essence';
 
 @import 'core/bgcolor.use';
 @import 'core/border.use';
@@ -11,3 +11,12 @@
 @import 'core/radius.use';
 @import 'core/shadow.use';
 @import 'core/zindex.use';
+
+@import 'mold/article.mod';
+@import 'mold/button.mod';
+@import 'mold/code.mod';
+@import 'mold/icon.mod';
+
+@import 'root/foundation';
+@import 'root/normalized';
+@import 'root/typography';

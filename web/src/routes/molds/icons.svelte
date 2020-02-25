@@ -17,8 +17,8 @@
 
   .item {
     display: flex;
-    flex-direction: column;
     text-align: center;
+    flex-direction: column;
     height: auto;
   }
 
@@ -27,18 +27,18 @@
     width: 100%;
     height: 4.5rem;
     background-color: #fff;
-    @include box-shadow(1);
+    @include shadow(1);
     // box-shadow: 0 1px 3px rgba(#000, 0.1), 0 1px 2px rgba(#000, 0.06);
-    border-radius: 3px;
+    @include radius();
 
-    > :global(.m-icon) {
+    > :global([m-icon]) {
       margin: auto;
       width: 1.5rem;
       height: 1.5rem;
     }
   }
 
-  icon-name {
+  .name {
     display: block;
     @include font-family(narrow);
     @include font-size(sm);
@@ -58,7 +58,7 @@
         <div class="view">
           <MIcon name={icon.name} />
         </div>
-        <icon-name>{icon.name}</icon-name>
+        <div class="name">{icon.name}</div>
       </li>
     {/each}
   </ul>

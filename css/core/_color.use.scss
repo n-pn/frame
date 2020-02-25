@@ -20,7 +20,7 @@ $abbr: abbr(color, $df: c);
   }
 }
 
-@each $name in map-keys($-pallete) {
+@each $name in map-keys($-palette) {
   .u-#{$abbr}-#{$name} {
     @include color($name);
   }

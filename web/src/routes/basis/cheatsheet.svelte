@@ -19,8 +19,8 @@
   //     display: block;
   //     background-color: #fff;
   //     padding: 1rem;
-  //     @include border-radius(2px);
-  //     @include box-shadow(2);
+  //     @include radius(2px);
+  //     @include shadow(2);
   // }
 
   .color {
@@ -39,10 +39,10 @@
     width: 2rem;
     height: 2rem;
     margin-left: 0.5rem;
-    @include border-radius();
-    @include box-shadow();
+    @include radius();
+    @include shadow();
 
-    @each $color in $-color-names {
+    @each $color in $-colors {
       @for $tone from 1 through 9 {
         &[color='#{$color}'][tone='#{$tone}'] {
           @include bgcolor($color, $tone);

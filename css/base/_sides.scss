@@ -1,4 +1,4 @@
-$-edges: top, bottom, left, right;
+$-sides: top, bottom, left, right;
 $-flanks: top-bottom, left-right;
 $-corners: top-left, top-right, bottom-left, bottom-right;
 
@@ -16,7 +16,7 @@ $-side-abbrs: (
 ) !default;
 
 @function side-abbr($key) {
-  $abbr: map-get($-side-abbrs, $type);
+  $abbr: map-get($-side-abbrs, $key);
 
   @if $abbr == null {
     @error "unknown side '#{$key}'";
@@ -24,19 +24,36 @@ $-side-abbrs: (
   @return $abbr;
 }
 
-// prettier-ignore
 @function side-match($side1, $side2) {
-    @if $side1 == $side2 { @return true; }
+  @if $side1 == $side2 {
+    @return true;
+  }
 
-    @if $side1 == top-left { @return $side2 == top or $side2 == left; }
-    @if $side1 == top-right { @return $side2 == top or $side2 == right; }
-    @if $side1 == bottom-left { @return $side2 == bottom or $side2 == left; }
-    @if $side1 == bottom-right { @return $side2 == bottom or $side2 == right; }
-    @if $side1 == top-bottom { @return $side2 == top or $side2 == bottom; }
-    @if $side1 == left-right { @return $side2 == left or $side2 == right; }
-
-    @if index($-edges, $side1) { @return side-match($side2, $side1); }
+  @if index($-sides, $side2) {
+    @if $side1 == top-left {
+      @return $side2 == top or $side2 == left;
+    }
+    @if $side1 == top-right {
+      @return $side2 == top or $side2 == right;
+    }
+    @if $side1 == bottom-left {
+      @return $side2 == bottom or $side2 == left;
+    }
+    @if $side1 == bottom-right {
+      @return $side2 == bottom or $side2 == right;
+    }
+    @if $side1 == top-bottom {
+      @return $side2 == top or $side2 == bottom;
+    }
+    @if $side1 == left-right {
+      @return $side2 == left or $side2 == right;
+    }
     @return false;
+  } @else if index($-sides, $side1) {
+    @return side-match($side2, $side1);
+  }
+
+  @return false;
 }
 
 // @debug side-match(top-left, left);
