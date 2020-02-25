@@ -8,27 +8,27 @@ $-button-size-names: tiny, small, medium, large, huge !default;
 $-button-size-df: medium !default;
 
 $-button-heights: (
-  /* 28px */ tiny: rem(7x),
-  /* 32px */ small: rem(8x),
-  /* 40px */ medium: rem(10x),
+  /* 24px */ tiny: rem(6x),
+  /* 28px */ small: rem(7x),
+  /* 36px */ medium: rem(9x),
   /* 48px */ large: rem(12x),
   /* 60px */ huge: rem(15x)
 );
 
 $-button-icon-sizes: (
   tiny: rem(16px),
-  small: rem(20px),
-  medium: rem(24px),
-  large: rem(28px),
-  huge: rem(32px),
+  small: rem(18px),
+  medium: rem(20px),
+  large: rem(24px),
+  huge: rem(28px),
 );
 
 $-button-font-sizes: (
   tiny: rem(12px),
-  small: rem(14px),
-  medium: rem(16px),
-  large: rem(18px),
-  huge: rem(22px),
+  small: rem(13px),
+  medium: rem(14px),
+  large: rem(16px),
+  huge: rem(20px),
 );
 
 @mixin button-sizing($size: $-button-size-df) {
