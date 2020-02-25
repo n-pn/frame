@@ -120,7 +120,7 @@ $-pinks: (
   9: #702459,
 ) !default;
 
-$-palette: (
+$-color-palette: (
   gray: $-grays,
   red: $-reds,
   orange: $-oranges,
@@ -133,7 +133,7 @@ $-palette: (
   pink: $-pinks,
 ) !default;
 
-$-mapping: (
+$-color-mapping: (
   neutral: gray,
   primary: blue,
   success: teal,
@@ -141,7 +141,7 @@ $-mapping: (
   harmful: red,
 ) !default;
 
-$-colors: map-keys($-palette);
+$-colors: map-keys($-color-palette);
 
 // functions
 
@@ -157,12 +157,12 @@ $-colors: map-keys($-palette);
     @return #000;
   }
 
-  $color: map-get($-mapping, $name);
+  $color: map-get($-color-mapping, $name);
   @if $color {
     $name: $color;
   }
 
-  $colors: map-get($-palette, $name);
+  $colors: map-get($-color-palette, $name);
 
   @if not $colors {
     @if type-of($name) == color {

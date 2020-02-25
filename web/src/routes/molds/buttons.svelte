@@ -37,7 +37,7 @@
 
   @import 'mold/button.def';
 
-  @each $color in map-keys($-palette) {
+  @each $color in map-keys($-color-palette) {
     :global([m-button~='#{$color}']) {
       width: 6rem;
       justify-content: center;

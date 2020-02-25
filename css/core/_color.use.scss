@@ -8,7 +8,7 @@ $abbr: abbr(color, $df: c);
   }
 }
 
-@each $name in map-keys($-mapping) {
+@each $name in map-keys($-color-mapping) {
   .u-#{$abbr}-#{$name} {
     @include color($name);
   }
@@ -20,7 +20,7 @@ $abbr: abbr(color, $df: c);
   }
 }
 
-@each $name in map-keys($-palette) {
+@each $name in map-keys($-color-palette) {
   .u-#{$abbr}-#{$name} {
     @include color($name);
   }
