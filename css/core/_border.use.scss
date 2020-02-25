@@ -19,18 +19,18 @@ $abbr: abbr(border, $df: bd);
 @each $side in $-sides {
   $side-abbr: side-abbr($side);
 
-  .u-#{$abbr}-#{$side-abbr} {
+  .u-#{$abbr}_#{$side-abbr} {
     @include border($side);
   }
 
   @each $width in $-border-widths {
-    .u-#{$abbr}-#{$side-abbr}-#{strip-unit($width)} {
+    .u-#{$abbr}_#{$side-abbr}-#{strip-unit($width)} {
       @include border-width($width, $side);
     }
   }
 
   @each $style in $-border-styles {
-    .u-#{$abbr}-#{$side-abbr}-#{$style} {
+    .u-#{$abbr}_#{$side-abbr}-#{$style} {
       @include border-style($style, $side);
     }
   }

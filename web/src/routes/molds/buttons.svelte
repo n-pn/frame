@@ -15,7 +15,7 @@
     'pink',
   ]
   const sizes = ['tiny', 'small', 'medium', 'large', 'huge']
-  const styles = ['solid', 'text', 'line']
+  const styles = ['fill', 'text', 'line']
   const variants = ['default', 'primary', 'success', 'warning', 'harmful']
 </script>
 
@@ -41,7 +41,7 @@
     :global([m-button~='#{$color}']) {
       width: 6rem;
       justify-content: center;
-      @include button-varify(solid, $color);
+      @include button-varify(fill, $color);
 
       @each $style in $-button-styles {
         &[m-button~='#{$style}'] {
@@ -84,7 +84,7 @@
     <MButton class="u-p_l-8x u-p_r-8x" m-button="success" icon="circle" />
     <MButton class="u-rd-8" m-button="harmful line" icon="x" text="Close" />
     <MButton
-      class="u-rd-x u-p_l-4x u-p_r-4x"
+      class="u-rd-x u-p_lr-4x"
       m-button="primary"
       icon-right="arrow-right"
       text="Next" />

@@ -17,7 +17,7 @@ $abbr: abbr(padding, m);
   //   }
   // }
 
-  @each $side in $-sides {
+  @each $side in join($-sides, $-flanks) {
     $side-abbr: side-abbr($side);
 
     .u-#{$abbr}_#{$side-abbr}-#{$size} {
