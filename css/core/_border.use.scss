@@ -1,32 +1,36 @@
-[u-border] {
+$attr: attr(util, border, bd);
+
+[u-#{attr}] {
   @include border(all);
 }
 
 @each $width in $-border-widths {
-  [u-border~='#{$width}'] {
+  [u-#{attr}~='#{$width}'] {
     @include border-width($width, all);
   }
 }
 
 @each $style, $class in $-border-styles {
-  [u-border~='#{$class}'] {
+  [u-#{attr}~='#{$class}'] {
     @include border-style($style, all);
   }
 }
 
 @each $side in $-sides {
-  [u-border-#{$side}] {
+  $side-attr: side-attr($side);
+
+  [u-#{attr}-#{$side-attr}] {
     @include border($side);
   }
 
   @each $width in $-border-widths {
-    [u-border-#{$side}~='#{$width}'] {
+    [u-#{attr}-#{$side-attr}~='#{$width}'] {
       @include borde-width($width, $side);
     }
   }
 
   @each $style, $class in $-border-styles {
-    [u-border-#{side}~='#{$class}'] {
+    [u-#{attr}-#{side-attr}~='#{$class}'] {
       @include border-style($style, $side);
     }
   }

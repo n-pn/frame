@@ -1,0 +1,33 @@
+// texts
+
+$attr: attr(color, $df: c);
+
+@each $name in (none, white, black) {
+  [u-#{$attr}-#{$name}] {
+    @include color($name);
+  }
+}
+
+@each $name in map-keys($-mapping) {
+  [u-#{$attr}-#{$name}] {
+    @include color($name);
+  }
+
+  @for $tone from 1 to 10 {
+    [u-#{$attr}-#{$name}='#{$tone}'] {
+      @include color($name, $tone);
+    }
+  }
+}
+
+@each $name in map-keys($-pallete) {
+  [u-#{$attr}-#{$name}] {
+    @include color($name);
+  }
+
+  @for $tone from 1 to 10 {
+    [u-#{$attr}-#{$name}='#{$tone}'] {
+      @include color($name, $tone);
+    }
+  }
+}

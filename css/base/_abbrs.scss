@@ -1,0 +1,32 @@
+$-abbrs: (
+  color: c,
+  bgcolor: bg,
+  padding: p,
+  margin: m,
+  border: bd,
+  radius: rd,
+  shadow: sd,
+  clearfix: cf,
+  float-left: fl,
+  flex-center: fx-center,
+  z-index: z,
+) !default;
+
+@function abbr($key, $df: $key) {
+  $abbrs: map-get($-abbrs, $type);
+
+  @if $abbrs == null {
+    @warn "unknown abbr key '#{$key}'";
+    @return $df;
+  }
+
+  $val: map-get($abbrs, $key);
+  @if $val == null {
+    @warn "unknow abbr for '#{$key}', possibles: '#{map-key($abbrs)}'";
+    @return $df;
+  }
+
+  @return $val;
+}
+
+// @debug abbr(side, top);

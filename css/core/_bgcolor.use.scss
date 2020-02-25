@@ -1,14 +1,15 @@
 // backgrounds
+$attr: attr(bgcolor, bg);
 
 @each $name in (none, white, black) {
-  [u-bg-#{$name}] {
+  [u-#{attr}-#{$name}] {
     @include bgcolor($name);
   }
 }
 
 @each $name in $-color-names {
   @for $tone from 1 through 9 {
-    [u-bg-#{$name}='#{$tone}'] {
+    [u-#{attr}-#{$name}='#{$tone}'] {
       @include bgcolor($name, $tone);
     }
   }

@@ -21,10 +21,11 @@ $-font-families: (
 @function font-family($name, $extra: null) {
   $stack: map-get($-font-families, $name);
 
-  @if not type-of($stack) == list {
+  @if type-of($stack) != list {
     @error "no font family named '#{$name}'";
   }
 
+  // add extra font on top
   @if $extra {
     $stack: prepend(remove($stack, $extra), $extra);
   }

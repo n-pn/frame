@@ -1,8 +1,6 @@
-$-sides: top, bottom, left, right;
-
-$-side-edges: top, bottom, left, right;
-$-side-flanks: top-bottom, left-right;
-$-side-corners: top-left, top-right, bottom-left, bottom-right;
+$-edges: top, bottom, left, right;
+$-flanks: top-bottom, left-right;
+$-corners: top-left, top-right, bottom-left, bottom-right;
 
 $-side-abbrs: (
   top: t,
@@ -11,18 +9,19 @@ $-side-abbrs: (
   right: r,
   top-left: tl,
   top-right: tr,
-  top-bottom: tb,
   bottom-left: bl,
   bottom-right: br,
+  top-bottom: tb,
   left-right: lr,
-);
+) !default;
 
-// prettier-ignore
-@function side-abbr($side) {
-    $abbr: map-get($-side-abbrs, $side);
-    @if $abbr { @return $abbr; }
+@function side-abbr($key) {
+  $abbr: map-get($-side-abbrs, $type);
 
-    @error "unknown side named '#{$side}'";
+  @if $abbr == null {
+    @error "unknown side '#{$key}'";
+  }
+  @return $abbr;
 }
 
 // prettier-ignore
@@ -36,7 +35,7 @@ $-side-abbrs: (
     @if $side1 == top-bottom { @return $side2 == top or $side2 == bottom; }
     @if $side1 == left-right { @return $side2 == left or $side2 == right; }
 
-    // @if index($-side-edges, $side1) { @return side-match($side2, $size1); }
+    @if index($-edges, $side1) { @return side-match($side2, $side1); }
     @return false;
 }
 

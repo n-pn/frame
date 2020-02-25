@@ -1,8 +1,8 @@
 // configs
-$-bgc-name-df: neutral !default;
-$-bgc-tone-df: 2 !default;
+$-bgcolor-name-df: neutral !default;
+$-bgcolor-tone-df: 2 !default;
 
 // helpers
-@mixin bgcolor($name: $-bgc-name-df, $tone: $-bgc-tone-df) {
+@mixin bgcolor($name: $-bgcolor-name-df, $tone: $-bgcolor-tone-df) {
   background-color: color($name, $tone);
 }

@@ -1,5 +1,17 @@
 // clearfix
 
-[u-clearfix] {
+$attr: attr(clearfix, $df: cf);
+$left-attr: attr(float-left, $df: fr);
+$right-attr: attr(float-right, $df: fr);
+
+[u-#{attr}] {
   @include clearfix;
+}
+
+[u-#{$left-attr}] {
+  float: left;
+}
+
+[u-#{$right-attr}] {
+  float: right;
 }

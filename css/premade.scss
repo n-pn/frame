@@ -1,38 +1,21 @@
 @import 'essense';
 
-@import 'core/bgcolor.impl';
-@import 'core/border.impl';
-
-@import 'mold/code.impl';
-@import 'mold/button.impl';
-@import 'mold/article.impl';
-
-@import 'utils/u-cf+u-fl+u-fr';
-@import 'utils/u-bg';
-@import 'utils/u-bd';
-@import 'utils/u-m+u-p';
-@import 'utils/u-sd';
-@import 'utils/u-rd';
-@import 'utils/u-t';
-
-$-font-names: map-keys($-font-families);
-
-@each $name in $-font-names {
-  .u-ff-#{$name} {
-    @include font-family($name);
-  }
-}
+@import 'core/bgcolor.use';
+@import 'core/border.use';
+@import 'core/clearfix.use';
+@import 'core/color.use';
+@import 'core/flex.use';
+@import 'core/margin.use';
+@import 'core/padding.use';
+@import 'core/position.use';
+@import 'core/radius.use';
+@import 'core/shadow.use';
+@import 'core/zindex.use';
 
 $-positions: -s, -a, -r, -f, -t;
 
 @each $pos in $-positions {
   .u-pos#{$pos} {
     @include pos($pos);
-  }
-}
-
-@for $idx from 0 to 9 {
-  .u-z-#{$idx} {
-    @include z-index($idx);
   }
 }
