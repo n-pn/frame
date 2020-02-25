@@ -28,7 +28,7 @@ $-button-font-sizes: (
   small: rem(13px),
   medium: rem(14px),
   large: rem(16px),
-  huge: rem(20px),
+  huge: rem(18px),
 );
 
 @mixin button-sizing($size: $-button-size-df) {

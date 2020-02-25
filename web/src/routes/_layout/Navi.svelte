@@ -21,13 +21,11 @@
     bottom: 0;
     text-align: right;
     box-shadow: 2px 0 6px rgba(#000, 0.06);
-    left: -25vw;
-    display: none;
+    left: -100%;
+    @include bgcolor(primary, 7);
     @include screen-min(lg) {
       left: 0;
-      display: block;
     }
-    @include bgcolor(primary, 7);
   }
   a {
     display: block;

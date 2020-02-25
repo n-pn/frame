@@ -11,7 +11,7 @@ blockquote {
   color: $-blockquote-color;
   background-color: $-blockquote-bgcolor;
 
-  @include radius();
+  // @include radius();
 
   @include border(
     $side: left,
