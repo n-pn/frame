@@ -1,5 +1,5 @@
 <script>
-  import Navi from './_layout/navi.svelte'
+  import Navi from './_layout/nav.svelte'
 
   export let segment
 </script>
