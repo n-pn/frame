@@ -11,11 +11,3 @@
 @import 'core/radius.use';
 @import 'core/shadow.use';
 @import 'core/zindex.use';
-
-$-positions: -s, -a, -r, -f, -t;
-
-@each $pos in $-positions {
-  .u-pos#{$pos} {
-    @include pos($pos);
-  }
-}

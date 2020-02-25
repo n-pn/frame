@@ -1,41 +1,31 @@
-// $-margin-sides: join($-side-edges, $-side-flanks) !default;
+$abbr: abbr(margin, m);
 
-[u-margin] {
+.u-#{$abbr} {
   @include margin($side: all);
 }
 
-@each $screen in $-screen-names {
-  [u-margin\:#{$screen}] {
-    @include screen-min($screen) {
-      @include margin($screen: $screen);
-    }
-  }
-}
-
 @each $size in $-margins {
-  [u-margin='#{$size}'] {
-    @include margin($size, all);
+  .u-#{$abbr}-#{$size} {
+    @include margin($size: $size, $side: all);
   }
 
   @each $screen in $-screen-names {
-    .u-m-#{$base}-#{$attr}-#{$screen} {
+    .u-#{$abbr}-#{$size}\:#{$screen} {
       @include screen-min($screen) {
-        @include margin($size, $side);
+        @include margin($size: $size, $screen: $screen);
       }
     }
   }
 
-  @each $side in $-margin-sides {
-    [u-margin-#{$side}] {
-      @include margin($side: $side);
-    }
+  @each $side in $-sides {
+    $side-abbr: side-abbr($side);
 
-    [u-margin-#{$side}='#{$size}'] {
-      @include margin($size, $side);
+    .u-#{$abbr}-#{$side-abbr}-#{$size} {
+      @include margin($size: $size, $side: $side);
     }
 
     @each $screen in $-screen-names {
-      .u-m-#{$base}-#{$attr}-#{$screen} {
+      .u-#{$abbr}-#{$side-abbr}-#{$size}\:#{$screen} {
         @include screen-min($screen) {
           @include margin($size, $side);
         }

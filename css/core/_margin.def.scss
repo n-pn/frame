@@ -1,16 +1,18 @@
-$-margins: (0, 1x, 2x, 3x, 4x, 5x, 6x, 8x, 10x) !default;
+$-margins: (0, 1x, 2x, 3x, 4x, 5x, 6x, 7x, 8x, 9x, 10x) !default;
 $-margin-df: 4x !default;
 
 // helpers
 @mixin margin($size: $-margin-df, $side: all, $screen: null) {
-  $spacing: rem($size);
+  $gutter: rem($size);
 
   @include screen-min($screen) {
-    // prettier-ignore
-    @if $side == all { margin: $spacing; }
-    @each $edge in $-side-edges {
-      // prettier-ignore
-      @if side-match($side, $edge) { margin-#{$edge}: $spacing; }
+    @if $side == all {
+      margin: $gutter;
+    }
+    @each $-side in $-sides {
+      @if side-match($side, $-side) {
+        margin-#{$-side}: $gutter;
+      }
     }
   }
 }

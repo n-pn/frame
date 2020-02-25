@@ -6,10 +6,11 @@ $-abbrs: (
   border: bd,
   radius: rd,
   shadow: sd,
+  zindex: z,
   clearfix: cf,
   float-left: fl,
-  flex-center: fx-center,
-  z-index: z,
+  float-right: fr,
+  flex-center: center,
 ) !default;
 
 @function abbr($key, $df: $key) {

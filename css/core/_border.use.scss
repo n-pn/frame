@@ -1,36 +1,36 @@
-$attr: attr(util, border, bd);
+$abbr: abbr(border, $df: bd);
 
-[u-#{attr}] {
+.u-#{$abbr} {
   @include border(all);
 }
 
 @each $width in $-border-widths {
-  [u-#{attr}~='#{$width}'] {
+  .u-#{$abbr}-#{$width} {
     @include border-width($width, all);
   }
 }
 
 @each $style, $class in $-border-styles {
-  [u-#{attr}~='#{$class}'] {
+  .u-#{$abbr}-#{$class} {
     @include border-style($style, all);
   }
 }
 
 @each $side in $-sides {
-  $side-attr: side-attr($side);
+  $side-abbr: side-abbr($side);
 
-  [u-#{attr}-#{$side-attr}] {
+  .u-#{$abbr}-#{$side-abbr} {
     @include border($side);
   }
 
   @each $width in $-border-widths {
-    [u-#{attr}-#{$side-attr}~='#{$width}'] {
+    .u-#{$abbr}-#{$side-abbr}-#{$width} {
       @include borde-width($width, $side);
     }
   }
 
   @each $style, $class in $-border-styles {
-    [u-#{attr}-#{side-attr}~='#{$class}'] {
+    .u-#{$abbr}-#{$side-abbr}-#{$class} {
       @include border-style($style, $side);
     }
   }

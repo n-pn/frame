@@ -1,13 +1,13 @@
 // Sizing shortcuts
 
 @mixin width($size, $pad: null) {
-  width: size($size);
+  width: rem($size);
   // prettier-ignore
   @if $pad { @include padding($pad, -lr); }
 }
 
 @mixin height($size, $pad: null) {
-  height: size($size);
+  height: rem($size);
   // prettier-ignore
   @if $pad { @include padding($pad, -tb); }
 }

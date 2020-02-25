@@ -5,6 +5,7 @@ $-shadow-2: 0 1px 3px 0 rgba(#000, 0.1), 0 1px 2px 0 rgba(#000, 0.06) !default;
 $-shadow-3: 0 4px 6px -1px rgba(#000, 0.125), 0 2px 4px -1px rgba(#000, 0.07) !default;
 $-shadow-4: 0 10px 15px -3px rgba(#000, 0.15), 0 4px 6px -2px rgba(#000, 0.1) !default;
 
+// TODO: move variables (5, 6, inset, output) outside
 $-shadows: (
   1: $-shadow-1,
   2: $-shadow-2,
@@ -16,17 +17,17 @@ $-shadows: (
   ),
   6: (
     0 25px 50px -12px rgba(#000, 0.25),
-    // 0 15px 15px -10px rgba(#000, 0.1),,,,,,,,,,,,,,,,,,,
+    0 15px 15px -10px rgba(#000, 0.1),
   ),
-  inset: inset 0 2px 4px 0 rgba(#000, 0.06),
-  outline: 0 0 0 3px rgba(#4299e1, 0.5),
+  i: inset 0 2px 4px 0 rgba(#000, 0.06),
+  l: 0 0 0 3px rgba(#4299e1, 0.5),
 ) !default;
 
 // helpers
-@function box-shadow($mode) {
+@function shadow($mode) {
   @return map-get($-shadows, $mode) or $mode;
 }
 
-@mixin box-shadow($mode: 1) {
-  box-shadow: box-shadow($mode);
+@mixin shadow($mode: 1) {
+  box-shadow: shadow($mode);
 }

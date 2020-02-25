@@ -1,4 +1,4 @@
-$-z-indexes: (
+$-zindexes: (
   0: 0,
   1: 10,
   2: 20,
@@ -11,6 +11,6 @@ $-z-indexes: (
   9: 90,
 ) !default;
 
-@function z-index($idx: 5) {
-  @return map-get($-z-indexes, $idx);
+@function zindex($idx: 5) {
+  @return map-get($-zindexes, $idx);
 }

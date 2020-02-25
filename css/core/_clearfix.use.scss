@@ -1,17 +1,17 @@
 // clearfix
 
-$attr: attr(clearfix, $df: cf);
-$left-attr: attr(float-left, $df: fr);
-$right-attr: attr(float-right, $df: fr);
+$abbr: abbr(clearfix, $df: cf);
+$left-abbr: abbr(float-left, $df: fr);
+$right-abbr: abbr(float-right, $df: fr);
 
-[u-#{attr}] {
+.u-#{$abbr} {
   @include clearfix;
 }
 
-[u-#{$left-attr}] {
+.u-#{$left-abbr} {
   float: left;
 }
 
-[u-#{$right-attr}] {
+.u-#{$right-abbr} {
   float: right;
 }

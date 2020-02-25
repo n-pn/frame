@@ -9,25 +9,19 @@ $-radius-sizes: (
   7: 10px,
   8: 12px,
   9: 16px,
-  x: 1000px,
+  x: 100vmax,
 ) !default;
 
 $-radius-size-df: 4px !default;
 
-@mixin corner($radius: $-radius-size-df, $side: all) {
+@mixin radius($radius: $-radius-size-df, $side: all) {
   @if $side == all {
     border-radius: $radius;
   }
-  @if $side == top or $side == left {
-    border-top-left-radius: $radius;
-  }
-  @if $side == top or $side == right {
-    border-top-right-radius: $radius;
-  }
-  @if $side == bottom or $side == left {
-    border-bottom-left-radius: $radius;
-  }
-  @if $side == bottom or $side == right {
-    border-bottom-right-radius: $radius;
+
+  @each $corner in $-corners {
+    @if side-amatch($side, $corner) {
+      border-#{$corner}-radius: $radius;
+    }
   }
 }

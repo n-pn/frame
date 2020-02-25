@@ -1,31 +1,18 @@
-/// configs
+$-paddings: (0, 1x, 2x, 3x, 4x, 5x, 6x, 7x, 8x, 9x, 10x) !default;
+$-padding-df: 4x !default;
 
 // helpers
-@mixin margin($size, $side: all, $screen: null) {
-  $spacing: rem($size);
+@mixin padding($size: $-padding-df, $side: all, $screen: null) {
+  $gutter: rem($size);
 
   @include screen-min($screen) {
-    // prettier-ignore
-    @if $side == all { margin: $spacing; }
-    @each $edge in $-side-edges {
-      // prettier-ignore
-      @if side-match($side, $edge) { margin-#{$edge}: $spacing; }
+    @if $side == all {
+      padding: $gutter;
     }
-  }
-}
-
-@mixin padding($size, $side: all, $screen: null) {
-  $spacing: rem($size);
-
-  @if $side == all {
-    // prettier-ignore
-    @include screen-min($screen) { padding: $spacing; }
-  }
-
-  @each $edge in $-side-edges {
-    @if side-match($side, $edge) {
-      // prettier-ignore
-      @include screen-min($screen) { padding-#{$edge}: $spacing; }
+    @each $-side in $-sides {
+      @if side-match($side, $-side) {
+        padding-#{$-side}: $gutter;
+      }
     }
   }
 }

@@ -1,17 +1,25 @@
-[u-corner] {
+$abbr: abbr(radius, rd);
+
+.u-#{$abbr} {
   border-radius: $-radius-size-df;
 }
 
 @each $key, $value in $-radius-sizes {
-  [u-corner='#{$key}'] {
-    @include corner($value, $side: all);
+  .u-#{$abbr}-#{$key} {
+    @include radius($value, $side: all);
   }
 }
 
 @each $side in $-sides {
+  $side-abbr: side-abbr($side);
+
+  .u-#{$abbr}-#{$side-abbr} {
+    @include radius($side: $side);
+  }
+
   @each $key, $value in $-radius-sizes {
-    [u-corner-#{$side}='#{$key}'] {
-      @include border-radius($value, $side: $side);
+    .u-#{$abbr}-#{$side-abbr}-#{$key} {
+      @include radius($value, $side: $side);
     }
   }
 }

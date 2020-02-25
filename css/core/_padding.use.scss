@@ -1,33 +1,31 @@
-$-spacing-sizes: (0, 1x, 2x, 3x, 4x, 5x, 6x, 8x, 10x) !default;
-$-spacing-sides: join($-side-edges, $-side-flanks) !default;
+$abbr: abbr(padding, m);
 
-@each $size in $-spacing-sizes {
-  $base: strip-unit($size);
+.u-#{$abbr} {
+  @include padding($side: all);
+}
 
-  .u-m-#{$base} {
-    @include margin($size);
-  }
-  .u-p-#{$base} {
-    @include padding($size);
+@each $size in $-paddings {
+  .u-#{$abbr}-#{$size} {
+    @include padding($size: $size, $side: all);
   }
 
-  @each $side in $-spacing-sides {
-    $attr: side-abbr($side);
-
-    .u-m-#{$base}-#{$attr} {
-      @include margin($size, $side);
+  @each $screen in $-screen-names {
+    .u-#{$abbr}-#{$size}\:#{$screen} {
+      @include screen-min($screen) {
+        @include padding($size: $size, $screen: $screen);
+      }
     }
-    .u-p-#{$base}-#{$attr} {
-      @include padding($size, $side);
+  }
+
+  @each $side in $-sides {
+    $side-abbr: side-abbr($side);
+
+    .u-#{$abbr}-#{$side-abbr}-#{$size} {
+      @include padding($size: $size, $side: $side);
     }
 
     @each $screen in $-screen-names {
-      .u-m-#{$base}-#{$attr}-#{$screen} {
-        @include screen-min($screen) {
-          @include margin($size, $side);
-        }
-      }
-      .u-p-#{$base}-#{$attr}-#{$screen} {
+      .u-#{$abbr}-#{$side-abbr}-#{$size}\:#{$screen} {
         @include screen-min($screen) {
           @include padding($size, $side);
         }

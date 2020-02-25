@@ -1,5 +1,5 @@
-$attr: attr(flex-center, f-c);
+$abbr: abbr(flex-center, center);
 
-[u-#{$attr}] {
+.u-#{$abbr} {
   @include flex-center;
 }

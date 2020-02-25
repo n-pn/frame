@@ -1,7 +1,7 @@
-$attr: attr(font-family, $df: ff);
+$abbr: abbr(font-family, $df: ff);
 
 @each $family in map-keys($-font-families) {
-  .u-#{attr}-#{$family} {
+  .u-#{$abbr}-#{$family} {
     @include font-family($family);
   }
 }
