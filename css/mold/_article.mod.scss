@@ -1,4 +1,5 @@
 [m-article] {
+  @include flow;
   @include article;
 
   // > h2:after {
