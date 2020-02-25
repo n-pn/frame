@@ -9,13 +9,13 @@ $abbr: abbr(margin, m);
     @include margin($size: $size, $side: all, $trump: true);
   }
 
-  @each $screen in $-screen-names {
-    .u-#{$abbr}-#{$size}\:#{$screen} {
-      @include screen-min($screen) {
-        @include margin($size: $size, $screen: $screen, $trump: true);
-      }
-    }
-  }
+  // @each $screen in $-screen-names {
+  //   .u-#{$abbr}-#{$size}\:#{$screen} {
+  //     @include screen-min($screen) {
+  //       @include margin($size: $size, $screen: $screen, $trump: true);
+  //     }
+  //   }
+  // }
 
   @each $side in $-sides {
     $side-abbr: side-abbr($side);
@@ -24,12 +24,12 @@ $abbr: abbr(margin, m);
       @include margin($size: $size, $side: $side, $trump: true);
     }
 
-    @each $screen in $-screen-names {
-      .u-#{$abbr}_#{$side-abbr}-#{$size}\:#{$screen} {
-        @include screen-min($screen) {
-          @include margin($size, $side, $trump: true);
-        }
-      }
-    }
+    // @each $screen in $-screen-names {
+    //   .u-#{$abbr}_#{$side-abbr}-#{$size}\:#{$screen} {
+    //     @include screen-min($screen) {
+    //       @include margin($size, $side, $trump: true);
+    //     }
+    //   }
+    // }
   }
 }
