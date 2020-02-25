@@ -15,7 +15,7 @@
     'pink',
   ]
   const sizes = ['tiny', 'small', 'medium', 'large', 'huge']
-  const styles = ['text', 'line', 'solid']
+  const styles = ['solid', 'text', 'line']
   const variants = ['default', 'primary', 'success', 'warning', 'harmful']
 </script>
 
@@ -39,6 +39,8 @@
 
   @each $color in map-keys($-palette) {
     :global([m-button~='#{$color}']) {
+      width: 6rem;
+      justify-content: center;
       @include button-varify(solid, $color);
 
       @each $style in $-button-styles {
@@ -54,14 +56,14 @@
   <title>Buttons - Molds</title>
 </svelte:head>
 
-<article class="m-article">
+<article m-article>
   <h1>Buttons</h1>
 
   <h2>Sizes</h2>
 
   <div class="button-list">
     {#each sizes as size}
-      <MButton m-button={size} text={size + ' button'} />
+      <MButton m-button={size} text={size + ' button'} icon="maximize" />
     {/each}
   </div>
 
@@ -70,7 +72,7 @@
   <div class="button-list">
     {#each styles as style}
       <button m-button="{style} primary">
-        <span>{style}</span>
+        <span>{style.toUpperCase()}</span>
       </button>
     {/each}
   </div>
@@ -79,10 +81,10 @@
 
   <div class="button-list">
     <MButton class="u-rd-x" icon="feather" />
-    <MButton class="u-p-l-8 u-p-r-8" m-button="success" icon="circle" />
+    <MButton class="u-p_l-8x u-p_r-8x" m-button="success" icon="circle" />
     <MButton class="u-rd-8" m-button="harmful line" icon="x" text="Close" />
     <MButton
-      class="u-rd-x u-p-4-lr"
+      class="u-rd-x u-p_l-4x u-p_r-4x"
       m-button="primary"
       icon-right="arrow-right"
       text="Next" />
@@ -147,9 +149,9 @@
     <em>Check source code of this page for detailed implementation.</em>
   </p>
 
-  {#each styles as style}
+  {#each colors as color}
     <div class="button-list">
-      {#each colors as color}
+      {#each styles as style}
         <MButton m-button="{style} {color}" text={color} />
       {/each}
     </div>

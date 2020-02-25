@@ -5,13 +5,13 @@ $abbr: abbr(border, $df: bd);
 }
 
 @each $width in $-border-widths {
-  .u-#{$abbr}-#{$width} {
+  .u-#{$abbr}-#{strip-unit($width)} {
     @include border-width($width, all);
   }
 }
 
-@each $style, $class in $-border-styles {
-  .u-#{$abbr}-#{$class} {
+@each $style in $-border-styles {
+  .u-#{$abbr}-#{$style} {
     @include border-style($style, all);
   }
 }
@@ -24,13 +24,13 @@ $abbr: abbr(border, $df: bd);
   }
 
   @each $width in $-border-widths {
-    .u-#{$abbr}-#{$side-abbr}-#{$width} {
+    .u-#{$abbr}-#{$side-abbr}-#{strip-unit($width)} {
       @include border-width($width, $side);
     }
   }
 
-  @each $style, $class in $-border-styles {
-    .u-#{$abbr}-#{$side-abbr}-#{$class} {
+  @each $style in $-border-styles {
+    .u-#{$abbr}-#{$side-abbr}-#{$style} {
       @include border-style($style, $side);
     }
   }

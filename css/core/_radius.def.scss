@@ -18,8 +18,11 @@ $-radius-size-df: 4 !default;
   @return map-get($-radius-sizes, $size);
 }
 
-@mixin radius($size: $-radius-size-df, $side: all) {
+@mixin radius($size: $-radius-size-df, $side: all, $trump: false) {
   $radius: radius($size);
+  @if $trump == true {
+    $radius: $radius !important;
+  }
 
   @if $side == all {
     border-radius: $radius;

@@ -6,7 +6,7 @@ $abbr: abbr(radius, rd);
 
 @each $key, $value in $-radius-sizes {
   .u-#{$abbr}-#{$key} {
-    @include radius($value, $side: all);
+    @include radius($key, $side: all, $trump: true);
   }
 }
 
@@ -14,12 +14,12 @@ $abbr: abbr(radius, rd);
   $side-abbr: side-abbr($side);
 
   .u-#{$abbr}-#{$side-abbr} {
-    @include radius($side: $side);
+    @include radius($side: $side, $trump: true);
   }
 
   @each $key, $value in $-radius-sizes {
     .u-#{$abbr}-#{$side-abbr}-#{$key} {
-      @include radius($value, $side: $side);
+      @include radius($key, $side: $side, $trump: true);
     }
   }
 }

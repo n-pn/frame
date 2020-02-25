@@ -2,6 +2,6 @@ $abbr: abbr(shadow, rd);
 
 @each $key, $val in $-shadows {
   .u-#{$abbr}-#{$key} {
-    box-shadow: $val;
+    box-shadow: $val !important;
   }
 }

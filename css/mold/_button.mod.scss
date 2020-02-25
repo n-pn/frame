@@ -2,9 +2,9 @@
   // width: auto;
   user-select: none;
   display: inline-flex;
-
+  // @include flex-center;
+  @include radius;
   @include text-upper;
-  @include radius();
   @include border(all, 1px, transparent);
 
   &:disabled {
