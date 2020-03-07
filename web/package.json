@@ -7,6 +7,7 @@
     "dev": "sapper dev",
     "build": "sapper build",
     "export": "sapper export",
+    "full-build": "sapper export && sapper build",
     "start": "node __sapper__/build"
   },
   "dependencies": {
@@ -26,8 +27,8 @@
     "sapper": "^0.27.0",
     "sass-loader": "^8.0.0",
     "svelte": "^3.0.0",
-    "svelte-loader-hot": "^0.1.1",
-    "webpack": "^4.41.5",
+    "svelte-loader-hot": "^0.3.0",
+    "webpack": "^4.42.0",
     "~mould": "file:../"
   },
   "browserslist": [
