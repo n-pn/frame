@@ -8,7 +8,7 @@
 
   $: {
     if (typeof gtag === 'function') {
-      window.gtag('config', 'UA-XXX', {
+      window.gtag('config', 'UA-158626989-2', {
         page_path: $page.path,
       })
     }
@@ -39,7 +39,9 @@
 </style>
 
 <svelte:head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXX">
+  <script
+    src="https://www.googletagmanager.com/gtag/js?id=UA-158626989-2"
+    async>
 
   </script>
   <script>
@@ -48,7 +50,7 @@
       dataLayer.push(arguments)
     }
     gtag('js', new Date())
-    gtag('config', 'UA-XXX')
+    gtag('config', 'UA-158626989-2')
   </script>
 </svelte:head>
 
