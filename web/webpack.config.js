@@ -52,7 +52,7 @@ module.exports = {
               preprocess,
               hydratable: true,
               hotReload: true,
-              emitCss: true,
+              emitCss: false,
               hotOptions: { optimistic: true },
             },
           },
@@ -92,8 +92,8 @@ module.exports = {
         'process.env.NODE_ENV': JSON.stringify(mode),
       }),
       new MiniCssExtractPlugin({
-        // filename: '[name].css',
-        // chunkFilename: '[name].[id].css',
+        filename: '[hash]/[name].css',
+        chunkFilename: '[hash]/[name].[id].css',
         ignoreOrder: false, // Enable to remove warnings about conflicting order
       }),
     ].filter(Boolean),

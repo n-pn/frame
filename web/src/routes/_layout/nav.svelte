@@ -13,25 +13,21 @@
 
 <style lang="scss">
   nav {
-    position: fixed;
-    width: 25vw;
-    max-width: 100vw;
-    z-index: 999;
+    position: absolute;
+    width: 15rem;
+    z-index: -1;
+    padding-left: 1rem;
     top: 0;
     bottom: 0;
-    text-align: right;
-    box-shadow: 2px 0 6px rgba(#000, 0.06);
-    left: -100%;
-    @include bgcolor(primary, 7);
-    @include screen-min(lg) {
-      left: 0;
-    }
+
+    left: -15rem;
+    // @include bgcolor(neutral, 1);
   }
   a {
     display: block;
     line-height: 1.5rem;
     text-decoration: none;
-    @include color(neutral, 2);
+    @include color(neutral, 6);
   }
   .site {
     text-transform: uppercase;
@@ -40,8 +36,8 @@
     @include font-size(x3);
     letter-spacing: 0.1em;
     // margin: 0 0.375rem;
-    padding: 0 0.75rem;
     line-height: 4rem;
+    margin: 0 0.75rem 0 0.75rem;
     position: relative;
     &:after {
       position: absolute;
@@ -51,7 +47,7 @@
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: rgba(color(primary, 6), 0.5);
+      background-color: color(neutral, 2);
     }
     // margin-top: 1rem;
   }
@@ -78,7 +74,7 @@
     font-weight: 400;
     padding: 0 1rem;
     margin-top: 0.5rem;
-    @include color(neutral, 4);
+    @include color(neutral, 5);
   }
 </style>
 
