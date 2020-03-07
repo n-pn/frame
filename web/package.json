@@ -1,13 +1,14 @@
 {
   "name": "mould-web",
   "description": "website + showcase",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build",
     "export": "sapper export",
-    "full-build": "sapper export && sapper build",
+    "version": "node tasks/add_version_to_assets.js",
+    "full-build": "sapper export && sapper build && yarn version",
     "start": "node __sapper__/build"
   },
   "dependencies": {
@@ -26,6 +27,7 @@
     "postcss-loader": "^3.0.0",
     "sapper": "^0.27.0",
     "sass-loader": "^8.0.0",
+    "string-hash": "^1.1.3",
     "svelte": "^3.0.0",
     "svelte-loader-hot": "^0.3.0",
     "webpack": "^4.42.0",
