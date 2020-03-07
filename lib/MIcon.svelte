@@ -1,5 +1,5 @@
 <script>
-  export let name = 'circle'
+  const name = $$props['m-icon'] || 'feather'
 </script>
 
 <svg class={$$props.class} m-icon={name}>

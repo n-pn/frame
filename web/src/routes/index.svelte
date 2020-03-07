@@ -1,7 +1,3 @@
-<style lang="scss">
-
-</style>
-
 <svelte:head>
   <title>Mould</title>
 </svelte:head>

@@ -7,8 +7,8 @@
     "dev": "sapper dev",
     "build": "sapper build",
     "export": "sapper export",
-    "version": "node tasks/add_version_to_assets.js",
-    "full-build": "sapper export && sapper build && yarn version",
+    "versoning": "node tasks/add_version_to_assets.js",
+    "full-build": "sapper export && sapper build && yarn versoning",
     "start": "node __sapper__/build"
   },
   "dependencies": {

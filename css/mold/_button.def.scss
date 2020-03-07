@@ -46,7 +46,7 @@ $-button-font-sizes: (
   > span {
     padding: 0 ($icon-size - $font-size) / 2;
   }
-  > svg {
+  > [m-icon] {
     margin: -1px;
     // margin-bottom: 0;
 
