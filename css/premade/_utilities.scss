@@ -1,0 +1,238 @@
+$-edge-abbrs: (
+  top: t,
+  bottom: b,
+  left: l,
+  right: r,
+  top-left: tl,
+  top-right: tr,
+  bottom-left: bl,
+  bottom-right: br,
+  top-bottom: tb,
+  left-right: lr,
+) !default;
+
+@function edge-abbr($key) {
+  $abbr: map-get($-edge-abbrs, $key);
+
+  @if $abbr == null {
+    @error "mssing edge abbr for [#{$key}]";
+  }
+  @return $abbr;
+}
+
+// backgrounds
+
+@each $name in (none, white, black) {
+  .u-bg-#{$name} {
+    @include bgcolor($name);
+  }
+}
+
+@each $name in $-colors {
+  @for $tone from 1 through 9 {
+    .u-bg-#{$name}-#{$tone} {
+      @include bgcolor($name, $tone);
+    }
+  }
+}
+
+// borders
+
+$-border-widths: 0, 1px, 2px, 3px, 4px !default;
+$-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
+
+.u-bd {
+  @include border(all);
+}
+
+@each $width in $-border-widths {
+  .u-bd-#{strip-unit($width)} {
+    @include border-width(all, $width);
+  }
+}
+
+@each $style in $-border-styles {
+  .u-bd-#{$style} {
+    @include border-style(all, $style);
+  }
+}
+
+@each $side in $-sides {
+  $side-abbr: side-abbr($side);
+
+  .u-bd_#{$side-abbr} {
+    @include border($side);
+  }
+
+  @each $width in $-border-widths {
+    .u-bd_#{$side-abbr}-#{strip-unit($width)} {
+      @include border-width($side, $width);
+    }
+  }
+
+  @each $style in $-border-styles {
+    .u-bd_#{$side-abbr}-#{$style} {
+      @include border-style($side, $style);
+    }
+  }
+}
+
+// clearfix
+
+.u-cf {
+  @include clearfix;
+}
+
+.u-fl {
+  float: left;
+}
+
+.u-fr {
+  float: right;
+}
+
+// text colors
+
+@each $name in (none, white, black) {
+  .u-tc-#{$name} {
+    @include color($name);
+  }
+}
+
+@each $name in map-keys($-color-mapping) {
+  .u-tc-#{$name} {
+    @include color($name);
+  }
+
+  @for $tone from 1 to 10 {
+    .u-tc-#{$name}-#{$tone} {
+      @include color($name, $tone);
+    }
+  }
+}
+
+@each $name in map-keys($-color-palette) {
+  .u-tc-#{$name} {
+    @include color($name);
+  }
+
+  @for $tone from 1 to 10 {
+    .u-tc-#{$name}-#{$tone} {
+      @include color($name, $tone);
+    }
+  }
+}
+
+.u-rd {
+  border-radius: $-radius-size-df;
+}
+
+@each $key, $value in $-radius-sizes {
+  .u-rd-#{$key} {
+    @include radius($key, $side: all, $trump: true);
+  }
+}
+
+@each $side in $-sides {
+  $side-abbr: side-abbr($side);
+
+  .u-rd-#{$side-abbr} {
+    @include radius($side: $side, $trump: true);
+  }
+
+  @each $key, $value in $-radius-sizes {
+    .u-rd-#{$side-abbr}-#{$key} {
+      @include radius($key, $side: $side, $trump: true);
+    }
+  }
+}
+
+// layouts
+
+.u-center {
+  @include flex-center;
+}
+
+.u-flex {
+  @include flex(0.5rem);
+}
+
+.u-flow {
+  @include flow(1rem);
+}
+
+.u-grid {
+  @include grid(minmax(1fr, 10rem));
+}
+
+// font families
+
+@each $family in map-keys($-font-families) {
+  .u-ff-#{$family} {
+    @include font-family($family);
+  }
+}
+
+// paddings
+
+.u-pd {
+  @include padding($side: all, $trump: true);
+}
+
+@each $size in $-spacings {
+  .u-pd-#{strip-unit($size)} {
+    @include padding($size: $size, $side: all, $trump: true);
+  }
+
+  @each $edge in join($-sides, $-flanks) {
+    $edge-abbr: edge-abbr($edge);
+
+    .u-pd_#{$edge-abbr}-#{strip-unit($size)} {
+      @include padding($edge, $size, $trump: true);
+    }
+  }
+}
+
+// margins
+
+.u-mg {
+  @include margin($side: all, $trump: true);
+}
+
+@each $size in $-spacings {
+  .u-mg-#{strip-unit($size)} {
+    @include margin($size: $size, $side: all, $trump: true);
+  }
+
+  @each $edge in join($-sides, $-flanks) {
+    $edge-abbr: edge-abbr($edge);
+
+    .u-mg_#{$edge-abbr}-#{strip-unit($size)} {
+      @include margin($edge, $size, $trump: true);
+    }
+  }
+}
+
+// positions
+
+@each $pos in $-positions {
+  .u-pos-#{$pos} {
+    position: $pos;
+  }
+}
+
+// shadows
+
+@each $key, $val in $-shadows {
+  .u-sd-#{$key} {
+    box-shadow: $val !important;
+  }
+}
+
+// z-indexes
+
+@for $idx from 0 to 9 {
+  .u-z-#{$idx} {
+    z-index: zindex($idx);
+  }
+}

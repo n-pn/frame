@@ -1,0 +1,9 @@
+// configs
+
+$-bgcolor-df: color(neutral, 2) !default;
+
+// helpers
+
+@mixin bgcolor($value: $-bgcolor-df, $trump: false) {
+  @include props(background-color, $value, $trump);
+}

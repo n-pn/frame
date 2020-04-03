@@ -1,0 +1,9 @@
+// configs
+
+$-fgcolor-df: color(neutral, 8) !default;
+
+// helpers
+
+@mixin fgcolor($value, $trump: false) {
+  @include props(color, $value, $trump);
+}

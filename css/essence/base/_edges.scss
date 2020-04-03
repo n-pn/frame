@@ -1,0 +1,23 @@
+$-sides: top, bottom, left, right;
+$-flanks: top-bottom, left-right;
+$-corners: top-left, top-right, bottom-left, bottom-right;
+
+@function match-edge($edge1, $edge2) {
+  @return str-index($edge1, $edge2) or str-index($edge2, $edge1);
+}
+
+@function edge-props($pos, $edges: $-sides, $before: null, $after: null) {
+  $output: ();
+
+  @each $edge in $edges {
+    @if match-edge($edge, $pos) {
+      @if $before {
+        $output: append($output, join-props($before, $edge, $after));
+      } @else {
+        $output: append($output, join-props($edge, $after));
+      }
+    }
+  }
+
+  @return $output;
+}

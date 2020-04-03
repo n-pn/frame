@@ -1,0 +1,47 @@
+// configs
+
+$-border-width-df: 1px !default;
+$-border-style-df: solid !default;
+$-border-color-df: color(neutral, 3) !default;
+
+// functions
+
+@function border-props($pos: all, $type: null) {
+  @if $pos == all or $pos == null {
+    @return join-props(border, $type);
+  }
+
+  $props: ();
+
+  @each $side in $-sides {
+    @if match-edge($side, $pos) {
+      $props: append($props, join-props(border, $side, $type));
+    }
+  }
+
+  @return $props;
+}
+
+// mixins
+
+@mixin border-color($pos: all, $value: $-border-color-df, $trump: false) {
+  $props: border-props($pos, color);
+  @include props($props, $value, $trump);
+}
+
+@mixin border-style($pos: all, $value: $-border-style-df, $trump: false) {
+  $props: border-props($pos, style);
+  @include props($props, $value, $trump);
+}
+
+@mixin border-width($pos: all, $value: $-border-width-df, $trump: false) {
+  $props: border-props($pos, width);
+  @include props($props, $value, $trump);
+}
+
+// prettier-ignore
+@mixin border($pos: all, $width: $-border-width-df, $color: $-border-color-df, $style: $-border-style-df, $trump: false ) {
+  $props: border-props($pos);
+  $value: $width $color $style;
+  @include props($props, $value, $trump);
+}

@@ -1,25 +1,25 @@
 @import 'essence';
 
-@import 'core/bgcolor.use';
-@import 'core/border.use';
-@import 'core/clearfix.use';
-@import 'core/color.use';
-@import 'core/flex.use';
-@import 'core/flow.use';
-@import 'core/margin.use';
-@import 'core/padding.use';
-@import 'core/position.use';
-@import 'core/radius.use';
-@import 'core/shadow.use';
-@import 'core/stack.use';
-@import 'core/zindex.use';
+@import 'helpers/bgcolor.use';
+@import 'helpers/border.use';
+@import 'helpers/clearfix.use';
+@import 'helpers/color.use';
+@import 'helpers/flex.use';
+@import 'helpers/flow.use';
+@import 'helpers/margin.use';
+@import 'helpers/padding.use';
+@import 'helpers/position.use';
+@import 'helpers/radius.use';
+@import 'helpers/shadow.use';
+@import 'helpers/stack.use';
+@import 'helpers/zindex.use';
 
-@import 'mold/article.mod';
-@import 'mold/button.mod';
-@import 'mold/code.mod';
-@import 'mold/icon.mod';
-@import 'mold/input.mod';
+@import 'modules/article.mod';
+@import 'modules/button.mod';
+@import 'modules/code.mod';
+@import 'modules/icon.mod';
+@import 'modules/input.mod';
 
-@import 'root/foundation';
-@import 'root/normalized';
-@import 'root/typography';
+@import 'globals/foundation';
+@import 'globals/normalized';
+@import 'globals/typography';

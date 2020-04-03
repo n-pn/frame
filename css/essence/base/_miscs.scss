@@ -1,0 +1,8 @@
+// prettier-ignore
+
+@function append-string($val, $str: null) {
+  @if $str {
+    $val: #{$val}-#{$str};
+  }
+  @return $val;
+}
