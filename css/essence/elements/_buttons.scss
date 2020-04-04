@@ -31,6 +31,18 @@ $-button-font-sizes: (
   huge: rem(18px),
 );
 
+@mixin button-common() {
+  @include radius;
+  @include uppercase;
+  @include border(all, 1px, transparent);
+
+  &:disabled {
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}
+
 @mixin button-sizing($size: $-button-size-df) {
   $height: map-get($-button-heights, $size);
   $icon-size: map-get($-button-icon-sizes, $size);
