@@ -12,7 +12,7 @@
     font-size: rem(14px);
     // font-weight: 500;
     @include font-family(narrow);
-    @include color(neutral, 6);
+    @include fgcolor(neutral, 6);
     background: linear-gradient(180deg, transparent 50%, #fff 50%);
     pointer-events: none;
   }

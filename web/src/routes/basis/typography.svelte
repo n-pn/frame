@@ -27,7 +27,7 @@
 
   .sample {
     // font-weight: bold;
-    // @include color(neutral, 2);
+    // @include fgcolor(neutral, 2);
     margin-top: 1rem;
     @include clearfix;
   }

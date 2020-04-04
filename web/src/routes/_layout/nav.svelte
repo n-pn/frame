@@ -27,7 +27,7 @@
     display: block;
     line-height: 1.5rem;
     text-decoration: none;
-    @include color(neutral, 6);
+    @include fgcolor(neutral, 6);
   }
   .site {
     text-transform: uppercase;
@@ -74,7 +74,7 @@
     font-weight: 400;
     padding: 0 1rem;
     margin-top: 0.5rem;
-    @include color(neutral, 5);
+    @include fgcolor(neutral, 5);
   }
 </style>
 

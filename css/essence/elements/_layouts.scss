@@ -16,7 +16,7 @@ $-grid-gap-df: rem(2x) !default;
   }
 }
 
-@mixin grid($size, $gap: $-grid-gap-def, $trump: false) {
+@mixin grid($size, $gap: $-grid-gap-df, $trump: false) {
   display: grid;
   grid-template-columns: repeat(auto-fill, $size);
   @include props(grid-gap, $gap, $trump);

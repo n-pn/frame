@@ -15,14 +15,6 @@
 </script>
 
 <style lang="scss">
-  // .colors {
-  //     display: block;
-  //     background-color: #fff;
-  //     padding: 1rem;
-  //     @include radius(2px);
-  //     @include shadow(2);
-  // }
-
   .color {
     @include clearfix;
   }
@@ -31,7 +23,7 @@
     font-variant: small-caps;
     line-height: 2rem;
     float: left;
-    @include color(neutral, 6);
+    @include fgcolor(color(neutral, 6));
   }
 
   .tone {
@@ -42,10 +34,10 @@
     @include radius();
     @include shadow();
 
-    @each $color in $-colors {
+    @each $color in $-color-names {
       @for $tone from 1 through 9 {
         &[color='#{$color}'][tone='#{$tone}'] {
-          @include bgcolor($color, $tone);
+          @include bgcolor(color($color, $tone));
         }
       }
     }

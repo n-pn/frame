@@ -1,7 +1,6 @@
 @import 'essence';
 
-@import 'globals/foundation';
-@import 'globals/normalized';
-@import 'globals/typography';
-@import 'globals/components';
-@import 'globals/util_classes';
+@import 'premade/foundation';
+@import 'premade/typography';
+@import 'premade/components';
+@import 'premade/util_classes';

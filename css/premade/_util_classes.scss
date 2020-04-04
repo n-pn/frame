@@ -28,7 +28,7 @@ $-edge-abbrs: (
   }
 }
 
-@each $name in $-colors {
+@each $name in $-color-names {
   @for $tone from 1 through 9 {
     .u-bg-#{$name}-#{$tone} {
       @include bgcolor($name, $tone);
@@ -58,20 +58,20 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
 }
 
 @each $side in $-sides {
-  $side-abbr: side-abbr($side);
+  $abbr: edge-abbr($side);
 
-  .u-bd_#{$side-abbr} {
+  .u-bd_#{$abbr} {
     @include border($side);
   }
 
   @each $width in $-border-widths {
-    .u-bd_#{$side-abbr}-#{strip-unit($width)} {
+    .u-bd_#{$abbr}-#{strip-unit($width)} {
       @include border-width($side, $width);
     }
   }
 
   @each $style in $-border-styles {
-    .u-bd_#{$side-abbr}-#{$style} {
+    .u-bd_#{$abbr}-#{$style} {
       @include border-style($side, $style);
     }
   }
@@ -94,37 +94,37 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
 // text colors
 
 @each $name in (none, white, black) {
-  .u-tc-#{$name} {
-    @include color($name);
+  .u-fg-#{$name} {
+    @include fgcolor($name);
   }
 }
 
 @each $name in map-keys($-color-mapping) {
-  .u-tc-#{$name} {
-    @include color($name);
+  .u-fg-#{$name} {
+    @include fgcolor($name);
   }
 
   @for $tone from 1 to 10 {
-    .u-tc-#{$name}-#{$tone} {
-      @include color($name, $tone);
+    .u-fg-#{$name}-#{$tone} {
+      @include fgcolor($name, $tone);
     }
   }
 }
 
 @each $name in map-keys($-color-palette) {
-  .u-tc-#{$name} {
-    @include color($name);
+  .u-fg-#{$name} {
+    @include fgcolor($name);
   }
 
   @for $tone from 1 to 10 {
-    .u-tc-#{$name}-#{$tone} {
-      @include color($name, $tone);
+    .u-fg-#{$name}-#{$tone} {
+      @include fgcolor($name, $tone);
     }
   }
 }
 
 .u-rd {
-  border-radius: $-radius-size-df;
+  border-radius: $-radius-df;
 }
 
 @each $key, $value in $-radius-sizes {
@@ -134,7 +134,7 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
 }
 
 @each $side in $-sides {
-  $side-abbr: side-abbr($side);
+  $side-abbr: edge-abbr($side);
 
   .u-rd-#{$side-abbr} {
     @include radius($side: $side, $trump: true);
@@ -176,12 +176,12 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
 // paddings
 
 .u-pd {
-  @include padding($side: all, $trump: true);
+  @include padding($pos: all, $trump: true);
 }
 
 @each $size in $-spacings {
   .u-pd-#{strip-unit($size)} {
-    @include padding($size: $size, $side: all, $trump: true);
+    @include padding($pos: all, $size: $size, $trump: true);
   }
 
   @each $edge in join($-sides, $-flanks) {
@@ -196,12 +196,12 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
 // margins
 
 .u-mg {
-  @include margin($side: all, $trump: true);
+  @include margin($pos: all, $trump: true);
 }
 
 @each $size in $-spacings {
   .u-mg-#{strip-unit($size)} {
-    @include margin($size: $size, $side: all, $trump: true);
+    @include margin($pos: all, $size: $size, $trump: true);
   }
 
   @each $edge in join($-sides, $-flanks) {

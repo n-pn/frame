@@ -18,9 +18,7 @@
 <style lang="scss">
   :global(#sapper) {
     height: 100%;
-    @include screen-min(md) {
-      margin-left: 15rem;
-    }
+    @include props(margin-left, attrs($md: 15rem));
   }
   main {
     min-height: 100%;
@@ -32,9 +30,6 @@
     margin: 0 auto;
     @include shadow(1);
     z-index: 1;
-    // @include screen-min(lg) {
-    //   margin-left: 0;
-    // }
   }
 </style>
 

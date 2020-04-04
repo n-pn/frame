@@ -18,14 +18,14 @@ code {
 kbd {
   // margin: -0.2em 0;
   // display: inline-block;
-  @include color(neutral, 7);
+  @include fgcolor(neutral, 7);
   @include border($color: color(neutral, 4));
   @include shadow(1);
 }
 
 code {
   // margin: 0 -0.2em;
-  @include color(neutral, 7);
+  @include fgcolor(neutral, 7);
   @include bgcolor(neutral, 2);
   & + & {
     margin-left: 0.4em;

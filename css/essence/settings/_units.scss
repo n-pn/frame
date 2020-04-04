@@ -31,7 +31,7 @@ $-base-font-size: 16px !default;
     @return gap($num);
   }
   @if unit($num) == px {
-    @return ($num / $-base-font-num) * 1rem;
+    @return ($num / $-base-font-size) * 1rem;
   }
   @if unit($num) == em {
     @return $num;

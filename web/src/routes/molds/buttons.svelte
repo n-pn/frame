@@ -35,7 +35,7 @@
     }
   }
 
-  @import 'mold/button.def';
+  @import 'essence/elements/buttons';
 
   @each $color in map-keys($-color-palette) {
     :global([m-button~='#{$color}']) {
