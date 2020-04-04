@@ -3,5 +3,5 @@
 </script>
 
 <svg class="m-icon _{name} {$$props.class}">
-  <use xlink:href="/feather.svg#{name}" />
+  <use xlink:href="/icons.svg#{name}" />
 </svg>

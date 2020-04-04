@@ -56,7 +56,9 @@
     {#each icons as icon}
       <li class="item">
         <div class="view">
-          <MIcon name={icon.name} />
+          <svg class="m-icon _{icon.name}">
+            <use xlink:href="/icons.svg#{icon.name}" />
+          </svg>
         </div>
         <div class="name">{icon.name}</div>
       </li>

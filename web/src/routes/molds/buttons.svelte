@@ -1,5 +1,4 @@
 <script>
-  import MIcon from '$mould/MIcon.svelte'
   import MButton from '$mould/MButton.svelte'
 
   const colors = [
