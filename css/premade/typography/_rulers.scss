@@ -1,7 +1,7 @@
 // rulers
 
 hr {
-  @include fgcolor(neutral, 3);
+  @include fgcolor(color(neutral, 3));
   background-color: currentColor;
   border: 0;
 

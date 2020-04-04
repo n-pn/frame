@@ -1,17 +1,17 @@
 // variables
 
-$-xs: 320px !default;
-$-sm: 560px !default;
-$-md: 800px !default;
-$-lg: 1040px !default;
-$-xl: 1280px !default;
+$-screen-xs: 320px !default;
+$-screen-sm: 560px !default;
+$-screen-md: 800px !default;
+$-screen-lg: 1040px !default;
+$-screen-xl: 1280px !default;
 
 $-screen-sizes: (
-  xs: $-xs,
-  sm: $-sm,
-  md: $-md,
-  lg: $-lg,
-  xl: $-xl,
+  xs: $-screen-xs,
+  sm: $-screen-sm,
+  md: $-screen-md,
+  lg: $-screen-lg,
+  xl: $-screen-xl,
 ) !default;
 
 $-screen-names: map-keys($-screen-sizes);

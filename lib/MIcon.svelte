@@ -1,7 +1,7 @@
 <script>
-  const name = $$props['m-icon'] || 'feather'
+  export let name
 </script>
 
-<svg class={$$props.class} m-icon={name}>
+<svg class="m-icon _{name} {$$props.class}">
   <use xlink:href="/feather.svg#{name}" />
 </svg>

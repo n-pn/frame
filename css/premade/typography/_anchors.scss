@@ -1,6 +1,5 @@
 /// links
 
-a[m-button],
 a[class] {
   text-decoration: none;
 }
@@ -9,7 +8,7 @@ $-link-internal: color(blue, 6) !default;
 $-link-external: color(teal, 6) !default;
 $-link-external-visited: color(purple, 6) !default;
 
-a:not([class]):not([m-button]) {
+a:not([class]) {
   color: $-link-internal;
   text-decoration: none;
   // text-decoration-skip-ink: auto;

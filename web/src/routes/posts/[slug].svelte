@@ -18,7 +18,7 @@
   <title>{post.title} - Mould</title>
 </svelte:head>
 
-<article m-article>
+<article class="m-article">
   <h1>{post.title}</h1>
   {@html post.html}
 </article>

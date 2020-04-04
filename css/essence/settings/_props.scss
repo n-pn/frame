@@ -23,10 +23,6 @@
     @return $xs;
   }
 
-  @if type-of($xs) == list {
-    @return attrs($xs...);
-  }
-
   @return (
     xs: $xs or $df,
     sm: $sm or $df,

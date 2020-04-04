@@ -39,9 +39,14 @@ $-border-color-df: color(neutral, 3) !default;
   @include props($props, $value, $trump);
 }
 
-// prettier-ignore
-@mixin border($pos: all, $width: $-border-width-df, $color: $-border-color-df, $style: $-border-style-df, $trump: false ) {
+@mixin border(
+  $pos: all,
+  $width: $-border-width-df,
+  $style: $-border-style-df,
+  $color: $-border-color-df,
+  $trump: false
+) {
   $props: border-props($pos);
-  $value: $width $color $style;
+  $value: $width $style $color;
   @include props($props, $value, $trump);
 }

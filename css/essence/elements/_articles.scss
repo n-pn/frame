@@ -14,7 +14,7 @@
         width: 100%;
         bottom: 0;
         height: 1px;
-        @include bgcolor(neutral, 3);
+        @include bgcolor(color(neutral, 3));
       }
     }
   }

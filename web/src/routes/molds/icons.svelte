@@ -31,7 +31,7 @@
     // box-shadow: 0 1px 3px rgba(#000, 0.1), 0 1px 2px rgba(#000, 0.06);
     @include radius();
 
-    > :global([m-icon]) {
+    > :global(.m-icon) {
       margin: auto;
       width: 1.5rem;
       height: 1.5rem;
@@ -51,12 +51,12 @@
   <h1>Icons</h1>
   <p>TODO: write usage</p>
 
-  <h2>Icon list ({icons.length})</h2>
+  <h2>Icon list ({icons.length} entries)</h2>
   <ul class="list">
     {#each icons as icon}
       <li class="item">
         <div class="view">
-          <MIcon m-icon={icon.name} />
+          <MIcon name={icon.name} />
         </div>
         <div class="name">{icon.name}</div>
       </li>

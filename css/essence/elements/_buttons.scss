@@ -9,7 +9,7 @@ $-button-size-df: medium !default;
 
 $-button-heights: (
   /* 24px */ tiny: rem(6x),
-  /* 28px */ small: rem(7x),
+  /* 32px */ small: rem(8x),
   /* 36px */ medium: rem(9x),
   /* 48px */ large: rem(11x),
   /* 60px */ huge: rem(14x)
@@ -32,9 +32,11 @@ $-button-font-sizes: (
 );
 
 @mixin button-common() {
+  display: inline-flex;
+
   @include radius;
   @include uppercase;
-  @include border(all, 1px, transparent);
+  @include border($pos: all, $color: transparent);
 
   &:disabled {
     &:hover {
@@ -58,7 +60,8 @@ $-button-font-sizes: (
   > span {
     padding: 0 ($icon-size - $font-size) / 2;
   }
-  > [m-icon] {
+  > svg,
+  > img {
     margin: -1px;
     // margin-bottom: 0;
 
@@ -103,7 +106,7 @@ $-button-font-sizes: (
         @include bgcolor(color(neutral, 2));
       }
     } @else {
-      color: #fff;
+      @include fgcolor(#fff);
       @include bgcolor(color($theme, 5));
       &:hover {
         @include bgcolor(color($theme, 4));
@@ -115,7 +118,7 @@ $-button-font-sizes: (
     }
   } @else {
     @if $theme == neutral {
-      @include fgcolor($theme, 6);
+      @include fgcolor(color($theme, 6));
 
       background-color: transparent;
       &:hover {
@@ -135,7 +138,7 @@ $-button-font-sizes: (
       }
 
       &:disabled {
-        @include fgcolor($theme, 3);
+        @include fgcolor(color($theme, 3));
         @include bgcolor(transparent);
       }
     }

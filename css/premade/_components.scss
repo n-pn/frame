@@ -1,0 +1,51 @@
+.m-button {
+  @include button-common();
+  @include button-sizing();
+  @include button-varify();
+
+  // sizings
+  @each $size in $-button-size-names {
+    &._#{$size} {
+      @include button-sizing($size);
+    }
+  }
+
+  // variants
+
+  @each $style in $-button-styles {
+    &._#{$style} {
+      @include button-varify($style, $-button-theme-df);
+    }
+  }
+
+  @each $theme in $-button-themes {
+    &._#{$theme} {
+      @include button-varify($-button-style-df, $theme);
+
+      @each $style in $-button-styles {
+        &._#{$style} {
+          @include button-varify($style, $theme);
+        }
+      }
+    }
+  }
+}
+
+.m-icon {
+  @include svg-icon();
+}
+
+.m-article {
+  @include article();
+}
+
+.m-input {
+  @include input-common();
+  @include input-sizing(normal);
+  &._small {
+    @include input-sizing(small);
+  }
+  &._large {
+    @include input-sizing(large);
+  }
+}

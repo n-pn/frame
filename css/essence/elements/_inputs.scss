@@ -37,21 +37,22 @@
     &:focus {
       outline: none;
       box-shadow: 0 0 0 1px inset color(primary, 5);
-      @include border-color(color(primary, 5));
+      @include border-color($value: color(primary, 5));
     }
   }
 }
 
 @mixin input-sizing($size: normal) {
-  $pad: gap(2);
+  $pad: gap(1.25);
   @if $size == small {
-    $pad: gap(1);
+    $pad: gap(0.5);
   } @else if $size == large {
-    $pad: gap(3);
+    $pad: gap(2.25);
   }
 
   > input,
-  > select {
+  > select,
+  > textarea {
     @include padding(top-bottom, $pad);
   }
 }

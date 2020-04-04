@@ -37,7 +37,7 @@
   <title>Typography - Molds</title>
 </svelte:head>
 
-<article m-article>
+<article class="m-article">
   <h1>Typography</h1>
 
   <p>

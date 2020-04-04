@@ -24,28 +24,27 @@
     display: flex;
     flex-wrap: wrap;
     & + & {
-      margin-top: 0;
-    }
-  }
-
-  :global([m-button]) {
-    margin-top: 0.5rem;
-    & + & {
-      margin-left: 0.5rem;
+      margin-top: 0.5rem;
     }
   }
 
   @import 'essence/elements/buttons';
 
-  @each $color in map-keys($-color-palette) {
-    :global([m-button~='#{$color}']) {
-      width: 6rem;
-      justify-content: center;
-      @include button-varify(fill, $color);
+  .m-button {
+    & + & {
+      margin-left: 0.5rem;
+    }
 
-      @each $style in $-button-styles {
-        &[m-button~='#{$style}'] {
-          @include button-varify($style, $color);
+    @each $color in map-keys($-color-palette) {
+      :global(&._#{$color}) {
+        width: 6rem;
+        justify-content: center;
+        @include button-varify(fill, $color);
+
+        @each $style in $-button-styles {
+          &._#{$style} {
+            @include button-varify($style, $color);
+          }
         }
       }
     }
@@ -63,7 +62,10 @@
 
   <div class="button-list">
     {#each sizes as size}
-      <MButton m-button={size} text={size + ' button'} icon="maximize" />
+      <MButton
+        class="m-button _{size}"
+        text={size + ' button'}
+        icon="maximize" />
     {/each}
   </div>
 
@@ -71,7 +73,7 @@
 
   <div class="button-list">
     {#each styles as style}
-      <button m-button="{style} primary">
+      <button class="m-button _{style} _primary">
         <span>{style.toUpperCase()}</span>
       </button>
     {/each}
@@ -80,16 +82,15 @@
   <h2>Icons</h2>
 
   <div class="button-list">
-    <MButton class="u-rd-x" icon="feather" />
-    <MButton class="u-p_l-8x u-p_r-8x" m-button="success" icon="circle" />
-    <MButton class="u-rd-8" m-button="harmful line" icon="x" text="Close" />
+    <MButton class="m-button u-rd-x" icon="feather" />
+    <MButton class="m-button _success u-p_l-8x u-p_r-8x" icon="circle" />
+    <MButton class="m-button _line _harmful u-rd-8" icon="x" text="Close" />
     <MButton
-      class="u-rd-x u-p_lr-4x"
-      m-button="primary"
+      class="m-button _primary u-rd-x u-p_lr-4x"
       icon-right="arrow-right"
       text="Next" />
     <MButton
-      class="u-sd-4 u-rd-0"
+      class="m-button u-sd-4 u-rd-0"
       disabled
       icon="chevron-left"
       icon-right="chevron-right"
@@ -101,13 +102,13 @@
   {#each styles as style}
     <div class="button-list">
       {#each variants as variant}
-        <MButton m-button="{style} {variant}" text={variant} />
+        <MButton class="m-button _{style} _{variant}" text={variant} />
       {/each}
     </div>
 
     <div class="button-list">
       {#each variants as variant}
-        <MButton m-button="{style} {variant}" disabled text={variant} />
+        <MButton class="m-button _{style} _{variant}" disabled text={variant} />
       {/each}
     </div>
     <hr />
@@ -117,14 +118,14 @@
 
   <div class="button-list">
     {#each styles as style}
-      <a href="/" m-button={style}>
+      <a href="/" class="m-button _primary _{style}">
         <span>Link</span>
       </a>
     {/each}
   </div>
   <div class="button-list">
     {#each styles as style}
-      <input type="button" m-button={style} value="input" />
+      <input type="button" class="m-button _harmful _{style}" value="input" />
     {/each}
   </div>
 
@@ -133,14 +134,14 @@
 
   <div class="button-list">
     {#each variants as variant}
-      <MButton class="u-rd-x" m-button={variant} text={variant} />
+      <MButton class="m-button _{variant} u-rd-x" text={variant} />
     {/each}
   </div>
 
   <h3>With shadows:</h3>
   <div class="button-list">
     {#each variants as variant}
-      <MButton class="u-sd-2" m-button={variant} text={variant} />
+      <MButton class="m-button _{variant} u-sd-2" text={variant} />
     {/each}
   </div>
 
@@ -152,7 +153,7 @@
   {#each colors as color}
     <div class="button-list">
       {#each styles as style}
-        <MButton m-button="{style} {color}" text={color} />
+        <MButton class="m-button _{style} _{color}" text={color} />
       {/each}
     </div>
   {/each}

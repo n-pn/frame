@@ -13,7 +13,7 @@ table {
 }
 
 caption {
-  @include padding($-table-padding, top-bottom);
+  @include padding(top-bottom, $-table-padding);
   color: $-table-capcolor;
   text-align: left;
   caption-side: bottom;
@@ -33,5 +33,5 @@ th {
 th,
 td {
   padding: $-table-padding $gutter;
-  @include border($-table-bdcolor, $width: 1px);
+  @include border($color: $-table-bdcolor, $width: 1px);
 }
