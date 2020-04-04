@@ -1,7 +1,18 @@
 <script>
-  import Navi from './_layout/nav.svelte'
+  import Nav from './_layout/nav.svelte'
 
   export let segment
+
+  import { stores } from '@sapper/app'
+  const { page } = stores()
+
+  $: {
+    if (typeof gtag === 'function') {
+      window.gtag('config', 'UA-158626989-2', {
+        page_path: $page.path,
+      })
+    }
+  }
 </script>
 
 <style lang="scss">
@@ -27,7 +38,23 @@
   }
 </style>
 
+<svelte:head>
+  <script
+    src="https://www.googletagmanager.com/gtag/js?id=UA-158626989-2"
+    async>
+
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+    gtag('config', 'UA-158626989-2')
+  </script>
+</svelte:head>
+
 <main>
-  <Navi {segment} />
+  <Nav {segment} />
   <slot />
 </main>
