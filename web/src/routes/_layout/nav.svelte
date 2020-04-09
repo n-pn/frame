@@ -1,5 +1,5 @@
 <script context="module">
-  import posts from '../posts/_posts.js'
+  import posts from '../examples/_posts.js'
 </script>
 
 <script>
