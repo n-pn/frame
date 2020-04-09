@@ -27,11 +27,11 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
   content: [
     './src/**/*.html',
     './src/**/*.svelte',
-    './__sapper__/build/**/*.html',
+    './__sapper__/export/**/*.html',
   ],
   keyframes: true,
   whitelistPatterns: [/svelte-/],
-  defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+  defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
 })
 
 // exports
