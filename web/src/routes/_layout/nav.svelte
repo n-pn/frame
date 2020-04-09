@@ -23,12 +23,19 @@
     left: -15rem;
     // @include bgcolor(neutral, 1);
   }
+
+  .content {
+    position: sticky;
+    top: 0;
+  }
+
   a {
     display: block;
     line-height: 1.5rem;
     text-decoration: none;
-    @include fgcolor(neutral, 6);
+    @include fgcolor(color(neutral, 6));
   }
+
   .site {
     text-transform: uppercase;
     font-weight: 300;
@@ -37,7 +44,7 @@
     letter-spacing: 0.1em;
     // margin: 0 0.375rem;
     line-height: 4rem;
-    margin: 0 0.75rem 0 0.75rem;
+    margin: 0 0.75rem;
     position: relative;
     &:after {
       position: absolute;
@@ -47,7 +54,7 @@
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: color(neutral, 2);
+      @include bgcolor(color(neutral, 2));
     }
     // margin-top: 1rem;
   }
@@ -57,11 +64,11 @@
     padding: 0.375rem 0.75rem;
     border-radius: 3px;
     border: 0;
-    @include font-size(sm);
+    @include font-size(3);
     line-height: 1.5rem;
 
     &:hover {
-      background-color: rgba(color(primary, 4), 0.2);
+      @include bgcolor(rgba(color(primary, 4), 0.2));
     }
   }
 
@@ -74,32 +81,37 @@
     font-weight: 400;
     padding: 0 1rem;
     margin-top: 0.5rem;
-    @include fgcolor(neutral, 5);
+    @include fgcolor(color(neutral, 5));
   }
 </style>
 
 <nav on:click={active_page}>
-  <a class="site" class:_active={segment === undefined} href=".">Mould</a>
+  <div class="content">
+    <a class="site" class:_active={segment === undefined} href=".">Mould</a>
 
-  <h3>Foundation</h3>
+    <h3>Foundation</h3>
 
-  <a class="link" href="basis/typography">Typography</a>
-  <a class="link" href="basis/cheatsheet">Cheatsheet</a>
+    <a class="link" href="typography">Typography</a>
+    <a class="link" href="cheatsheet">Cheatsheet</a>
 
-  <h3>Components</h3>
-  <a class="link" href="molds/icons">Icons</a>
-  <a class="link" href="molds/buttons">Buttons</a>
-  <a class="link" href="molds/inputs">Inputs</a>
-  <!-- <a class="link" href="molds/chips">Chips</a>
-    <a class="link" href="molds/badges">Badges</a>
-    <a class="link" href="molds/cards">Cards</a>
-    <a class="link" href="molds/menus">Menus</a>
-    <a class="link" href="molds/dialogs">Dialogs</a>
-    <a class="link" href="molds/tables">Tables</a>
-    <a class="link" href="molds/tooltips">Tooltips</a> -->
+    <h3>Components</h3>
+    <a class="link" href="components/icons">Icons</a>
+    <a class="link" href="components/buttons">Buttons</a>
+    <a class="link" href="components/inputs">Inputs</a>
+    <!-- <a class="link" href="components/chips">Chips</a>
+    <a class="link" href="components/badges">Badges</a>
+    <a class="link" href="components/cards">Cards</a>
+    <a class="link" href="components/menus">Menus</a>
+    <a class="link" href="components/dialogs">Dialogs</a>
+    <a class="link" href="components/tables">Tables</a>
+    <a class="link" href="components/tooltips">Tooltips</a> -->
 
-  <h3>Examples</h3>
-  {#each posts as post}
-    <a class="link" rel="prefetch" href="posts/{post.slug}">{post.title}</a>
-  {/each}
+    <h3>Examples</h3>
+    {#each posts as post}
+      <a class="link" rel="prefetch" href="examples/{post.slug}">
+        {post.title}
+      </a>
+    {/each}
+  </div>
+
 </nav>

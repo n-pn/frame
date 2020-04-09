@@ -18,10 +18,11 @@
   const variants = ['default', 'primary', 'success', 'warning', 'harmful']
 </script>
 
-<style type="text/scss">
+<style lang="scss">
   .button-list {
-    display: flex;
+    @include flex($gap: 0.5rem, $child: ':global(.m-button)');
     flex-wrap: wrap;
+
     & + & {
       margin-top: 0.5rem;
     }
@@ -30,10 +31,6 @@
   @import 'essence/elements/buttons';
 
   .m-button {
-    & + & {
-      margin-left: 0.5rem;
-    }
-
     @each $color in map-keys($-color-palette) {
       :global(&._#{$color}) {
         width: 6rem;

@@ -9,9 +9,7 @@
 
 <style lang="scss">
   .list {
-    display: grid;
-    grid-gap: 0.75rem;
-    grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+    @include grid(minmax(6rem, 1fr), 0.75rem, '.item');
     margin-top: 1rem;
   }
 
@@ -26,7 +24,7 @@
     display: flex;
     width: 100%;
     height: 4.5rem;
-    background-color: #fff;
+    @include bgcolor(color(neutral, 1));
     @include shadow(1);
     // box-shadow: 0 1px 3px rgba(#000, 0.1), 0 1px 2px rgba(#000, 0.06);
     @include radius();
