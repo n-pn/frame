@@ -31,7 +31,7 @@
     "svelte": "^3.0.0",
     "svelte-loader-hot": "^0.3.0",
     "webpack": "^4.42.0",
-    "~mould": "file:../"
+    "~mould": "file:.."
   },
   "browserslist": [
     "> 1%",
