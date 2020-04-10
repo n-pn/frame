@@ -52,7 +52,7 @@ module.exports = {
               preprocess,
               hydratable: true,
               hotReload: true,
-              emitCss: false,
+              emitCss: !dev,
               hotOptions: { optimistic: true },
             },
           },
