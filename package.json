@@ -2,7 +2,7 @@
   "name": "@nipin/mould",
   "author": "Nipinium",
   "description": "Reusable stylesheets and components for Svelte projects",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "MIT",
   "files": [
     "css",
