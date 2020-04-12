@@ -127,9 +127,9 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
   border-radius: $-radius-df;
 }
 
-@each $key, $value in $-radius-sizes {
+@each $key in $-radiuses {
   .u-rd-#{$key} {
-    @include radius($key, $side: all, $trump: true);
+    @include radius(all, $key, $trump: true);
   }
 }
 
@@ -137,12 +137,12 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
   $side-abbr: edge-abbr($side);
 
   .u-rd-#{$side-abbr} {
-    @include radius($side: $side, $trump: true);
+    @include radius($side, $trump: true);
   }
 
-  @each $key, $value in $-radius-sizes {
+  @each $key in $-radiuses {
     .u-rd-#{$side-abbr}-#{$key} {
-      @include radius($key, $side: $side, $trump: true);
+      @include radius($side, $key, $trump: true);
     }
   }
 }

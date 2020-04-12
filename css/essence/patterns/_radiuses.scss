@@ -13,24 +13,35 @@ $-radius-sizes: (
 ) !default;
 
 $-radius-df: 4 !default;
+$-radiuses: map-keys($-radius-sizes);
 
-@function radius($size) {
-  @return map-get($-radius-sizes, $size);
-}
+// functions
 
-@mixin radius($size: $-radius-df, $side: all, $trump: false) {
-  $radius: radius($size);
-  @if $trump == true {
-    $radius: $radius !important;
+@function radius-props($pos: all) {
+  @if $pos == all or $pos == null {
+    @return border-radius;
   }
 
-  @if $side == all {
-    border-radius: $radius;
-  }
+  $props: ();
 
   @each $corner in $-corners {
-    @if side-amatch($side, $corner) {
-      border-#{$corner}-radius: $radius;
+    @if match-edge($corner, $pos) {
+      $props: append($props, border-#{$corner}-radius);
     }
   }
+
+  @return $props;
+}
+
+@function radius($value) {
+  @return map-get($-radius-sizes, $value) or $value;
+}
+
+// mixins
+
+@mixin radius($pos: all, $value: $-radius-df, $trump: false) {
+  $props: radius-props($pos);
+  $value: radius($value);
+
+  @include props($props, $value, $trump);
 }
