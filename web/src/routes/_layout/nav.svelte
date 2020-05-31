@@ -33,7 +33,7 @@
     display: block;
     line-height: 1.5rem;
     text-decoration: none;
-    @include fgcolor(color(neutral, 6));
+    @include fgcolor(neutral, 6);
   }
 
   .site {
@@ -54,7 +54,7 @@
       left: 0;
       width: 100%;
       height: 1px;
-      @include bgcolor(color(neutral, 2));
+      @include bgcolor(neutral, 2);
     }
     // margin-top: 1rem;
   }
@@ -81,7 +81,7 @@
     font-weight: 400;
     padding: 0 1rem;
     margin-top: 0.5rem;
-    @include fgcolor(color(neutral, 5));
+    @include fgcolor(neutral, 5);
   }
 </style>
 

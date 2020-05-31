@@ -43,5 +43,5 @@ $-radiuses: map-keys($-radius-sizes);
   $props: radius-props($pos);
   $value: radius($value);
 
-  @include props($props, $value, $trump);
+  @include apply($props, $value, $trump);
 }

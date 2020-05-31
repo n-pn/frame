@@ -32,14 +32,14 @@
   );
 }
 
-@function trump($val, $trump: false) {
+@function trump($value, $trump: false) {
   @if $trump {
-    $val: $val !important;
+    @return $value !important;
   }
-  @return $val;
+  @return $value;
 }
 
-@mixin props($props, $value, $trump: false) {
+@mixin apply($props, $value, $trump: false) {
   @if type-of($props) != list {
     $props: ($props);
   }
@@ -57,4 +57,9 @@
     }
     $old: $val;
   }
+}
+
+@mixin props($props, $value, $trump: false) {
+  @warn "deprecated, using apply() instead";
+  @include apply($props, $value, $trump);
 }

@@ -145,41 +145,72 @@ $-color-names: map-keys($-color-palette);
 
 // functions
 
-/// get color by name and tone
-@function color($name, $tone: 5) {
-  @if $name == none {
+@function is-custom-color($color) {
+  @if map-has-key($-color-palette, $color) {
+    @return true;
+  }
+  @if map-has-key($-color-mapping, $color) {
+    @return true;
+  }
+  @return false;
+}
+
+@function alpha($color, $alpha: null) {
+  @if $alpha == null or $alpha == 1 {
+    @return $color;
+  }
+
+  @return rgba($color, $alpha);
+}
+
+/// get color by name and shade
+@function color($color, $shade: 5, $alpha: null) {
+  @if $color == none {
     @return transparent;
   }
-  @if $name == white {
+  @if $color == white {
     @return #fff;
   }
-  @if $name == black {
-    @return #000;
+  @if $color == black {
+    @return alpha(#000, $alpha);
   }
 
-  $color: map-get($-color-mapping, $name);
-  @if $color {
-    $name: $color;
+  $value: map-get($-color-mapping, $color);
+  @if $value {
+    $color: $value;
   }
 
-  $tones: map-get($-color-palette, $name);
+  $shades: map-get($-color-palette, $color);
 
-  @if not $tones {
-    @if type-of($name) == color {
-      @warn "using custom color [#{$name}] is not recommended";
-      @return $name;
+  @if not $shades {
+    @if type-of($color) == color {
+      @return alpha($color, $alpha);
     } @else {
-      @error "[#{$name}] is not a valid color";
+      @error "#{$color} is not a valid color";
     }
   }
 
-  @if type-of($tone) != number {
-    @error "color tone should be a number, got [#{$tone}]";
+  @if type-of($shade) != number {
+    @error "color shade must be a number, got #{$shade}";
   }
 
-  @if $tone < 1 or $tone > 9 {
-    @error "color tone should be in range 1..9, got [#{$tone}]";
+  @if $shade < 1 or $shade > 9 {
+    @error "color shade should be in range 1..9, got #{$shade}";
   }
 
-  @return map-get($tones, $tone);
+  @return alpha(map-get($shades, $shade), $alpha);
+}
+
+@function colors($colors, $shade: 5, $alpha: null) {
+  @if type-of($colors) != list {
+    // TODO: support map?
+    @error "expecting a list of colors";
+  }
+
+  $-colors: ();
+  @each $color in $colors {
+    $-colors: append($-colors, color($color, $shade, $alpha));
+  }
+
+  @return $-colors;
 }

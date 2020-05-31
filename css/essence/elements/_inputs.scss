@@ -16,7 +16,7 @@
     // font-weight: 500;
     background: linear-gradient(180deg, transparent 50%, $bgcolor 50%);
     pointer-events: none;
-    @include fgcolor(color(neutral, 6));
+    @include fgcolor(neutral, 6);
     @include font-family(narrow);
   }
 

@@ -23,7 +23,7 @@
     font-variant: small-caps;
     line-height: 2rem;
     float: left;
-    @include fgcolor(color(neutral, 6));
+    @include fgcolor(neutral, 6);
   }
 
   .tone {
@@ -37,7 +37,7 @@
     @each $color in $-color-names {
       @for $tone from 1 through 9 {
         &[color='#{$color}'][tone='#{$tone}'] {
-          @include bgcolor(color($color, $tone));
+          @include bgcolor($color, $tone);
         }
       }
     }

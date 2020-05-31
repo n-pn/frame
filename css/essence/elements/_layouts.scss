@@ -5,21 +5,21 @@ $-grid-gap-df: rem(2x) !default;
 @mixin flow($gap: $-flow-gap-df, $child: '*', $trump: false) {
   display: block;
   > #{$child} + #{$child} {
-    @include props(margin-top, $gap, $trump);
+    @include apply(margin-top, $gap, $trump);
   }
 }
 
 @mixin flex($gap: $-flex-gap-df, $child: '*', $trump: false) {
   display: flex;
   > #{$child} + #{$child} {
-    @include props(margin-left, $gap, $trump);
+    @include apply(margin-left, $gap, $trump);
   }
 }
 
 @mixin grid($size, $gap: $-grid-gap-df, $trump: false) {
   display: grid;
   grid-template-columns: repeat(auto-fill, $size);
-  @include props(grid-gap, $gap, $trump);
+  @include apply(grid-gap, $gap, $trump);
 }
 
 @mixin flex-center {

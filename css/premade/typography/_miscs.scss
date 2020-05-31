@@ -40,23 +40,23 @@ mark {
 }
 
 del {
-  @include fgcolor(color(red, 7));
-  @include bgcolor(color(red, 2));
+  @include fgcolor(red, 7);
+  @include bgcolor(red, 2);
 }
 
 ins {
-  @include fgcolor(color(green, 7));
-  @include bgcolor(color(green, 2));
+  @include fgcolor(green, 7);
+  @include bgcolor(green, 2);
 }
 
 mark {
-  @include fgcolor(color(yellow, 7));
-  @include bgcolor(color(yellow, 2));
+  @include fgcolor(yellow, 7);
+  @include bgcolor(yellow, 2);
 }
 
 time,
 var {
-  @include fgcolor(color(primary, 6));
+  @include fgcolor(primary, 6);
 }
 
 abbr[title],
