@@ -34,13 +34,13 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
 
 @each $width in $-border-widths {
   .u-bd-#{strip-unit($width)} {
-    @include border-width(all, $width);
+    @include bdwidth($width, $sides: all);
   }
 }
 
 @each $style in $-border-styles {
   .u-bd-#{$style} {
-    @include border-style(all, $style);
+    @include bdstyle($style, $sides: all);
   }
 }
 
@@ -48,18 +48,18 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
   $abbr: side-abbr($side);
 
   .u-bd_#{$abbr} {
-    @include border($side);
+    @include border($sides: $side);
   }
 
   @each $width in $-border-widths {
     .u-bd_#{$abbr}-#{strip-unit($width)} {
-      @include border-width($side, $width);
+      @include bdwidth($width, $sides: $side);
     }
   }
 
   @each $style in $-border-styles {
     .u-bd_#{$abbr}-#{$style} {
-      @include border-style($side, $style);
+      @include bdstyle($style, $sides: $side);
     }
   }
 }

@@ -7,15 +7,15 @@ $-border-shade-df: 3 !default;
 
 // functions
 
-@function border-props($pos: all, $type: null) {
-  @if $pos == all or $pos == null {
+@function border-props($sides: all, $type: null) {
+  @if $sides == all or $sides == null {
     @return join-props(border, $type);
   }
 
   $props: ();
 
   @each $side in $-sides {
-    @if match-side($side, $pos) {
+    @if match-side($side, $sides) {
       $props: append($props, join-props(border, $side, $type));
     }
   }
@@ -23,37 +23,43 @@ $-border-shade-df: 3 !default;
   @return $props;
 }
 
-// mixins
+// colors
 
-@mixin border-color(
-  $pos: all,
+@mixin bdcolor(
   $color: $-border-color-df,
   $shade: $-border-shade-df,
+  $sides: all,
   $trump: false
 ) {
-  $props: border-props($pos, color);
+  $props: border-props($sides, color);
   @include apply($props, color($color, $shade), $trump);
 }
 
-@mixin border-style($pos: all, $style: $-border-style-df, $trump: false) {
-  $props: border-props($pos, style);
+// styles
+
+@mixin bdstyle($style: $-border-style-df, $sides: all, $trump: false) {
+  $props: border-props($sides, style);
   @include apply($props, $style, $trump);
 }
 
-@mixin border-width($pos: all, $width: $-border-width-df, $trump: false) {
-  $props: border-props($pos, width);
+// widths
+
+@mixin bdwidth($width: $-border-width-df, $sides: all, $trump: false) {
+  $props: border-props($sides, width);
   @include apply($props, $width, $trump);
 }
 
+// borders
+
 @mixin border(
-  $pos: all,
   $width: $-border-width-df,
   $color: $-border-color-df,
   $shade: $-border-shade-df,
   $style: $-border-style-df,
+  $sides: all,
   $trump: false
 ) {
-  $props: border-props($pos);
+  $props: border-props($sides);
   $value: $width $style color($color, $shade);
   @include apply($props, $value, $trump);
 }

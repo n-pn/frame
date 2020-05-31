@@ -36,7 +36,7 @@ $-button-font-sizes: (
 
   @include radius;
   @include uppercase;
-  @include border($pos: all, $color: transparent);
+  @include border($color: none);
 
   &._disabled,
   &:disabled {
@@ -80,18 +80,18 @@ $-button-font-sizes: (
 @mixin button-varify($style: fill, $color: neutral) {
   @if $style == line {
     @if $color == neutral {
-      @include border-color($color: $color, $shade: 4);
+      @include bdcolor($color: $color, $shade: 4);
       &:disabled {
-        @include border-color($color: $color, $shade: 3);
+        @include bdcolor($color: $color, $shade: 3);
       }
     } @else {
-      @include border-color($color: $color, $shade: 3);
+      @include bdcolor($color: $color, $shade: 3);
       &:disabled {
-        @include border-color($color: $color, $shade: 2);
+        @include bdcolor($color: $color, $shade: 2);
       }
     }
   } @else {
-    @include border-color($color: none);
+    @include bdcolor($color: none);
   }
 
   @if $style == fill {
