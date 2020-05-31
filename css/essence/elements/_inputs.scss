@@ -37,7 +37,7 @@
     &:focus {
       outline: none;
       // box-shadow: 0 0 0 1px inset color(primary, 5);
-      @include border-color($value: color(primary, 5));
+      @include border-color($color: primary, $shade: 5);
     }
   }
 }

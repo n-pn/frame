@@ -1,0 +1,30 @@
+$-sides: top, bottom, left, right;
+$-flanks: top-bottom, left-right;
+$-corners: top-left, top-right, bottom-left, bottom-right;
+
+@function match-side($side1, $side2) {
+  @if type-of($side1) != string {
+    @error "side #{$side1} is not a string";
+  }
+  @if type-of($side2) != string {
+    @error "side #{$side2} is not a string";
+  }
+
+  @return str-index($side1, $side2) or str-index($side2, $side1);
+}
+
+@function side-props($pos, $sides: $-sides, $before: null, $after: null) {
+  $output: ();
+
+  @each $side in $sides {
+    @if match-side($side, $pos) {
+      @if $before {
+        $output: append($output, join-props($before, $side, $after));
+      } @else {
+        $output: append($output, join-props($side, $after));
+      }
+    }
+  }
+
+  @return $output;
+}

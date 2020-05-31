@@ -1,8 +1,8 @@
 $-button-styles: text, line, fill !default;
-$-button-themes: neutral, primary, success, warning, harmful !default;
+$-button-colors: neutral, primary, success, warning, harmful !default;
 
 $-button-style-df: fill !default;
-$-button-theme-df: neutral !default;
+$-button-color-df: neutral !default;
 
 $-button-size-names: tiny, small, medium, large, huge !default;
 $-button-size-df: medium !default;
@@ -63,7 +63,7 @@ $-button-font-sizes: (
   }
   > svg,
   > img {
-    margin: -1px;
+    margin: -rem(1px);
     // margin-bottom: 0;
 
     width: $icon-size;
@@ -77,26 +77,26 @@ $-button-font-sizes: (
   }
 }
 
-@mixin button-varify($style: fill, $theme: neutral) {
+@mixin button-varify($style: fill, $color: neutral) {
   @if $style == line {
-    @if $theme == neutral {
-      @include border-color($value: color($theme, 4));
+    @if $color == neutral {
+      @include border-color($color: $color, $shade: 4);
       &:disabled {
-        @include border-color($value: color($theme, 3));
+        @include border-color($color: $color, $shade: 3);
       }
     } @else {
-      @include border-color($value: color($theme, 3));
+      @include border-color($color: $color, $shade: 3);
       &:disabled {
-        @include border-color($value: color($theme, 2));
+        @include border-color($color: $color, $shade: 2);
       }
     }
   } @else {
-    @include border-color($value: transparent);
+    @include border-color($color: none);
   }
 
   @if $style == fill {
-    @if $theme == neutral {
-      @include fgcolor(neutral, 6);
+    @if $color == neutral {
+      @include fgcolor(neutral, 7);
       @include bgcolor(neutral, 2);
       &:hover {
         @include bgcolor(neutral, 3);
@@ -108,38 +108,38 @@ $-button-font-sizes: (
       }
     } @else {
       @include fgcolor(white);
-      @include bgcolor($theme, 5);
+      @include bgcolor($color, 5);
       &:hover {
-        @include bgcolor($theme, 4);
+        @include bgcolor($color, 4);
       }
 
       &:disabled {
-        @include bgcolor($theme, 3);
+        @include bgcolor($color, 3);
       }
     }
   } @else {
-    @if $theme == neutral {
-      @include fgcolor($theme, 6);
-
+    @if $color == neutral {
+      @include fgcolor($color, 6);
       @include bgcolor(none);
+
       &:hover {
-        @include bgcolor($theme, 2);
+        @include bgcolor($color, 2);
       }
 
       &:disabled {
-        @include fgcolor($theme, 4);
+        @include fgcolor($color, 4);
         @include bgcolor(none);
       }
     } @else {
-      @include fgcolor($theme, 5);
+      @include fgcolor($color, 6);
       @include bgcolor(none);
 
       &:hover {
-        @include bgcolor($theme, 1);
+        @include bgcolor($color, 1);
       }
 
       &:disabled {
-        @include fgcolor($theme, 3);
+        @include fgcolor($color, 3);
         @include bgcolor(none);
       }
     }

@@ -25,7 +25,7 @@ $-radiuses: map-keys($-radius-sizes);
   $props: ();
 
   @each $corner in $-corners {
-    @if match-edge($corner, $pos) {
+    @if match-side($corner, $pos) {
       $props: append($props, border-#{$corner}-radius);
     }
   }

@@ -1,7 +1,7 @@
 @import 'essence';
 @import 'utilities/color-utils';
 
-$-edge-abbrs: (
+$-side-abbrs: (
   top: t,
   bottom: b,
   left: l,
@@ -14,11 +14,11 @@ $-edge-abbrs: (
   left-right: lr,
 ) !default;
 
-@function edge-abbr($key) {
-  $abbr: map-get($-edge-abbrs, $key);
+@function side-abbr($key) {
+  $abbr: map-get($-side-abbrs, $key);
 
   @if $abbr == null {
-    @error "mssing edge abbr for [#{$key}]";
+    @error "mssing side abbr for [#{$key}]";
   }
   @return $abbr;
 }
@@ -45,7 +45,7 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
 }
 
 @each $side in $-sides {
-  $abbr: edge-abbr($side);
+  $abbr: side-abbr($side);
 
   .u-bd_#{$abbr} {
     @include border($side);
@@ -89,7 +89,7 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
 }
 
 @each $side in $-sides {
-  $side-abbr: edge-abbr($side);
+  $side-abbr: side-abbr($side);
 
   .u-rd-#{$side-abbr} {
     @include radius($side, $trump: true);
@@ -139,11 +139,11 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
     @include padding($pos: all, $size: $size, $trump: true);
   }
 
-  @each $edge in join($-sides, $-flanks) {
-    $edge-abbr: edge-abbr($edge);
+  @each $side in join($-sides, $-flanks) {
+    $side-abbr: side-abbr($side);
 
-    .u-pd_#{$edge-abbr}-#{strip-unit($size)} {
-      @include padding($edge, $size, $trump: true);
+    .u-pd_#{$side-abbr}-#{strip-unit($size)} {
+      @include padding($side, $size, $trump: true);
     }
   }
 }
@@ -159,11 +159,11 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
     @include margin($pos: all, $size: $size, $trump: true);
   }
 
-  @each $edge in join($-sides, $-flanks) {
-    $edge-abbr: edge-abbr($edge);
+  @each $side in join($-sides, $-flanks) {
+    $side-abbr: side-abbr($side);
 
-    .u-mg_#{$edge-abbr}-#{strip-unit($size)} {
-      @include margin($edge, $size, $trump: true);
+    .u-mg_#{$side-abbr}-#{strip-unit($size)} {
+      @include margin($side, $size, $trump: true);
     }
   }
 }

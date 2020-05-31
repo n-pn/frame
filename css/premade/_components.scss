@@ -14,17 +14,17 @@
 
   @each $style in $-button-styles {
     &._#{$style} {
-      @include button-varify($style, $-button-theme-df);
+      @include button-varify($style, $-button-color-df);
     }
   }
 
-  @each $theme in $-button-themes {
-    &._#{$theme} {
-      @include button-varify($-button-style-df, $theme);
+  @each $color in $-button-colors {
+    &._#{$color} {
+      @include button-varify($-button-style-df, $color);
 
       @each $style in $-button-styles {
         &._#{$style} {
-          @include button-varify($style, $theme);
+          @include button-varify($style, $color);
         }
       }
     }

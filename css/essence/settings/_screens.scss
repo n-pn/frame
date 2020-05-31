@@ -1,10 +1,10 @@
 // variables
 
-$-screen-xs: 320px !default;
-$-screen-sm: 560px !default;
-$-screen-md: 800px !default;
-$-screen-lg: 1040px !default;
-$-screen-xl: 1280px !default;
+$-screen-xs: rem(320px) !default;
+$-screen-sm: rem(560px) !default;
+$-screen-md: rem(800px) !default;
+$-screen-lg: rem(1040px) !default;
+$-screen-xl: rem(1280px) !default;
 
 $-screen-sizes: (
   xs: $-screen-xs,
@@ -46,7 +46,7 @@ $-screen-names: map-keys($-screen-sizes);
   @if $max == null {
     @content;
   } @else {
-    $size-max: screen-size($max) - 1px;
+    $size-max: screen-size($max) - rem(1px);
     @media screen and (max-width: $size-max) {
       @content;
     }
@@ -55,13 +55,13 @@ $-screen-names: map-keys($-screen-sizes);
 
 @mixin screen-range($min: sm, $max: xl) {
   $size-min: screen-size($min);
-  $size-max: screen-size($max) - 1px;
+  $size-max: screen-size($max) - rem(1px);
   @media screen and (min-width: $size-min) and (max-width: $size-max) {
     @content;
   }
 }
 
-@mixin screen-height-min($min: sm) {
+@mixin screen-height($min: sm) {
   // default is small tablet
   @if $min == null {
     @content;
@@ -95,14 +95,11 @@ $-screen-names: map-keys($-screen-sizes);
 
 // primary
 
-@mixin screen($screen: sm, $max: false) {
-  @if $max {
-    @include screen-max($screen) {
-      @content;
+@mixin screen($screen: sm, $prop: null, $value: null) {
+  @include screen-min($screen) {
+    @if $prop and $value {
+      #{$prop}: #{$value};
     }
-  } @else {
-    @include screen-min($screen) {
-      @content;
-    }
+    @content;
   }
 }
