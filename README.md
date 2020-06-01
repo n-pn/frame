@@ -29,11 +29,10 @@ import '@nipin/mould/lib/MIcon.svelte'
 
 ## SCSS cheatsheets
 
-````scss
+```scss
 @function append-string($before, $after: null) {
   // return $before-$after unless $after is null
 }
-
 
 @function color($color, $shade: null, $alpha: null) {
   // return a color base from a custom defined color palette
@@ -78,16 +77,20 @@ import '@nipin/mould/lib/MIcon.svelte'
   // $props: a string or a list of string, eg: background or (border-left, border-right)
   // $value: can be a single value or a screen-vals result
 }
-
 ```
 
 ## Svelte components
 
-```html
-<MButton class="" disabled="">
+```jsx
+<MButton class="" disabled=""></MButton>
+
+<MIcon class="" name="feather"></MIcon>
 ```
 
 ## License
 
 MIT
-````
+
+```
+
+```
