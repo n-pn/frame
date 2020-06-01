@@ -31,7 +31,7 @@
     line-height: rem(6x);
 
     @include border($color: color(neutral, 4));
-    @include padding(left-right, rem(3x));
+    @include padding(rem(3x), $sides: left-right);
     @include radius;
 
     &:focus {
@@ -53,6 +53,6 @@
   > input,
   > select,
   > textarea {
-    @include padding(top-bottom, $pad);
+    @include padding($pad, $sides: top-bottom);
   }
 }

@@ -17,15 +17,15 @@ $-radiuses: map-keys($-radius-sizes);
 
 // functions
 
-@function radius-props($pos: all) {
-  @if $pos == all or $pos == null {
+@function radius-props($sides: all) {
+  @if $sides == all or $sides == null {
     @return border-radius;
   }
 
   $props: ();
 
   @each $corner in $-corners {
-    @if match-side($corner, $pos) {
+    @if match-side($corner, $sides) {
       $props: append($props, border-#{$corner}-radius);
     }
   }
@@ -39,8 +39,8 @@ $-radiuses: map-keys($-radius-sizes);
 
 // mixins
 
-@mixin radius($pos: all, $value: $-radius-df, $trump: false) {
-  $props: radius-props($pos);
+@mixin radius($value: $-radius-df, $sides: all, $trump: false) {
+  $props: radius-props($sides);
   $value: radius($value);
 
   @include apply($props, $value, $trump);

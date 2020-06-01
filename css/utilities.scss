@@ -84,7 +84,7 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
 
 @each $key in $-radiuses {
   .u-rd-#{$key} {
-    @include radius(all, $key, $trump: true);
+    @include radius($key, $sides: all, $trump: true);
   }
 }
 
@@ -92,12 +92,12 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
   $side-abbr: side-abbr($side);
 
   .u-rd-#{$side-abbr} {
-    @include radius($side, $trump: true);
+    @include radius($sides: $side, $trump: true);
   }
 
   @each $key in $-radiuses {
     .u-rd-#{$side-abbr}-#{$key} {
-      @include radius($side, $key, $trump: true);
+      @include radius($key, $sides: $side, $trump: true);
     }
   }
 }
@@ -131,19 +131,19 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
 // paddings
 
 .u-pd {
-  @include padding($pos: all, $trump: true);
+  @include padding($sides: all, $trump: true);
 }
 
 @each $size in $-spacings {
   .u-pd-#{strip-unit($size)} {
-    @include padding($pos: all, $size: $size, $trump: true);
+    @include padding($size: $size, $sides: all, $trump: true);
   }
 
   @each $side in join($-sides, $-flanks) {
     $side-abbr: side-abbr($side);
 
     .u-pd_#{$side-abbr}-#{strip-unit($size)} {
-      @include padding($side, $size, $trump: true);
+      @include padding($size, $sides: $side, $trump: true);
     }
   }
 }
@@ -151,28 +151,28 @@ $-border-styles: none, inset, hidden, solid, double, dotted, dashed !default;
 // margins
 
 .u-mg {
-  @include margin($pos: all, $trump: true);
+  @include margin($sides: all, $trump: true);
 }
 
 @each $size in $-spacings {
   .u-mg-#{strip-unit($size)} {
-    @include margin($pos: all, $size: $size, $trump: true);
+    @include margin($size: $size, $sides: all, $trump: true);
   }
 
   @each $side in join($-sides, $-flanks) {
     $side-abbr: side-abbr($side);
 
     .u-mg_#{$side-abbr}-#{strip-unit($size)} {
-      @include margin($side, $size, $trump: true);
+      @include margin($size, $sides: $side, $trump: true);
     }
   }
 }
 
 // positions
 
-@each $pos in $-positions {
-  .u-pos-#{$pos} {
-    position: $pos;
+@each $sides in $-positions {
+  .u-pos-#{$sides} {
+    position: $sides;
   }
 }
 

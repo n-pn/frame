@@ -13,7 +13,7 @@ table {
 }
 
 caption {
-  @include padding(top-bottom, $-table-padding);
+  @include padding($-table-padding, $sides: top-bottom);
   color: $-table-capcolor;
   text-align: left;
   caption-side: bottom;

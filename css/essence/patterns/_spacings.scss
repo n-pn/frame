@@ -6,12 +6,12 @@ $-spacing-df: rem(4x) !default;
 
 // helpers
 
-@mixin margin($pos: all, $size: $-spacing-df, $trump: false) {
-  $props: side-props($pos, $-sides, margin);
+@mixin margin($size: $-spacing-df, $sides: all, $trump: false) {
+  $props: side-props($sides, $-sides, margin);
   @include apply($props, $size, $trump);
 }
 
-@mixin padding($pos: all, $size: $-spacing-df, $trump: false) {
-  $props: side-props($pos, $-sides, padding);
+@mixin padding($size: $-spacing-df, $sides: all, $trump: false) {
+  $props: side-props($sides, $-sides, padding);
   @include apply($props, $size, $trump);
 }
