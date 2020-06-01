@@ -16,16 +16,16 @@ $-button-heights: (
 );
 
 $-button-icon-sizes: (
-  tiny: rem(16px),
-  small: rem(18px),
+  tiny: rem(14px),
+  small: rem(16px),
   medium: rem(20px),
   large: rem(24px),
   huge: rem(28px),
 );
 
 $-button-font-sizes: (
-  tiny: rem(12px),
-  small: rem(13px),
+  tiny: rem(11px),
+  small: rem(12px),
   medium: rem(14px),
   large: rem(16px),
   huge: rem(18px),
@@ -63,7 +63,7 @@ $-button-font-sizes: (
   }
   > svg,
   > img {
-    // margin: -rem(1px);
+    // margin-top: rem(-1px);
     // margin-bottom: 0;
 
     width: $icon-size;
@@ -119,7 +119,7 @@ $-button-font-sizes: (
     }
   } @else {
     @if $color == neutral {
-      @include fgcolor($color, 6);
+      @include fgcolor($color, 7);
       @include bgcolor(none);
 
       &:hover {

@@ -13,6 +13,19 @@ $-corners: top-left, top-right, bottom-left, bottom-right;
   @return str-index($side1, $side2) or str-index($side2, $side1);
 }
 
+@function join-props($props...) {
+  $out: nth($props, 1);
+  $len: length($props);
+  @for $idx from 2 through $len {
+    $val: nth($props, $idx);
+    @if $val {
+      $out: #{$out}-#{$val};
+    }
+  }
+
+  @return $out;
+}
+
 @function side-props($pos, $sides: $-sides, $before: null, $after: null) {
   $output: ();
 

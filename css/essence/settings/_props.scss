@@ -1,37 +1,3 @@
-@function join-props($props...) {
-  $out: nth($props, 1);
-  $len: length($props);
-  @for $idx from 2 through $len {
-    $val: nth($props, $idx);
-    @if $val {
-      $out: #{$out}-#{$val};
-    }
-  }
-
-  @return $out;
-}
-
-@function attrs(
-  $xs: null,
-  $sm: null,
-  $md: null,
-  $lg: null,
-  $xl: null,
-  $df: null
-) {
-  @if type-of($xs) == map {
-    @return $xs;
-  }
-
-  @return (
-    xs: $xs or $df,
-    sm: $sm or $df,
-    md: $md or $df,
-    lg: $lg or $df,
-    xl: $xl or $df
-  );
-}
-
 @function trump($value, $trump: false) {
   @if $trump {
     @return $value !important;
@@ -44,7 +10,7 @@
     $props: ($props);
   }
 
-  $map: attrs($value);
+  $map: screen-vals($value);
   $old: null;
 
   @each $key, $val in $map {

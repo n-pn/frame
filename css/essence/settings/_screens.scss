@@ -22,11 +22,24 @@ $-screen-names: map-keys($-screen-sizes);
   $val: map-get($-screen-sizes, $key);
 
   @if not $val {
-    @warn "custom screen size [#{$key}] is not recommended";
+    // @warn "custom screen size [#{$key}] is not recommended";
     @return $key;
   }
 
   @return $val;
+}
+
+// prettier-ignore
+@function screen-vals( $xs: null, $sm: null, $md: null, $lg: null, $xl: null, $df: null ) {
+  @if type-of($xs) == map { @return $xs; }
+
+  @return (
+    xs: $xs or $df,
+    sm: $sm or $df,
+    md: $md or $df,
+    lg: $lg or $df,
+    xl: $xl or $df
+  );
 }
 
 // extras

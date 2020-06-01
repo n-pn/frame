@@ -18,7 +18,7 @@
 <style lang="scss">
   :global(#sapper) {
     height: 100%;
-    @include apply(margin-left, attrs($md: 15rem));
+    @include apply(margin-left, screen-vals($md: 15rem));
   }
   main {
     min-height: 100%;
