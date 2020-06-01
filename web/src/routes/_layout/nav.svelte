@@ -7,7 +7,6 @@
 
   function active_page(evt) {
     const target = evt.target
-    console.log(evt)
   }
 </script>
 

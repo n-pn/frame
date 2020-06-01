@@ -25,7 +25,6 @@ module.exports = {
           resolve({
             code: result.css.toString(),
             map: result.map.toString(),
-            // dependencies: result.stats.includedFiles, // include this slow down compilation process
           })
         })
       })

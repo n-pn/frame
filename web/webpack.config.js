@@ -10,8 +10,8 @@ const dev = mode === 'development'
 const alias = {
   svelte: path.resolve(__dirname, 'node_modules', 'svelte'),
   $mould: path.resolve(__dirname, 'node_modules', '~mould/lib'),
-  $com: path.resolve(__dirname, 'src/routes/_common'),
   $src: path.resolve(__dirname, 'src'),
+  $com: path.resolve(__dirname, 'src/routes/_common'),
 }
 
 const extensions = ['.mjs', '.js', '.json', '.svelte', '.html']
@@ -53,7 +53,10 @@ module.exports = {
               hydratable: true,
               hotReload: true,
               emitCss: !dev,
-              hotOptions: { optimistic: true },
+              hotOptions: {
+                noPreserveState: false, // Default: false
+                optimistic: true, // Default: false
+              },
             },
           },
         },
