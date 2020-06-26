@@ -39,7 +39,8 @@ $-button-text-sizes: (
   @include border($color: none);
 
   &._disabled,
-  &:disabled {
+  &:disabled,
+  &._disable {
     &:hover {
       cursor: text;
     }
@@ -67,7 +68,7 @@ $-button-text-sizes: (
   }
 
   > span {
-    margin-top: rem(1px);
+    // margin-top: rem(1px);
     padding: 0 $text-pad;
   }
 
@@ -84,12 +85,14 @@ $-button-text-sizes: (
   @if $style == line {
     @if $color == neutral {
       @include bdcolor($color: $color, $shade: 4);
-      &:disabled {
+      &:disabled,
+      &._disable {
         @include bdcolor($color: $color, $shade: 3);
       }
     } @else {
       @include bdcolor($color: $color, $shade: 3);
-      &:disabled {
+      &:disabled,
+      &._disable {
         @include bdcolor($color: $color, $shade: 2);
       }
     }
@@ -105,7 +108,8 @@ $-button-text-sizes: (
         @include bgcolor(neutral, 3);
       }
 
-      &:disabled {
+      &:disabled,
+      &._disable {
         @include fgcolor(neutral, 4);
         @include bgcolor(neutral, 2);
       }
@@ -116,7 +120,8 @@ $-button-text-sizes: (
         @include bgcolor($color, 4);
       }
 
-      &:disabled {
+      &:disabled,
+      &._disable {
         @include bgcolor($color, 3);
       }
     }
@@ -129,7 +134,8 @@ $-button-text-sizes: (
         @include bgcolor($color, 2);
       }
 
-      &:disabled {
+      &:disabled,
+      &._disable {
         @include fgcolor($color, 4);
         @include bgcolor(none);
       }
@@ -141,7 +147,8 @@ $-button-text-sizes: (
         @include bgcolor($color, 1);
       }
 
-      &:disabled {
+      &:disabled,
+      &._disable {
         @include fgcolor($color, 3);
         @include bgcolor(none);
       }
