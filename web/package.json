@@ -25,7 +25,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.0",
     "postcss-loader": "^3.0.0",
-    "sapper": "^0.27.0",
+    "sapper": "^0.28.0",
     "sass-loader": "^8.0.0",
     "string-hash": "^1.1.3",
     "svelte": "^3.0.0",

@@ -51,11 +51,13 @@ module.exports = {
               dev,
               preprocess,
               hydratable: true,
-              hotReload: true,
+              hotReload: dev,
               emitCss: !dev,
               hotOptions: {
                 noPreserveState: false, // Default: false
                 optimistic: true, // Default: false
+                acceptAccessors: true,
+                acceptNamedExports: true,
               },
             },
           },
@@ -65,12 +67,9 @@ module.exports = {
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: dev,
-                reloadAll: true,
-              },
+              options: { hmr: dev, reloadAll: true },
             },
-            'css-loader',
+            { loader: 'css-loader', options: { sourceMap: true } },
             !dev && {
               loader: 'postcss-loader',
               options: {
@@ -79,10 +78,7 @@ module.exports = {
                 plugins: [autoprefixer, cssnano, purgecss],
               },
             },
-            {
-              loader: 'sass-loader',
-              options: { sourceMap: true },
-            },
+            { loader: 'sass-loader', options: { sourceMap: true } },
           ].filter(Boolean),
         },
       ],
@@ -120,6 +116,7 @@ module.exports = {
               generate: 'ssr',
               dev,
               preprocess,
+              hydratable: true,
             },
           },
         },
