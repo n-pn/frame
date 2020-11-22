@@ -1,15 +1,16 @@
 const webpack = require('webpack')
-const path = require('path')
-const config = require('sapper/config/webpack.js')
-const pkg = require('./package.json')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+const path = require('path')
+const pkg = require('./package.json')
+const config = require('sapper/config/webpack.js')
 
 const mode = process.env.NODE_ENV
 const dev = mode === 'development'
 
 const alias = {
   svelte: path.resolve(__dirname, 'node_modules', 'svelte'),
-  $mould: path.resolve(__dirname, 'node_modules', '@nipin', 'mould', 'lib'),
+  $lib: path.resolve(__dirname, 'lib'),
   $src: path.resolve(__dirname, 'src'),
 }
 
@@ -20,8 +21,6 @@ const { preprocess } = require('./svelte.config')
 
 // postcss
 
-const autoprefixer = require('autoprefixer')
-const cssnano = require('cssnano')({ preset: 'default' })
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: ['./src/**/*.html', './src/**/*.svelte'],
   keyframes: true,
@@ -44,7 +43,7 @@ module.exports = {
             loader: 'svelte-loader-hot',
             options: {
               dev,
-              emitCss: !dev,
+              emitCss: false,
               preprocess,
               hydratable: true,
               hotReload: dev,
@@ -58,16 +57,15 @@ module.exports = {
         {
           test: /\.s?css$/,
           use: [
-            {
-              loader: MiniCssExtractPlugin.loader,
-              options: { hmr: dev, reloadAll: true },
-            },
+            MiniCssExtractPlugin.loader,
             { loader: 'css-loader', options: { sourceMap: true } },
             !dev && {
               loader: 'postcss-loader',
               options: {
-                parsers: 'postcss',
-                plugins: [autoprefixer, cssnano, purgecss],
+                postcssOptions: {
+                  parsers: 'postcss',
+                  plugins: ['autoprefixer', 'cssnano', purgecss],
+                },
               },
             },
             { loader: 'sass-loader', options: { sourceMap: true } },

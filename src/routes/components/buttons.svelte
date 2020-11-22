@@ -1,5 +1,5 @@
 <script>
-  import MButton from '$mould/MButton.svelte'
+  import MButton from '$lib/MButton.svelte'
 
   const colors = [
     'gray',
@@ -17,35 +17,6 @@
   const styles = ['fill', 'text', 'line']
   const variants = ['default', 'primary', 'success', 'warning', 'harmful']
 </script>
-
-<style lang="scss">
-  .button-list {
-    @include flex($gap: 0.5rem, $child: ':global(.m-button)');
-    flex-wrap: wrap;
-
-    & + & {
-      margin-top: 0.5rem;
-    }
-  }
-
-  @import 'essence/elements/buttons';
-
-  .m-button {
-    @each $color in map-keys($-color-palette) {
-      :global(&._#{$color}) {
-        width: 6rem;
-        justify-content: center;
-        @include button-varify(fill, $color);
-
-        @each $style in $-button-styles {
-          &._#{$style} {
-            @include button-varify($style, $color);
-          }
-        }
-      }
-    }
-  }
-</style>
 
 <svelte:head>
   <title>Buttons - Molds</title>
@@ -114,9 +85,7 @@
 
   <div class="button-list">
     {#each styles as style}
-      <a href="/" class="m-button _primary _{style}">
-        <span>Link</span>
-      </a>
+      <a href="/" class="m-button _primary _{style}"> <span>Link</span> </a>
     {/each}
   </div>
   <div class="button-list">
@@ -142,9 +111,7 @@
   </div>
 
   <h2>Colors (custom)</h2>
-  <p>
-    <em>Check source code of this page for detailed implementation.</em>
-  </p>
+  <p><em>Check source code of this page for detailed implementation.</em></p>
 
   {#each colors as color}
     <div class="button-list">
@@ -153,5 +120,33 @@
       {/each}
     </div>
   {/each}
-
 </article>
+
+<style lang="scss">
+  .button-list {
+    @include flex($wrap: true);
+    @include flex-gap($gap: 0.5rem, $child: ':global(*)');
+
+    & + & {
+      margin-top: 0.5rem;
+    }
+  }
+
+  @import 'molds/buttons.d';
+
+  .m-button {
+    @each $color in map-keys($m-color-palette) {
+      :global(&._#{$color}) {
+        width: 6rem;
+        justify-content: center;
+        @include button-varify(fill, $color);
+
+        @each $style in $-button-styles {
+          &._#{$style} {
+            @include button-varify($style, $color);
+          }
+        }
+      }
+    }
+  }
+</style>

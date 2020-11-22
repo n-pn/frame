@@ -14,9 +14,26 @@
   const shades = [9, 8, 7, 6, 5, 4, 3, 2, 1]
 </script>
 
+<svelte:head>
+  <title>Cheatsheet - Molds</title>
+</svelte:head>
+
+<article class="m-article">
+  <h1>Cheatsheet</h1>
+
+  <h2>Color palette</h2>
+
+  {#each colors as color}
+    <div class="colors">
+      <span class="label">{color}:</span>
+      {#each shades as shade}<span class="shade" {color} {shade} />{/each}
+    </div>
+  {/each}
+</article>
+
 <style lang="scss">
-  .color {
-    @include clearfix;
+  .colors {
+    @include flow();
   }
 
   .label {
@@ -34,9 +51,9 @@
     @include radius();
     @include shadow();
 
-    @each $color in $-color-names {
+    @each $color in $m-color-names {
       @for $shade from 1 through 9 {
-        &._#{$color}._s#{$shade}] {
+        &[color='#{$color}'][shade='#{$shade}'] {
           @include bgcolor($color, $shade);
         }
       }
@@ -48,20 +65,3 @@
   //   padding-top: 1rem;
   // }
 </style>
-
-<svelte:head>
-  <title>Cheatsheet - Molds</title>
-</svelte:head>
-
-<article class="m-article">
-  <h1>Cheatsheet</h1>
-
-  <h2>Color palette</h2>
-
-  {#each colors as color}
-    <div class="colors">
-      <span class="label">{color}:</span>
-      {#each shades as shade}<span class="shade" {color} {shade} />{/each}
-    </div>
-  {/each}
-</article>

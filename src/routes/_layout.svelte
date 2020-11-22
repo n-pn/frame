@@ -15,29 +15,10 @@
   }
 </script>
 
-<style lang="scss">
-  :global(#sapper) {
-    height: 100%;
-    @include apply(margin-left, screen-vals($md: 15rem));
-  }
-  main {
-    min-height: 100%;
-    background-color: #fff;
-    position: relative;
-    width: 48rem;
-    max-width: 100%;
-    padding: 1.5rem;
-    margin: 0 auto;
-    @include shadow(1);
-    z-index: 1;
-  }
-</style>
-
 <svelte:head>
   <script
     src="https://www.googletagmanager.com/gtag/js?id=UA-158626989-2"
     async>
-
   </script>
   <script>
     window.dataLayer = window.dataLayer || []
@@ -53,3 +34,22 @@
   <Nav {segment} />
   <slot />
 </main>
+
+<style lang="scss">
+  :global(#sapper) {
+    height: 100%;
+    @include props(margin-left, $md: 15rem);
+  }
+
+  main {
+    min-height: 100%;
+    background-color: #fff;
+    position: relative;
+    width: 48rem;
+    max-width: 100%;
+    padding: 1.5rem;
+    margin: 0 auto;
+    @include shadow(1);
+    z-index: 1;
+  }
+</style>

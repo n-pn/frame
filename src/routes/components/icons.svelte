@@ -4,13 +4,33 @@
 </script>
 
 <script>
-  import MIcon from '$mould/MIcon.svelte'
+  import MIcon from '$lib/MIcon.svelte'
 </script>
+
+<article class="m-article">
+  <h1>Icons</h1>
+  <p>TODO: write usage</p>
+
+  <h2>Icon list ({icons.length} entries)</h2>
+  <ul class="list">
+    {#each icons as icon}
+      <li class="item">
+        <div class="view">
+          <svg class="m-icon _{icon.name}">
+            <use xlink:href="/icons.svg#{icon.name}" />
+          </svg>
+        </div>
+        <div class="name">{icon.name}</div>
+      </li>
+    {/each}
+  </ul>
+</article>
 
 <style lang="scss">
   .list {
-    @include grid(minmax(6rem, 1fr), 0.75rem, '.item');
     margin-top: 1rem;
+    @include grid(minmax(6rem, 1fr));
+    @include grid-gap(0.75rem);
   }
 
   .item {
@@ -43,22 +63,3 @@
     padding-top: 0.25rem;
   }
 </style>
-
-<article class="m-article">
-  <h1>Icons</h1>
-  <p>TODO: write usage</p>
-
-  <h2>Icon list ({icons.length} entries)</h2>
-  <ul class="list">
-    {#each icons as icon}
-      <li class="item">
-        <div class="view">
-          <svg class="m-icon _{icon.name}">
-            <use xlink:href="/icons.svg#{icon.name}" />
-          </svg>
-        </div>
-        <div class="name">{icon.name}</div>
-      </li>
-    {/each}
-  </ul>
-</article>

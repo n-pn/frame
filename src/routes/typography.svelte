@@ -1,38 +1,3 @@
-<style lang="scss">
-  .demo {
-    @include clearfix;
-    margin-bottom: 1rem;
-  }
-
-  .right {
-    margin-left: gap(2);
-  }
-
-  .column {
-    float: left;
-    width: 100%;
-
-    &._third {
-      @include screen-min(sm) {
-        width: 33%;
-      }
-    }
-
-    &._half {
-      @include screen-min(sm) {
-        width: 50%;
-      }
-    }
-  }
-
-  .sample {
-    // font-weight: bold;
-    // @include fgcolor(neutral, 2);
-    margin-top: 1rem;
-    @include clearfix;
-  }
-</style>
-
 <svelte:head>
   <title>Typography - Molds</title>
 </svelte:head>
@@ -82,10 +47,7 @@
       <em>sit amet</em>
       , consectetur
     </strong>
-    <a href="typography">
-      adipiscing
-      <code>elit</code>
-    </a>
+    <a href="typography"> adipiscing <code>elit</code> </a>
     . Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus.
     Duis quis sodales risus. Etiam euismod ornare consequat.
   </p>
@@ -225,9 +187,7 @@
         The advance of technology is based on making it fit in so that you don't
         really even notice it, so it's part of everyday life.
       </p>
-      <p>
-        <cite>- Bill Gates</cite>
-      </p>
+      <p><cite>- Bill Gates</cite></p>
     </blockquote>
   </blockquote>
 
@@ -275,5 +235,39 @@
       </dl>
     </div>
   </div>
-
 </article>
+
+<style lang="scss">
+  .demo {
+    @include flow();
+    margin-bottom: 1rem;
+  }
+
+  .right {
+    margin-left: gap(2);
+  }
+
+  .column {
+    float: left;
+    width: 100%;
+
+    &._third {
+      @include screen-min(sm) {
+        width: 33%;
+      }
+    }
+
+    &._half {
+      @include screen-min(sm) {
+        width: 50%;
+      }
+    }
+  }
+
+  .sample {
+    // font-weight: bold;
+    // @include fgcolor(neutral, 2);
+    margin-top: 1rem;
+    @include flow();
+  }
+</style>

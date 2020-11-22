@@ -1,14 +1,9 @@
-<style type="text/scss">
-
-</style>
-
 <article class="m-article">
   <h1>Inputs</h1>
 
   <h2>Text fields</h2>
 
   <div class="u-flow">
-
     <div class="u-flex">
       <div class="m-input _small">
         <input type="text" name="#t1" />
@@ -40,5 +35,14 @@
       <textarea name="" id="input" cols="30" rows="10" />
     </div>
   </div>
-
 </article>
+
+<style lang="scss">
+  .u-flex {
+    @include flex;
+  }
+
+  .u-flow {
+    @include line-gap(1rem);
+  }
+</style>
