@@ -15,7 +15,7 @@ module.exports = {
       const options = {
         data,
         sourceMap: true,
-        includePaths: [path.resolve(__dirname, '../css')],
+        includePaths: [path.resolve(__dirname, 'css')],
         outFile: filename + '.css',
       }
 

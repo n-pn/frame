@@ -11,7 +11,7 @@
     'purple',
     'pink',
   ]
-  const tones = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+  const shades = [9, 8, 7, 6, 5, 4, 3, 2, 1]
 </script>
 
 <style lang="scss">
@@ -19,14 +19,14 @@
     @include clearfix;
   }
 
-  .name {
+  .label {
     font-variant: small-caps;
     line-height: 2rem;
     float: left;
     @include fgcolor(neutral, 6);
   }
 
-  .tone {
+  .shade {
     float: right;
     width: 2rem;
     height: 2rem;
@@ -35,9 +35,9 @@
     @include shadow();
 
     @each $color in $-color-names {
-      @for $tone from 1 through 9 {
-        &[color='#{$color}'][tone='#{$tone}'] {
-          @include bgcolor($color, $tone);
+      @for $shade from 1 through 9 {
+        &._#{$color}._s#{$shade}] {
+          @include bgcolor($color, $shade);
         }
       }
     }
@@ -59,11 +59,9 @@
   <h2>Color palette</h2>
 
   {#each colors as color}
-    <div class="color">
-      <span class="name">{color}:</span>
-      {#each tones as tone}
-        <span class="tone" {color} {tone} />
-      {/each}
+    <div class="colors">
+      <span class="label">{color}:</span>
+      {#each shades as shade}<span class="shade" {color} {shade} />{/each}
     </div>
   {/each}
 </article>

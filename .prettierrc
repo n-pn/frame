@@ -4,5 +4,8 @@
   "quoteProps": "consistent",
   "tabWidth": 2,
   "semi": false,
-  "singleQuote": true
+  "singleQuote": true,
+  "htmlWhitespaceSensitivity": "css",
+  "svelteSortOrder": "scripts-markup-styles",
+  "svelteBracketNewLine": false
 }

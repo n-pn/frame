@@ -9,9 +9,8 @@ const dev = mode === 'development'
 
 const alias = {
   svelte: path.resolve(__dirname, 'node_modules', 'svelte'),
-  $mould: path.resolve(__dirname, 'node_modules', '~mould/lib'),
+  $mould: path.resolve(__dirname, 'node_modules', '@nipin', 'mould', 'lib'),
   $src: path.resolve(__dirname, 'src'),
-  $com: path.resolve(__dirname, 'src/routes/_common'),
 }
 
 const extensions = ['.mjs', '.js', '.json', '.svelte', '.html']
@@ -24,11 +23,7 @@ const { preprocess } = require('./svelte.config')
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')({ preset: 'default' })
 const purgecss = require('@fullhuman/postcss-purgecss')({
-  content: [
-    './src/**/*.html',
-    './src/**/*.svelte',
-    './__sapper__/export/**/*.html',
-  ],
+  content: ['./src/**/*.html', './src/**/*.svelte'],
   keyframes: true,
   whitelistPatterns: [/svelte-/],
   defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
@@ -49,15 +44,13 @@ module.exports = {
             loader: 'svelte-loader-hot',
             options: {
               dev,
+              emitCss: !dev,
               preprocess,
               hydratable: true,
               hotReload: dev,
-              emitCss: !dev,
               hotOptions: {
-                noPreserveState: false, // Default: false
-                optimistic: true, // Default: false
-                acceptAccessors: true,
-                acceptNamedExports: true,
+                noPreserveState: false,
+                optimistic: true,
               },
             },
           },
@@ -74,7 +67,6 @@ module.exports = {
               loader: 'postcss-loader',
               options: {
                 parsers: 'postcss',
-                // exec: true,
                 plugins: [autoprefixer, cssnano, purgecss],
               },
             },
@@ -114,23 +106,21 @@ module.exports = {
             options: {
               css: false,
               generate: 'ssr',
+              hydratable: true,
               dev,
               preprocess,
-              hydratable: true,
             },
           },
         },
       ],
     },
-    mode: process.env.NODE_ENV,
-    performance: {
-      hints: false, // it doesn't matter if server.js is large
-    },
+    mode,
+    performance: { hints: false },
   },
 
   serviceworker: {
     entry: config.serviceworker.entry(),
     output: config.serviceworker.output(),
-    mode: process.env.NODE_ENV,
+    mode,
   },
 }
