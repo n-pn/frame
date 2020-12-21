@@ -22,7 +22,7 @@
   <title>Buttons - Molds</title>
 </svelte:head>
 
-<article m-article>
+<article class="m-article">
   <h1>Buttons</h1>
 
   <h2>Sizes</h2>

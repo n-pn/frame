@@ -25,10 +25,10 @@ $-button-icon-sizes: (
 
 $-button-text-sizes: (
   tiny: rem(11px),
-  small: rem(12px),
+  small: rem(13px),
   medium: rem(14px),
-  large: rem(16px),
-  huge: rem(18px),
+  large: rem(15px),
+  huge: rem(17px),
 );
 
 @mixin button-common() {
@@ -106,7 +106,7 @@ $-button-text-sizes: (
   @if $style == fill {
     @if $color == neutral {
       @include fgcolor(neutral, 7);
-      @include bgcolor(neutral, 2);
+      // @include bgcolor(neutral, 2);
 
       &:hover {
         @include bgcolor(neutral, 3);
@@ -115,7 +115,7 @@ $-button-text-sizes: (
       &:disabled,
       &._disable {
         @include fgcolor(neutral, 4);
-        @include bgcolor(neutral, 2);
+        // @include bgcolor(neutral, 2);
       }
     } @else {
       @include fgcolor(white);
@@ -131,6 +131,8 @@ $-button-text-sizes: (
       }
     }
   } @else {
+    background-color: #fff;
+
     @if $color == neutral {
       @include fgcolor($color, 7);
       @include bgcolor(neutral, 1);
@@ -142,11 +144,12 @@ $-button-text-sizes: (
       &:disabled,
       &._disable {
         @include fgcolor($color, 4);
-        @include bgcolor(neutral, 1);
+        // @include bgcolor(neutral, 1);
       }
     } @else {
       @include fgcolor($color, 6);
-      @include bgcolor(neutral, 1);
+      background-color: #fff;
+      // @include bgcolor(neutral, 1);
 
       &:hover {
         @include bgcolor($color, 1);
@@ -155,7 +158,8 @@ $-button-text-sizes: (
       &:disabled,
       &._disable {
         @include fgcolor($color, 3);
-        @include bgcolor(neutral, 1);
+        background-color: #fff;
+        // @include bgcolor(neutral, 1);
       }
     }
   }
