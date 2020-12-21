@@ -22,7 +22,11 @@ const { preprocess } = require('./svelte.config')
 // postcss
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
-  content: ['./src/**/*.html', './src/**/*.svelte'],
+  content: [
+    './src/**/*.html',
+    './src/**/*.svelte',
+    './__sapper__/export/**/*.html',
+  ],
   keyframes: true,
   whitelistPatterns: [/svelte-/],
   defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
