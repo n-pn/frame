@@ -123,6 +123,8 @@
 </article>
 
 <style lang="scss">
+  @import 'molds/buttons.d';
+
   .button-list {
     @include flex($wrap: true);
     @include flex-gap($gap: 0.5rem, $child: ':global(*)');
@@ -131,8 +133,6 @@
       margin-top: 0.5rem;
     }
   }
-
-  @import 'molds/buttons.d';
 
   .m-button {
     @each $color in map-keys($m-color-palette) {

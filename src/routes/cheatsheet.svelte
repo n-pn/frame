@@ -53,7 +53,7 @@
 
     @each $color in $m-color-names {
       @for $shade from 1 through 9 {
-        &[color='#{$color}'][shade='#{$shade}'] {
+        &[color='#{"" + $color}'][shade='#{"" + $shade}'] {
           @include bgcolor($color, $shade);
         }
       }

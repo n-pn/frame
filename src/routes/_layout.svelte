@@ -15,20 +15,18 @@
   }
 </script>
 
-<svelte:head>
-  <script
+<svelte:head
+  ><script
     src="https://www.googletagmanager.com/gtag/js?id=UA-158626989-2"
     async>
-  </script>
-  <script>
+  </script><script>
     window.dataLayer = window.dataLayer || []
     function gtag() {
       dataLayer.push(arguments)
     }
     gtag('js', new Date())
     gtag('config', 'UA-158626989-2')
-  </script>
-</svelte:head>
+  </script></svelte:head>
 
 <main>
   <Nav {segment} />
@@ -49,7 +47,7 @@
     max-width: 100%;
     padding: 1.5rem;
     margin: 0 auto;
-    @include shadow(1);
     z-index: 1;
+    @include shadow(1);
   }
 </style>
