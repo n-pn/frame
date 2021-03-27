@@ -1,15 +1,13 @@
 <script context="module">
-  export function preload({ params, query }) {
-    return this.fetch(`/examples.json`)
+    export async function load({ page, fetch }) {
+    return fetch(`/examples.json`)
       .then(r => r.json())
-      .then(posts => {
-        return { posts }
-      })
+      .then(index => ({ props: {index}}))
   }
 </script>
 
 <script>
-  export let posts
+  export let index
 </script>
 
 <style>
@@ -26,9 +24,9 @@
   <h1>Recent posts</h1>
 
   <ul>
-    {#each posts as post}
+    {#each index as {title, slug}}
       <li>
-        <a rel="prefetch" href="examples/{post.slug}">{post.title}</a>
+        <a rel="prefetch" href="examples/{slug}">{title}</a>
       </li>
     {/each}
   </ul>

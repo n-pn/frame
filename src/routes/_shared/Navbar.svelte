@@ -1,13 +1,9 @@
-<script context="module">
-  import posts from '../examples/_posts.js'
-</script>
 
 <script>
+  import posts from '../examples/_posts.js'
+
   export let segment
 
-  function active_page(evt) {
-    const target = evt.target
-  }
 </script>
 
 <style lang="scss">
@@ -84,30 +80,30 @@
   }
 </style>
 
-<nav on:click={active_page}>
+<nav>
   <div class="content">
     <a class="site" class:_active={segment === undefined} href=".">Mould</a>
 
     <h3>Foundation</h3>
 
-    <a class="link" href="typography">Typography</a>
-    <a class="link" href="cheatsheet">Cheatsheet</a>
+    <a class="link" href="/typography">Typography</a>
+    <a class="link" href="/cheatsheet">Cheatsheet</a>
 
     <h3>Components</h3>
-    <a class="link" href="components/icons">Icons</a>
-    <a class="link" href="components/buttons">Buttons</a>
-    <a class="link" href="components/inputs">Inputs</a>
-    <!-- <a class="link" href="components/chips">Chips</a>
-    <a class="link" href="components/badges">Badges</a>
-    <a class="link" href="components/cards">Cards</a>
-    <a class="link" href="components/menus">Menus</a>
-    <a class="link" href="components/dialogs">Dialogs</a>
-    <a class="link" href="components/tables">Tables</a>
-    <a class="link" href="components/tooltips">Tooltips</a> -->
+    <a class="link" href="/components/icons">Icons</a>
+    <a class="link" href="/components/buttons">Buttons</a>
+    <a class="link" href="/components/inputs">Inputs</a>
+    <!-- <a class="link" href="/components/chips">Chips</a>
+    <a class="link" href="/components/badges">Badges</a>
+    <a class="link" href="/components/cards">Cards</a>
+    <a class="link" href="/components/menus">Menus</a>
+    <a class="link" href="/components/dialogs">Dialogs</a>
+    <a class="link" href="/components/tables">Tables</a>
+    <a class="link" href="/components/tooltips">Tooltips</a> -->
 
     <h3>Examples</h3>
     {#each posts as post}
-      <a class="link" rel="prefetch" href="examples/{post.slug}">
+      <a class="link" sveltekit:prefetch href="/examples/{post.slug}">
         {post.title}
       </a>
     {/each}

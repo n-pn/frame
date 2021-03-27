@@ -1,12 +1,17 @@
 <script context="module">
-  export async function preload({ params, query }) {
-    // the `slug` parameter is available because
-    // this file is called [slug].svelte
-    const res = await this.fetch(`examples/${params.slug}.json`)
-    const data = await res.json()
+  export async function load({ page, fetch }) {
+    const {slug} = page.params
+    const res = await fetch(`/examples/${slug}.json`)
 
-    if (res.status === 200) return { post: data }
-    else this.error(res.status, data.message)
+    if (res.ok) {
+      const post = await res.json()
+      return { props: { post } }
+    }
+
+    return {
+      status: res.status,
+      error: new Error('Example not found!')
+    }
   }
 </script>
 

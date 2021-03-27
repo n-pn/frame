@@ -1,10 +1,11 @@
 <script context="module">
-  const feather = require('feather-icons')
-  const icons = Object.values(feather.icons)
+
 </script>
 
 <script>
-  import MIcon from '$lib/MIcon.svelte'
+  import feather from 'feather-icons'
+  const icons = Object.values(feather.icons)
+
 </script>
 
 <article class="m-article">

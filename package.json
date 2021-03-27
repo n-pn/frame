@@ -1,44 +1,43 @@
 {
-  "name": "@nipin/mould",
-  "author": "Nipinium",
-  "description": "Reusable stylesheets and components for Svelte projects",
-  "version": "0.4.3",
-  "license": "MIT",
-  "files": [
-    "css",
-    "lib",
-    "etc"
-  ],
-  "scripts": {
-    "dev": "sapper dev",
-    "build": "sapper build",
-    "export": "sapper export",
-    "start": "node __sapper__/build"
-  },
-  "dependencies": {
-    "polka": "next",
-    "sirv": "^1.0.6"
-  },
-  "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^3.0.0",
-    "autoprefixer": "^10.0.2",
-    "css-loader": "^5.0.1",
-    "cssnano": "^4.1.10",
-    "feather-icons": "^4.25.0",
-    "mini-css-extract-plugin": "^1.3.1",
-    "postcss": "^8.1.9",
-    "postcss-loader": "^4.0.1",
-    "sapper": "^0.28.5",
-    "sass": "^1.32.6",
-    "sass-loader": "^10.1.0",
-    "string-hash": "^1.1.3",
-    "svelte": "^3.0.0",
-    "svelte-loader-hot": "^0.3.1",
-    "svelte-preprocess": "^4.6.6",
-    "webpack": "^4.42.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+	"name": "@nipin/mould",
+	"author": "Nipinium",
+	"description": "Reusable stylesheets and components for Svelte projects",
+	"version": "0.5.0",
+	"license": "MIT",
+	"files": [
+		"src/css",
+		"src/lib",
+		"src/etc"
+	],
+	"scripts": {
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
+		"start": "svelte-kit start",
+		"lint": "prettier --check .",
+		"format": "prettier --write ."
+	},
+	"dependencies": {
+		"feather-icons": "^4.28.0"
+	},
+	"devDependencies": {
+		"@fullhuman/postcss-purgecss": "^4.0.3",
+		"@sveltejs/adapter-node": "next",
+		"@sveltejs/kit": "next",
+		"autoprefixer": "^10.2.5",
+		"cssnano": "^4.1.10",
+		"postcss": "^8.2.8",
+		"postcss-load-config": "^3.0.1",
+		"sass": "^1.0.0",
+		"svelte": "^3.29.0",
+		"svelte-preprocess": "^4.0.0",
+		"vite": "^2.1.0"
+	},
+	"type": "module",
+	"engines": {
+		"node": ">= 14.17.0"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions"
+	]
 }

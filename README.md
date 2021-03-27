@@ -1,96 +1,42 @@
-# Mould
+# create-svelte
 
-SCSS mixins-based framework and reused Svelte components
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
 
-## Install
+## Creating a project
 
-```sh
-# using npm
-npm install @nipin/mould --save-dev
-# using yarm
-yarn add -D @nipin/mould
+If you're seeing this, you've probably already done this step. Congrats!
+
+```bash
+# create a new project in the current directory
+npm init svelte@next
+
+# create a new project in my-app
+npm init svelte@next my-app
 ```
 
-```scss
-@import '@nipin/mould/css/essence'; // variables, functions and mixins
+> Note: the `@next` is temporary
+
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
 
-```js
-// include it in your main js file
-import '@nipin/mould/css/premade.scss' // for typography and normalize
-import '@nipin/mould/css/utilities.scss' // for using .u-cf, .u-pd-4 etc.
-```
+## Building
 
-```js
-// svelte component
-import '@nipin/mould/lib/MButton.svelte'
-import '@nipin/mould/lib/MIcon.svelte'
-```
+Svelte apps are built with _adapters_, which optimise your project for deployment to different environments.
 
-## SCSS cheatsheets
+By default, `npm run build` will generate a Node app that you can run with `node build`. To use a different adapter, add it to the `devDependencies` in `package.json` making sure to specify the version as `next` and update your `svelte.config.cjs` to [specify your chosen adapter](https://kit.svelte.dev/docs#configuration-adapter). The following official adapters are available:
 
-```scss
-@function append-string($before, $after: null) {
-  // return $before-$after unless $after is null
-}
+- [@sveltejs/adapter-node](https://github.com/sveltejs/kit/tree/master/packages/adapter-node)
+- [@sveltejs/adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static)
+- [@sveltejs/adapter-netlify](https://github.com/sveltejs/kit/tree/master/packages/adapter-netlify)
+- [@sveltejs/adapter-vercel](https://github.com/sveltejs/kit/tree/master/packages/adapter-vercel)
+- ...more soon
 
-@function color($color, $shade: null, $alpha: null) {
-  // return a color base from a custom defined color palette
-  // $color:
-  // - gray, red, orange, yellow, green, teal, blue, indigo, purple, pink
-  // - neutral, primary, success, warning, harmful
-  // - real color like #fff or rgba(20, 50, 80)
-  // $shade: 1..9, can be omitted
-  // $alpha: transparency level, can be null
-}
-
-@function colors($colors, $shade: null, $alpha) {
-  // return a list of colors by calling color() for each item of $colors
-  // $colors must be a list
-}
-
-@function trump($value, $trump: false) {
-  // return `$value !important` if $trump is true
-  // else just return $value
-}
-
-// prettier-ignore
-@function screen-vals($xs, $sm: null, $md: null, $lg: null, $xl: null, $df: null) {
-  // convert list to a map of screen sizes to values
-  // null value will be ignored
-}
-
-@mixin screen-min($min: sm) {
-  // warp content in media screen
-}
-
-@mixin screen-max($max: sm) {
-  // warp content in media screen
-}
-
-@mixin screen($screen: sm, $prop: null, $value: null) {
-  // calling screen-min with @content and a single line of $prop: $value;
-}
-
-@mixin apply($props, $value, $trump: false) {
-  // insert property value defination for each item of $props, adaptive to screen size
-  // $props: a string or a list of string, eg: background or (border-left, border-right)
-  // $value: can be a single value or a screen-vals result
-}
-```
-
-## Svelte components
-
-```jsx
-<MButton class="" disabled=""></MButton>
-
-<MIcon class="" name="feather"></MIcon>
-```
-
-## License
-
-MIT
-
-```
-
-```
+[See the adapter documentation for more detail](https://kit.svelte.dev/docs#adapters)

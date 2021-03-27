@@ -1,5 +1,5 @@
 <script>
-  import MIcon from './MIcon'
+  import MIcon from './MIcon.svelte'
 </script>
 
 <button class={$$props.class} disabled={$$props.disabled}>

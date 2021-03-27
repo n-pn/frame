@@ -136,13 +136,13 @@
 
   .m-button {
     @each $color in map-keys($m-color-palette) {
-      :global(&._#{$color}) {
+      :global(&._#{'' + $color}) {
         width: 6rem;
         justify-content: center;
         @include button-varify(fill, $color);
 
         @each $style in $-button-styles {
-          &._#{$style} {
+          &._#{'' + $style} {
             @include button-varify($style, $color);
           }
         }
