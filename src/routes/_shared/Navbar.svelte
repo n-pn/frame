@@ -1,5 +1,5 @@
 <script>
-  import posts from '../examples/_posts.js'
+  import posts from '../examples/_posts.json'
 
   export let segment
 

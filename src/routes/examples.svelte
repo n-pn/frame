@@ -1,20 +1,18 @@
 <script context="module">
-    export async function load({ page, fetch }) {
-    return fetch(`/examples.json`)
-      .then(r => r.json())
-      .then(index => ({ props: {index}}))
+  import posts from './examples/_posts.json'
+
+  export function load() {
+    return {
+      props: { posts },
+    }
   }
+
 </script>
 
 <script>
-  export let index
-</script>
+  export let posts
 
-<style>
-  ul {
-    margin-top: 1rem;
-  }
-</style>
+</script>
 
 <svelte:head>
   <title>Posts - Mould</title>
@@ -24,11 +22,17 @@
   <h1>Recent posts</h1>
 
   <ul>
-    {#each index as {title, slug}}
+    {#each posts as { title, slug }}
       <li>
         <a rel="prefetch" href="examples/{slug}">{title}</a>
       </li>
     {/each}
   </ul>
-
 </article>
+
+<style>
+  ul {
+    margin-top: 1rem;
+  }
+
+</style>

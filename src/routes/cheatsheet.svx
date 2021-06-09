@@ -12,11 +12,10 @@
     'pink',
   ]
   const shades = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+
 </script>
 
-<svelte:head>
-  <title>Cheatsheet - Molds</title>
-</svelte:head>
+--- title: Cheatsheet ---
 
 <article class="m-article">
   <h1>Cheatsheet</h1>
@@ -64,4 +63,5 @@
   //   margin-top: 1rem;
   //   padding-top: 1rem;
   // }
+
 </style>
