@@ -3,15 +3,15 @@ const cssnano = require('cssnano')
 const purgecss = require('@fullhuman/postcss-purgecss')
 
 const mode = process.env.NODE_ENV
-const dev = mode === 'development'
+const prod = mode === 'production'
 
 module.exports = {
   plugins: [
     autoprefixer,
-    !dev && cssnano({ preset: 'default' }),
-    !dev &&
+    prod && cssnano({ preset: 'default' }),
+    prod &&
       purgecss({
-        content: ['./src/**/*.svelte'],
+        content: ['./src/**/*.svelte', './src/**/*.html'],
         keyframes: true,
         whitelistPatterns: [/svelte-/],
         defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],

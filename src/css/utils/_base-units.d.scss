@@ -1,7 +1,9 @@
+@use "sass:math";
+
 $m-cell: 0.25rem !default;
 
 @function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+  @return math.div($num, $num * 0 + 1);
 }
 
 @function cell($size) {

@@ -1,10 +1,39 @@
-
 <script>
   import posts from '../examples/_posts.js'
 
   export let segment
 
 </script>
+
+<nav>
+  <div class="content">
+    <a class="site" class:_active={segment === undefined} href=".">Mould</a>
+
+    <h3>Foundation</h3>
+
+    <a class="link" href="/typography">Typography</a>
+    <a class="link" href="/cheatsheet">Cheatsheet</a>
+
+    <h3>Components</h3>
+    <a class="link" href="/components/icons">Icons</a>
+    <a class="link" href="/components/buttons">Buttons</a>
+    <a class="link" href="/components/inputs">Inputs</a>
+    <!-- <a class="link" href="/components/chips">Chips</a>
+    <a class="link" href="/components/badges">Badges</a>
+    <a class="link" href="/components/cards">Cards</a>
+    <a class="link" href="/components/menus">Menus</a>
+    <a class="link" href="/components/dialogs">Dialogs</a>
+    <a class="link" href="/components/tables">Tables</a>
+    <a class="link" href="/components/tooltips">Tooltips</a> -->
+
+    <h3>Examples</h3>
+    {#each posts as post}
+      <a class="link" sveltekit:prefetch href="/examples/{post.slug}">
+        {post.title}
+      </a>
+    {/each}
+  </div>
+</nav>
 
 <style lang="scss">
   nav {
@@ -78,35 +107,5 @@
     margin-top: 0.5rem;
     @include fgcolor(neutral, 5);
   }
+
 </style>
-
-<nav>
-  <div class="content">
-    <a class="site" class:_active={segment === undefined} href=".">Mould</a>
-
-    <h3>Foundation</h3>
-
-    <a class="link" href="/typography">Typography</a>
-    <a class="link" href="/cheatsheet">Cheatsheet</a>
-
-    <h3>Components</h3>
-    <a class="link" href="/components/icons">Icons</a>
-    <a class="link" href="/components/buttons">Buttons</a>
-    <a class="link" href="/components/inputs">Inputs</a>
-    <!-- <a class="link" href="/components/chips">Chips</a>
-    <a class="link" href="/components/badges">Badges</a>
-    <a class="link" href="/components/cards">Cards</a>
-    <a class="link" href="/components/menus">Menus</a>
-    <a class="link" href="/components/dialogs">Dialogs</a>
-    <a class="link" href="/components/tables">Tables</a>
-    <a class="link" href="/components/tooltips">Tooltips</a> -->
-
-    <h3>Examples</h3>
-    {#each posts as post}
-      <a class="link" sveltekit:prefetch href="/examples/{post.slug}">
-        {post.title}
-      </a>
-    {/each}
-  </div>
-
-</nav>
