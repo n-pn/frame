@@ -1,6 +1,5 @@
 <script>
   import posts from '$lib/data/posts.json'
-
   export let segment
 
 </script>
@@ -14,21 +13,21 @@
     <a class="link" href="/typography">Typography</a>
     <a class="link" href="/cheatsheet">Cheatsheet</a>
 
-    <h3>Components</h3>
-    <a class="link" href="/components/icons">Icons</a>
-    <a class="link" href="/components/buttons">Buttons</a>
-    <a class="link" href="/components/inputs">Inputs</a>
-    <!-- <a class="link" href="/components/chips">Chips</a>
-    <a class="link" href="/components/badges">Badges</a>
-    <a class="link" href="/components/cards">Cards</a>
-    <a class="link" href="/components/menus">Menus</a>
-    <a class="link" href="/components/dialogs">Dialogs</a>
-    <a class="link" href="/components/tables">Tables</a>
-    <a class="link" href="/components/tooltips">Tooltips</a> -->
+    <h3>Modules</h3>
+    <a class="link" href="/modules/icons">Icons</a>
+    <a class="link" href="/modules/buttons">Buttons</a>
+    <a class="link" href="/modules/inputs">Inputs</a>
+    <!-- <a class="link" href="/modules/chips">Chips</a>
+    <a class="link" href="/modules/badges">Badges</a>
+    <a class="link" href="/modules/cards">Cards</a>
+    <a class="link" href="/modules/menus">Menus</a>
+    <a class="link" href="/modules/dialogs">Dialogs</a>
+    <a class="link" href="/modules/tables">Tables</a>
+    <a class="link" href="/modules/tooltips">Tooltips</a> -->
 
-    <h3>Examples</h3>
+    <h3>Sample texts</h3>
     {#each posts as post}
-      <a class="link" sveltekit:prefetch href="/examples/{post.slug}">
+      <a class="link" sveltekit:prefetch href="/samples/{post.slug}">
         {post.title}
       </a>
     {/each}

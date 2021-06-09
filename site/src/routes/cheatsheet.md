@@ -1,34 +1,19 @@
-<script>
-  const colors = [
-    'gray',
-    'red',
-    'orange',
-    'yellow',
-    'green',
-    'teal',
-    'blue',
-    'indigo',
-    'purple',
-    'pink',
-  ]
-  const shades = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+---
+title: Cheatsheet
+---
 
+<script>
+  import {colors, shades} from "$lib/data/conts"
 </script>
 
---- title: Cheatsheet ---
+## Color palette
 
-<article class="m-article">
-  <h1>Cheatsheet</h1>
-
-  <h2>Color palette</h2>
-
-  {#each colors as color}
-    <div class="colors">
-      <span class="label">{color}:</span>
-      {#each shades as shade}<span class="shade" {color} {shade} />{/each}
-    </div>
-  {/each}
-</article>
+{#each colors as color}
+  <div class="colors">
+    <span class="label">{color}:</span>
+    {#each shades as shade}<span class="shade" {color} {shade} />{/each}
+  </div>
+{/each}
 
 <style lang="scss">
   .colors {
@@ -63,5 +48,4 @@
   //   margin-top: 1rem;
   //   padding-top: 1rem;
   // }
-
 </style>

@@ -24,7 +24,7 @@
   <ul>
     {#each posts as { title, slug }}
       <li>
-        <a rel="prefetch" href="examples/{slug}">{title}</a>
+        <a rel="prefetch" href="samples/{slug}">{title}</a>
       </li>
     {/each}
   </ul>

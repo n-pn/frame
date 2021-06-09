@@ -11,11 +11,3 @@
   <h1>{title}</h1>
   <slot />
 </article>
-
-<style lang="scss">
-  :global(.--live) {
-    @include border();
-    @include radius();
-  }
-
-</style>
