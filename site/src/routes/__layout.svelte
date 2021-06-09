@@ -1,7 +1,7 @@
 <script>
   import { page } from '$app/stores'
   import Navbar from '$lib/Navbar.svelte'
-  import '$mcss/globals.scss'
+  import '$frame/css/globals.scss'
 
   $: {
     if (typeof gtag === 'function') {

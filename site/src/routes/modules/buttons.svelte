@@ -1,5 +1,5 @@
 <script>
-  import MButton from '$mlib/MButton.svelte'
+  import MButton from '$frame/lib/MButton.svelte'
 
   const colors = [
     'gray',

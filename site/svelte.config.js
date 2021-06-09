@@ -12,12 +12,10 @@ const mdsvexConfig = {
   smartypants: { dashes: 'oldschool' },
   remarkPlugins: [breaks],
   rehypePlugins: [],
-  layout: path.join(__dirname, 'src/lib/Layout.svelte'),
+  layout: path.resolve(__dirname, 'src/lib/Layout.svelte'),
 }
 
-function resolve_lib(name) {
-  return path.join(__dirname, 'node_modules/@np-nam/frame/', name)
-}
+const frame_src = path.resolve(__dirname, 'node_modules/@np-nam/frame/src')
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -25,7 +23,7 @@ const config = {
   preprocess: [
     preprocess({
       scss: {
-        includePaths: [resolve_lib('src/css')],
+        includePaths: [path.join(frame_src, 'css')],
         prependData: '@use "sass:math";\n@import "helpers";\n',
       },
       postcss: true,
@@ -38,8 +36,7 @@ const config = {
     vite: {
       resolve: {
         alias: {
-          $mlib: resolve_lib('src/lib'),
-          $mcss: resolve_lib('src/css'),
+          $frame: frame_src,
         },
       },
     },
