@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-  <title>Mould</title>
+  <title>Frame</title>
 </svelte:head>
 
 <main>

@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-  <title>{status}: {error.message} - Mould</title>
+  <title>{status}: {error.message} - Frame</title>
 </svelte:head>
 
 <h1>{status}</h1>

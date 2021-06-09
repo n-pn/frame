@@ -6,7 +6,7 @@
 
 <nav>
   <div class="content">
-    <a class="site" class:_active={segment === undefined} href=".">Mould</a>
+    <a class="site" class:_active={segment === undefined} href=".">Frame</a>
 
     <h3>Foundation</h3>
 

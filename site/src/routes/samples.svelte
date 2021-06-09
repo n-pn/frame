@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-  <title>Posts - Mould</title>
+  <title>Posts - Frame</title>
 </svelte:head>
 
 <article class="m-article">

@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-  <title>{title} - Mould</title>
+  <title>{title} - Frame</title>
 </svelte:head>
 
 <article class="m-article">
