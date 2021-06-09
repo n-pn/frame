@@ -1,7 +1,3 @@
-<script context="module">
-
-</script>
-
 <script>
   import feather from 'feather-icons'
   const icons = Object.values(feather.icons)
@@ -63,4 +59,5 @@
     line-height: 1.25rem;
     padding-top: 0.25rem;
   }
+
 </style>

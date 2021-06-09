@@ -1,5 +1,5 @@
 <script>
-  import MButton from '$lib/MButton.svelte'
+  import MButton from '$mlib/MButton.svelte'
 
   const colors = [
     'gray',
@@ -16,6 +16,7 @@
   const sizes = ['tiny', 'small', 'medium', 'large', 'huge']
   const styles = ['fill', 'text', 'line']
   const variants = ['default', 'primary', 'success', 'warning', 'harmful']
+
 </script>
 
 <svelte:head>
@@ -29,10 +30,7 @@
 
   <div class="button-list">
     {#each sizes as size}
-      <MButton
-        class="m-button _{size}"
-        text={size + ' button'}
-        icon="maximize" />
+      <MButton class="m-button _{size}" text={size + ' button'} icon="maximize" />
     {/each}
   </div>
 
@@ -149,4 +147,5 @@
       }
     }
   }
+
 </style>

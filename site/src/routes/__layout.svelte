@@ -1,13 +1,14 @@
 <script>
-  import { page } from '$app/stores';
-  import Navbar from './_shared/Navbar.svelte'
-  import "../css/globals.scss"
+  import { page } from '$app/stores'
+  import Navbar from '$lib/Navbar.svelte'
+  import '$mcss/globals.scss'
 
   $: {
     if (typeof gtag === 'function') {
       gtag('config', 'UA-158626989-2', { page_path: $page.path })
     }
   }
+
 </script>
 
 <svelte:head>
@@ -36,4 +37,5 @@
     z-index: 1;
     @include shadow(1);
   }
+
 </style>

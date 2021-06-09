@@ -1,3 +1,5 @@
+import path from 'path'
+
 import preprocess from 'svelte-preprocess'
 import node from '@sveltejs/adapter-node'
 import { mdsvex } from 'mdsvex'
@@ -8,7 +10,11 @@ const mdsvexConfig = {
   smartypants: { dashes: 'oldschool' },
   remarkPlugins: [breaks],
   rehypePlugins: [],
-  layout: 'src/routes/examples/_layout.svelte',
+  layout: './src/lib/Layout.svelte',
+}
+
+function resolve_lib(name) {
+  return path.resolve('.', 'node_modules', '@np-nam', 'frame', name)
 }
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -17,7 +23,7 @@ const config = {
   preprocess: [
     preprocess({
       scss: {
-        includePaths: ['src/css'],
+        includePaths: [resolve_lib('src/css')],
         prependData: '@use "sass:math";\n@import "helpers";\n',
       },
       postcss: true,
@@ -27,6 +33,14 @@ const config = {
   kit: {
     adapter: node(),
     target: '#svelte',
+    vite: {
+      resolve: {
+        alias: {
+          $mlib: resolve_lib('src/lib'),
+          $mcss: resolve_lib('src/css'),
+        },
+      },
+    },
   },
 }
 

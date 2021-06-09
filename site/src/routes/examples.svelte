@@ -1,5 +1,5 @@
 <script context="module">
-  import posts from './examples/_posts.json'
+  import posts from '$lib/data/posts.json'
 
   export function load() {
     return {

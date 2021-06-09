@@ -1,6 +1,6 @@
 {
-	"name": "@nipin/mould",
-	"author": "NP Nam",
+	"name": "@np-nam/frame",
+	"author": "Nguyen Phuong Nam",
 	"description": "Reusable stylesheets and components for Svelte projects",
 	"version": "0.6.0",
 	"license": "MIT",
@@ -8,37 +8,5 @@
 		"src/css",
 		"src/lib",
 		"src/etc"
-	],
-	"scripts": {
-		"dev": "svelte-kit dev --open",
-		"build": "svelte-kit build",
-		"preview": "svelte-kit preview",
-		"lint": "prettier --check --plugin-search-dir=. .",
-		"format": "prettier --write --plugin-search-dir=. ."
-	},
-	"devDependencies": {
-		"@fullhuman/postcss-purgecss": "^4.0.3",
-		"@sveltejs/adapter-node": "^1.0.0-next.24",
-		"@sveltejs/kit": "^1.0.0-next.113",
-		"autoprefixer": "^10.2.6",
-		"cssnano": "^5.0.5",
-		"mdsvex": "^0.9.7",
-		"postcss": "^8.3.0",
-		"postcss-load-config": "^3.0.1",
-		"prettier": "~2.3.1",
-		"prettier-plugin-svelte": "^2.3.0",
-		"prismjs": "^1.23.0",
-		"remark-breaks": "^2.0.2",
-		"sass": "^1.34.1",
-		"svelte": "^3.38.2",
-		"svelte-preprocess": "^4.7.3"
-	},
-	"dependencies": {
-		"feather-icons": "^4.28.0"
-	},
-	"type": "module",
-	"browserslist": [
-		"> 1%",
-		"last 2 versions"
 	]
 }
