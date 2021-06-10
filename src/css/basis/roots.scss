@@ -1,0 +1,89 @@
+@use "../_core" as *;
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url('/fonts/Roboto.woff2?v=3.003') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: 'Italic';
+  src: url('/fonts/Roboto-Italic.woff2?v=3.003') format('woff2');
+}
+
+:root {
+  $colors: (gray, blue, green, yellow, orange, red, purple) !default;
+
+  --color-black: #{color(black)};
+  --color-dark-black: #{color(dark-black)};
+  --color-white: #{color(white)};
+  --color-dark-white: #{color(dark-white)};
+
+  @each $name in $colors {
+    @for $tone from 0 to 10 {
+      #{cname($name, $tone)}: #{color($name, $tone)};
+      #{cname('dark-' + $name, $tone)}: #{color('dark-' + $name, $tone)};
+    }
+  }
+
+  --flow-gap: 1rem;
+
+  --font-sans: #{$font-sans};
+  --font-mono: #{$font-mono};
+
+  font-size: 100%;
+
+  // enable smooth scrolling
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+html,
+body,
+main {
+  min-height: 100%;
+}
+
+body {
+  --main-fg: var(--color-gray-8);
+  --main-bg: var(--color-gray-0);
+
+  margin: 0;
+  min-width: 320px;
+
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: var(--font-sans);
+
+  color: var(--main-fg);
+  background-color: var(--main-bg);
+
+  overflow-y: scroll;
+
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(#000, 0);
+
+  @include dark-root {
+    --main-fg: var(--color-dark-gray-0);
+    --main-bg: var(--color-dark-gray-9);
+  }
+}

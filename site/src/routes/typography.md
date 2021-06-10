@@ -157,6 +157,12 @@ Chase mice attack feet but rub face on everything hopped up on goofballs.
       많다. 내가 이를 불쌍히 여겨, 새로 스물 여덟 글자를 만드니, 사람마다
       하여금 쉽게 익혀, 날마다 씀에 편하게 하고자 할 따름이다.
     </p>
+
+    <p class="sample">Vietnamese</p>
+    <p lang="vi">
+      Tất cả mọi người đều sinh ra có quyền bình đẳng. Tạo hóa cho họ những quyền không ai có thể xâm phạm được; trong những quyền ấy, có quyền được sống, quyền tự do và quyền mưu cầu hạnh phúc
+    </p>
+
   </div>
 </div>
 

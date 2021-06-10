@@ -2,8 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@fullhuman/postcss-purgecss': ^4.0.3
-  '@np-nam/frame': link:..
-  '@sveltejs/adapter-node': ^1.0.0-next.24
+  '@sveltejs/adapter-node': next
   '@sveltejs/kit': next
   autoprefixer: ^10.2.6
   cssnano: ^5.0.5
@@ -19,13 +18,12 @@ specifiers:
   svelte-preprocess: ^4.7.3
 
 dependencies:
-  '@np-nam/frame': link:..
   feather-icons: 4.28.0
 
 devDependencies:
   '@fullhuman/postcss-purgecss': 4.0.3_postcss@8.3.0
-  '@sveltejs/adapter-node': 1.0.0-next.24
-  '@sveltejs/kit': 1.0.0-next.113_svelte@3.38.2
+  '@sveltejs/adapter-node': 1.0.0-next.25
+  '@sveltejs/kit': 1.0.0-next.114_svelte@3.38.2
   autoprefixer: 10.2.6_postcss@8.3.0
   cssnano: 5.0.5_postcss@8.3.0
   mdsvex: 0.9.7_svelte@3.38.2
@@ -77,12 +75,14 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@sveltejs/adapter-node/1.0.0-next.24:
-    resolution: {integrity: sha512-33IbIYsIOq3LapSlW519oWuFvEHh8EHqU4FsOg1UZaF2EE5CkOh23SXjv0H9RT0iLCxvhifqiFN+vb/vlDRSWw==}
+  /@sveltejs/adapter-node/1.0.0-next.25:
+    resolution: {integrity: sha512-6Kg3eJBKoug+XMW0AJlXD+etD3j5f5CJhLeUhZ8fM5b6Ds8nODoObozHcmkUoZUsI2i6sIcD37ctpPCNeTjsBg==}
+    dependencies:
+      esbuild: 0.12.8
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.113_svelte@3.38.2:
-    resolution: {integrity: sha512-X7feyAD9ZWQ79W5MXgF0t3JBsA+pTqCrnl2l8y8PNCP7pEJwizPCfmFAjwx7luz3OZUA2FTFBB7bqG7K1IUaYg==}
+  /@sveltejs/kit/1.0.0-next.114_svelte@3.38.2:
+    resolution: {integrity: sha512-SDs0DmGzq3KOE/9CmK11AIef4c84iAx5Cyr9gw2ae04awrksalSbm9Xb45/4fxOwsA5gTKUZrOJNnOIhfZrm+A==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
     hasBin: true
     peerDependencies:

@@ -1,5 +1,7 @@
 <script>
   import posts from '$lib/data/posts.json'
+  import { dark_mode } from '$lib/stores'
+
   export let segment
 
 </script>
@@ -31,6 +33,13 @@
         {post.title}
       </a>
     {/each}
+
+    <footer>
+      <button
+        type="button"
+        class="m-button"
+        on:click={() => dark_mode.update((x) => !x)}>Toggle darkmode</button>
+    </footer>
   </div>
 </nav>
 

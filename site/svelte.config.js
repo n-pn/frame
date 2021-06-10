@@ -15,7 +15,7 @@ const mdsvexConfig = {
   layout: path.resolve(__dirname, 'src/lib/Layout.svelte'),
 }
 
-const frame_src = path.resolve(__dirname, 'node_modules/@np-nam/frame/src')
+const frame_src = path.resolve(__dirname, '../src')
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -24,7 +24,10 @@ const config = {
     preprocess({
       scss: {
         includePaths: [path.join(frame_src, 'css')],
-        prependData: '@use "sass:math";\n@import "helpers";\n',
+        prependData: `
+        @use "sass:math";
+        @use "_core" as *;
+        @import "helpers";`,
       },
       postcss: true,
     }),

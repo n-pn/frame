@@ -28,8 +28,8 @@ body {
   vertical-align: baseline;
   overflow-y: scroll;
 
-  background-color: $-body-bgcolor;
-  color: $-body-color;
+  background-color: var(--main-bg);
+  color: var(--main-fg);
 
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(#000, 0);
@@ -40,22 +40,17 @@ body {
 
 html,
 body,
-#sapper,
 main {
   min-height: 100%;
 }
 
-$-selection-bgcolor: color(neutral, 6) !default;
-$-selection-color: color(neutral, 1) !default;
-$-selection-color: white;
-
 ::selection {
-  background-color: $-selection-bgcolor;
-  color: $-selection-color;
+  background-color: var(--selection-bg);
+  color: var(--selection-fg);
 }
 
 :focus {
-  outline: none !important;
+  outline: 0 !important;
 }
 
 [tabindex='-1']:focus:not(:focus-visible) {
@@ -95,7 +90,7 @@ output {
 
 button::-moz-focus-inner {
   border: 0 !important;
-  outline: none !important;
+  outline: 0 !important;
 }
 
 /* Remove default margin */
@@ -131,10 +126,6 @@ progress {
 label {
   display: inline-block;
 }
-
-// button {
-//     border-radius: 0;
-// }
 
 input,
 button,
