@@ -4,7 +4,42 @@
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     %svelte.head%
+
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/Roboto.woff2?v=3.003"
+      type="font/woff2"
+    />
+
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/Roboto-Italic.woff2?v=3.003"
+      type="font/woff2"
+    />
+
+    <style>
+      @font-face {
+        font-family: 'Roboto VF';
+        font-weight: 100 900;
+        font-display: swap;
+        font-style: normal;
+        font-named-instance: 'Regular';
+        src: url('/fonts/Roboto.woff2?v=3.003') format('woff2');
+      }
+
+      @font-face {
+        font-family: 'Roboto VF';
+        font-weight: 100 900;
+        font-display: swap;
+        font-style: italic;
+        font-named-instance: 'Italic';
+        src: url('/fonts/Roboto-Italic.woff2?v=3.003') format('woff2');
+      }
+    </style>
 
     <script
       src="https://www.googletagmanager.com/gtag/js?id=UA-158626989-2"
