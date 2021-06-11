@@ -14,3 +14,18 @@
 //     --selection-fg: var(--color-gray-1);
 //   }
 // }
+
+hr {
+  --hr-fg: var(--color-gray-1);
+  color: var(--hr-fg);
+  background-color: currentColor;
+  border: 0;
+
+  &:not([size]) {
+    height: 1px;
+  }
+
+  @include dark-mode {
+    --hr-fg: var(--color-dark-gray-6);
+  }
+}

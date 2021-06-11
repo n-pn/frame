@@ -1,22 +1,12 @@
 @mixin dark-mode($kit: false) {
   @if ($kit) {
-    :global(.tm-dark) & {
-      @content;
-    }
-  } @else {
-    .tm-dark & {
-      @content;
-    }
-  }
-}
-
-@mixin dark-root($kit: false) {
-  @if ($kit) {
+    :global(.tm-dark) &,
     &:global(.tm-dark) {
       @content;
     }
   } @else {
-    &.tm-dark {
+    &.tm-dark,
+    .tm-dark & {
       @content;
     }
   }
