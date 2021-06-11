@@ -15,10 +15,10 @@
     }
   }
 
-  --gutter: 0.75rem;
   --radius: 4px;
 
-  --flow-gap: 1rem;
+  @include props(--gutter, $gutter);
+  @include props(--spacer, $gutter-roomy);
 
   --font-sans: #{$font-sans};
   --font-mono: #{$font-mono};
@@ -48,9 +48,13 @@ main {
 }
 
 body {
-  --main-fg: var(--color-gray-8);
+  --color-text: var(--color-gray-8);
+  --color-label: var(--color-gray-7);
+  --color-muted: var(--color-gray-6);
+
+  --main-fg: var(--color-text);
   --main-bg: var(--color-gray-0);
-  --bdcolor: var(--color-gray-2);
+  --bdcolor: var(--color-gray-1);
 
   margin: 0;
   min-width: 320px;
@@ -69,7 +73,10 @@ body {
   -webkit-tap-highlight-color: rgba(#000, 0);
 
   @include dark-mode {
-    --main-fg: var(--color-dark-gray-0);
+    --color-text: var(--color-dark-gray-0);
+    --color-label: var(--color-dark-gray-1);
+    --color-muted: var(--color-dark-gray-2);
+
     --main-bg: var(--color-dark-gray-9);
     --bdcolor: var(--color-dark-gray-5);
   }

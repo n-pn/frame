@@ -35,11 +35,6 @@
   @include svg-icon();
 }
 
-.m-article {
-  @include article();
-  @include line-gap(1rem);
-}
-
 .m-input {
   @include input-common();
   @include input-sizing(normal);

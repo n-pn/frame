@@ -43,7 +43,7 @@
     min-height: 100%;
     width: 48rem;
     max-width: 100%;
-    padding: 1.5rem;
+    padding: var(--spacer) var(--gutter);
     margin: 0 auto;
 
     @include shadow(1);
