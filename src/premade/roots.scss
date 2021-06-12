@@ -3,15 +3,15 @@
 :root {
   $colors: (gray, blue, green, yellow, orange, red, purple) !default;
 
-  --color-black: #{color(black)};
-  --color-dark-black: #{color(dark-black)};
-  --color-white: #{color(white)};
-  --color-dark-white: #{color(dark-white)};
+  --color-black: #{color-raw(black)};
+  --color-dark-black: #{color-raw(dark-black)};
+  --color-white: #{color-raw(white)};
+  --color-dark-white: #{color-raw(dark-white)};
 
   @each $name in $colors {
     @for $tone from 0 to 10 {
-      #{cname($name, $tone)}: #{color($name, $tone)};
-      #{cname('dark-' + $name, $tone)}: #{color('dark-' + $name, $tone)};
+      #{cname($name, $tone)}: #{color-raw($name, $tone)};
+      #{cname('dark-' + $name, $tone)}: #{color-raw('dark-' + $name, $tone)};
     }
   }
 

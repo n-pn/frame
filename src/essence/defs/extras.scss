@@ -1,19 +1,20 @@
-@mixin heading($font-size, $line-height: 1.5) {
-  color: var(--color-label);
-  margin: 0;
-  font-size: $font-size;
-  line-height: $line-height;
+@function str-append($before, $after: null) {
+  @if $after {
+    $before: #{$before}-#{$after};
+  }
+  @return $before;
 }
 
-@mixin after-block($abs: false) {
-  // prettier-ignore
-  @if $abs { position: relative; }
+@function join-props($props...) {
+  $length: length($props);
+  $output: nth($props, 1);
 
-  &:after {
-    display: block;
-    content: '';
-    // prettier-ignore
-    @if $abs { position: absolute; }
-    @content;
+  @for $index from 2 through $length {
+    $value: nth($props, $index);
+    @if $value {
+      $output: #{$output}-#{$value};
+    }
   }
+
+  @return $output;
 }

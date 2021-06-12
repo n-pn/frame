@@ -21,7 +21,7 @@ a:not([class]) {
   font-weight: 500;
 
   // transition: all 0.1s ease-in-out;
-  @include radius();
+  @include bdradi();
 
   &:hover {
     color: lighten($-link-internal, 5%);

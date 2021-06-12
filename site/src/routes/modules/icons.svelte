@@ -43,7 +43,7 @@
     height: 4.5rem;
     @include bgcolor(neutral, 1);
     @include shadow(1);
-    @include radius();
+    @include bdradi();
 
     > :global(.m-icon) {
       margin: auto;
@@ -54,7 +54,6 @@
 
   .name {
     display: block;
-    @include font-family(narrow);
     @include font-size(sm);
     line-height: 1.25rem;
     padding-top: 0.25rem;

@@ -2,17 +2,7 @@
 @use "sass:list";
 @use "../vars/palette" as *;
 
-@function cname($vals...) {
-  $ret: --color;
-
-  @each $val in $vals {
-    $ret: $ret + '-' + $val;
-  }
-
-  @return $ret;
-}
-
-@function color($name, $tone: 5) {
+@function color-raw($name, $tone: 5) {
   $-alias: map.get($color-mapping, $name);
   // prettier-ignore
   @if $-alias { $name: $-alias; }
@@ -34,10 +24,20 @@
   @error "unknown color `#{$name}`";
 }
 
-@mixin fgcolor($name, $tone: 5, $css: true) {
-  color: color($name, $tone, $css);
+@function color($vals...) {
+  $ret: --color;
+
+  @each $val in $vals {
+    $ret: $ret + '-' + $val;
+  }
+
+  @return $ret;
 }
 
-@mixin bgcolor($name, $tone: 5, $css: true) {
-  background-color: color($name, $tone, $css);
+@mixin fgcolor($name, $tone: 5) {
+  color: color($name, $tone);
+}
+
+@mixin bgcolor($name, $tone: 5) {
+  background-color: color($name, $tone);
 }

@@ -12,7 +12,7 @@ code {
   line-height: inherit;
   font-weight: 500;
   vertical-align: text-top;
-  @include radius();
+  @include bdradi();
 }
 
 kbd {
@@ -44,6 +44,6 @@ pre {
     color: color(gray, 1);
     background: color(gray, 8);
     font-weight: normal;
-    @include radius();
+    @include bdradi();
   }
 }

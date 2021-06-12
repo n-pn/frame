@@ -23,11 +23,8 @@ const config = {
   preprocess: [
     preprocess({
       scss: {
-        includePaths: [path.join(frame_src), path.resolve(__dirname, 'src/css')],
-        prependData: `
-        @use "sass:math";
-        @use "essence" as *;
-        @import "helpers";`,
+        includePaths: [frame_src, path.resolve(__dirname, 'src/css')],
+        prependData: `@use "sass:math";\n@use "essence" as *;`,
       },
       postcss: true,
     }),

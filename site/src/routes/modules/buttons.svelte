@@ -107,17 +107,6 @@
       <MButton class="m-button _{variant} u-sd-2" text={variant} />
     {/each}
   </div>
-
-  <h2>Colors (custom)</h2>
-  <p><em>Check source code of this page for detailed implementation.</em></p>
-
-  {#each colors as color}
-    <div class="button-list">
-      {#each styles as style}
-        <MButton class="m-button _{style} _{color}" text={color} />
-      {/each}
-    </div>
-  {/each}
 </article>
 
 <style lang="scss">
@@ -129,22 +118,6 @@
 
     & + & {
       margin-top: 0.5rem;
-    }
-  }
-
-  .m-button {
-    @each $color in map-keys($m-color-palette) {
-      :global(&._#{'' + $color}) {
-        width: 6rem;
-        justify-content: center;
-        @include button-varify(fill, $color);
-
-        @each $style in $-button-styles {
-          &._#{'' + $style} {
-            @include button-varify($style, $color);
-          }
-        }
-      }
     }
   }
 

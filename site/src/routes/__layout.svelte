@@ -5,7 +5,6 @@
 
   import Navbar from '$lib/parts/Navbar.svelte'
 
-  import '$frame/globals.scss'
   import '$frame/premade.scss'
 
   $: {

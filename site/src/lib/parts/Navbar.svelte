@@ -100,7 +100,7 @@
     line-height: 1.5rem;
 
     &:hover {
-      @include bgcolor(rgba(color(primary, 4), 0.2));
+      @include bgcolor(primary, 3);
     }
   }
 

@@ -8,4 +8,4 @@ export const colors = [
   'blue',
   'purple',
 ]
-export const shades = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+export const shades = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
