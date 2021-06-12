@@ -1,11 +1,12 @@
 <script>
+  import { onMount } from 'svelte'
   import { page } from '$app/stores'
   import { dark_mode } from '$lib/stores'
 
   import Navbar from '$lib/Navbar.svelte'
+
   import '$frame/css/globals.scss'
-  import '$frame/css/basis.scss'
-  import { browser } from '$app/env'
+  import '$frame/css/premade.scss'
 
   $: {
     if (typeof gtag === 'function') {
@@ -13,11 +14,9 @@
     }
   }
 
-  $: if (browser) {
-    const classes = document.body.classList
-    if ($dark_mode) classes.add('tm-dark')
-    else classes.remove('tm-dark')
-  }
+  let root
+  onMount(() => (root = document.documentElement))
+  $: root?.classList.toggle('tm-dark', $dark_mode)
 
 </script>
 

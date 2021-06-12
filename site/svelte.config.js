@@ -26,7 +26,7 @@ const config = {
         includePaths: [path.join(frame_src, 'css')],
         prependData: `
         @use "sass:math";
-        @use "_core" as *;
+        @use "essence" as *;
         @import "helpers";`,
       },
       postcss: true,

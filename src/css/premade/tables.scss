@@ -1,4 +1,4 @@
-@use "../core" as *;
+@use "../essence" as *;
 
 table {
   --table-gutter: var(--gutter, 0.75rem);
