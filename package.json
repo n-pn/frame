@@ -1,12 +1,12 @@
 {
 	"name": "@np-nam/frame",
-	"author": "Nguyen Phuong Nam",
-	"description": "Reusable stylesheets and components for Svelte projects",
+	"author": "NP Nam",
+	"description": "SCSS variables, functions, mixins plus premade modules and utilities",
 	"version": "0.1.0",
 	"license": "MIT",
 	"files": [
-		"src/css",
-		"src/lib",
-		"src/etc"
+		"src",
+		"etc",
+		"dist"
 	]
 }

@@ -3,10 +3,10 @@
   import { page } from '$app/stores'
   import { dark_mode } from '$lib/stores'
 
-  import Navbar from '$lib/Navbar.svelte'
+  import Navbar from '$lib/parts/Navbar.svelte'
 
-  import '$frame/css/globals.scss'
-  import '$frame/css/premade.scss'
+  import '$frame/globals.scss'
+  import '$frame/premade.scss'
 
   $: {
     if (typeof gtag === 'function') {

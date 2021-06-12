@@ -1,6 +1,6 @@
 # Frame
 
-Personal reusable stylesheets and components for Svelte projects
+Personal SCSS variables, functions, mixins plus premade modules and utilities
 
 ## Install
 

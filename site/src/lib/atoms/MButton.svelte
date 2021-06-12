@@ -1,5 +1,6 @@
 <script>
-  import MIcon from './MIcon.svelte'
+  import MIcon from '$lib/atoms/MIcon.svelte'
+
 </script>
 
 <button class={$$props.class} disabled={$$props.disabled}>

@@ -1,5 +1,6 @@
 <script>
   export let name
+
 </script>
 
 <svg class="m-icon _{name} {$$props.class}">

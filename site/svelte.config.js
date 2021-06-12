@@ -12,7 +12,7 @@ const mdsvexConfig = {
   smartypants: { dashes: 'oldschool' },
   remarkPlugins: [breaks],
   rehypePlugins: [],
-  layout: path.resolve(__dirname, 'src/lib/Layout.svelte'),
+  layout: path.resolve(__dirname, 'src/lib/parts/Layout.svelte'),
 }
 
 const frame_src = path.resolve(__dirname, '../src')
@@ -23,7 +23,7 @@ const config = {
   preprocess: [
     preprocess({
       scss: {
-        includePaths: [path.join(frame_src, 'css')],
+        includePaths: [path.join(frame_src), path.resolve(__dirname, 'src/css')],
         prependData: `
         @use "sass:math";
         @use "essence" as *;
