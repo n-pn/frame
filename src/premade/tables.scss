@@ -13,8 +13,8 @@ table {
   min-width: 100%;
 
   @include dark-mode {
-    --table-thcolor: var(--color-dark-gray-3);
-    --table-bgcolor: var(--color-dark-gray-7);
+    --table-thcolor: var(--color-gray-3);
+    --table-bgcolor: var(--color-gray-9);
   }
 }
 
@@ -29,7 +29,7 @@ caption {
   caption-side: bottom;
 
   @include dark-mode {
-    --cap-color: var(--color-dark-gray-6);
+    --cap-color: var(--color-gray-6);
   }
 }
 

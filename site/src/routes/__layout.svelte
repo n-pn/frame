@@ -16,7 +16,6 @@
   let root
   onMount(() => (root = document.documentElement))
   $: root?.classList.toggle('tm-dark', $dark_mode)
-
 </script>
 
 <svelte:head>
@@ -49,8 +48,7 @@
     z-index: 1;
 
     @include dark-mode($kit: true) {
-      --main-bg: var(--color-dark-gray-8);
+      --main-bg: var(--color-gray-8);
     }
   }
-
 </style>

@@ -24,7 +24,7 @@
   @error "unknown color `#{$name}`";
 }
 
-@function color($vals...) {
+@function color-name($vals...) {
   $ret: --color;
 
   @each $val in $vals {
@@ -34,10 +34,14 @@
   @return $ret;
 }
 
+@function color($name, $tone) {
+  @return 'var(#{color-name($name, $tone)})';
+}
+
 @mixin fgcolor($name, $tone: 5) {
-  color: color($name, $tone);
+  color: 'var(#{color-name($name, $tone)})';
 }
 
 @mixin bgcolor($name, $tone: 5) {
-  background-color: color($name, $tone);
+  background-color: 'var(#{color-name($name, $tone)})';
 }

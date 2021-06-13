@@ -3,12 +3,14 @@ import node from '@sveltejs/adapter-node'
 import { mdsvex } from 'mdsvex'
 import breaks from 'remark-breaks'
 
+import postcssConfig from './postcss.config.cjs'
+
 import path from 'path'
 import { fileURLToPath } from 'url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const mdsvexConfig = {
-  extensions: ['.svelte.md', '.md', '.svx'],
+  extensions: ['.svx', '.md'],
   smartypants: { dashes: 'oldschool' },
   remarkPlugins: [breaks],
   rehypePlugins: [],
@@ -26,7 +28,7 @@ const config = {
         includePaths: [frame_src, path.resolve(__dirname, 'src/css')],
         prependData: `@use "sass:math";\n@use "essence" as *;`,
       },
-      postcss: true,
+      postcss: postcssConfig,
     }),
     mdsvex(mdsvexConfig),
   ],
