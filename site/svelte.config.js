@@ -7,17 +7,17 @@ import postcssConfig from './postcss.config.cjs'
 
 import path from 'path'
 import { fileURLToPath } from 'url'
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const _cwd = path.dirname(fileURLToPath(import.meta.url))
 
 const mdsvexConfig = {
   extensions: ['.svx', '.md'],
   smartypants: { dashes: 'oldschool' },
   remarkPlugins: [breaks],
   rehypePlugins: [],
-  layout: path.resolve(__dirname, 'src/lib/parts/Layout.svelte'),
+  layout: path.resolve(_cwd, 'src/lib/parts/Layout.svelte'),
 }
 
-const frame_src = path.resolve(__dirname, '../src')
+const frame_src = path.resolve(_cwd, '../src')
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -25,7 +25,7 @@ const config = {
   preprocess: [
     preprocess({
       scss: {
-        includePaths: [frame_src, path.resolve(__dirname, 'src/css')],
+        includePaths: [frame_src, path.resolve(_cwd, 'src/css')],
         prependData: `@use "sass:math";\n@use "essence" as *;`,
       },
       postcss: postcssConfig,
