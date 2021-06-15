@@ -1,5 +1,5 @@
 const purge = require('@fullhuman/postcss-purgecss')
-const svelte = require('purgecss-from-svelte')
+const purgeSvelte = require('purgecss-from-svelte')
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
 
@@ -8,17 +8,18 @@ const prod = mode === 'production'
 
 module.exports = {
   plugins: [
-    autoprefixer(),
+    autoprefixer,
     prod && cssnano({ preset: 'default' }),
     prod &&
       purge({
         content: ['./src/**/*.{svelte,html,svx,md}'],
+        safelist: [/svelte-/],
         extractors: [
           {
-            extractor: (content) => svelte.extract(content),
+            extractor: (content) => purgeSvelte.extract(content),
             extensions: ['svelte'],
           },
         ],
       }),
-  ].filter(Boolean),
+  ],
 }
