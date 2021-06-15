@@ -38,7 +38,7 @@ title: Typography
 
 ## Paragraphs
 
-**Lorem ipsum [dolor](.) _sit amet_, consectetur** [ adipiscing ](typography)`elit`. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
+**Lorem ipsum [dolor](.) _sit amet_, consectetur** [ adipiscing ](/typography)`elit`. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
 
 _Climb leg rub face on everything give **attitude** nap all day for under the bed._
 Chase mice attack feet but rub face on everything hopped up on goofballs.

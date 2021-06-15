@@ -6,7 +6,7 @@ First, you have to know what [Svelte](https://svelte.dev) is. Svelte is a UI fra
 
 ---
 
-Sapper is a Next.js-style framework [(more on that here)](examples/how-is-sapper-different-from-next'>) built around Svelte. It makes it embarrassingly easy to create extremely high performance web apps. Out of the box, you get:
+Sapper is a Next.js-style framework [(more on that here)](/samples/how-is-sapper-different-from-next'>) built around Svelte. It makes it embarrassingly easy to create extremely high performance web apps. Out of the box, you get:
 
 - Code-splitting, dynamic imports and hot module replacement, powered by webpack
 - Server-side rendering (SSR) with client-side hydration

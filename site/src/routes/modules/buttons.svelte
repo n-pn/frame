@@ -1,22 +1,9 @@
 <script>
   import MButton from '$lib/atoms/MButton.svelte'
 
-  const colors = [
-    'gray',
-    'red',
-    'orange',
-    'yellow',
-    'green',
-    'teal',
-    'blue',
-    'indigo',
-    'purple',
-    'pink',
-  ]
   const sizes = ['tiny', 'small', 'medium', 'large', 'huge']
   const styles = ['fill', 'text', 'line']
   const variants = ['default', 'primary', 'success', 'warning', 'harmful']
-
 </script>
 
 <svelte:head>
@@ -110,8 +97,6 @@
 </article>
 
 <style lang="scss">
-  @import 'molds/buttons.d';
-
   .button-list {
     @include flex($wrap: true);
     @include flex-gap($gap: 0.5rem, $child: ':global(*)');
@@ -120,5 +105,4 @@
       margin-top: 0.5rem;
     }
   }
-
 </style>

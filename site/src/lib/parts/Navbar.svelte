@@ -3,10 +3,9 @@
   import { dark_mode } from '$lib/stores'
 
   export let segment
-
 </script>
 
-<nav>
+<nav class="navbar">
   <div class="content">
     <a class="site" class:_active={segment === undefined} href=".">Frame</a>
 
@@ -19,15 +18,8 @@
     <a class="link" href="/modules/icons">Icons</a>
     <a class="link" href="/modules/buttons">Buttons</a>
     <a class="link" href="/modules/inputs">Inputs</a>
-    <!-- <a class="link" href="/modules/chips">Chips</a>
-    <a class="link" href="/modules/badges">Badges</a>
-    <a class="link" href="/modules/cards">Cards</a>
-    <a class="link" href="/modules/menus">Menus</a>
-    <a class="link" href="/modules/dialogs">Dialogs</a>
-    <a class="link" href="/modules/tables">Tables</a>
-    <a class="link" href="/modules/tooltips">Tooltips</a> -->
 
-    <h3>Sample texts</h3>
+    <h3>Samples</h3>
     {#each posts as post}
       <a class="link" sveltekit:prefetch href="/samples/{post.slug}">
         {post.title}
@@ -44,7 +36,7 @@
 </nav>
 
 <style lang="scss">
-  nav {
+  .navbar {
     position: absolute;
     width: 15rem;
     z-index: -1;
@@ -53,7 +45,7 @@
     bottom: 0;
 
     left: -15rem;
-    // @include bgcolor(neutral, 1);
+    @include bgcolor(neutral, 1);
   }
 
   .content {
@@ -115,5 +107,4 @@
     margin-top: 0.5rem;
     @include fgcolor(neutral, 5);
   }
-
 </style>

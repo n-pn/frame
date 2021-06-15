@@ -21,5 +21,5 @@ module.exports = {
           },
         ],
       }),
-  ],
+  ].filter(Boolean),
 }
