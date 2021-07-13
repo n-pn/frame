@@ -1,8 +1,8 @@
 <script>
   import MButton from '$lib/atoms/MButton.svelte'
 
-  const sizes = ['tiny', 'small', 'medium', 'large', 'huge']
-  const styles = ['fill', 'text', 'line']
+  const sizes = ['xs', 'sm', 'md', 'lg', 'xl']
+  const styles = ['fill', 'text']
   const variants = ['default', 'primary', 'success', 'warning', 'harmful']
 </script>
 
@@ -17,7 +17,7 @@
 
   <div class="button-list">
     {#each sizes as size}
-      <MButton class="m-button _{size}" text={size + ' button'} icon="maximize" />
+      <MButton class="m-button btn-{size}" text={size + ' button'} icon="maximize" />
     {/each}
   </div>
 
@@ -75,7 +75,10 @@
   </div>
   <div class="button-list">
     {#each styles as style}
-      <input type="button" class="m-button _harmful _{style}" value="input" />
+      <label class="m-button _harmful _{style}">
+        <span>Input</span>
+        <input type="button" />
+      </label>
     {/each}
   </div>
 
@@ -99,5 +102,9 @@
 <style lang="scss">
   .button-list {
     @include flex($wrap: nowrap, $gap: 0.5rem);
+  }
+
+  .m-button > input {
+    display: none !important;
   }
 </style>
