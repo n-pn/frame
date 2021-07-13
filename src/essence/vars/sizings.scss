@@ -41,28 +41,6 @@ $spacer-em: (
   6: 0.75em, // 3/4
 );
 
-// content padding
-$gutter: (
-  xs: 0.5rem,
-  sm: 0.75rem,
-  md: 1rem,
-  lg: 1.25rem,
-) !default;
-
-$gutter-dense: (
-  xs: 0.375rem,
-  sm: 0.5rem,
-  md: 0.75rem,
-  lg: 1rem,
-) !default;
-
-$gutter-roomy: (
-  xs: 0.75rem,
-  sm: 1rem,
-  md: 1.25rem,
-  lg: 1.5rem,
-) !default;
-
 // Size scale
 // prettier-ignore
 $sizings: (
@@ -75,20 +53,6 @@ $sizings: (
   6: 2.5rem, // 40px
   7: 3rem, // 48px
   8: 4rem, // 64px
-) !default;
-
-// Breakpoint widths
-$screen-xs: 360px !default; // older phone, iphone se
-$screen-sm: 480px !default; // Small screen / phone
-$screen-md: 720px !default; // Medium screen / tablet
-$screen-lg: 960px !default; // Large screen / desktop
-$screen-xl: 1200px !default; // Extra large screen / wide desktop
-
-$screens: (
-  sm: $screen-sm,
-  md: $screen-md,
-  lg: $screen-lg,
-  xl: $screen-xl,
 ) !default;
 
 $sidebar-widths: (

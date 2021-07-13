@@ -1,0 +1,36 @@
+@use 'sass:list';
+@use 'sass:string';
+
+@function str-append($before, $after: null) {
+  @if $after {
+    $before: #{$before}-#{$after};
+  }
+
+  @return $before;
+}
+
+@function join-props($props...) {
+  $length: length($props);
+  $output: list.nth($props, 1);
+
+  @for $index from 2 through $length {
+    $value: list.nth($props, $index);
+    @if $value {
+      $output: #{$output}-#{$value};
+    }
+  }
+
+  @return $output;
+}
+
+@function match-side($side, $list) {
+  @if type-of($list) == list {
+    @return list.index($list, $side);
+  } @else if type-of($list) == string {
+    @return string.index($list, $side);
+  } @else {
+    // @debug $list;
+    // @debug type-of($list);
+    @error "wrong argument";
+  }
+}

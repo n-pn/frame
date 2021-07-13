@@ -1,7 +1,6 @@
 <script>
   import feather from 'feather-icons'
   const icons = Object.values(feather.icons)
-
 </script>
 
 <article class="m-article">
@@ -26,8 +25,7 @@
 <style lang="scss">
   .list {
     margin-top: 1rem;
-    @include grid(minmax(6rem, 1fr));
-    @include grid-gap(0.75rem);
+    @include grid(minmax(6rem, 1fr), $gap: 0.75rem);
   }
 
   .item {
@@ -54,9 +52,8 @@
 
   .name {
     display: block;
-    @include font-size(sm);
     line-height: 1.25rem;
     padding-top: 0.25rem;
+    @include ftsize(sm);
   }
-
 </style>

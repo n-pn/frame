@@ -1,0 +1,103 @@
+@use "../essence" as *;
+
+$-btn-height-xs: rem(24px);
+$-btn-height-sm: rem(32px);
+$-btn-height-md: rem(36px);
+$-btn-height-lg: rem(48px);
+$-btn-height-xl: rem(60px);
+
+.m-button {
+  @include color(fgcolor, fg-tert);
+  @include color(bgcolor, bg-tert);
+  @include color(bghover, bg-secd);
+
+  --height: #{$-btn-height-md};
+  --gutter: var(--gutter-xs);
+  --ftsize: var(--ftsize-sm);
+  --innerh: calc(var(--height) - var(--gutter) - var(--gutter));
+
+  color: var(--fgcolor);
+  background: var(--bgcolor);
+
+  display: inline-flex;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+
+  @include bdradi;
+  @include linesd(bd-soft);
+
+  padding: var(--gutter);
+  height: var(--height);
+  line-height: var(--innerh);
+  font-size: var(--ftsize);
+
+  &:hover {
+    background: var(--bghover);
+  }
+
+  &:disabled,
+  &._disable {
+    @include fgcolor(mute);
+    @include bgcolor(mute);
+    @include linesd(bg-mute);
+
+    @include hover {
+      cursor: text;
+    }
+  }
+
+  > span {
+    margin: 0 var(--gutter-ss);
+  }
+
+  > svg,
+  > img {
+    // margin: var(--gutter) 0;
+    width: var(--innerh);
+    height: var(--innerh);
+  }
+}
+
+.btn-sm {
+  --height: #{$-btn-height-sm};
+  --gutter: var(--gutter-ss);
+  --ftsize: var(--ftsize-xs);
+}
+
+.btn-lg {
+  --height: #{$-btn-height-lg};
+  --gutter: var(--gutter-sm);
+  --ftsize: var(--ftsize-md);
+}
+
+.m-button {
+  &._primary {
+    @include color(fgcolor, primary, 6);
+    @include color(bgcolor, primary, 0);
+    @include color(bghover, primary, 1);
+  }
+}
+
+.m-button {
+  &._primary {
+    @include bgcolor(primary, 1);
+    @include linesd(primary, 2, $ndef: false);
+  }
+}
+
+.m-button._fill {
+  @include color(fgcolor, bg-main);
+
+  &._primary {
+    @include bgvar(primary, 6);
+    @include color(bghover, primary, 5);
+
+    .tm-dark & {
+      @include fgvar(primary, 1);
+      @include fgvar(primary, 8);
+      @include color(bghover, primary, 7);
+    }
+  }
+}

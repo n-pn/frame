@@ -45,7 +45,7 @@
     bottom: 0;
 
     left: -15rem;
-    @include bgcolor(neutral, 1);
+    @include bgcolor(main);
   }
 
   .content {
@@ -64,7 +64,7 @@
     text-transform: uppercase;
     font-weight: 300;
     // text-align: center;
-    @include font-size(x3);
+    @include ftsize(x3);
     letter-spacing: 0.1em;
     // margin: 0 0.375rem;
     line-height: 4rem;
@@ -88,7 +88,7 @@
     padding: 0.375rem 0.75rem;
     border-radius: 3px;
     border: 0;
-    @include font-size(3);
+    @include ftsize(3);
     line-height: 1.5rem;
 
     &:hover {

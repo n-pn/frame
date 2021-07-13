@@ -1,0 +1,58 @@
+// functions
+@use "sass:list";
+@use "../defs" as *;
+
+$dirs: (top, right, bottom, left);
+
+@function bdprops($sides: all, $type: null) {
+  @if $sides == all or $sides == null {
+    @return join-props(border, $type);
+  }
+
+  $props: ();
+
+  @each $dir in $dirs {
+    @if match-side($dir, $sides) {
+      $props: list.append($props, join-props(border, $dir, $type));
+    }
+  }
+
+  @return $props;
+}
+
+// colors
+$-labels: (main, secd, tert, mute);
+
+@mixin bdcolor($color: gray, $tone: 5, $sides: all) {
+  $props: bdprops($sides, color);
+
+  @if known-colors($color) {
+    @include fluid($props, color($color, $tone));
+  } @else if list.index($-labels, $color) {
+    @include fluid($props, #{var(--bd-#{$color})});
+  } @else {
+    @include fluid($props, #{var(--#{$color})});
+  }
+}
+
+// styles
+
+@mixin bdstyle($style: solid, $sides: all) {
+  $props: bdprops($sides, style);
+  @include fluid($props, $style);
+}
+
+// widths
+
+@mixin bdwidth($width: 1px, $sides: all) {
+  $props: bdprops($sides, width);
+  @include fluid($props, $width);
+}
+
+// borders
+
+@mixin border($color: gray, $tone: 3, $width: 1px, $style: solid, $sides: all) {
+  $props: bdprops($sides);
+  $color: #{color($color, $tone)};
+  @include fluid($props, $width $style $color);
+}

@@ -5,7 +5,7 @@
 
   import Navbar from '$lib/parts/Navbar.svelte'
 
-  import '$frame/premade.scss'
+  import '$frame/generic.scss'
 
   $: {
     if (typeof gtag === 'function') {
@@ -30,25 +30,19 @@
 <style lang="scss">
   :global(#svelte) {
     min-height: 100%;
-    @include props(margin-left, $md: 15rem);
+    @include fluid(margin-left, $md: 15rem);
   }
 
   main {
-    --main-bg: var(--color-white);
-
     position: relative;
     min-height: 100%;
     width: 48rem;
     max-width: 100%;
-    padding: var(--spacer) var(--gutter);
+    padding: var(--verpad) var(--gutter);
     margin: 0 auto;
 
     @include shadow(1);
-    background-color: var(--main-bg);
+    @include bgcolor(secd);
     z-index: 1;
-
-    @include dark-mode($kit: true) {
-      --main-bg: var(--color-gray-8);
-    }
   }
 </style>

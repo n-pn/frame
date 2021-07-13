@@ -98,11 +98,6 @@
 
 <style lang="scss">
   .button-list {
-    @include flex($wrap: true);
-    @include flex-gap($gap: 0.5rem, $child: ':global(*)');
-
-    & + & {
-      margin-top: 0.5rem;
-    }
+    @include flex($wrap: nowrap, $gap: 0.5rem);
   }
 </style>
